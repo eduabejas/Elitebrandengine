@@ -1,0 +1,4 @@
+# Elite Brand Engine — Python dependencies (intentionally minimal so it runs
+# fast and free on GitHub Actions).
+PyYAML>=6.0        # human-friendly config.yml
+requests>=2.31     # HTTP client for API connectors (eBay, Amazon, feeds)

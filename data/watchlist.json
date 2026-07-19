@@ -1,0 +1,225 @@
+{
+  "_comment": "Curated products the company tracks. Edit freely. Empty sizes/colors = any variant. target_price (USD) = alert at or below; omit to rely on statistical drop detection. 'keywords' add extra search terms for the API/feed connectors.",
+  "items": [
+    {
+      "id": "arcteryx_beta_ar_jacket",
+      "brand": "Arc'teryx",
+      "name": "Beta AR Jacket",
+      "category": "Hardshell",
+      "sizes": ["M", "L"],
+      "colors": ["black", "blue"],
+      "target_price": 449.00,
+      "keywords": ["gore-tex", "pro", "shell"],
+      "active": true
+    },
+    {
+      "id": "tnf_nuptse_1996",
+      "brand": "The North Face",
+      "name": "1996 Retro Nuptse Jacket",
+      "category": "Down Jacket",
+      "sizes": ["M", "L", "XL"],
+      "colors": ["black"],
+      "target_price": 210.00,
+      "keywords": ["700 fill", "puffer"],
+      "active": true
+    },
+    {
+      "id": "patagonia_nano_puff",
+      "brand": "Patagonia",
+      "name": "Nano Puff Jacket",
+      "category": "Insulated Jacket",
+      "sizes": ["S", "M", "L"],
+      "colors": [],
+      "target_price": 149.00,
+      "keywords": ["primaloft"],
+      "active": true
+    },
+    {
+      "id": "blackdiamond_distance_carbon_z",
+      "brand": "Black Diamond",
+      "name": "Distance Carbon Z Trekking Poles",
+      "category": "Trekking Poles",
+      "sizes": ["110", "120", "130"],
+      "colors": [],
+      "target_price": 150.00,
+      "keywords": ["z-pole", "carbon"],
+      "active": true
+    },
+    {
+      "id": "deuter_aircontact_core_60_10",
+      "brand": "Deuter",
+      "name": "Aircontact Core 60+10 Backpack",
+      "category": "Backpack",
+      "sizes": ["70L"],
+      "colors": [],
+      "target_price": 200.00,
+      "keywords": ["trekking", "pack"],
+      "active": true
+    },
+    {
+      "id": "outdoor_research_helium_rain",
+      "brand": "Outdoor Research",
+      "name": "Helium Rain Jacket",
+      "category": "Rain Shell",
+      "sizes": ["M", "L"],
+      "colors": [],
+      "target_price": 130.00,
+      "keywords": ["pertex", "ultralight"],
+      "active": true
+    },
+    {
+      "id": "mammut_ophir_harness",
+      "brand": "Mammut",
+      "name": "Ophir 3 Slide Climbing Harness",
+      "category": "Climbing Harness",
+      "sizes": ["M", "L"],
+      "colors": [],
+      "target_price": 60.00,
+      "keywords": ["climbing"],
+      "active": true
+    },
+    {
+      "id": "mountainhardwear_ghost_whisperer",
+      "brand": "Mountain Hardwear",
+      "name": "Ghost Whisperer 2 Hoody",
+      "category": "Down Jacket",
+      "sizes": ["M", "L"],
+      "colors": ["blue", "black"],
+      "target_price": 300.00,
+      "keywords": ["800 fill", "ultralight down"],
+      "active": true
+    },
+    {
+      "id": "marmot_precip_eco",
+      "brand": "Marmot",
+      "name": "PreCip Eco Jacket",
+      "category": "Rain Shell",
+      "sizes": ["M", "L", "XL"],
+      "colors": [],
+      "target_price": 75.00,
+      "keywords": ["nanopro"],
+      "active": true
+    },
+    {
+      "id": "rab_microlight_alpine",
+      "brand": "Rab",
+      "name": "Microlight Alpine Down Jacket",
+      "category": "Down Jacket",
+      "sizes": ["M", "L"],
+      "colors": [],
+      "target_price": 200.00,
+      "keywords": ["recycled down", "pertex"],
+      "active": true
+    },
+    {
+      "id": "fjallraven_kanken",
+      "brand": "Fjällräven",
+      "name": "Kånken Backpack",
+      "category": "Daypack",
+      "sizes": ["16L"],
+      "colors": [],
+      "target_price": 65.00,
+      "keywords": ["classic"],
+      "active": true
+    },
+    {
+      "id": "norrona_lofoten_goretex_pro",
+      "brand": "Norrøna",
+      "name": "Lofoten Gore-Tex Pro Jacket",
+      "category": "Hardshell",
+      "sizes": ["M", "L"],
+      "colors": [],
+      "target_price": 550.00,
+      "keywords": ["ski", "shell"],
+      "active": true
+    },
+    {
+      "id": "petzl_actik_core",
+      "brand": "Petzl",
+      "name": "Actik Core Headlamp",
+      "category": "Headlamp",
+      "sizes": [],
+      "colors": [],
+      "target_price": 55.00,
+      "keywords": ["rechargeable", "450 lumens"],
+      "active": true
+    },
+    {
+      "id": "lasportiva_tarantulace",
+      "brand": "La Sportiva",
+      "name": "Tarantulace Climbing Shoes",
+      "category": "Climbing Shoes",
+      "sizes": ["EU 42", "EU 43"],
+      "colors": [],
+      "target_price": 75.00,
+      "keywords": ["rock climbing"],
+      "active": true
+    },
+    {
+      "id": "osprey_atmos_ag_65",
+      "brand": "Osprey",
+      "name": "Atmos AG 65 Backpack",
+      "category": "Backpack",
+      "sizes": ["65L"],
+      "colors": [],
+      "target_price": 220.00,
+      "keywords": ["anti-gravity", "trekking"],
+      "active": true
+    },
+    {
+      "id": "gregory_baltoro_65",
+      "brand": "Gregory",
+      "name": "Baltoro 65 Backpack",
+      "category": "Backpack",
+      "sizes": ["65L"],
+      "colors": [],
+      "target_price": 250.00,
+      "keywords": ["trekking"],
+      "active": true
+    },
+    {
+      "id": "salomon_x_ultra_4_gtx",
+      "brand": "Salomon",
+      "name": "X Ultra 4 GTX Hiking Shoes",
+      "category": "Hiking Shoes",
+      "sizes": ["US 10", "US 10.5", "US 11"],
+      "colors": [],
+      "target_price": 110.00,
+      "keywords": ["gore-tex", "low"],
+      "active": true
+    },
+    {
+      "id": "lowa_renegade_gtx_mid",
+      "brand": "Lowa",
+      "name": "Renegade GTX Mid Boots",
+      "category": "Hiking Boots",
+      "sizes": ["US 10", "US 11"],
+      "colors": [],
+      "target_price": 200.00,
+      "keywords": ["gore-tex", "mid"],
+      "active": true
+    },
+    {
+      "id": "scarpa_zodiac_tech_gtx",
+      "brand": "Scarpa",
+      "name": "Zodiac Tech GTX Mountaineering Boots",
+      "category": "Mountaineering Boots",
+      "sizes": ["EU 43", "EU 44"],
+      "colors": [],
+      "target_price": 340.00,
+      "keywords": ["gore-tex", "alpine"],
+      "active": true
+    },
+    {
+      "id": "exped_megamat_10",
+      "brand": "Exped",
+      "name": "MegaMat 10 Sleeping Pad",
+      "category": "Sleeping Pad",
+      "sizes": ["LW"],
+      "colors": [],
+      "target_price": 200.00,
+      "keywords": ["insulated", "self-inflating"],
+      "active": true
+    }
+  ]
+}

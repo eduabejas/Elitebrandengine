@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+.pytest_cache/
+.mypy_cache/
+
+# Local secrets / config overrides (NEVER commit real credentials)
+.env
+.env.*
+!.env.example
+config.local.yml
+secrets.yml
+
+# Ephemeral build output (regenerated each run)
+dist/
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+
+# NOTE: data/ (watchlist, offers, deals, price history) is intentionally
+# TRACKED. On GitHub's free tier the git repo IS the database: the scheduled
+# Action commits updated prices back so history survives between runs.

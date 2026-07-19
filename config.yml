@@ -1,0 +1,68 @@
+# =============================================================================
+# Elite Brand Engine — configuration
+# -----------------------------------------------------------------------------
+# Non-secret settings live here. SECRETS (API keys, SMTP passwords) NEVER go in
+# this file — set them as environment variables / GitHub Actions secrets.
+# Copy to config.local.yml to override locally without touching this file.
+# =============================================================================
+
+currency: USD
+
+site:
+  title: "Elite Brand Engine"
+  tagline: "Radar de ofertas para equipo de montañismo y alpinismo"
+
+# --- How a price becomes a "deal" -------------------------------------------
+detection:
+  min_discount_pct: 15.0     # % below reference (list price or recent median)
+  min_history_points: 4      # observations needed before statistical detection
+  alert_ttl_days: 7          # don't re-email the same deal within N days
+  min_match_score: 0.6       # 0..1 confidence a listing is the right product
+
+# --- Where prices come from --------------------------------------------------
+# Only LEGITIMATE sources: official APIs + affiliate datafeeds + polite,
+# robots.txt-respecting fetching. The 'sample' source ships enabled so the whole
+# system works with zero setup; turn on the real ones as you get credentials.
+sources:
+  sample:
+    enabled: true            # synthetic demo data (no network, no keys)
+
+  ebay:
+    enabled: false           # needs EBAY_CLIENT_ID / EBAY_CLIENT_SECRET
+    marketplace: EBAY_US
+    limit: 8
+
+  amazon:
+    enabled: false           # needs AMAZON_ACCESS_KEY / _SECRET_KEY / _PARTNER_TAG
+    marketplace: www.amazon.com
+    region: us-east-1
+    search_index: SportingGoods
+
+  affiliate_feed:
+    enabled: false           # REI / Backcountry / Patagonia / brand DTC via feeds
+    feeds: []
+    # Example (uncomment and fill in once you're an approved affiliate):
+    # feeds:
+    #   - source: "REI Co-op"
+    #     url: "https://datafeed.avantlink.com/download.php?...format=csv"
+    #     format: csv
+    #     mapping:
+    #       name: "Product Name"
+    #       brand: "Brand"
+    #       price: "Sale Price"
+    #       list_price: "Retail Price"
+    #       url: "Buy URL"
+    #       image: "Image URL"
+    #       size: "Size"
+    #       color: "Color"
+    #       upc: "UPC"
+
+# --- Email alerts ------------------------------------------------------------
+# Transport auto-detected from env (SMTP_* / SENDGRID_API_KEY / RESEND_API_KEY).
+# With no transport or no recipients it runs in DRY-RUN and renders the email to
+# dist/last_email.html instead of sending.
+email:
+  enabled: true
+  subject_prefix: "[Elite Brand Engine] "
+  from_name: "Elite Brand Engine"
+  to: []                     # e.g. ["compras@tuempresa.com"] or set ALERT_EMAIL_TO

@@ -1,0 +1,221 @@
+# 🏔️ Elite Brand Engine
+
+**A focused price-comparison and deal-alert engine for outdoor / mountaineering
+gear.** It tracks a curated watchlist of products from a fixed set of flagship
+brands, collects offers from multiple **legitimate** sources, detects genuine
+price drops against stored history, reports them by **email**, and publishes a
+searchable comparison **website** — all running **for free** on GitHub Actions +
+GitHub Pages.
+
+> Built for a US company that buys made-to-order outdoor gear for a niche
+> audience (mountaineers, alpinists, explorers, botanists, agronomists,
+> photographers…). Narrowing the search to a defined brand universe is exactly
+> what makes matching accurate and the whole thing cheap to run.
+
+- 📊 **Live demo data included** — clone, run one command, open the site.
+- 📧 **Email alerts** showing *product name, size, website, direct link, price*.
+- 🔎 **Multi-store comparison** with size / colour / brand awareness.
+- 🧭 **Scoped to 30 flagship brands** for precision and efficiency.
+- ⚖️ **Legal by design** — official APIs + affiliate datafeeds + polite,
+  robots.txt-respecting fetching. **No CAPTCHA/anti-bot evasion.**
+
+---
+
+## Why "legal by design"? (and how apps like Honey really work)
+
+The brief asked how deal apps like **Honey** manage to do this. The important,
+often-misunderstood answer: **Honey does not defeat anti-bot systems.** It runs
+as a **browser extension inside the user's own logged-in session**, so it never
+faces CAPTCHAs, and its price/coupon data comes from **affiliate partnerships**
+and crowdsourced codes — not mass scraping. ([Wikipedia][honey-wiki], [Snopes][honey-snopes])
+
+So this engine follows the same sustainable playbook instead of trying to evade
+protections (which violates Terms of Service / the CFAA / DMCA §1201, breaks
+constantly, and gets your IPs banned):
+
+| Source | How we read prices — legitimately |
+| --- | --- |
+| **eBay** | Official **Browse API** (OAuth client-credentials). ([docs][ebay]) |
+| **Amazon** | Official **Product Advertising API 5.0** (Associates + SigV4). |
+| **REI / Backcountry / Patagonia / brand DTC** | **Affiliate product datafeeds** via AvantLink / Impact / CJ — explicitly meant for comparison sites. ([AvantLink][avantlink]) |
+| **Other stores** | *Polite* HTML fetching that honours `robots.txt`, rate-limits, identifies itself, and **backs off** on any challenge. |
+
+👉 Full rationale in **[docs/ENFOQUE-LEGAL-Y-COMO-LO-HACE-HONEY.md](docs/ENFOQUE-LEGAL-Y-COMO-LO-HACE-HONEY.md)** (Español).
+
+---
+
+## How it works
+
+```mermaid
+flowchart LR
+  subgraph GitHub Actions (cron, free)
+    A[watchlist.json] --> B[Connectors]
+    B -->|eBay API| B
+    B -->|Amazon PA-API| B
+    B -->|Affiliate feeds| B
+    B -->|sample demo| B
+    B --> C[Normalize + match<br/>brand / size / colour]
+    C --> D[Deal detector<br/>vs target & price history]
+    D --> E[(data/ = the database<br/>committed back to git)]
+    D --> F[📧 Email alerts]
+    E --> G[web/data/*.json snapshot]
+  end
+  G --> H[[GitHub Pages<br/>static comparison site]]
+```
+
+On the free tier there is no database — **the git repo is the store.** Each
+scheduled run commits updated prices back, so price history (and therefore deal
+detection) survives between runs, and the diff doubles as an audit log.
+
+---
+
+## Quick start (local)
+
+```bash
+pip install -r requirements.txt
+
+# optional: seed ~30 days of demo price history so sparklines look real
+python scripts/seed_demo.py 30
+
+# run one collection cycle (uses the built-in demo source; no keys needed)
+python -m engine.run --no-email
+
+# preview the website
+cd web && python -m http.server 8000     # open http://localhost:8000
+```
+
+Run the tests:
+
+```bash
+python -m tests.test_normalize
+python -m tests.test_dealdetector
+# or, if you have pytest:  pytest -q
+```
+
+---
+
+## Deploy on GitHub (100% free tier)
+
+1. **Push this repo** to GitHub (public repo = unlimited Actions minutes).
+2. **Enable Pages**: *Settings → Pages → Build and deployment → Source =
+   **GitHub Actions***. The **Deploy site** workflow publishes `web/`.
+3. **Enable the schedule**: the **Collect deals** workflow runs every 6 hours
+   (and on demand from the Actions tab). It collects, emails new deals, and
+   commits fresh prices — which re-triggers the site deploy.
+4. **Configure email + sources** with repository *Secrets* and *Variables*
+   (below). With none set, it runs in safe **dry-run** mode.
+
+That's it — no servers, no database, no paid services.
+
+---
+
+## Configuration
+
+### Watchlist — `data/watchlist.json`
+The products you track. Empty `sizes`/`colors` mean *any variant*.
+`target_price` (USD) triggers an alert at or below it; omit it to rely on
+statistical drop detection.
+
+```json
+{
+  "id": "arcteryx_beta_ar_jacket",
+  "brand": "Arc'teryx",
+  "name": "Beta AR Jacket",
+  "category": "Hardshell",
+  "sizes": ["M", "L"],
+  "colors": ["black", "blue"],
+  "target_price": 449.00,
+  "keywords": ["gore-tex", "pro", "shell"]
+}
+```
+
+### Settings — `config.yml`
+Brands, detection thresholds, which sources are on, email options. Secrets are
+**never** stored here — they come from the environment. See the inline comments.
+
+Key detection knobs:
+- `min_discount_pct` (default 15) — how far below the reference a price must be.
+- `min_history_points` (default 4) — data needed before statistical detection.
+- `alert_ttl_days` (default 7) — don't re-email the same deal within N days.
+- `min_match_score` (default 0.6) — confidence a listing is the right product.
+
+### Turning on real sources
+Set `enabled: true` under `sources.<name>` in `config.yml` and provide the
+credentials as environment variables / GitHub Secrets:
+
+| Source | Env vars |
+| --- | --- |
+| eBay | `EBAY_CLIENT_ID`, `EBAY_CLIENT_SECRET` |
+| Amazon | `AMAZON_ACCESS_KEY`, `AMAZON_SECRET_KEY`, `AMAZON_PARTNER_TAG` |
+| Affiliate feeds | add `feeds:` entries (feed URL + column mapping) — no secret needed if the feed URL is tokenised |
+
+### Email transport (auto-detected from env, first match wins)
+
+| Transport | Env vars |
+| --- | --- |
+| SMTP (e.g. Gmail app password) | `SMTP_HOST`, `SMTP_PORT`, `SMTP_USER`, `SMTP_PASS`, `SMTP_FROM` |
+| SendGrid | `SENDGRID_API_KEY` (+ `ALERT_EMAIL_FROM`) |
+| Resend | `RESEND_API_KEY` (+ `ALERT_EMAIL_FROM`) |
+
+Recipients: `email.to` in `config.yml`, or the `ALERT_EMAIL_TO` variable
+(comma-separated). With no transport/recipients it renders the email to
+`dist/last_email.html` instead of sending.
+
+---
+
+## Covered brands
+
+The North Face · Black Diamond · Patagonia · Ansilta · Deuter · Outdoor
+Research · Mammut · Arc'teryx · Mountain Hardwear · Marmot · Rab · Fjällräven ·
+Norrøna · Salewa · Ortovox · Montbell · Columbia · Helly Hansen · Petzl · La
+Sportiva · Peak Performance · Osprey · Gregory · Exped · Scarpa · Salomon ·
+Lowa · Asolo · Montagne
+
+Each brand ships with alias/misspelling handling (e.g. `arcteryx` → *Arc'teryx*,
+`scaroa` → *Scarpa*, `fjallraven` → *Fjällräven*). Add or edit brands in
+`engine/normalize.py`.
+
+---
+
+## Project structure
+
+```
+engine/                 Python collection engine
+  models.py             dataclasses: WatchItem, Offer, Deal, PricePoint
+  normalize.py          brand/size/colour normalisation + fuzzy matching
+  config.py             config.yml loader (+ env overrides for secrets)
+  store.py              JSON store, price history, website snapshot
+  dealdetector.py       target / discount / new-low detection
+  run.py                orchestrator + CLI (python -m engine.run)
+  connectors/           sample · ebay · amazon · affiliate_feed · polite_html
+  notify/email.py       SMTP / SendGrid / Resend / dry-run alerts
+data/                   watchlist.json + committed price history (the "database")
+web/                    static GitHub Pages site (search / compare / deals)
+scripts/seed_demo.py    generate backdated demo history
+tests/                  unit tests for normalisation & detection
+.github/workflows/      collect.yml (cron) + deploy-pages.yml
+docs/                   operator guide + legal/Honey explainer (Español)
+```
+
+---
+
+## Limitations & honest notes
+
+- The **demo source is synthetic** — turn on eBay/Amazon/affiliate feeds for
+  real prices. The site shows a *"Modo demo"* badge until you do.
+- The **Amazon** connector's SigV4 signing is implemented to spec but should be
+  validated the first time against your live keys.
+- Affiliate feeds require you to be an **approved affiliate** of each program.
+- Matching is deliberately conservative (`min_match_score`); tune per source.
+
+---
+
+## License
+
+MIT — see `LICENSE`. Retailer names/brands belong to their respective owners;
+this tool only reads pricing you're authorised to access.
+
+[honey-wiki]: https://en.wikipedia.org/wiki/PayPal_Honey
+[honey-snopes]: https://www.snopes.com/news/2024/12/30/honey-browser-extension-scam/
+[ebay]: https://developer.ebay.com/api-docs/buy/browse/overview.html
+[avantlink]: https://support.avantlink.com/hc/en-us/articles/4404406207501-Datafeed-Manager-Affiliate-User-Guide-Product-Datafeeds

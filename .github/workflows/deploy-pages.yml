@@ -1,0 +1,48 @@
+name: Deploy site
+
+# Publishes the static website in web/ to GitHub Pages. Runs when the site code
+# or the data snapshot changes (including the commits the collector pushes), and
+# can be triggered manually.
+#
+# One-time setup: repo Settings -> Pages -> Build and deployment -> Source:
+# "GitHub Actions".
+
+on:
+  push:
+    branches: [main, master]
+    paths:
+      - "web/**"
+      - "data/**"
+      - "config.yml"
+      - ".github/workflows/deploy-pages.yml"
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload site artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: web
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

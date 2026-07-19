@@ -1,0 +1,74 @@
+name: Collect deals
+
+# Runs the engine on a schedule: fetch prices from the configured sources,
+# detect deals, email new ones, and commit the updated data back to the repo
+# (the repo IS the database on the free tier). Pushing the data change then
+# triggers "Deploy site" to republish the website with fresh prices.
+
+on:
+  schedule:
+    - cron: "0 */6 * * *"        # every 6 hours (UTC)
+  workflow_dispatch: {}           # allow manual runs from the Actions tab
+
+permissions:
+  contents: write                 # needed to commit updated prices back
+
+concurrency:
+  group: collect
+  cancel-in-progress: false
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run collection cycle
+        env:
+          # Recipients (non-secret) — set as a repository Variable.
+          ALERT_EMAIL_TO: ${{ vars.ALERT_EMAIL_TO }}
+          # Email transport (set whichever you use as repository Secrets).
+          ALERT_EMAIL_FROM: ${{ secrets.ALERT_EMAIL_FROM }}
+          SMTP_HOST: ${{ secrets.SMTP_HOST }}
+          SMTP_PORT: ${{ secrets.SMTP_PORT }}
+          SMTP_USER: ${{ secrets.SMTP_USER }}
+          SMTP_PASS: ${{ secrets.SMTP_PASS }}
+          SMTP_FROM: ${{ secrets.SMTP_FROM }}
+          SMTP_TLS: ${{ secrets.SMTP_TLS }}
+          SENDGRID_API_KEY: ${{ secrets.SENDGRID_API_KEY }}
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          # Source API credentials (optional).
+          EBAY_CLIENT_ID: ${{ secrets.EBAY_CLIENT_ID }}
+          EBAY_CLIENT_SECRET: ${{ secrets.EBAY_CLIENT_SECRET }}
+          AMAZON_ACCESS_KEY: ${{ secrets.AMAZON_ACCESS_KEY }}
+          AMAZON_SECRET_KEY: ${{ secrets.AMAZON_SECRET_KEY }}
+          AMAZON_PARTNER_TAG: ${{ secrets.AMAZON_PARTNER_TAG }}
+        run: python -m engine.run
+
+      - name: Upload rendered email (for inspection)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: last-email
+          path: dist/last_email.html
+          if-no-files-found: ignore
+
+      - name: Commit updated prices
+        run: |
+          git config user.name  "elite-brand-engine[bot]"
+          git config user.email "actions@users.noreply.github.com"
+          git add data web/data
+          if git diff --cached --quiet; then
+            echo "No price changes to commit."
+          else
+            git commit -m "chore: update prices ($(date -u +%Y-%m-%dT%H:%MZ))"
+            git push origin HEAD:${{ github.ref_name }}
+          fi

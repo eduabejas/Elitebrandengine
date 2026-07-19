@@ -1,0 +1,39 @@
+{
+  "generated_at": "2026-07-19T03:24:14+00:00",
+  "currency": "USD",
+  "demo": true,
+  "product_count": 20,
+  "offer_count": 100,
+  "deal_count": 40,
+  "sources": [
+    {
+      "name": "REI Co-op",
+      "available": true,
+      "offers": 20
+    },
+    {
+      "name": "Backcountry",
+      "available": true,
+      "offers": 20
+    },
+    {
+      "name": "Brand Official",
+      "available": true,
+      "offers": 20
+    },
+    {
+      "name": "Amazon",
+      "available": true,
+      "offers": 20
+    },
+    {
+      "name": "eBay",
+      "available": true,
+      "offers": 20
+    }
+  ],
+  "site": {
+    "title": "Elite Brand Engine",
+    "tagline": "Radar de ofertas para equipo de montañismo y alpinismo"
+  }
+}

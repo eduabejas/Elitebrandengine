@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Elite Brand Engine — Radar de ofertas outdoor</title>
+  <meta name="description" content="Motor de búsqueda y comparación de precios para equipo de montañismo y alpinismo de marcas insignia, con detección de ofertas multi-tienda." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8F%94%EF%B8%8F%3C/text%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="./assets/css/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true">🏔️</span>
+        <div>
+          <h1 class="brand-title" id="site-title">Elite Brand Engine</h1>
+          <p class="brand-tagline" id="site-tagline">Radar de ofertas para equipo de montañismo y alpinismo</p>
+        </div>
+      </div>
+      <div class="header-meta">
+        <span id="demo-badge" class="badge badge-demo" hidden>Modo demo · datos sintéticos</span>
+        <span class="updated" id="updated">—</span>
+      </div>
+    </div>
+  </header>
+
+  <section class="statbar">
+    <div class="wrap statbar-inner" id="statbar">
+      <div class="stat"><span class="stat-num" id="stat-products">—</span><span class="stat-label">Productos vigilados</span></div>
+      <div class="stat"><span class="stat-num" id="stat-deals">—</span><span class="stat-label">Ofertas activas</span></div>
+      <div class="stat"><span class="stat-num" id="stat-offers">—</span><span class="stat-label">Precios comparados</span></div>
+      <div class="stat"><span class="stat-num" id="stat-sources">—</span><span class="stat-label">Tiendas</span></div>
+    </div>
+  </section>
+
+  <nav class="controls">
+    <div class="wrap controls-inner">
+      <div class="tabs" role="tablist">
+        <button class="tab is-active" data-view="deals" role="tab">🔥 Ofertas activas</button>
+        <button class="tab" data-view="catalog" role="tab">📋 Catálogo</button>
+      </div>
+      <div class="search">
+        <input id="search" type="search" placeholder="Buscar producto, marca o categoría…" autocomplete="off" />
+      </div>
+      <div class="sort">
+        <label for="sort" class="sr-only">Ordenar</label>
+        <select id="sort">
+          <option value="discount">Mayor descuento</option>
+          <option value="price_asc">Precio: menor a mayor</option>
+          <option value="price_desc">Precio: mayor a menor</option>
+          <option value="brand">Marca (A–Z)</option>
+        </select>
+      </div>
+    </div>
+    <div class="wrap filters" id="brand-filters"><!-- brand chips injected --></div>
+  </nav>
+
+  <main class="wrap main">
+    <div id="empty" class="empty" hidden>Sin resultados para los filtros actuales.</div>
+    <div id="grid" class="grid" aria-live="polite"></div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <div>
+        <strong>Fuentes de datos</strong>
+        <div class="sources" id="sources">—</div>
+      </div>
+      <div class="footer-note">
+        <p>Precios obtenidos únicamente por <strong>vías legítimas</strong>: APIs oficiales (eBay, Amazon PA-API)
+        y datafeeds de afiliados (AvantLink/Impact), más fetching cortés que respeta <code>robots.txt</code>.
+        No se evaden CAPTCHAs ni controles anti-bot.</p>
+        <p>Verifica siempre el precio final en el sitio del comercio antes de comprar.
+        Generado por Elite Brand Engine · corre gratis en GitHub Pages + Actions.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Product detail dialog -->
+  <div class="modal" id="modal" hidden>
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <button class="modal-close" data-close aria-label="Cerrar">×</button>
+      <div id="modal-body"></div>
+    </div>
+  </div>
+
+  <script src="./assets/js/app.js" defer></script>
+</body>
+</html>
