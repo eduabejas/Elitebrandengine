@@ -84,6 +84,11 @@ python -m engine.run --no-email
 cd web && python -m http.server 8000     # open http://localhost:8000
 ```
 
+**Instant sandbox:** open **`web/sandbox.html`** directly in a browser — a single
+self-contained file with demo data, search, brand filter and price comparison
+baked in (no server, no build). Regenerate it after changing data with
+`python scripts/build_sandbox.py`.
+
 Run the tests:
 
 ```bash

@@ -213,7 +213,7 @@ a { color: inherit; }
 /* ======================================================================== */
 /* Cinematic looping mountain background                                     */
 /* ======================================================================== */
-html { background: var(--bg); }
+html { background: var(--bg); color-scheme: dark; }
 body { background: transparent; }
 
 .bg { position: fixed; inset: 0; z-index: -1; overflow: hidden; }

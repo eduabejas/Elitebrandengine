@@ -1,0 +1,816 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Elite Brand Engine — Sandbox</title>
+  <meta name="description" content="Sandbox interactivo del motor de comparación de ofertas outdoor." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8F%94%EF%B8%8F%3C/text%3E%3C/svg%3E" />
+</head>
+<body>
+<style>
+/* Elite Brand Engine — self-contained styles (no external fonts/CDNs so it
+   works offline on GitHub Pages). Search-first, alpine dark theme. */
+
+:root {
+  --bg: #0d1519;
+  --bg-2: #101e25;
+  --surface: #16262f;
+  --surface-2: #1b2f3a;
+  --border: #243a45;
+  --text: #e9f0f2;
+  --muted: #9fb4bd;
+  --muted-2: #6f8792;
+  --green: #2ea36f;
+  --green-dark: #12684f;
+  --green-soft: #1f3b32;
+  --deal: #ffb02e;
+  --deal-soft: #3a2f14;
+  --used: #d98a3d;
+  --radius: 14px;
+  --shadow: 0 8px 30px rgba(0, 0, 0, .35);
+  --maxw: 1120px;
+  font-synthesis: none;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body {
+  background:
+    radial-gradient(1100px 480px at 82% -12%, #13303a 0%, transparent 60%),
+    radial-gradient(820px 460px at -10% 0%, #10242c 0%, transparent 55%),
+    var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  min-height: 100vh;
+}
+a { color: inherit; }
+.wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 20px; }
+
+/* Header ------------------------------------------------------------------ */
+.site-header { border-bottom: 1px solid var(--border); }
+.header-inner {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 16px; padding: 15px 0; flex-wrap: wrap;
+}
+.brand { display: flex; align-items: center; gap: 13px; }
+.brand-mark { font-size: 30px; line-height: 1; }
+.brand-title { font-size: 20px; margin: 0; letter-spacing: -.02em; }
+.brand-tagline { margin: 0; color: var(--muted); font-size: 12.5px; }
+.header-meta { display: flex; align-items: center; gap: 12px; }
+.updated { color: var(--muted-2); font-size: 12px; }
+.badge { font-size: 11px; font-weight: 700; padding: 4px 9px; border-radius: 20px; }
+.badge-demo { background: var(--deal-soft); color: var(--deal); border: 1px solid #4d3f18; }
+
+/* Hero / search ----------------------------------------------------------- */
+.hero { padding: 34px 0 8px; }
+.searchbar {
+  display: flex; gap: 10px; align-items: stretch; max-width: 820px; margin: 0 auto;
+}
+@media (max-width: 560px) { .searchbar { flex-direction: column; } }
+
+/* Brand filter button (exclusive: one brand at a time) */
+.brand-select { position: relative; flex: 0 0 auto; }
+.brand-btn {
+  display: flex; align-items: center; gap: 8px; height: 100%;
+  background: var(--surface); border: 1px solid var(--border); color: var(--text);
+  padding: 0 14px; min-height: 52px; border-radius: 13px; cursor: pointer;
+  font-size: 14px; font-weight: 600; white-space: nowrap;
+}
+.brand-btn:hover { border-color: var(--green); }
+.brand-btn.is-set { background: var(--green-soft); border-color: var(--green); color: #d7f2e5; }
+.brand-btn-label { max-width: 190px; overflow: hidden; text-overflow: ellipsis; }
+.caret { color: var(--muted); font-size: 12px; }
+.brand-menu {
+  position: absolute; top: calc(100% + 6px); left: 0; z-index: 30; margin: 0; padding: 6px;
+  list-style: none; background: var(--surface); border: 1px solid var(--border);
+  border-radius: 12px; box-shadow: var(--shadow); min-width: 240px;
+  max-height: 340px; overflow-y: auto;
+}
+.brand-menu li {
+  padding: 9px 12px; border-radius: 8px; cursor: pointer; font-size: 14px;
+  display: flex; align-items: center; justify-content: space-between; gap: 10px;
+}
+.brand-menu li:hover, .brand-menu li.is-active { background: var(--surface-2); }
+.brand-menu li .n { color: var(--muted-2); font-size: 12px; }
+.brand-menu li.is-active { color: #d7f2e5; }
+
+/* Search input with predictive dropdown */
+.search-input-wrap {
+  position: relative; flex: 1 1 auto; display: flex; align-items: center;
+  background: var(--surface); border: 1px solid var(--border); border-radius: 13px;
+  padding: 0 12px; min-height: 52px;
+}
+.search-input-wrap:focus-within { border-color: var(--green); box-shadow: 0 0 0 3px rgba(46,163,111,.18); }
+.search-ico { font-size: 16px; opacity: .8; margin-right: 8px; }
+#search {
+  flex: 1; background: transparent; border: 0; color: var(--text);
+  font-size: 16px; padding: 12px 0; outline: none;
+}
+#search::placeholder { color: var(--muted-2); }
+.search-clear { background: transparent; border: 0; color: var(--muted); font-size: 22px;
+  cursor: pointer; line-height: 1; padding: 0 4px; }
+
+/* Horizontal predictive suggestions */
+.suggestions {
+  display: flex; gap: 8px; max-width: 820px; margin: 12px auto 0;
+  overflow-x: auto; padding-bottom: 4px; scrollbar-width: thin;
+}
+.suggestions::-webkit-scrollbar { height: 6px; }
+.suggestions::-webkit-scrollbar-thumb { background: var(--border); border-radius: 6px; }
+.sugg {
+  flex: 0 0 auto; display: inline-flex; align-items: center; gap: 8px;
+  background: var(--surface); border: 1px solid var(--border); color: var(--text);
+  padding: 8px 13px; border-radius: 20px; cursor: pointer; font-size: 13.5px; white-space: nowrap;
+}
+.sugg:hover { border-color: var(--green); background: var(--surface-2); }
+.sugg b { color: var(--green); font-weight: 700; }
+.sugg .sugg-brand { color: var(--muted); font-size: 11px; text-transform: uppercase; letter-spacing: .05em; }
+
+/* Results head ------------------------------------------------------------ */
+.results-head { border-bottom: 1px solid var(--border); margin-top: 22px; }
+.results-head-inner { display: flex; align-items: center; justify-content: space-between;
+  gap: 12px; padding: 10px 0; flex-wrap: wrap; }
+.view-links { display: flex; gap: 4px; }
+.view-link {
+  background: transparent; border: 0; color: var(--muted); font-weight: 700; font-size: 15px;
+  padding: 8px 12px; border-radius: 9px; cursor: pointer; border-bottom: 2px solid transparent;
+}
+.view-link:hover { color: var(--text); }
+.view-link.is-active { color: var(--text); border-bottom-color: var(--green); }
+.view-link .count { color: var(--deal); font-size: 13px; }
+.result-info { color: var(--muted); font-size: 13px; }
+
+/* Grid & cards ------------------------------------------------------------ */
+.main { padding: 20px 20px 60px; }
+.grid { display: grid; gap: 16px; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); }
+.empty { color: var(--muted); text-align: center; padding: 60px 0; }
+
+.card {
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
+  overflow: hidden; display: flex; flex-direction: column; box-shadow: var(--shadow);
+  transition: transform .12s ease, border-color .12s ease;
+}
+.card:hover { transform: translateY(-3px); border-color: #35525f; }
+.card-media { height: 112px; position: relative; display: flex; align-items: flex-end; padding: 10px 12px; }
+.card-brand { font-size: 12px; font-weight: 700; text-transform: uppercase;
+  letter-spacing: .06em; color: #fff; text-shadow: 0 1px 4px rgba(0,0,0,.5); }
+.card-cat { position: absolute; top: 10px; right: 10px; font-size: 11px; background: rgba(0,0,0,.4);
+  color: #e9f0f2; padding: 3px 8px; border-radius: 20px; backdrop-filter: blur(2px); }
+.discount-tag { position: absolute; top: 10px; left: 10px; background: var(--deal); color: #241a00;
+  font-weight: 800; font-size: 13px; padding: 3px 9px; border-radius: 8px; }
+.card-body { padding: 12px 14px 14px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
+.card-name { font-size: 15px; font-weight: 700; margin: 0; line-height: 1.3; }
+.variant { color: var(--muted); font-size: 12.5px; }
+.variant b { color: var(--text); }
+.price-row { display: flex; align-items: baseline; gap: 8px; margin-top: auto; flex-wrap: wrap; }
+.price { font-size: 21px; font-weight: 800; letter-spacing: -.02em; }
+.price-was { color: var(--muted-2); text-decoration: line-through; font-size: 13px; }
+.src-badge { font-size: 11.5px; background: var(--surface-2); border: 1px solid var(--border);
+  color: var(--muted); padding: 2px 8px; border-radius: 20px; }
+.reason { color: var(--muted); font-size: 12px; }
+.card-actions { display: flex; gap: 8px; align-items: center; }
+.btn { border: 0; border-radius: 10px; padding: 9px 14px; font-weight: 700; font-size: 13px;
+  cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; }
+.btn-primary { background: var(--green); color: #06231a; }
+.btn-primary:hover { background: #38b57d; }
+.btn-ghost { background: var(--surface-2); color: var(--text); border: 1px solid var(--border); }
+.btn-ghost:hover { border-color: var(--green); }
+.cond-used { color: var(--used); font-size: 12px; font-weight: 600; }
+.spark { width: 100%; height: 34px; display: block; }
+
+/* Footer ------------------------------------------------------------------ */
+.site-footer { border-top: 1px solid var(--border); background: var(--bg-2); }
+.footer-inner { display: grid; grid-template-columns: 1fr 2fr; gap: 24px; padding: 24px 20px 40px; }
+.foot-stats { color: var(--text); font-size: 13px; font-weight: 600; margin-bottom: 8px; }
+.sources { color: var(--muted); font-size: 13px; display: flex; gap: 8px; flex-wrap: wrap; }
+.source-pill { background: var(--surface); border: 1px solid var(--border); padding: 4px 10px; border-radius: 20px; }
+.source-pill.off { opacity: .5; }
+.footer-note { color: var(--muted); font-size: 12.5px; }
+.footer-note code { background: var(--surface); padding: 1px 6px; border-radius: 6px; color: #cfe; }
+
+/* Modal ------------------------------------------------------------------- */
+.modal { position: fixed; inset: 0; z-index: 40; display: flex; align-items: center;
+  justify-content: center; padding: 20px; }
+/* Critical: an explicit display on .modal would otherwise override [hidden],
+   leaving the dark backdrop covering the page and eating clicks. */
+.modal[hidden] { display: none; }
+.modal-backdrop { position: absolute; inset: 0; background: rgba(4,10,12,.7); }
+.modal-card { position: relative; background: var(--surface); border: 1px solid var(--border);
+  border-radius: 16px; max-width: 640px; width: 100%; max-height: 86vh; overflow: auto;
+  box-shadow: var(--shadow); padding: 22px; }
+.modal-close { position: absolute; top: 12px; right: 14px; background: transparent; border: 0;
+  color: var(--muted); font-size: 26px; cursor: pointer; line-height: 1; }
+.modal-title { margin: 0 40px 2px 0; font-size: 19px; }
+.modal-sub { color: var(--muted); font-size: 13px; margin-bottom: 14px; }
+.offer-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.offer-table th { text-align: left; color: var(--muted); font-weight: 600; padding: 8px 6px;
+  border-bottom: 1px solid var(--border); font-size: 12px; }
+.offer-table td { padding: 9px 6px; border-bottom: 1px solid var(--border); }
+.offer-table tr.best td { background: rgba(46,163,111,.08); }
+.offer-price { font-weight: 800; }
+.mini-link { color: var(--green); text-decoration: none; font-weight: 700; white-space: nowrap; }
+.mini-link:hover { text-decoration: underline; }
+.hist-wrap { margin-top: 16px; }
+.hist-wrap h4 { margin: 0 0 6px; font-size: 13px; color: var(--muted); }
+
+/* Responsive -------------------------------------------------------------- */
+@media (max-width: 720px) {
+  .footer-inner { grid-template-columns: 1fr; }
+  .brand-btn-label { max-width: 140px; }
+}
+
+/* ======================================================================== */
+/* Cinematic looping mountain background                                     */
+/* ======================================================================== */
+html { background: var(--bg); color-scheme: dark; }
+body { background: transparent; }
+
+.bg { position: fixed; inset: 0; z-index: -1; overflow: hidden; }
+.bg-scene { position: absolute; inset: 0; transform-origin: 50% 68%;
+  animation: bgPush 52s ease-in-out infinite alternate; }
+.bg-sky { position: absolute; inset: 0;
+  background: linear-gradient(180deg,#081826 0%,#0f2c3c 40%,#1d4c5f 66%,#356f86 84%,#5f93a0 100%); }
+.bg-sun { position: absolute; left: 62%; top: 40%; width: 55vw; height: 55vw;
+  transform: translate(-50%,-50%);
+  background: radial-gradient(circle, rgba(255,216,170,.5), rgba(255,190,140,0) 62%);
+  filter: blur(6px); }
+
+/* mist / clouds drifting slowly */
+.bg-cloud { position: absolute; height: 26vh; width: 60vw; border-radius: 50%;
+  background: radial-gradient(closest-side, rgba(226,238,244,.16), rgba(226,238,244,0));
+  filter: blur(18px); will-change: transform; }
+.bg-cloud-1 { top: 30%; left: -20%; animation: cloudDrift 150s linear infinite; }
+.bg-cloud-2 { top: 46%; left: -30%; opacity: .8; height: 20vh; animation: cloudDrift 210s linear infinite; animation-delay: -60s; }
+.bg-cloud-3 { top: 20%; left: -25%; opacity: .6; height: 16vh; animation: cloudDrift 260s linear infinite; animation-delay: -120s; }
+
+/* layered ridgelines (aerial perspective: farther = lighter/hazier) */
+.bg-range { position: absolute; left: 0; bottom: 0; width: 200%; will-change: transform; }
+.bg-range-3 { height: 52vh; background: linear-gradient(180deg,#4a7890,#37627a);
+  clip-path: polygon(0% 100%,0% 55%,5% 63%,11% 42%,17% 60%,24% 38%,31% 57%,39% 46%,47% 28%,55% 50%,63% 40%,71% 58%,79% 44%,87% 62%,93% 48%,100% 60%,100% 100%);
+  animation: driftFar 92s ease-in-out infinite alternate; opacity: .92; }
+.bg-range-2 { height: 44vh; background: linear-gradient(180deg,#294f5f,#1c3d4b);
+  clip-path: polygon(0% 100%,0% 68%,8% 54%,15% 72%,22% 50%,30% 70%,38% 56%,46% 76%,54% 52%,62% 74%,70% 58%,78% 78%,86% 60%,94% 80%,100% 64%,100% 100%);
+  animation: driftMid 72s ease-in-out infinite alternate; }
+.bg-range-1 { height: 34vh; background: linear-gradient(180deg,#0e2029,#091920);
+  clip-path: polygon(0% 100%,0% 84%,10% 72%,20% 88%,30% 74%,40% 90%,50% 76%,60% 92%,70% 78%,80% 94%,90% 80%,100% 90%,100% 100%);
+  animation: driftNear 58s ease-in-out infinite alternate; }
+.bg-grain { position: absolute; inset: 0; opacity: .04; mix-blend-mode: overlay;
+  background-image: radial-gradient(rgba(255,255,255,.7) .5px, transparent .5px);
+  background-size: 3px 3px; }
+
+/* real footage layer (revealed by JS only if it actually loads) */
+.bg-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
+  opacity: 0; transition: opacity 1.4s ease; }
+.bg-video.is-on { opacity: 1; }
+
+/* readability scrim + fade into the dark content theme */
+.bg-scrim { position: absolute; inset: 0; pointer-events: none;
+  background:
+    linear-gradient(180deg, rgba(8,16,22,.3) 0%, rgba(8,16,22,.02) 26%, rgba(13,21,25,.08) 64%, rgba(13,21,25,.55) 88%, var(--bg) 100%),
+    radial-gradient(120% 80% at 50% 0%, transparent 45%, rgba(8,16,22,.3) 100%); }
+
+@keyframes bgPush { 0% { transform: scale(1.04) translateY(0); } 100% { transform: scale(1.13) translateY(-1.6%); } }
+@keyframes driftFar { to { transform: translate3d(-9%,0,0); } }
+@keyframes driftMid { to { transform: translate3d(-5%,0,0); } }
+@keyframes driftNear { to { transform: translate3d(-3%,0,0); } }
+@keyframes cloudDrift { from { transform: translateX(-15%); } to { transform: translateX(115%); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .bg-scene, .bg-range, .bg-cloud, .bg-video { animation: none !important; }
+}
+
+/* Hero fills the first screen so the whole scene sits behind the search bar */
+.hero {
+  min-height: calc(100svh - 66px);
+  display: flex; flex-direction: column; justify-content: center;
+  padding: 24px 0 48px;
+  background: linear-gradient(180deg, transparent 0%, transparent 68%, rgba(13,21,25,.5) 88%, var(--bg) 100%);
+}
+.hero-hint { text-align: center; color: var(--muted); font-size: 12.5px; margin: 18px 0 0;
+  letter-spacing: .04em; text-shadow: 0 1px 6px rgba(0,0,0,.5); }
+
+/* Content below the hero is opaque so it scrolls cleanly over the fixed scene */
+.results-head, .main { background: var(--bg); position: relative; z-index: 1; }
+.site-footer { position: relative; z-index: 1; }
+
+/* Header sits over the sky — strengthen text for contrast */
+.site-header { background: linear-gradient(180deg, rgba(6,14,20,.55), transparent); position: relative; z-index: 1; }
+.brand-title, .brand-tagline { text-shadow: 0 1px 8px rgba(0,0,0,.55); }
+
+/* Search bar: gradient shadow glow so it stands out over the scenery */
+.searchbar { position: relative; z-index: 1; }
+.searchbar::before {
+  content: ""; position: absolute; inset: -26px -16px; z-index: -1; border-radius: 30px;
+  background:
+    radial-gradient(60% 130% at 50% 50%, rgba(46,163,111,.55), transparent 72%),
+    linear-gradient(115deg, rgba(46,163,111,.62), rgba(52,140,162,.5) 45%, rgba(255,176,46,.42));
+  filter: blur(34px); opacity: .95;
+}
+.brand-btn, .search-input-wrap {
+  background: rgba(18,32,40,.72); backdrop-filter: blur(12px);
+  box-shadow: 0 26px 60px -18px rgba(0,0,0,.7);
+}
+.search-input-wrap:focus-within { box-shadow: 0 26px 60px -14px rgba(0,0,0,.7), 0 0 0 3px rgba(46,163,111,.35); }
+
+</style>
+<!-- Cinematic looping mountain background. It is an animated CSS/SVG scene by
+       default (works offline, zero deps). To use REAL drone/mountain footage,
+       drop a clip at web/assets/video/mountain.mp4 (and/or .webm) — see that
+       folder's README.md for a free, commercial-use source. The video auto-
+       reveals only if it loads; otherwise the animated scene shows. -->
+  <div class="bg" aria-hidden="true">
+    <div class="bg-scene">
+      <div class="bg-sky"></div>
+      <div class="bg-sun"></div>
+      <div class="bg-cloud bg-cloud-1"></div>
+      <div class="bg-cloud bg-cloud-2"></div>
+      <div class="bg-cloud bg-cloud-3"></div>
+      <div class="bg-range bg-range-3"></div>
+      <div class="bg-range bg-range-2"></div>
+      <div class="bg-range bg-range-1"></div>
+      <div class="bg-grain"></div>
+    </div>
+    
+    
+    <div class="bg-scrim"></div>
+  </div>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true">🏔️</span>
+        <div>
+          <h1 class="brand-title" id="site-title">Elite Brand Engine</h1>
+          <p class="brand-tagline" id="site-tagline">Radar de ofertas para equipo de montañismo y alpinismo</p>
+        </div>
+      </div>
+      <div class="header-meta">
+        <span id="demo-badge" class="badge badge-demo" hidden>Modo demo · datos sintéticos</span>
+        <span class="updated" id="updated">—</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Search-first hero: brand filter button + predictive search bar -->
+  <section class="hero">
+    <div class="wrap">
+      <div class="searchbar" role="search">
+        <div class="brand-select">
+          <button class="brand-btn" id="brand-btn" aria-haspopup="listbox" aria-expanded="false" title="Filtrar por una sola marca">
+            <span aria-hidden="true">🏷️</span>
+            <span class="brand-btn-label" id="brand-btn-label">Todas las marcas</span>
+            <span class="caret" aria-hidden="true">▾</span>
+          </button>
+          <ul class="brand-menu" id="brand-menu" role="listbox" aria-label="Marca" hidden></ul>
+        </div>
+
+        <div class="search-input-wrap">
+          <span class="search-ico" aria-hidden="true">🔎</span>
+          <input id="search" type="search" autocomplete="off" spellcheck="false"
+                 placeholder="Escribí el nombre de un producto…"
+                 role="combobox" aria-expanded="false" aria-controls="suggestions" aria-autocomplete="list" />
+          <button class="search-clear" id="search-clear" hidden aria-label="Limpiar">×</button>
+        </div>
+      </div>
+
+      <!-- horizontal predictive suggestions -->
+      <div class="suggestions" id="suggestions" role="listbox" aria-label="Sugerencias" hidden></div>
+      <p class="hero-hint" id="hero-hint">Escribí un producto y elegí una predicción · filtrá por una sola marca para acotar la búsqueda</p>
+    </div>
+  </section>
+
+  <section class="results-head">
+    <div class="wrap results-head-inner">
+      <div class="view-links" role="tablist">
+        <button class="view-link is-active" data-view="deals" role="tab">🔥 Ofertas <span class="count" id="deals-count"></span></button>
+        <button class="view-link" data-view="catalog" role="tab">📋 Catálogo</button>
+      </div>
+      <span class="result-info" id="result-info"></span>
+    </div>
+  </section>
+
+  <main class="wrap main">
+    <div id="empty" class="empty" hidden>Sin resultados. Probá con otro nombre o cambiá la marca.</div>
+    <div id="grid" class="grid" aria-live="polite"></div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <div>
+        <div class="foot-stats" id="foot-stats">—</div>
+        <div class="sources" id="sources">—</div>
+      </div>
+      <div class="footer-note">
+        <p>Precios obtenidos por <strong>vías legítimas</strong>: APIs oficiales (eBay, Amazon PA-API)
+        y datafeeds de afiliados (AvantLink/Impact), más fetching cortés que respeta <code>robots.txt</code>.
+        No se evaden CAPTCHAs ni controles anti-bot.</p>
+        <p>Verificá el precio final en el sitio del comercio antes de comprar.</p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="modal" id="modal" hidden>
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <button class="modal-close" data-close aria-label="Cerrar">×</button>
+      <div id="modal-body"></div>
+    </div>
+  </div>
+<script>window.__DATA__ = {"meta":{"generated_at":"2026-07-19T03:24:14+00:00","currency":"USD","demo":true,"product_count":20,"offer_count":100,"deal_count":40,"sources":[{"name":"REI Co-op","available":true,"offers":20},{"name":"Backcountry","available":true,"offers":20},{"name":"Brand Official","available":true,"offers":20},{"name":"Amazon","available":true,"offers":20},{"name":"eBay","available":true,"offers":20}],"site":{"title":"Elite Brand Engine","tagline":"Radar de ofertas para equipo de montañismo y alpinismo"}},"products":{"products":[{"id":"arcteryx_beta_ar_jacket","brand":"Arc'teryx","name":"Beta AR Jacket","category":"Hardshell","sizes":["M","L"],"colors":["black","blue"],"target_price":449.0,"currency":"USD","keywords":["gore-tex","pro","shell"],"upc":null,"mpn":null,"image":null,"active":true,"best_price":432.65,"best_source":"Brand Official","offer_count":5,"offers":[{"watch_id":"arcteryx_beta_ar_jacket","source":"Brand Official","title":"Arc'teryx Beta AR Jacket — blue, L","url":"https://example-brand.com/shop/arcteryx-beta-ar-jacket?v=l-blue","price":432.65,"currency":"USD","size":"L","color":"blue","condition":"new","availability":"in_stock","seller":"Brand Official","image":null,"list_price":598.67,"match_score":1.0,"fetched_at":"2026-07-19T03:24:14+00:00","id":"82ed37a1c1c7a53f"},{"watch_id":"arcteryx_beta_ar_jacket","source":"eBay","title":"Arc'teryx Beta AR Jacket — blue, M","url":"https://www.ebay.com/itm/arcteryx-beta-ar-jacket?v=m-blue","price":545.99,"currency":"USD","size":"M","color":"blue","condition":"used","availability":"in_stock","seller":"eBay","image":null,"list_price":null,"match_score":1.0,"fetched_at":"2026-07-19T03:24:14+00:00","id":"dc3de077a03708db"},{"watch_id":"arcteryx_beta_ar_jacket","source":"Amazon","title":"Arc'teryx Beta AR Jacket — black, L","url":"https://www.amazon.com/dp/arcteryx-beta-ar-jacket?v=l-black","price":573.02,"currency":"USD","size":"L","color":"black","condition":"new","availability":"in_stock","seller":"Amazon","image":null,"list_price":null,"match_score":1.0,"fetched_at":"2026-07-19T03:24:14+00:00","id":"b4632d2cb054a263"},{"watch_id":"arcteryx_beta_ar_jacket","source":"REI Co-op","title":"Arc'teryx Beta AR Jacket — blue, M","url":"https://www.rei.com/product/arcteryx-beta-ar-jacket?v=m-blue","price":621.03,"currency":"USD","size":"M","color":"blue","condition":"new","availability":"in_stock","seller":"REI Co-op","image":null,"list_price":null,"match_score":1.0,"fetched_at":"2026-07-19T03:24:14+00:00","id":"d55c1d78bd3d0272"},{"watch_id":"arcteryx_beta_ar_jacket","source":"Backcountry","title":"Arc'teryx Beta AR Jacket — black, L","url":"https://www.backcountry.com/arcteryx-beta-ar-jacket?v=l-black","price":638.64,"currency":"USD","size":"L","color":"black","condition":"new","availability":"in_stock","seller":"Backcountry","image":null,"list_price":null,"match_score":1.0,"fetched_at":"2026-07-19T03:24:14+00:00","id":"3242f3a53412e108"}],"history":[{"ts":"2026-07-15T12:00:00+00:00","price":493.3,"source":"Backcountry"},{"ts":"2026-07-15T12:00:00+00:00","price":526.77,"source":"Brand Official"},{"ts":"2026-07-15T12:00:00+00:00","price":519.8,"source":"Amazon"},{"ts":"2026-07-15T12:00:00+00:00","price":541.71,"source":"eBay"},{"ts":"2026-07-16T12:00:00+00:00","price":497.0,"source":"REI Co-op"},{"ts":"2026-07-16T12:00:00+00:00","price":634.31,"source":"Backcountry"},{"ts":"2026-07-16T12:00:00+00:00","price":398.78,"source":"Brand Official"},{"ts":"2026-07-16T12:00:00+00:00","price":336.6,"source":"Amazon"},{"ts":"2026-07-16T12:00:00+00:00","price":556.38,"source":"eBay"},{"ts":"2026-07-17T12:00:00+00:00","price":556.31,"source":"REI Co-op"},{"ts":"2026-07-17T12:00:00+00:00","price":614.14,"source":"Backcountry"},{"ts":"2026-07-17T12:00:00+00:00","price":465.2,"source":"Brand Official"},{"ts":"2026-07-17T12:00:00+00:00","price":395.81,"source":"Amazon"},{"ts":"2026-07-17T12:00:00+00:00","price":507.51,"source":"eBay"},{"ts":"2026-07-18T12:00:00+00:00","price":427.88,"source":"REI Co-op"},{"ts":"2026-07-18T12:00:00+00:00","price":425.05,"source":"Backcountry"},{"ts":"2026-07-18T12:00:00+00:00","price":361.67,"source":"Brand Official"},{"ts":"2026-07-18T12:00:00+00:00","price":380.0,"source":"Amazon"},{"ts":"2026-07-18T12:00:00+00:00","price":523.05,"source":"eBay"},{"ts":"2026-07-19T03:24:14+00:00","price":621.03,"source":"REI Co-op"},{"ts":"2026-07-19T03:24:14+00:00","price":638.64,"source":"Backcountry"},{"ts":"2026-07-19T03:24:14+00:00","price":432.65,"source":"Brand Official"},{"ts":"2026-07-19T03:24:14+00:00","price":573.02,"source":"Amazon"},{"ts":"2026-07-19T03:24:14+00:00","price":545.99,"source":"eBay"}]},{"id":"tnf_nuptse_1996","brand":"The North Face","name":"1996 Retro Nuptse Jacket","category":"Down Jacket","sizes":["M","L","XL"],"colors":["black"],"target_price":210.0,"currency":"USD","keywords":["700 fill","puffer"],"upc":null,"mpn":null,"image":null,"active":true,"best_price":253.21,"best_source":"Amazon","offer_count":5,"offers":[{"watch_id":"tnf_nuptse_1996","source":"Amazon","title":"The North Face 1996 Retro Nuptse Jacket — black, XL","url":"https://www.amazon.com/dp/tnf-nuptse-1996?v=xl-black","price":253.21,"currency":"USD","size":"XL","color":"black","condition":"new","availability":"in_stock","seller":"Amazon","image":null,"list_price":null,"match_score":1.0,"fetched_at":"2026-07-19T03:24:14+00:00","id":"44434ae33e7711bf"},{"watch_id":"tnf_nuptse_1996","source":"eBay","title":"The North Face 1996 Retro Nuptse Jacket — black, XL","url":"https://www.ebay.com/itm/tnf-nuptse-1996?v=xl-black","price":258.6,"currency":"USD","size":"XL","color":"black","condition":"used","availability":"in_stock","seller":"eBay","image":null,"list_price":null,"match_score":1.0,"fetched_at":"2026-07-19T03:24:14+00:00","id":"ec101c3b6e285519"},{"watch_id":"tnf_nuptse_1996","source":"REI Co-op","title":"The North Face 1996 Retro Nuptse Jacket — black, M","url":"https://www.rei.com/product/tnf-nuptse-1996?v=m-black","price":277.01,"currency":"USD","size":"M","color":"black","condition":"new","availability":"in_stock","seller":"REI Co-op","image":null,"list_price":null,"match_score":1.0,"fetched_at":"2026-07-19T03:24:14+00:00","id":"b52618706f25f640"},{"watch_id":"tnf_nuptse_1996","source":"Backcountry","title":"The North Face 1996 Retro Nuptse Jacket — black, XL","url":"https://www.backcountry.com/tnf-nuptse-1996?v=xl-black","price":294.41,"currency":"USD","size":"XL","color":"black","condition":"new","availability":"in_stock","seller":"Backcountry","image":null,"list_price":null,"match_score":1.0,"fetched_at":"2026-07-19T03:24:14+00:00","id":"88a1bd3e2855bea6"},{"watch_id":"tnf_nuptse_1996","source":"Brand Official","title":"The North Face 1996 Retro Nuptse Jacket — black, XL","url":"https://example-brand.com/shop/tnf-nuptse-1996?v=xl-black","price":313.7,"currency":"USD","size":"XL","color":"black","condition":"new","availability":"in_stock","seller":"Brand Official","image":null,"list_price":null,"match_score":1.0,"fetched_at":"2026-07-19T03:24:14+00:00","id":"fd0f5e3d00c5a1ee"}],"history":[{"ts":"2026-07-15T12:00:00+00:00","price":225.21,"source":"Backcountry"},{"ts":"2026-07-15T12:00:00+00:00","price":247.88,"source":"Brand Official"},{"ts":"2026-07-15T12:00:00+00:00","price":192.38,"source":"Amazon"},{"ts":"2026-07-15T12:00:00+00:00","price":236.69,"source":"eBay"},{"ts":"2026-07-16T12:00:00+00:00","price":188.75,"source":"REI Co-op"},{"ts":"2026-07-16T12:00:00+00:00","price":250.05,"source":"Backcountry"},{"ts":"2026-07-16T12:00:00+00:00","price":272.87,"source":"Brand Official"},{"ts":"2026-07-16T12:00:00+00:00","price":211.94,"source":"Amazon"},{"ts":"2026-07-16T12:00:00+00:00","price":243.16,"source":"eBay"},{"ts":"2026-07-17T12:00:00+00:00","price":210.21,"source":"REI Co-op"},{"ts":"2026-07-17T12:00:00+00:00","price":213.34,"source":"Backcountry"},{"ts":"2026-07-17T12:00:00+00:00","price":295.2,"source":"Brand Official"},{"ts":"2026-07-17T12:00:00+00:00","price":287.89,"source":"Amazon"},{"ts":"2026-07-17T12:00:00+00:00","price":227.69,"source":"eBay"},{"ts":"2026-07-18T12:00:00+00:00","price":262.42,"source":"REI Co-op"},{"ts":"2026-07-18T12:00:00+00:00","price":275.95,"source":"Backcountry"},{"ts":"2026-07-18T12:00:00+00:00","price":259.83,"source":"Brand Official"},{"ts":"2026-07-18T12:00:00+00:00","price":274.09,"source":"Amazon"},{"ts":"2026-07-18T12:00:00+00:00","price":221.33,"source":"eBay"},{"ts":"2026-07-19T03:24:14+00:00","price":277.01,"source":"REI Co-op"},{"ts":"2026-07-19T03:24:14+00:00","price":294.41,"source":"Backcountry"},{"ts":"2026-07-19T03:24:14+00:00","price":313.7,"source":"Brand Official"},{"ts":"2026-07-19T03:24:14+00:00","price":253.21,"source":"Amazon"},{"ts":"2026-07-19T03:24:14+00:00","price":258.6,"source":"eBay"}]},{"id":"patagonia_nano_puff","brand":"Patagonia","name":"Nano Puff Jacket","category":"Insulated Jacket","sizes":["S","M","L"],"colors":[],"target_price":149.0,"currency":"USD","keywords":["primaloft"],"upc":null,"mpn":null,"image":null,"active":true,"best_price":135.95,"best_source":"eBay","offer_count":5,"offers":[{"watch_id":"patagonia_nano_puff","source":"eBay","title":"Patagonia Nano Puff Jacket — Green, L","url":"https://www.ebay.com/itm/patagonia-nano-puff?v=l-green","price":135.95,"currency":"USD","size":"L","color":"Green","condition":"used","availability":"in_stock","seller":"eBay","image":null,"list_price":198.67,"match_score":1.0,"fetched_at":"2026-07-19T03:24:14+00:00","id":"58547536530cb602"},{"watch_id":"patagonia_nano_puff","source":"Amazon","title":"Patagonia Nano Puff Jacket — Blue, S","url":"https://www.amazon.com/dp/patagonia-nano-puff?v=s-blue","price":181.77,"currency":"USD","size":"S","color":"Blue","condition":"new","availability":"in_stock","seller":"Amazon","image":null,"list_price":null,"match_score":1.0,"fetched_at":"2026-07-19T03:24:14+00:00","id":"7b287bd4c44e92fa"},{"watch_id":"patagonia_nano_puff","source":"REI Co-op","title":"Patagonia Nano Puff Jacket — Green, M","url":"https://www.rei.com/product/patagonia-nano-puff?v=m-green","price":186.5,"currency":"USD","size":"M","color":"Green","condition":"new","availability":"in_stock","seller":"REI Co-op","image":null,"list_price":null,"match_score":1.0,"fetched_at":"2026-07-19T03:24:14+00:00","id":"5c25780a792c6464"},{"watch_id":"patagonia_nano_puff","source":"Backcountry","title":"Patagonia Nano Puff Jacket — Green, L","url":"https://www.backcountry.com/patagonia-nano-puff?v=l-green","price":197.21,"currency":"USD","size":"L","color":"Green","condition":"new","availability":"in_stock","seller":"Backcountry","image":null,"list_price":null,"match_score":1.0,"fetched_at":"2026-07-19T03:24:14+00:00","id":"51e67e847cc1891a"},{"watch_id":"patagonia_nano_puff","source":"Brand Official","title":"Patagonia Nano Puff Jacket — Blue, L","url":"https://example-brand.com/shop/patagonia-nano-puff?v=l-blue","price":214.07,"currency":"USD","size":"L","color":"Blue","condition":"new","availability":"in_stock","seller":"Brand Official","image":null,"list_price":null,"match_score":1.0,"fetched_at":"2026-07-19T03:24:14+00:00","id":"724d789c575b4ba2"}],"history":[{"ts":"2026-07-15T12:00:00+00:00","price":134.69,"source":"Backcountry"},{"ts":"2026-07-15T12:00:00+00:00","price":204.73,"source":"Brand Official"},{"ts":"2026-07-15T12:00:00+00:00","price":160.33,"source":"Amazon"},{"ts":"2026-07-15T12:00:00+00:00","price":164.07,"source":"eBay"},{"ts":"2026-07-16T12:00:00+00:00","price":156.59,"source":"REI Co-op"},{"ts":"2026-07-16T12:00:00+00:00","price":128.18,"source":"Backcountry"},{"ts":"2026-07-16T12:00:00+00:00","price":222.8,"source":"Brand Official"},{"ts":"2026-07-16T12:00:00+00:00","price":171.45,"source":"Amazon"},{"ts":"2026-07-16T12:00:00+00:00","price":181.8,"source":"eBay"},{"ts":"2026-07-17T12:00:00+00:00","price":208.94,"source":"REI Co-op"},{"ts":"2026-07-17T12:00:00+00:00","price":207.92,"source":"Backcountry"},{"ts":"2026-07-17T12:00:00+00:00","price":162.0,"source":"Brand Official"},{"ts":"2026-07-17T12:00:00+00:00","price":134.7,"source":"Amazon"},{"ts":"2026-07-17T12:00:00+00:00","price":130.29,"source":"eBay"},{"ts":"2026-07-18T12:00:00+00:00","price":185.99,"source":"REI Co-op"},{"ts":"2026-07-18T12:00:00+00:00","price":145.05,"source":"Backcountry"},{"ts":"2026-07-18T12:00:00+00:00","price":199.84,"source":"Brand Official"},{"ts":"2026-07-18T12:00:00+00:00","price":173.12,"source":"Amazon"},{"ts":"2026-07-18T12:00:00+00:00","price":165.39,"source":"eBay"},{"ts":"2026-07-19T03:24:14+00:00","price":186.5,"source":"REI Co-op"},{"ts":"2026-07-19T03:24:14+00:00","price":197.21,"source":"Backcountry"},{"ts":"2026-07-19T03:24:14+00:00","price":214.07,"source":"Brand Official"},{"ts":"2026-07-19T03:24:14+00:00","price":181.77,"source":"Amazon"},{"ts":"2026-07-19T03:24:14+00:00","price":135.95,"source":"eBay"}]},{"id":"blackdiamond_distance_carbon_z","brand":"Black Diamond","name":"Distance Carbon Z Trekking Poles","category":"Trekking Poles","sizes":["110","120","130"],"colors":[],"target_price":150.0,"currency":"USD","keywords":["z-pole","carbon"],"upc":null,"mpn":null,"image":null,"active":true,"best_price":140.62,"best_source":"REI Co-op","offer_count":5,"offers":[{"watch_id":"blackdiamond_distance_carbon_z","source":"REI Co-op","title":"Black Diamond Distance Carbon Z Trekking Poles — Green, 120","url":"https://www.rei.com/product/blackdiamond-distance-carbon-z?v=120-green","price":140.62,"currency":"USD","size":"120","color":"Green","condition":"new","availability":"in_stock","seller":"REI Co-op","image":null,"list_price":200.0,"match_score":1.0,"fetched_at":"2026-07-19T03:24:14+00:00","id":"f393a67652ccbe0c"},{"watch_id":"blackdiamond_distance_carbon_z","source":"eBay","title":"Black Diamond Distance Carbon Z Trekking Poles — Blue, 130","url":"https://www.ebay.com/itm/blackdiamond-distance-carbon-z?v=130-blue","price":170.37,"currency":"USD","size":"130","color":"Blue","condition":"used","availability":"in_stock","seller":"eBay","image":null,"list_price":null,"match_score":1.0,"fetched_at":"2026-07-19T03:24:14+00:00","id":"6b36789e7c4706e6"},{"watch_id":"blackdiamond_distance_carbon_z","source":"Amazon","title":"Black Diamond Distance Carbon Z Trekking Poles — Black, 130","url":"https://www.amazon.com/dp/blackdiamond-distance-carbon-z?v=130-black","price":184.3,"currency":"USD","size":"130","color":"Black","condition":"new","availability":"in_stock","seller":"Amazon","image":null,"list_price":null,"match_score":1.0,"fetched_at":"2026-07-19T03:24:14+00:00","id":"7b744411fdef607a"},{"watch_id":"blackdiamond_distance_carbon_z","source":"Backcountry","title":"Black Diamond Distance Carbon Z Trekking Poles — Black, 130","url":"https://www.backcountry.com/blackdiamond-distance-carbon-z?v=130-black","price":199.05,"currency":"USD","size":"130","color":"Black","condition":"new","availability":"in_stock","seller":"Backcountry","image":null,"list_price":null,"match_score":1.0,"fetched_at":"2026-07-19T03:24:14+00:00","id":"4f93c0b68c51f6cf"},{"watch_id":"blackdiamond_distance_carbon_z","source":"Brand Official","title":"Black Diamond Distance Carbon Z Trekking Poles — Blue, 120","url":"https://example-brand.com/shop/blackdiamond-distance-carbon-z?v=120-blue","price":202.31,"currency":"USD","size":"120","color":"Blue","condition":"new","availability":"in_stock","seller":"Brand Official","image":null,"list_price":null,"match_score":1.0,"fetched_at":"2026-07-19T03:24:14+00:00","id":"556acb8eed245033"}],"history":[{"ts":"2026-07-15T12:00:00+00:00","price":187.71,"source":"Backcountry"},{"ts":"2026-07-15T12:00:00+00:00","price":197.32,"source":"Brand Official"},{"ts":"2026-07-15T12:00:00+00:00","price":172.17,"source":"Amazon"},{"ts":"2026-07-15T12:00:00+00:00","price":167.96,"source":"eBay"},{"ts":"2026-07-16T12:00:00+00:00","price":136.47,"source":"REI Co-op"},{"ts":"2026-07-16T12:00:00+00:00","price":184.59,"source":"Backcountry"},{"ts":"2026-07-16T12:00:00+00:00","price":177.38,"source":"Brand Official"},{"ts":"2026-07-16T12:00:00+00:00","price":127.98,"source":"Amazon"},{"ts":"2026-07-16T12:00:00+00:00","price":118.42,"source":"eBay"},{"ts":"2026-07-17T12:00:00+00:00","price":186.22,"source":"REI Co-op"},{"ts":"2026-07-17T12:00:00+00:00","price":212.83,"source":"Backcountry"},{"ts":"2026-07-17T12:00:00+00:00","price":214.15,"source":"Brand Official"},{"ts":"2026-07-17T12:00:00+00:00","price":129.64,"source":"Amazon"},{"ts":"2026-07-17T12:00:00+00:00","price":153.11,"source":"eBay"},{"ts":"2026-07-18T12:00:00+00:00","price":204.55,"source":"REI Co-op"},{"ts":"2026-07-18T12:00:00+00:00","price":124.16,"source":"Backcountry"},{"ts":"2026-07-18T12:00:00+00:00","price":144.23,"source":"Brand Official"},{"ts":"2026-07-18T12:00:00+00:00","price":200.29,"source":"Amazon"},{"ts":"2026-07-18T12:00:00+00:00","price":181.17,"source":"eBay"},{"ts":"2026-07-19T03:24:14+00:00","price":140.62,"source":"REI Co-op"},{"ts":"2026-07-19T03:24:14+00:00","price":199.05,"source":"Backcountry"},{"ts":"2026-07-19T03:24:14+00:00","price":202.31,"source":"Brand Official"},{"ts":"2026-07-19T03:24:14+00:00","price":184.3,"source":"Amazon"},{"ts":"2026-07-19T03:24:14+00:00","price":170.37,"source":"eBay"}]},{"id":"deuter_aircontact_core_60_10","brand":"Deuter","name":"Aircontact Core 60+10 Backpack","category":"Backpack","sizes":["70L"],"colors":[],"target_price":200.0,"currency":"USD","keywords":["trekking","pack"],"upc":null,"mpn":null,"image":null,"active":true,"best_price":160.75,"best_source":"Amazon","offer_count":5,"offers":[{"watch_id":"deuter_aircontact_core_60_10","source":"Amazon","title":"Deuter Aircontact Core 60+10 Backpack — Black, 70L","url":"https://www.amazon.com/dp/deuter-aircontact-core-60-10?v=70l-black","price":160.75,"currency":"USD","size":"70L","color":"Black","condition":"new","availability":"in_stock","seller":"Amazon","image":null,"list_price":266.67,"match_score":1.0,"fetched_at":"2026-07-19T03:24:14+00:00","id":"ac7af2b90efcf757"},{"watch_id":"deuter_aircontact_core_60_10","source":"Backcountry","title":"Deuter Aircontact Core 60+10 Backpack — Blue, 70L","url":"https://www.backcountry.com/deuter-aircontact-core-60-10?v=70l-blue","price":167.89,"currency":"USD","size":"70L","color":"Blue","condition":"new","availability":"in_stock","seller":"Backcountry","image":null,"list_price":266.67,"match_score":1.0,"fetched_at":"2026-07-19T03:24:14+00:00","id":"fa0d637830cdd068"},{"watch_id":"deuter_aircontact_core_60_10","source":"Brand Official","title":"Deuter Aircontact Core 60+10 Backpack — Green, 70L","url":"https://example-brand.com/shop/deuter-aircontact-core-60-10?v=70l-green","price":207.12,"currency":"USD","size":"70L","color":"Green","condition":"new","availability":"in_stock","seller":"Brand Official","image":null,"list_price":266.67,"match_score":1.0,"fetched_at":"2026-07-19T03:24:14+00:00","id":"3dd5d7e80d77bdaa"},{"watch_id":"deuter_aircontact_core_60_10","source":"eBay","title":"Deuter Aircontact Core 60+10 Backpack — Black, 70L","url":"https://www.ebay.com/itm/deuter-aircontact-core-60-10?v=70l-black","price":214.58,"currency":"USD","size":"70L","color":"Black","condition":"used","availability":"in_stock","seller":"eBay","image":null,"list_price":null,"match_score":1.0,"fetched_at":"2026-07-19T03:24:14+00:00","id":"46a5ccc73ec70981"},{"watch_id":"deuter_aircontact_core_60_10","source":"REI Co-op","title":"Deuter Aircontact Core 60+10 Backpack — Green, 70L","url":"https://www.rei.com/product/deuter-aircontact-core-60-10?v=70l-green","price":258.67,"currency":"USD","size":"70L","color":"Green","condition":"new","availability":"in_stock","seller":"REI Co-op","image":null,"list_price":null,"match_score":1.0,"fetched_at":"2026-07-19T03:24:14+00:00","id":"ffa49ee0d5b297b8"}],"history":[{"ts":"2026-07-15T12:00:00+00:00","price":217.62,"source":"Backcountry"},{"ts":"2026-07-15T12:00:00+00:00","price":295.3,"source":"Brand Official"},{"ts":"2026-07-15T12:00:00+00:00","price":238.91,"source":"Amazon"},{"ts":"2026-07-15T12:00:00+00:00","price":146.43,"source":"eBay"},{"ts":"2026-07-16T12:00:00+00:00","price":281.21,"source":"REI Co-op"},{"ts":"2026-07-16T12:00:00+00:00","price":281.15,"source":"Backcountry"},{"ts":"2026-07-16T12:00:00+00:00","price":278.75,"source":"Brand Official"},{"ts":"2026-07-16T12:00:00+00:00","price":232.47,"source":"Amazon"},{"ts":"2026-07-16T12:00:00+00:00","price":195.74,"source":"eBay"},{"ts":"2026-07-17T12:00:00+00:00","price":265.93,"source":"REI Co-op"},{"ts":"2026-07-17T12:00:00+00:00","price":177.57,"source":"Backcountry"},{"ts":"2026-07-17T12:00:00+00:00","price":216.72,"source":"Brand Official"},{"ts":"2026-07-17T12:00:00+00:00","price":148.51,"source":"Amazon"},{"ts":"2026-07-17T12:00:00+00:00","price":224.62,"source":"eBay"},{"ts":"2026-07-18T12:00:00+00:00","price":269.25,"source":"REI Co-op"},{"ts":"2026-07-18T12:00:00+00:00","price":236.68,"source":"Backcountry"},{"ts":"2026-07-18T12:00:00+00:00","price":190.58,"source":"Brand Official"},{"ts":"2026-07-18T12:00:00+00:00","price":164.27,"source":"Amazon"},{"ts":"2026-07-18T12:00:00+00:00","price":252.21,"source":"eBay"},{"ts":"2026-07-19T03:24:14+00:00","price":258.67,"source":"REI Co-op"},{"ts":"2026-07-19T03:24:14+00:00","price":167.89,"source":"Backcountry"},{"ts":"2026-07-19T03:24:14+00:00","price":207.12,"source":"Brand Official"},{"ts":"2026-07-19T03:24:14+00:00","price":160.75,"source":"Amazon"},{"ts":"2026-07-19T03:24:14+00:00","price":214.58,"source":"eBay"}]},{"id":"outdoor_research_helium_rain","brand":"Outdoor Research","name":"Helium Rain Jacket","category":"Rain Shell","sizes":["M","L"],"colors":[],"target_price":130.0,"currency":"USD","keywords":["pertex","ultralight"],"upc":null,"mpn":null,"image":null,"active":true,"best_price":118.06,"best_source":"eBay","offer_count":5,"offers":[{"watch_id":"outdoor_research_helium_rain","source":"eBay","title":"Outdoor Research Helium Rain Jacket — Black, L","url":"https://www.ebay.com/itm/outdoor-research-helium-rain?v=l-black","price":118.06,"currency":"USD","size":"L","color":"Black","condition":"used","availability":"in_stock","seller":"eBay","image":null,"list_price":173.33,"match_score":1.0,"fetched_at":"2026-07-19T03:24:14+00:00","id":"bba08eb82f11adf7"},{"watch_id":"outdoor_research_helium_rain","source":"Backcountry","title":"Outdoor Research Helium Rain Jacket — Green, M","url":"https://www.backcountry.com/outdoor-research-helium-rain?v=m-green","price":168.16,"currency":"USD","size":"M","color":"Green","condition":"new","availability":"in_stock","seller":"Backcountry","image":null,"list_price":null,"match_score":1.0,"fetched_at":"2026-07-19T03:24:14+00:00","id":"1cb360e14377a4c8"},{"watch_id":"outdoor_research_helium_rain","source":"Amazon","title":"Outdoor Research Helium Rain Jacket — Blue, L","url":"https://www.amazon.com/dp/outdoor-research-helium-rain?v=l-blue","price":168.68,"currency":"USD","size":"L","color":"Blue","condition":"new","availability":"in_stock","seller":"Amazon","image":null,"list_price":null,"match_score":1.0,"fetched_at":"2026-07-19T03:24:14+00:00","id":"2f931ec3a8be2fa7"},{"watch_id":"outdoor_research_helium_rain","source":"REI Co-op","title":"Outdoor Research Helium Rain Jacket — Green, M","url":"https://www.rei.com/product/outdoor-research-helium-rain?v=m-green","price":177.82,"currency":"USD","size":"M","color":"Green","condition":"new","availability":"in_stock","seller":"REI Co-op","image":null,"list_price":null,"match_score":1.0,"fetched_at":"2026-07-19T03:24:14+00:00","id":"2338f0b6c2855d14"},{"watch_id":"outdoor_research_helium_rain","source":"Brand Official","title":"Outdoor Research Helium Rain Jacket — Green, L","url":"https://example-brand.com/shop/outdoor-research-helium-rain?v=l-green","price":195.51,"currency":"USD","size":"L","color":"Green","condition":"new","availability":"in_stock","seller":"Brand Official","image":null,"list_price":null,"match_score":1.0,"fetched_at":"2026-07-19T03:24:14+00:00","id":"8fb1f7d40074da34"}],"history":[{"ts":"2026-07-15T12:00:00+00:00","price":110.24,"source":"Backcountry"},{"ts":"2026-07-15T12:00:00+00:00","price":172.18,"source":"Brand Official"},{"ts":"2026-07-15T12:00:00+00:00","price":175.39,"source":"Amazon"},{"ts":"2026-07-15T12:00:00+00:00","price":111.91,"source":"eBay"},{"ts":"2026-07-16T12:00:00+00:00","price":176.2,"source":"REI Co-op"},{"ts":"2026-07-16T12:00:00+00:00","price":128.13,"source":"Backcountry"},{"ts":"2026-07-16T12:00:00+00:00","price":143.92,"source":"Brand Official"},{"ts":"2026-07-16T12:00:00+00:00","price":173.25,"source":"Amazon"},{"ts":"2026-07-16T12:00:00+00:00","price":141.94,"source":"eBay"},{"ts":"2026-07-17T12:00:00+00:00","price":115.65,"source":"REI Co-op"},{"ts":"2026-07-17T12:00:00+00:00","price":106.32,"source":"Backcountry"},{"ts":"2026-07-17T12:00:00+00:00","price":117.03,"source":"Brand Official"},{"ts":"2026-07-17T12:00:00+00:00","price":121.17,"source":"Amazon"},{"ts":"2026-07-17T12:00:00+00:00","price":150.85,"source":"eBay"},{"ts":"2026-07-18T12:00:00+00:00","price":158.31,"source":"REI Co-op"},{"ts":"2026-07-18T12:00:00+00:00","price":118.62,"source":"Backcountry"},{"ts":"2026-07-18T12:00:00+00:00","price":168.9,"source":"Brand Official"},{"ts":"2026-07-18T12:00:00+00:00","price":109.67,"source":"Amazon"},{"ts":"2026-07-18T12:00:00+00:00","price":109.01,"source":"eBay"},{"ts":"2026-07-19T03:24:14+00:00","price":177.82,"source":"REI Co-op"},{"ts":"2026-07-19T03:24:14+00:00","price":168.16,"source":"Backcountry"},{"ts":"2026-07-19T03:24:14+00:00","price":195.51,"source":"Brand Official"},{"ts":"2026-07-19T03:24:14+00:00","price":168.68,"source":"Amazon"},{"ts":"2026-07-19T03:24:14+00:00","price":118.06,"source":"eBay"}]},{"id":"mammut_ophir_harness","brand":"Mammut","name":"Ophir 3 Slide Climbing Harness","category":"Climbing Harness","sizes":["M","L"],"colors":[],"target_price":60.0,"currency":"USD","keywords":["climbing"],"upc":null,"mpn":null,"image":null,"active":true,"best_price":43.74,"best_source":"eBay","offer_count":5,"offers":[{"watch_id":"mammut_ophir_harness","source":"eBay","title":"Mammut Ophir 3 Slide Climbing Harness — Blue, M","url":"https://www.ebay.com/itm/mammut-ophir-harness?v=m-blue","price":43.74,"currency":"USD","size":"M","color":"Blue","condition":"used","availability":"in_stock","seller":"eBay","image":null,"list_price":80.0,"match_score":1.0,"fetched_at":"2026-07-19T03:24:14+00:00","id":"c5f613f086571132"},{"watch_id":"mammut_ophir_harness","source":"Amazon","title":"Mammut Ophir 3 Slide Climbing Harness — Green, M","url":"https://www.amazon.com/dp/mammut-ophir-harness?v=m-green","price":60.76,"currency":"USD","size":"M","color":"Green","condition":"new","availability":"in_stock","seller":"Amazon","image":null,"list_price":80.0,"match_score":1.0,"fetched_at":"2026-07-19T03:24:14+00:00","id":"28ae265844befff8"},{"watch_id":"mammut_ophir_harness","source":"Backcountry","title":"Mammut Ophir 3 Slide Climbing Harness — Blue, M","url":"https://www.backcountry.com/mammut-ophir-harness?v=m-blue","price":73.05,"currency":"USD","size":"M","color":"Blue","condition":"new","availability":"in_stock","seller":"Backcountry","image":null,"list_price":null,"match_score":1.0,"fetched_at":"2026-07-19T03:24:14+00:00","id":"884d2b3678641416"},{"watch_id":"mammut_ophir_harness","source":"REI Co-op","title":"Mammut Ophir 3 Slide Climbing Harness — Blue, L","url":"https://www.rei.com/product/mammut-ophir-harness?v=l-blue","price":82.42,"currency":"USD","size":"L","color":"Blue","condition":"new","availability":"in_stock","seller":"REI Co-op","image":null,"list_price":null,"match_score":1.0,"fetched_at":"2026-07-19T03:24:14+00:00","id":"c287320967b92846"},{"watch_id":"mammut_ophir_harness","source":"Brand Official","title":"Mammut Ophir 3 Slide Climbing Harness — Blue, M","url":"https://example-brand.com/shop/mammut-ophir-harness?v=m-blue","price":84.64,"currency":"USD","size":"M","color":"Blue","condition":"new","availability":"in_stock","seller":"Brand Official","image":null,"list_price":null,"match_score":1.0,"fetched_at":"2026-07-19T03:24:14+00:00","id":"9e4d9e73284e7742"}],"history":[{"ts":"2026-07-15T12:00:00+00:00","price":80.25,"source":"Backcountry"},{"ts":"2026-07-15T12:00:00+00:00","price":70.7,"source":"Brand Official"},{"ts":"2026-07-15T12:00:00+00:00","price":82.27,"source":"Amazon"},{"ts":"2026-07-15T12:00:00+00:00","price":67.02,"source":"eBay"},{"ts":"2026-07-16T12:00:00+00:00","price":62.12,"source":"REI Co-op"},{"ts":"2026-07-16T12:00:00+00:00","price":50.23,"source":"Backcountry"},{"ts":"2026-07-16T12:00:00+00:00","price":88.44,"source":"Brand Official"},{"ts":"2026-07-16T12:00:00+00:00","price":58.37,"source":"Amazon"},{"ts":"2026-07-16T12:00:00+00:00","price":49.67,"source":"eBay"},{"ts":"2026-07-17T12:00:00+00:00","price":80.06,"source":"REI Co-op"},{"ts":"2026-07-17T12:00:00+00:00","price":72.94,"source":"Backcountry"},{"ts":"2026-07-17T12:00:00+00:00","price":88.16,"source":"Brand Official"},{"ts":"2026-07-17T12:00:00+00:00","price":45.14,"source":"Amazon"},{"ts":"2026-07-17T12:00:00+00:00","price":68.34,"source":"eBay"},{"ts":"2026-07-18T12:00:00+00:00","price":62.56,"source":"REI Co-op"},{"ts":"2026-07-18T12:00:00+00:00","price":70.8,"source":"Backcountry"},{"ts":"2026-07-18T12:00:00+00:00","price":85.78,"source":"Brand Official"},{"ts":"2026-07-18T12:00:00+00:00","price":72.57,"source":"Amazon"},{"ts":"2026-07-18T12:00:00+00:00","price":76.2,"source":"eBay"},{"ts":"2026-07-19T03:24:14+00:00","price":82.42,"source":"REI Co-op"},{"ts":"2026-07-19T03:24:14+00:00","price":73.05,"source":"Backcountry"},{"ts":"2026-07-19T03:24:14+00:00","price":84.64,"source":"Brand Official"},{"ts":"2026-07-19T03:24:14+00:00","price":60.76,"source":"Amazon"},{"ts":"2026-07-19T03:24:14+00:00","price":43.74,"source":"eBay"}]},{"id":"mountainhardwear_ghost_whisperer","brand":"Mountain Hardwear","name":"Ghost Whisperer 2 Hoody","category":"Down Jacket","sizes":["M","L"],"colors":["blue","black"],"target_price":300.0,"currency":"USD","keywords":["800 fill","ultralight down"],"upc":null,"mpn":null,"image":null,"active":true,"best_price":261.65,"best_source":"Backcountry","offer_count":5,"offers":[{"watch_id":"mountainhardwear_ghost_whisperer","source":"Backcountry","title":"Mountain Hardwear Ghost Whisperer 2 Hoody — black, M","url":"https://www.backcountry.com/mountainhardwear-ghost-whisperer?v=m-black","price":261.65,"currency":"USD","size":"M","color":"black","condition":"new","availability":"in_stock","seller":"Backcountry","image":null,"list_price":400.0,"match_score":1.0,"fetched_at":"2026-07-19T03:24:14+00:00","id":"74fdc34bfc639339"},{"watch_id":"mountainhardwear_ghost_whisperer","source":"eBay","title":"Mountain Hardwear Ghost Whisperer 2 Hoody — black, L","url":"https://www.ebay.com/itm/mountainhardwear-ghost-whisperer?v=l-black","price":331.48,"currency":"USD","size":"L","color":"black","condition":"used","availability":"in_stock","seller":"eBay","image":null,"list_price":null,"match_score":1.0,"fetched_at":"2026-07-19T03:24:14+00:00","id":"fccebc0968011d75"},{"watch_id":"mountainhardwear_ghost_whisperer","source":"REI Co-op","title":"Mountain Hardwear Ghost Whisperer 2 Hoody — black, L","url":"https://www.rei.com/product/mountainhardwear-ghost-whisperer?v=l-black","price":399.69,"currency":"USD","size":"L","color":"black","condition":"new","availability":"in_stock","seller":"REI Co-op","image":null,"list_price":null,"match_score":1.0,"fetched_at":"2026-07-19T03:24:14+00:00","id":"ac95689e63982a8e"},{"watch_id":"mountainhardwear_ghost_whisperer","source":"Amazon","title":"Mountain Hardwear Ghost Whisperer 2 Hoody — blue, L","url":"https://www.amazon.com/dp/mountainhardwear-ghost-whisperer?v=l-blue","price":401.8,"currency":"USD","size":"L","color":"blue","condition":"new","availability":"in_stock","seller":"Amazon","image":null,"list_price":null,"match_score":1.0,"fetched_at":"2026-07-19T03:24:14+00:00","id":"867da22e1edaba51"},{"watch_id":"mountainhardwear_ghost_whisperer","source":"Brand Official","title":"Mountain Hardwear Ghost Whisperer 2 Hoody — black, M","url":"https://example-brand.com/shop/mountainhardwear-ghost-whisperer?v=m-black","price":426.17,"currency":"USD","size":"M","color":"black","condition":"new","availability":"in_stock","seller":"Brand Official","image":null,"list_price":null,"match_score":1.0,"fetched_at":"2026-07-19T03:24:14+00:00","id":"06b5e575d0186193"}],"history":[{"ts":"2026-07-15T12:00:00+00:00","price":338.86,"source":"Backcountry"},{"ts":"2026-07-15T12:00:00+00:00","price":417.11,"source":"Brand Official"},{"ts":"2026-07-15T12:00:00+00:00","price":290.92,"source":"Amazon"},{"ts":"2026-07-15T12:00:00+00:00","price":219.11,"source":"eBay"},{"ts":"2026-07-16T12:00:00+00:00","price":325.2,"source":"REI Co-op"},{"ts":"2026-07-16T12:00:00+00:00","price":369.13,"source":"Backcountry"},{"ts":"2026-07-16T12:00:00+00:00","price":407.52,"source":"Brand Official"},{"ts":"2026-07-16T12:00:00+00:00","price":369.88,"source":"Amazon"},{"ts":"2026-07-16T12:00:00+00:00","price":271.36,"source":"eBay"},{"ts":"2026-07-17T12:00:00+00:00","price":255.24,"source":"REI Co-op"},{"ts":"2026-07-17T12:00:00+00:00","price":284.23,"source":"Backcountry"},{"ts":"2026-07-17T12:00:00+00:00","price":388.78,"source":"Brand Official"},{"ts":"2026-07-17T12:00:00+00:00","price":264.36,"source":"Amazon"},{"ts":"2026-07-17T12:00:00+00:00","price":300.14,"source":"eBay"},{"ts":"2026-07-18T12:00:00+00:00","price":397.35,"source":"REI Co-op"},{"ts":"2026-07-18T12:00:00+00:00","price":227.56,"source":"Backcountry"},{"ts":"2026-07-18T12:00:00+00:00","price":254.14,"source":"Brand Official"},{"ts":"2026-07-18T12:00:00+00:00","price":363.48,"source":"Amazon"},{"ts":"2026-07-18T12:00:00+00:00","price":359.99,"source":"eBay"},{"ts":"2026-07-19T03:24:14+00:00","price":399.69,"source":"REI Co-op"},{"ts":"2026-07-19T03:24:14+00:00","price":261.65,"source":"Backcountry"},{"ts":"2026-07-19T03:24:14+00:00","price":426.17,"source":"Brand Official"},{"ts":"2026-07-19T03:24:14+00:00","price":401.8,"source":"Amazon"},{"ts":"2026-07-19T03:24:14+00:00","price":331.48,"source":"eBay"}]},{"id":"marmot_precip_eco","brand":"Marmot","name":"PreCip Eco Jacket","category":"Rain Shell","sizes":["M","L","XL"],"colors":[],"target_price":75.0,"currency":"USD","keywords":["nanopro"],"upc":null,"mpn":null,"image":null,"active":true,"best_price":61.74,"best_source":"REI Co-op","offer_count":5,"offers":[{"watch_id":"marmot_precip_eco","source":"REI Co-op","title":"Marmot PreCip Eco Jacket — Green, L","url":"https://www.rei.com/product/marmot-precip-eco?v=l-green","price":61.74,"currency":"USD","size":"L","color":"Green","condition":"new","availability":"in_stock","seller":"REI Co-op","image":null,"list_price":100.0,"match_score":1.0,"fetched_at":"2026-07-19T03:24:14+00:00","id":"a3d893c7dd2f45ce"},{"watch_id":"marmot_precip_eco","source":"Backcountry","title":"Marmot PreCip Eco Jacket — Black, L","url":"https://www.backcountry.com/marmot-precip-eco?v=l-black","price":71.97,"currency":"USD","size":"L","color":"Black","condition":"new","availability":"in_stock","seller":"Backcountry","image":null,"list_price":100.0,"match_score":1.0,"fetched_at":"2026-07-19T03:24:14+00:00","id":"53186a2323e9f921"},{"watch_id":"marmot_precip_eco","source":"eBay","title":"Marmot PreCip Eco Jacket — Green, M","url":"https://www.ebay.com/itm/marmot-precip-eco?v=m-green","price":86.91,"currency":"USD","size":"M","color":"Green","condition":"used","availability":"in_stock","seller":"eBay","image":null,"list_price":null,"match_score":1.0,"fetched_at":"2026-07-19T03:24:14+00:00","id":"0c7f7315956f2385"},{"watch_id":"marmot_precip_eco","source":"Brand Official","title":"Marmot PreCip Eco Jacket — Green, XL","url":"https://example-brand.com/shop/marmot-precip-eco?v=xl-green","price":93.88,"currency":"USD","size":"XL","color":"Green","condition":"new","availability":"in_stock","seller":"Brand Official","image":null,"list_price":null,"match_score":1.0,"fetched_at":"2026-07-19T03:24:14+00:00","id":"867a354d3d8ae881"},{"watch_id":"marmot_precip_eco","source":"Amazon","title":"Marmot PreCip Eco Jacket — Blue, M","url":"https://www.amazon.com/dp/marmot-precip-eco?v=m-blue","price":94.2,"currency":"USD","size":"M","color":"Blue","condition":"new","availability":"in_stock","seller":"Amazon","image":null,"list_price":null,"match_score":1.0,"fetched_at":"2026-07-19T03:24:14+00:00","id":"607481d4fb0b5c66"}],"history":[{"ts":"2026-07-15T12:00:00+00:00","price":81.26,"source":"Backcountry"},{"ts":"2026-07-15T12:00:00+00:00","price":74.34,"source":"Brand Official"},{"ts":"2026-07-15T12:00:00+00:00","price":103.49,"source":"Amazon"},{"ts":"2026-07-15T12:00:00+00:00","price":75.1,"source":"eBay"},{"ts":"2026-07-16T12:00:00+00:00","price":107.21,"source":"REI Co-op"},{"ts":"2026-07-16T12:00:00+00:00","price":99.63,"source":"Backcountry"},{"ts":"2026-07-16T12:00:00+00:00","price":71.77,"source":"Brand Official"},{"ts":"2026-07-16T12:00:00+00:00","price":104.32,"source":"Amazon"},{"ts":"2026-07-16T12:00:00+00:00","price":58.87,"source":"eBay"},{"ts":"2026-07-17T12:00:00+00:00","price":92.4,"source":"REI Co-op"},{"ts":"2026-07-17T12:00:00+00:00","price":63.87,"source":"Backcountry"},{"ts":"2026-07-17T12:00:00+00:00","price":89.82,"source":"Brand Official"},{"ts":"2026-07-17T12:00:00+00:00","price":70.41,"source":"Amazon"},{"ts":"2026-07-17T12:00:00+00:00","price":68.36,"source":"eBay"},{"ts":"2026-07-18T12:00:00+00:00","price":68.28,"source":"REI Co-op"},{"ts":"2026-07-18T12:00:00+00:00","price":98.92,"source":"Backcountry"},{"ts":"2026-07-18T12:00:00+00:00","price":95.8,"source":"Brand Official"},{"ts":"2026-07-18T12:00:00+00:00","price":86.21,"source":"Amazon"},{"ts":"2026-07-18T12:00:00+00:00","price":66.9,"source":"eBay"},{"ts":"2026-07-19T03:24:14+00:00","price":61.74,"source":"REI Co-op"},{"ts":"2026-07-19T03:24:14+00:00","price":71.97,"source":"Backcountry"},{"ts":"2026-07-19T03:24:14+00:00","price":93.88,"source":"Brand Official"},{"ts":"2026-07-19T03:24:14+00:00","price":94.2,"source":"Amazon"},{"ts":"2026-07-19T03:24:14+00:00","price":86.91,"source":"eBay"}]},{"id":"rab_microlight_alpine","brand":"Rab","name":"Microlight Alpine Down Jacket","category":"Down Jacket","sizes":["M","L"],"colors":[],"target_price":200.0,"currency":"USD","keywords":["recycled down","pertex"],"upc":null,"mpn":null,"image":null,"active":true,"best_price":156.54,"best_source":"eBay","offer_count":5,"offers":[{"watch_id":"rab_microlight_alpine","source":"eBay","title":"Rab Microlight Alpine Down Jacket — Black, L","url":"https://www.ebay.com/itm/rab-microlight-alpine?v=l-black","price":156.54,"currency":"USD","size":"L","color":"Black","condition":"used","availability":"in_stock","seller":"eBay","image":null,"list_price":266.67,"match_score":1.0,"fetched_at":"2026-07-19T03:24:14+00:00","id":"d67349048a09d1d5"},{"watch_id":"rab_microlight_alpine","source":"Amazon","title":"Rab Microlight Alpine Down Jacket — Blue, M","url":"https://www.amazon.com/dp/rab-microlight-alpine?v=m-blue","price":162.97,"currency":"USD","size":"M","color":"Blue","condition":"new","availability":"in_stock","seller":"Amazon","image":null,"list_price":266.67,"match_score":1.0,"fetched_at":"2026-07-19T03:24:14+00:00","id":"a1b0ea42be4eff52"},{"watch_id":"rab_microlight_alpine","source":"Brand Official","title":"Rab Microlight Alpine Down Jacket — Blue, L","url":"https://example-brand.com/shop/rab-microlight-alpine?v=l-blue","price":193.85,"currency":"USD","size":"L","color":"Blue","condition":"new","availability":"in_stock","seller":"Brand Official","image":null,"list_price":266.67,"match_score":1.0,"fetched_at":"2026-07-19T03:24:14+00:00","id":"bacb9396318869b9"},{"watch_id":"rab_microlight_alpine","source":"REI Co-op","title":"Rab Microlight Alpine Down Jacket — Green, L","url":"https://www.rei.com/product/rab-microlight-alpine?v=l-green","price":208.72,"currency":"USD","size":"L","color":"Green","condition":"new","availability":"in_stock","seller":"REI Co-op","image":null,"list_price":266.67,"match_score":1.0,"fetched_at":"2026-07-19T03:24:14+00:00","id":"2d614a088dda9cf3"},{"watch_id":"rab_microlight_alpine","source":"Backcountry","title":"Rab Microlight Alpine Down Jacket — Green, L","url":"https://www.backcountry.com/rab-microlight-alpine?v=l-green","price":274.42,"currency":"USD","size":"L","color":"Green","condition":"new","availability":"in_stock","seller":"Backcountry","image":null,"list_price":null,"match_score":1.0,"fetched_at":"2026-07-19T03:24:14+00:00","id":"a7ad4f169d4e0901"}],"history":[{"ts":"2026-07-15T12:00:00+00:00","price":276.58,"source":"Backcountry"},{"ts":"2026-07-15T12:00:00+00:00","price":267.79,"source":"Brand Official"},{"ts":"2026-07-15T12:00:00+00:00","price":237.4,"source":"Amazon"},{"ts":"2026-07-15T12:00:00+00:00","price":248.7,"source":"eBay"},{"ts":"2026-07-16T12:00:00+00:00","price":190.5,"source":"REI Co-op"},{"ts":"2026-07-16T12:00:00+00:00","price":276.25,"source":"Backcountry"},{"ts":"2026-07-16T12:00:00+00:00","price":297.47,"source":"Brand Official"},{"ts":"2026-07-16T12:00:00+00:00","price":266.63,"source":"Amazon"},{"ts":"2026-07-16T12:00:00+00:00","price":218.3,"source":"eBay"},{"ts":"2026-07-17T12:00:00+00:00","price":241.49,"source":"REI Co-op"},{"ts":"2026-07-17T12:00:00+00:00","price":275.16,"source":"Backcountry"},{"ts":"2026-07-17T12:00:00+00:00","price":191.75,"source":"Brand Official"},{"ts":"2026-07-17T12:00:00+00:00","price":171.8,"source":"Amazon"},{"ts":"2026-07-17T12:00:00+00:00","price":156.01,"source":"eBay"},{"ts":"2026-07-18T12:00:00+00:00","price":182.06,"source":"REI Co-op"},{"ts":"2026-07-18T12:00:00+00:00","price":187.52,"source":"Backcountry"},{"ts":"2026-07-18T12:00:00+00:00","price":258.2,"source":"Brand Official"},{"ts":"2026-07-18T12:00:00+00:00","price":238.67,"source":"Amazon"},{"ts":"2026-07-18T12:00:00+00:00","price":156.33,"source":"eBay"},{"ts":"2026-07-19T03:24:14+00:00","price":208.72,"source":"REI Co-op"},{"ts":"2026-07-19T03:24:14+00:00","price":274.42,"source":"Backcountry"},{"ts":"2026-07-19T03:24:14+00:00","price":193.85,"source":"Brand Official"},{"ts":"2026-07-19T03:24:14+00:00","price":162.97,"source":"Amazon"},{"ts":"2026-07-19T03:24:14+00:00","price":156.54,"source":"eBay"}]},{"id":"fjallraven_kanken","brand":"Fjällräven","name":"Kånken Backpack","category":"Daypack","sizes":["16L"],"colors":[],"target_price":65.0,"currency":"USD","keywords":["classic"],"upc":null,"mpn":null,"image":null,"active":true,"best_price":51.54,"best_source":"eBay","offer_count":5,"offers":[{"watch_id":"fjallraven_kanken","source":"eBay","title":"Fjällräven Kånken Backpack — Blue, 16L","url":"https://www.ebay.com/itm/fjallraven-kanken?v=16l-blue","price":51.54,"currency":"USD","size":"16L","color":"Blue","condition":"used","availability":"in_stock","seller":"eBay","image":null,"list_price":86.67,"match_score":1.0,"fetched_at":"2026-07-19T03:24:14+00:00","id":"a07fef950ab5f1f6"},{"watch_id":"fjallraven_kanken","source":"Amazon","title":"Fjällräven Kånken Backpack — Blue, 16L","url":"https://www.amazon.com/dp/fjallraven-kanken?v=16l-blue","price":61.06,"currency":"USD","size":"16L","color":"Blue","condition":"new","availability":"in_stock","seller":"Amazon","image":null,"list_price":86.67,"match_score":1.0,"fetched_at":"2026-07-19T03:24:14+00:00","id":"dfa7ffa8cd0f409e"},{"watch_id":"fjallraven_kanken","source":"Backcountry","title":"Fjällräven Kånken Backpack — Black, 16L","url":"https://www.backcountry.com/fjallraven-kanken?v=16l-black","price":61.96,"currency":"USD","size":"16L","color":"Black","condition":"new","availability":"in_stock","seller":"Backcountry","image":null,"list_price":86.67,"match_score":1.0,"fetched_at":"2026-07-19T03:24:14+00:00","id":"6ba4495708ced2dd"},{"watch_id":"fjallraven_kanken","source":"REI Co-op","title":"Fjällräven Kånken Backpack — Green, 16L","url":"https://www.rei.com/product/fjallraven-kanken?v=16l-green","price":87.07,"currency":"USD","size":"16L","color":"Green","condition":"new","availability":"in_stock","seller":"REI Co-op","image":null,"list_price":null,"match_score":1.0,"fetched_at":"2026-07-19T03:24:14+00:00","id":"c845451d53096c79"},{"watch_id":"fjallraven_kanken","source":"Brand Official","title":"Fjällräven Kånken Backpack — Blue, 16L","url":"https://example-brand.com/shop/fjallraven-kanken?v=16l-blue","price":87.67,"currency":"USD","size":"16L","color":"Blue","condition":"new","availability":"in_stock","seller":"Brand Official","image":null,"list_price":null,"match_score":1.0,"fetched_at":"2026-07-19T03:24:14+00:00","id":"1a3f410b5b196451"}],"history":[{"ts":"2026-07-15T12:00:00+00:00","price":64.81,"source":"Backcountry"},{"ts":"2026-07-15T12:00:00+00:00","price":51.78,"source":"Brand Official"},{"ts":"2026-07-15T12:00:00+00:00","price":75.37,"source":"Amazon"},{"ts":"2026-07-15T12:00:00+00:00","price":66.71,"source":"eBay"},{"ts":"2026-07-16T12:00:00+00:00","price":59.15,"source":"REI Co-op"},{"ts":"2026-07-16T12:00:00+00:00","price":86.55,"source":"Backcountry"},{"ts":"2026-07-16T12:00:00+00:00","price":82.51,"source":"Brand Official"},{"ts":"2026-07-16T12:00:00+00:00","price":83.27,"source":"Amazon"},{"ts":"2026-07-16T12:00:00+00:00","price":80.06,"source":"eBay"},{"ts":"2026-07-17T12:00:00+00:00","price":66.98,"source":"REI Co-op"},{"ts":"2026-07-17T12:00:00+00:00","price":78.82,"source":"Backcountry"},{"ts":"2026-07-17T12:00:00+00:00","price":94.54,"source":"Brand Official"},{"ts":"2026-07-17T12:00:00+00:00","price":80.02,"source":"Amazon"},{"ts":"2026-07-17T12:00:00+00:00","price":81.8,"source":"eBay"},{"ts":"2026-07-18T12:00:00+00:00","price":69.66,"source":"REI Co-op"},{"ts":"2026-07-18T12:00:00+00:00","price":91.13,"source":"Backcountry"},{"ts":"2026-07-18T12:00:00+00:00","price":64.22,"source":"Brand Official"},{"ts":"2026-07-18T12:00:00+00:00","price":83.18,"source":"Amazon"},{"ts":"2026-07-18T12:00:00+00:00","price":79.24,"source":"eBay"},{"ts":"2026-07-19T03:24:14+00:00","price":87.07,"source":"REI Co-op"},{"ts":"2026-07-19T03:24:14+00:00","price":61.96,"source":"Backcountry"},{"ts":"2026-07-19T03:24:14+00:00","price":87.67,"source":"Brand Official"},{"ts":"2026-07-19T03:24:14+00:00","price":61.06,"source":"Amazon"},{"ts":"2026-07-19T03:24:14+00:00","price":51.54,"source":"eBay"}]},{"id":"norrona_lofoten_goretex_pro","brand":"Norrøna","name":"Lofoten Gore-Tex Pro Jacket","category":"Hardshell","sizes":["M","L"],"colors":[],"target_price":550.0,"currency":"USD","keywords":["ski","shell"],"upc":null,"mpn":null,"image":null,"active":true,"best_price":492.8,"best_source":"REI Co-op","offer_count":5,"offers":[{"watch_id":"norrona_lofoten_goretex_pro","source":"REI Co-op","title":"Norrøna Lofoten Gore-Tex Pro Jacket — Blue, L","url":"https://www.rei.com/product/norrona-lofoten-goretex-pro?v=l-blue","price":492.8,"currency":"USD","size":"L","color":"Blue","condition":"new","availability":"in_stock","seller":"REI Co-op","image":null,"list_price":733.33,"match_score":1.0,"fetched_at":"2026-07-19T03:24:14+00:00","id":"bc629e33735a08fa"},{"watch_id":"norrona_lofoten_goretex_pro","source":"Amazon","title":"Norrøna Lofoten Gore-Tex Pro Jacket — Blue, M","url":"https://www.amazon.com/dp/norrona-lofoten-goretex-pro?v=m-blue","price":602.19,"currency":"USD","size":"M","color":"Blue","condition":"new","availability":"in_stock","seller":"Amazon","image":null,"list_price":733.33,"match_score":1.0,"fetched_at":"2026-07-19T03:24:14+00:00","id":"92cb5b92e9fb18b4"},{"watch_id":"norrona_lofoten_goretex_pro","source":"Backcountry","title":"Norrøna Lofoten Gore-Tex Pro Jacket — Green, L","url":"https://www.backcountry.com/norrona-lofoten-goretex-pro?v=l-green","price":628.66,"currency":"USD","size":"L","color":"Green","condition":"new","availability":"in_stock","seller":"Backcountry","image":null,"list_price":733.33,"match_score":1.0,"fetched_at":"2026-07-19T03:24:14+00:00","id":"e8620b14b06c4d4f"},{"watch_id":"norrona_lofoten_goretex_pro","source":"eBay","title":"Norrøna Lofoten Gore-Tex Pro Jacket — Green, L","url":"https://www.ebay.com/itm/norrona-lofoten-goretex-pro?v=l-green","price":676.91,"currency":"USD","size":"L","color":"Green","condition":"used","availability":"in_stock","seller":"eBay","image":null,"list_price":null,"match_score":1.0,"fetched_at":"2026-07-19T03:24:14+00:00","id":"8b30b04420505ac0"},{"watch_id":"norrona_lofoten_goretex_pro","source":"Brand Official","title":"Norrøna Lofoten Gore-Tex Pro Jacket — Green, L","url":"https://example-brand.com/shop/norrona-lofoten-goretex-pro?v=l-green","price":739.69,"currency":"USD","size":"L","color":"Green","condition":"new","availability":"in_stock","seller":"Brand Official","image":null,"list_price":null,"match_score":1.0,"fetched_at":"2026-07-19T03:24:14+00:00","id":"c0ff4fdd45bb2826"}],"history":[{"ts":"2026-07-15T12:00:00+00:00","price":572.45,"source":"Backcountry"},{"ts":"2026-07-15T12:00:00+00:00","price":727.49,"source":"Brand Official"},{"ts":"2026-07-15T12:00:00+00:00","price":656.31,"source":"Amazon"},{"ts":"2026-07-15T12:00:00+00:00","price":378.13,"source":"eBay"},{"ts":"2026-07-16T12:00:00+00:00","price":729.1,"source":"REI Co-op"},{"ts":"2026-07-16T12:00:00+00:00","price":752.32,"source":"Backcountry"},{"ts":"2026-07-16T12:00:00+00:00","price":681.68,"source":"Brand Official"},{"ts":"2026-07-16T12:00:00+00:00","price":594.64,"source":"Amazon"},{"ts":"2026-07-16T12:00:00+00:00","price":623.05,"source":"eBay"},{"ts":"2026-07-17T12:00:00+00:00","price":684.24,"source":"REI Co-op"},{"ts":"2026-07-17T12:00:00+00:00","price":608.2,"source":"Backcountry"},{"ts":"2026-07-17T12:00:00+00:00","price":465.1,"source":"Brand Official"},{"ts":"2026-07-17T12:00:00+00:00","price":740.17,"source":"Amazon"},{"ts":"2026-07-17T12:00:00+00:00","price":597.21,"source":"eBay"},{"ts":"2026-07-18T12:00:00+00:00","price":765.11,"source":"REI Co-op"},{"ts":"2026-07-18T12:00:00+00:00","price":719.84,"source":"Backcountry"},{"ts":"2026-07-18T12:00:00+00:00","price":572.78,"source":"Brand Official"},{"ts":"2026-07-18T12:00:00+00:00","price":672.65,"source":"Amazon"},{"ts":"2026-07-18T12:00:00+00:00","price":434.88,"source":"eBay"},{"ts":"2026-07-19T03:24:14+00:00","price":492.8,"source":"REI Co-op"},{"ts":"2026-07-19T03:24:14+00:00","price":628.66,"source":"Backcountry"},{"ts":"2026-07-19T03:24:14+00:00","price":739.69,"source":"Brand Official"},{"ts":"2026-07-19T03:24:14+00:00","price":602.19,"source":"Amazon"},{"ts":"2026-07-19T03:24:14+00:00","price":676.91,"source":"eBay"}]},{"id":"petzl_actik_core","brand":"Petzl","name":"Actik Core Headlamp","category":"Headlamp","sizes":[],"colors":[],"target_price":55.0,"currency":"USD","keywords":["rechargeable","450 lumens"],"upc":null,"mpn":null,"image":null,"active":true,"best_price":42.21,"best_source":"eBay","offer_count":5,"offers":[{"watch_id":"petzl_actik_core","source":"eBay","title":"Petzl Actik Core Headlamp — Green, M","url":"https://www.ebay.com/itm/petzl-actik-core?v=m-green","price":42.21,"currency":"USD","size":"M","color":"Green","condition":"used","availability":"in_stock","seller":"eBay","image":null,"list_price":73.33,"match_score":1.0,"fetched_at":"2026-07-19T03:24:14+00:00","id":"2ddc3318f1d85dea"},{"watch_id":"petzl_actik_core","source":"Backcountry","title":"Petzl Actik Core Headlamp — Green, XL","url":"https://www.backcountry.com/petzl-actik-core?v=xl-green","price":51.19,"currency":"USD","size":"XL","color":"Green","condition":"new","availability":"in_stock","seller":"Backcountry","image":null,"list_price":73.33,"match_score":1.0,"fetched_at":"2026-07-19T03:24:14+00:00","id":"047fe446281ad5db"},{"watch_id":"petzl_actik_core","source":"REI Co-op","title":"Petzl Actik Core Headlamp — Black, XL","url":"https://www.rei.com/product/petzl-actik-core?v=xl-black","price":52.03,"currency":"USD","size":"XL","color":"Black","condition":"new","availability":"in_stock","seller":"REI Co-op","image":null,"list_price":73.33,"match_score":1.0,"fetched_at":"2026-07-19T03:24:14+00:00","id":"12c281eac9c8030f"},{"watch_id":"petzl_actik_core","source":"Amazon","title":"Petzl Actik Core Headlamp — Blue, M","url":"https://www.amazon.com/dp/petzl-actik-core?v=m-blue","price":53.88,"currency":"USD","size":"M","color":"Blue","condition":"new","availability":"in_stock","seller":"Amazon","image":null,"list_price":73.33,"match_score":1.0,"fetched_at":"2026-07-19T03:24:14+00:00","id":"8de4078c6f4ecaff"},{"watch_id":"petzl_actik_core","source":"Brand Official","title":"Petzl Actik Core Headlamp — Black, S","url":"https://example-brand.com/shop/petzl-actik-core?v=s-black","price":78.61,"currency":"USD","size":"S","color":"Black","condition":"new","availability":"in_stock","seller":"Brand Official","image":null,"list_price":null,"match_score":1.0,"fetched_at":"2026-07-19T03:24:14+00:00","id":"a8e66ae389e5050b"}],"history":[{"ts":"2026-07-15T12:00:00+00:00","price":70.49,"source":"Backcountry"},{"ts":"2026-07-15T12:00:00+00:00","price":56.48,"source":"Brand Official"},{"ts":"2026-07-15T12:00:00+00:00","price":45.68,"source":"Amazon"},{"ts":"2026-07-15T12:00:00+00:00","price":70.39,"source":"eBay"},{"ts":"2026-07-16T12:00:00+00:00","price":53.48,"source":"REI Co-op"},{"ts":"2026-07-16T12:00:00+00:00","price":52.44,"source":"Backcountry"},{"ts":"2026-07-16T12:00:00+00:00","price":79.08,"source":"Brand Official"},{"ts":"2026-07-16T12:00:00+00:00","price":54.23,"source":"Amazon"},{"ts":"2026-07-16T12:00:00+00:00","price":49.01,"source":"eBay"},{"ts":"2026-07-17T12:00:00+00:00","price":44.46,"source":"REI Co-op"},{"ts":"2026-07-17T12:00:00+00:00","price":50.27,"source":"Backcountry"},{"ts":"2026-07-17T12:00:00+00:00","price":83.02,"source":"Brand Official"},{"ts":"2026-07-17T12:00:00+00:00","price":56.08,"source":"Amazon"},{"ts":"2026-07-17T12:00:00+00:00","price":38.03,"source":"eBay"},{"ts":"2026-07-18T12:00:00+00:00","price":49.7,"source":"REI Co-op"},{"ts":"2026-07-18T12:00:00+00:00","price":73.8,"source":"Backcountry"},{"ts":"2026-07-18T12:00:00+00:00","price":74.62,"source":"Brand Official"},{"ts":"2026-07-18T12:00:00+00:00","price":73.89,"source":"Amazon"},{"ts":"2026-07-18T12:00:00+00:00","price":43.8,"source":"eBay"},{"ts":"2026-07-19T03:24:14+00:00","price":52.03,"source":"REI Co-op"},{"ts":"2026-07-19T03:24:14+00:00","price":51.19,"source":"Backcountry"},{"ts":"2026-07-19T03:24:14+00:00","price":78.61,"source":"Brand Official"},{"ts":"2026-07-19T03:24:14+00:00","price":53.88,"source":"Amazon"},{"ts":"2026-07-19T03:24:14+00:00","price":42.21,"source":"eBay"}]},{"id":"lasportiva_tarantulace","brand":"La Sportiva","name":"Tarantulace Climbing Shoes","category":"Climbing Shoes","sizes":["EU 42","EU 43"],"colors":[],"target_price":75.0,"currency":"USD","keywords":["rock climbing"],"upc":null,"mpn":null,"image":null,"active":true,"best_price":80.34,"best_source":"eBay","offer_count":5,"offers":[{"watch_id":"lasportiva_tarantulace","source":"eBay","title":"La Sportiva Tarantulace Climbing Shoes — Green, EU 43","url":"https://www.ebay.com/itm/lasportiva-tarantulace?v=eu-43-green","price":80.34,"currency":"USD","size":"EU 43","color":"Green","condition":"used","availability":"in_stock","seller":"eBay","image":null,"list_price":null,"match_score":1.0,"fetched_at":"2026-07-19T03:24:14+00:00","id":"67bed151d75a4ef3"},{"watch_id":"lasportiva_tarantulace","source":"Brand Official","title":"La Sportiva Tarantulace Climbing Shoes — Blue, EU 42","url":"https://example-brand.com/shop/lasportiva-tarantulace?v=eu-42-blue","price":93.53,"currency":"USD","size":"EU 42","color":"Blue","condition":"new","availability":"in_stock","seller":"Brand Official","image":null,"list_price":null,"match_score":1.0,"fetched_at":"2026-07-19T03:24:14+00:00","id":"efa1fd6504aa797f"},{"watch_id":"lasportiva_tarantulace","source":"REI Co-op","title":"La Sportiva Tarantulace Climbing Shoes — Green, EU 42","url":"https://www.rei.com/product/lasportiva-tarantulace?v=eu-42-green","price":100.34,"currency":"USD","size":"EU 42","color":"Green","condition":"new","availability":"in_stock","seller":"REI Co-op","image":null,"list_price":null,"match_score":1.0,"fetched_at":"2026-07-19T03:24:14+00:00","id":"41dd8e64542e2cdd"},{"watch_id":"lasportiva_tarantulace","source":"Backcountry","title":"La Sportiva Tarantulace Climbing Shoes — Green, EU 42","url":"https://www.backcountry.com/lasportiva-tarantulace?v=eu-42-green","price":103.05,"currency":"USD","size":"EU 42","color":"Green","condition":"new","availability":"in_stock","seller":"Backcountry","image":null,"list_price":null,"match_score":1.0,"fetched_at":"2026-07-19T03:24:14+00:00","id":"b2982f7dd67000fe"},{"watch_id":"lasportiva_tarantulace","source":"Amazon","title":"La Sportiva Tarantulace Climbing Shoes — Green, EU 43","url":"https://www.amazon.com/dp/lasportiva-tarantulace?v=eu-43-green","price":103.64,"currency":"USD","size":"EU 43","color":"Green","condition":"new","availability":"in_stock","seller":"Amazon","image":null,"list_price":null,"match_score":1.0,"fetched_at":"2026-07-19T03:24:14+00:00","id":"65678f0e3ffea4a5"}],"history":[{"ts":"2026-07-15T12:00:00+00:00","price":94.62,"source":"Backcountry"},{"ts":"2026-07-15T12:00:00+00:00","price":74.83,"source":"Brand Official"},{"ts":"2026-07-15T12:00:00+00:00","price":100.36,"source":"Amazon"},{"ts":"2026-07-15T12:00:00+00:00","price":62.12,"source":"eBay"},{"ts":"2026-07-16T12:00:00+00:00","price":99.72,"source":"REI Co-op"},{"ts":"2026-07-16T12:00:00+00:00","price":88.32,"source":"Backcountry"},{"ts":"2026-07-16T12:00:00+00:00","price":100.42,"source":"Brand Official"},{"ts":"2026-07-16T12:00:00+00:00","price":91.64,"source":"Amazon"},{"ts":"2026-07-16T12:00:00+00:00","price":92.32,"source":"eBay"},{"ts":"2026-07-17T12:00:00+00:00","price":97.2,"source":"REI Co-op"},{"ts":"2026-07-17T12:00:00+00:00","price":92.05,"source":"Backcountry"},{"ts":"2026-07-17T12:00:00+00:00","price":71.17,"source":"Brand Official"},{"ts":"2026-07-17T12:00:00+00:00","price":79.56,"source":"Amazon"},{"ts":"2026-07-17T12:00:00+00:00","price":82.86,"source":"eBay"},{"ts":"2026-07-18T12:00:00+00:00","price":67.08,"source":"REI Co-op"},{"ts":"2026-07-18T12:00:00+00:00","price":67.38,"source":"Backcountry"},{"ts":"2026-07-18T12:00:00+00:00","price":109.71,"source":"Brand Official"},{"ts":"2026-07-18T12:00:00+00:00","price":98.63,"source":"Amazon"},{"ts":"2026-07-18T12:00:00+00:00","price":96.65,"source":"eBay"},{"ts":"2026-07-19T03:24:14+00:00","price":100.34,"source":"REI Co-op"},{"ts":"2026-07-19T03:24:14+00:00","price":103.05,"source":"Backcountry"},{"ts":"2026-07-19T03:24:14+00:00","price":93.53,"source":"Brand Official"},{"ts":"2026-07-19T03:24:14+00:00","price":103.64,"source":"Amazon"},{"ts":"2026-07-19T03:24:14+00:00","price":80.34,"source":"eBay"}]},{"id":"osprey_atmos_ag_65","brand":"Osprey","name":"Atmos AG 65 Backpack","category":"Backpack","sizes":["65L"],"colors":[],"target_price":220.0,"currency":"USD","keywords":["anti-gravity","trekking"],"upc":null,"mpn":null,"image":null,"active":true,"best_price":157.02,"best_source":"eBay","offer_count":5,"offers":[{"watch_id":"osprey_atmos_ag_65","source":"eBay","title":"Osprey Atmos AG 65 Backpack — Black, 65L","url":"https://www.ebay.com/itm/osprey-atmos-ag-65?v=65l-black","price":157.02,"currency":"USD","size":"65L","color":"Black","condition":"used","availability":"in_stock","seller":"eBay","image":null,"list_price":293.33,"match_score":1.0,"fetched_at":"2026-07-19T03:24:14+00:00","id":"8edcac1c178a41c2"},{"watch_id":"osprey_atmos_ag_65","source":"REI Co-op","title":"Osprey Atmos AG 65 Backpack — Blue, 65L","url":"https://www.rei.com/product/osprey-atmos-ag-65?v=65l-blue","price":182.13,"currency":"USD","size":"65L","color":"Blue","condition":"new","availability":"in_stock","seller":"REI Co-op","image":null,"list_price":293.33,"match_score":1.0,"fetched_at":"2026-07-19T03:24:14+00:00","id":"8ed9964876e9698c"},{"watch_id":"osprey_atmos_ag_65","source":"Brand Official","title":"Osprey Atmos AG 65 Backpack — Black, 65L","url":"https://example-brand.com/shop/osprey-atmos-ag-65?v=65l-black","price":304.81,"currency":"USD","size":"65L","color":"Black","condition":"new","availability":"in_stock","seller":"Brand Official","image":null,"list_price":null,"match_score":1.0,"fetched_at":"2026-07-19T03:24:14+00:00","id":"8ef22d0ac7cc69ae"},{"watch_id":"osprey_atmos_ag_65","source":"Amazon","title":"Osprey Atmos AG 65 Backpack — Green, 65L","url":"https://www.amazon.com/dp/osprey-atmos-ag-65?v=65l-green","price":305.03,"currency":"USD","size":"65L","color":"Green","condition":"new","availability":"in_stock","seller":"Amazon","image":null,"list_price":null,"match_score":1.0,"fetched_at":"2026-07-19T03:24:14+00:00","id":"5dc3642c671b14e8"},{"watch_id":"osprey_atmos_ag_65","source":"Backcountry","title":"Osprey Atmos AG 65 Backpack — Blue, 65L","url":"https://www.backcountry.com/osprey-atmos-ag-65?v=65l-blue","price":305.83,"currency":"USD","size":"65L","color":"Blue","condition":"new","availability":"in_stock","seller":"Backcountry","image":null,"list_price":null,"match_score":1.0,"fetched_at":"2026-07-19T03:24:14+00:00","id":"301c03cadeba15e8"}],"history":[{"ts":"2026-07-15T12:00:00+00:00","price":268.39,"source":"Backcountry"},{"ts":"2026-07-15T12:00:00+00:00","price":304.91,"source":"Brand Official"},{"ts":"2026-07-15T12:00:00+00:00","price":259.32,"source":"Amazon"},{"ts":"2026-07-15T12:00:00+00:00","price":198.12,"source":"eBay"},{"ts":"2026-07-16T12:00:00+00:00","price":288.63,"source":"REI Co-op"},{"ts":"2026-07-16T12:00:00+00:00","price":289.39,"source":"Backcountry"},{"ts":"2026-07-16T12:00:00+00:00","price":217.63,"source":"Brand Official"},{"ts":"2026-07-16T12:00:00+00:00","price":238.27,"source":"Amazon"},{"ts":"2026-07-16T12:00:00+00:00","price":258.35,"source":"eBay"},{"ts":"2026-07-17T12:00:00+00:00","price":208.88,"source":"REI Co-op"},{"ts":"2026-07-17T12:00:00+00:00","price":274.66,"source":"Backcountry"},{"ts":"2026-07-17T12:00:00+00:00","price":315.04,"source":"Brand Official"},{"ts":"2026-07-17T12:00:00+00:00","price":168.97,"source":"Amazon"},{"ts":"2026-07-17T12:00:00+00:00","price":260.64,"source":"eBay"},{"ts":"2026-07-18T12:00:00+00:00","price":274.1,"source":"REI Co-op"},{"ts":"2026-07-18T12:00:00+00:00","price":260.76,"source":"Backcountry"},{"ts":"2026-07-18T12:00:00+00:00","price":318.41,"source":"Brand Official"},{"ts":"2026-07-18T12:00:00+00:00","price":210.82,"source":"Amazon"},{"ts":"2026-07-18T12:00:00+00:00","price":233.24,"source":"eBay"},{"ts":"2026-07-19T03:24:14+00:00","price":182.13,"source":"REI Co-op"},{"ts":"2026-07-19T03:24:14+00:00","price":305.83,"source":"Backcountry"},{"ts":"2026-07-19T03:24:14+00:00","price":304.81,"source":"Brand Official"},{"ts":"2026-07-19T03:24:14+00:00","price":305.03,"source":"Amazon"},{"ts":"2026-07-19T03:24:14+00:00","price":157.02,"source":"eBay"}]},{"id":"gregory_baltoro_65","brand":"Gregory","name":"Baltoro 65 Backpack","category":"Backpack","sizes":["65L"],"colors":[],"target_price":250.0,"currency":"USD","keywords":["trekking"],"upc":null,"mpn":null,"image":null,"active":true,"best_price":217.0,"best_source":"Backcountry","offer_count":5,"offers":[{"watch_id":"gregory_baltoro_65","source":"Backcountry","title":"Gregory Baltoro 65 Backpack — Green, 65L","url":"https://www.backcountry.com/gregory-baltoro-65?v=65l-green","price":217.0,"currency":"USD","size":"65L","color":"Green","condition":"new","availability":"in_stock","seller":"Backcountry","image":null,"list_price":333.33,"match_score":1.0,"fetched_at":"2026-07-19T03:24:14+00:00","id":"8eb1ed4130b80a8f"},{"watch_id":"gregory_baltoro_65","source":"Brand Official","title":"Gregory Baltoro 65 Backpack — Green, 65L","url":"https://example-brand.com/shop/gregory-baltoro-65?v=65l-green","price":218.84,"currency":"USD","size":"65L","color":"Green","condition":"new","availability":"in_stock","seller":"Brand Official","image":null,"list_price":333.33,"match_score":1.0,"fetched_at":"2026-07-19T03:24:14+00:00","id":"ac576f85b2dc32a9"},{"watch_id":"gregory_baltoro_65","source":"REI Co-op","title":"Gregory Baltoro 65 Backpack — Black, 65L","url":"https://www.rei.com/product/gregory-baltoro-65?v=65l-black","price":232.98,"currency":"USD","size":"65L","color":"Black","condition":"new","availability":"in_stock","seller":"REI Co-op","image":null,"list_price":333.33,"match_score":1.0,"fetched_at":"2026-07-19T03:24:14+00:00","id":"b4b903b29b62fd21"},{"watch_id":"gregory_baltoro_65","source":"eBay","title":"Gregory Baltoro 65 Backpack — Blue, 65L","url":"https://www.ebay.com/itm/gregory-baltoro-65?v=65l-blue","price":299.96,"currency":"USD","size":"65L","color":"Blue","condition":"used","availability":"in_stock","seller":"eBay","image":null,"list_price":null,"match_score":1.0,"fetched_at":"2026-07-19T03:24:14+00:00","id":"26e3680823bf7048"},{"watch_id":"gregory_baltoro_65","source":"Amazon","title":"Gregory Baltoro 65 Backpack — Black, 65L","url":"https://www.amazon.com/dp/gregory-baltoro-65?v=65l-black","price":319.67,"currency":"USD","size":"65L","color":"Black","condition":"new","availability":"in_stock","seller":"Amazon","image":null,"list_price":null,"match_score":1.0,"fetched_at":"2026-07-19T03:24:14+00:00","id":"20efc2e65ff1c24c"}],"history":[{"ts":"2026-07-15T12:00:00+00:00","price":274.85,"source":"Backcountry"},{"ts":"2026-07-15T12:00:00+00:00","price":351.4,"source":"Brand Official"},{"ts":"2026-07-15T12:00:00+00:00","price":341.36,"source":"Amazon"},{"ts":"2026-07-15T12:00:00+00:00","price":178.87,"source":"eBay"},{"ts":"2026-07-16T12:00:00+00:00","price":336.76,"source":"REI Co-op"},{"ts":"2026-07-16T12:00:00+00:00","price":332.72,"source":"Backcountry"},{"ts":"2026-07-16T12:00:00+00:00","price":231.36,"source":"Brand Official"},{"ts":"2026-07-16T12:00:00+00:00","price":234.52,"source":"Amazon"},{"ts":"2026-07-16T12:00:00+00:00","price":201.36,"source":"eBay"},{"ts":"2026-07-17T12:00:00+00:00","price":307.98,"source":"REI Co-op"},{"ts":"2026-07-17T12:00:00+00:00","price":321.44,"source":"Backcountry"},{"ts":"2026-07-17T12:00:00+00:00","price":311.1,"source":"Brand Official"},{"ts":"2026-07-17T12:00:00+00:00","price":228.79,"source":"Amazon"},{"ts":"2026-07-17T12:00:00+00:00","price":276.12,"source":"eBay"},{"ts":"2026-07-18T12:00:00+00:00","price":325.92,"source":"REI Co-op"},{"ts":"2026-07-18T12:00:00+00:00","price":296.74,"source":"Backcountry"},{"ts":"2026-07-18T12:00:00+00:00","price":358.22,"source":"Brand Official"},{"ts":"2026-07-18T12:00:00+00:00","price":257.18,"source":"Amazon"},{"ts":"2026-07-18T12:00:00+00:00","price":275.17,"source":"eBay"},{"ts":"2026-07-19T03:24:14+00:00","price":232.98,"source":"REI Co-op"},{"ts":"2026-07-19T03:24:14+00:00","price":217.0,"source":"Backcountry"},{"ts":"2026-07-19T03:24:14+00:00","price":218.84,"source":"Brand Official"},{"ts":"2026-07-19T03:24:14+00:00","price":319.67,"source":"Amazon"},{"ts":"2026-07-19T03:24:14+00:00","price":299.96,"source":"eBay"}]},{"id":"salomon_x_ultra_4_gtx","brand":"Salomon","name":"X Ultra 4 GTX Hiking Shoes","category":"Hiking Shoes","sizes":["US 10","US 10.5","US 11"],"colors":[],"target_price":110.0,"currency":"USD","keywords":["gore-tex","low"],"upc":null,"mpn":null,"image":null,"active":true,"best_price":99.71,"best_source":"eBay","offer_count":5,"offers":[{"watch_id":"salomon_x_ultra_4_gtx","source":"eBay","title":"Salomon X Ultra 4 GTX Hiking Shoes — Black, US 10.5","url":"https://www.ebay.com/itm/salomon-x-ultra-4-gtx?v=us-10.5-black","price":99.71,"currency":"USD","size":"US 10.5","color":"Black","condition":"used","availability":"in_stock","seller":"eBay","image":null,"list_price":146.67,"match_score":1.0,"fetched_at":"2026-07-19T03:24:14+00:00","id":"00915dc14fa5d819"},{"watch_id":"salomon_x_ultra_4_gtx","source":"REI Co-op","title":"Salomon X Ultra 4 GTX Hiking Shoes — Green, US 10","url":"https://www.rei.com/product/salomon-x-ultra-4-gtx?v=us-10-green","price":108.13,"currency":"USD","size":"US 10","color":"Green","condition":"new","availability":"in_stock","seller":"REI Co-op","image":null,"list_price":146.67,"match_score":1.0,"fetched_at":"2026-07-19T03:24:14+00:00","id":"5e1bb34802eba89c"},{"watch_id":"salomon_x_ultra_4_gtx","source":"Amazon","title":"Salomon X Ultra 4 GTX Hiking Shoes — Black, US 10","url":"https://www.amazon.com/dp/salomon-x-ultra-4-gtx?v=us-10-black","price":126.1,"currency":"USD","size":"US 10","color":"Black","condition":"new","availability":"in_stock","seller":"Amazon","image":null,"list_price":null,"match_score":1.0,"fetched_at":"2026-07-19T03:24:14+00:00","id":"38548cec59ac648a"},{"watch_id":"salomon_x_ultra_4_gtx","source":"Brand Official","title":"Salomon X Ultra 4 GTX Hiking Shoes — Green, US 11","url":"https://example-brand.com/shop/salomon-x-ultra-4-gtx?v=us-11-green","price":140.17,"currency":"USD","size":"US 11","color":"Green","condition":"new","availability":"in_stock","seller":"Brand Official","image":null,"list_price":null,"match_score":1.0,"fetched_at":"2026-07-19T03:24:14+00:00","id":"e353b45c581056fb"},{"watch_id":"salomon_x_ultra_4_gtx","source":"Backcountry","title":"Salomon X Ultra 4 GTX Hiking Shoes — Blue, US 10.5","url":"https://www.backcountry.com/salomon-x-ultra-4-gtx?v=us-10.5-blue","price":152.93,"currency":"USD","size":"US 10.5","color":"Blue","condition":"new","availability":"in_stock","seller":"Backcountry","image":null,"list_price":null,"match_score":1.0,"fetched_at":"2026-07-19T03:24:14+00:00","id":"61b60e0d38e76dc8"}],"history":[{"ts":"2026-07-15T12:00:00+00:00","price":139.62,"source":"Backcountry"},{"ts":"2026-07-15T12:00:00+00:00","price":137.22,"source":"Brand Official"},{"ts":"2026-07-15T12:00:00+00:00","price":139.92,"source":"Amazon"},{"ts":"2026-07-15T12:00:00+00:00","price":95.86,"source":"eBay"},{"ts":"2026-07-16T12:00:00+00:00","price":137.48,"source":"REI Co-op"},{"ts":"2026-07-16T12:00:00+00:00","price":137.98,"source":"Backcountry"},{"ts":"2026-07-16T12:00:00+00:00","price":114.95,"source":"Brand Official"},{"ts":"2026-07-16T12:00:00+00:00","price":147.31,"source":"Amazon"},{"ts":"2026-07-16T12:00:00+00:00","price":85.71,"source":"eBay"},{"ts":"2026-07-17T12:00:00+00:00","price":102.69,"source":"REI Co-op"},{"ts":"2026-07-17T12:00:00+00:00","price":143.83,"source":"Backcountry"},{"ts":"2026-07-17T12:00:00+00:00","price":160.49,"source":"Brand Official"},{"ts":"2026-07-17T12:00:00+00:00","price":125.22,"source":"Amazon"},{"ts":"2026-07-17T12:00:00+00:00","price":98.39,"source":"eBay"},{"ts":"2026-07-18T12:00:00+00:00","price":129.33,"source":"REI Co-op"},{"ts":"2026-07-18T12:00:00+00:00","price":143.18,"source":"Backcountry"},{"ts":"2026-07-18T12:00:00+00:00","price":99.57,"source":"Brand Official"},{"ts":"2026-07-18T12:00:00+00:00","price":126.05,"source":"Amazon"},{"ts":"2026-07-18T12:00:00+00:00","price":131.75,"source":"eBay"},{"ts":"2026-07-19T03:24:14+00:00","price":108.13,"source":"REI Co-op"},{"ts":"2026-07-19T03:24:14+00:00","price":152.93,"source":"Backcountry"},{"ts":"2026-07-19T03:24:14+00:00","price":140.17,"source":"Brand Official"},{"ts":"2026-07-19T03:24:14+00:00","price":126.1,"source":"Amazon"},{"ts":"2026-07-19T03:24:14+00:00","price":99.71,"source":"eBay"}]},{"id":"lowa_renegade_gtx_mid","brand":"Lowa","name":"Renegade GTX Mid Boots","category":"Hiking Boots","sizes":["US 10","US 11"],"colors":[],"target_price":200.0,"currency":"USD","keywords":["gore-tex","mid"],"upc":null,"mpn":null,"image":null,"active":true,"best_price":154.52,"best_source":"REI Co-op","offer_count":5,"offers":[{"watch_id":"lowa_renegade_gtx_mid","source":"REI Co-op","title":"Lowa Renegade GTX Mid Boots — Blue, US 10","url":"https://www.rei.com/product/lowa-renegade-gtx-mid?v=us-10-blue","price":154.52,"currency":"USD","size":"US 10","color":"Blue","condition":"new","availability":"in_stock","seller":"REI Co-op","image":null,"list_price":266.67,"match_score":1.0,"fetched_at":"2026-07-19T03:24:14+00:00","id":"edc41b8edcf5a783"},{"watch_id":"lowa_renegade_gtx_mid","source":"Backcountry","title":"Lowa Renegade GTX Mid Boots — Green, US 11","url":"https://www.backcountry.com/lowa-renegade-gtx-mid?v=us-11-green","price":170.66,"currency":"USD","size":"US 11","color":"Green","condition":"new","availability":"in_stock","seller":"Backcountry","image":null,"list_price":266.67,"match_score":1.0,"fetched_at":"2026-07-19T03:24:14+00:00","id":"1cf785e4451750e3"},{"watch_id":"lowa_renegade_gtx_mid","source":"eBay","title":"Lowa Renegade GTX Mid Boots — Green, US 10","url":"https://www.ebay.com/itm/lowa-renegade-gtx-mid?v=us-10-green","price":204.93,"currency":"USD","size":"US 10","color":"Green","condition":"used","availability":"in_stock","seller":"eBay","image":null,"list_price":266.67,"match_score":1.0,"fetched_at":"2026-07-19T03:24:14+00:00","id":"6be339908bba6d6d"},{"watch_id":"lowa_renegade_gtx_mid","source":"Amazon","title":"Lowa Renegade GTX Mid Boots — Green, US 10","url":"https://www.amazon.com/dp/lowa-renegade-gtx-mid?v=us-10-green","price":265.26,"currency":"USD","size":"US 10","color":"Green","condition":"new","availability":"in_stock","seller":"Amazon","image":null,"list_price":null,"match_score":1.0,"fetched_at":"2026-07-19T03:24:14+00:00","id":"517d1dac4bb7f0f9"},{"watch_id":"lowa_renegade_gtx_mid","source":"Brand Official","title":"Lowa Renegade GTX Mid Boots — Green, US 10","url":"https://example-brand.com/shop/lowa-renegade-gtx-mid?v=us-10-green","price":297.31,"currency":"USD","size":"US 10","color":"Green","condition":"new","availability":"in_stock","seller":"Brand Official","image":null,"list_price":null,"match_score":1.0,"fetched_at":"2026-07-19T03:24:14+00:00","id":"b90e8028fff973b3"}],"history":[{"ts":"2026-07-15T12:00:00+00:00","price":179.2,"source":"Backcountry"},{"ts":"2026-07-15T12:00:00+00:00","price":212.79,"source":"Brand Official"},{"ts":"2026-07-15T12:00:00+00:00","price":268.05,"source":"Amazon"},{"ts":"2026-07-15T12:00:00+00:00","price":253.11,"source":"eBay"},{"ts":"2026-07-16T12:00:00+00:00","price":281.97,"source":"REI Co-op"},{"ts":"2026-07-16T12:00:00+00:00","price":188.55,"source":"Backcountry"},{"ts":"2026-07-16T12:00:00+00:00","price":249.61,"source":"Brand Official"},{"ts":"2026-07-16T12:00:00+00:00","price":206.06,"source":"Amazon"},{"ts":"2026-07-16T12:00:00+00:00","price":153.23,"source":"eBay"},{"ts":"2026-07-17T12:00:00+00:00","price":258.96,"source":"REI Co-op"},{"ts":"2026-07-17T12:00:00+00:00","price":189.05,"source":"Backcountry"},{"ts":"2026-07-17T12:00:00+00:00","price":239.49,"source":"Brand Official"},{"ts":"2026-07-17T12:00:00+00:00","price":179.66,"source":"Amazon"},{"ts":"2026-07-17T12:00:00+00:00","price":223.81,"source":"eBay"},{"ts":"2026-07-18T12:00:00+00:00","price":187.67,"source":"REI Co-op"},{"ts":"2026-07-18T12:00:00+00:00","price":182.25,"source":"Backcountry"},{"ts":"2026-07-18T12:00:00+00:00","price":256.39,"source":"Brand Official"},{"ts":"2026-07-18T12:00:00+00:00","price":176.65,"source":"Amazon"},{"ts":"2026-07-18T12:00:00+00:00","price":159.43,"source":"eBay"},{"ts":"2026-07-19T03:24:14+00:00","price":154.52,"source":"REI Co-op"},{"ts":"2026-07-19T03:24:14+00:00","price":170.66,"source":"Backcountry"},{"ts":"2026-07-19T03:24:14+00:00","price":297.31,"source":"Brand Official"},{"ts":"2026-07-19T03:24:14+00:00","price":265.26,"source":"Amazon"},{"ts":"2026-07-19T03:24:14+00:00","price":204.93,"source":"eBay"}]},{"id":"scarpa_zodiac_tech_gtx","brand":"Scarpa","name":"Zodiac Tech GTX Mountaineering Boots","category":"Mountaineering Boots","sizes":["EU 43","EU 44"],"colors":[],"target_price":340.0,"currency":"USD","keywords":["gore-tex","alpine"],"upc":null,"mpn":null,"image":null,"active":true,"best_price":360.18,"best_source":"eBay","offer_count":5,"offers":[{"watch_id":"scarpa_zodiac_tech_gtx","source":"eBay","title":"Scarpa Zodiac Tech GTX Mountaineering Boots — Green, EU 44","url":"https://www.ebay.com/itm/scarpa-zodiac-tech-gtx?v=eu-44-green","price":360.18,"currency":"USD","size":"EU 44","color":"Green","condition":"used","availability":"in_stock","seller":"eBay","image":null,"list_price":null,"match_score":1.0,"fetched_at":"2026-07-19T03:24:14+00:00","id":"956bfd0d774b1535"},{"watch_id":"scarpa_zodiac_tech_gtx","source":"Amazon","title":"Scarpa Zodiac Tech GTX Mountaineering Boots — Black, EU 43","url":"https://www.amazon.com/dp/scarpa-zodiac-tech-gtx?v=eu-43-black","price":365.96,"currency":"USD","size":"EU 43","color":"Black","condition":"new","availability":"in_stock","seller":"Amazon","image":null,"list_price":453.33,"match_score":1.0,"fetched_at":"2026-07-19T03:24:14+00:00","id":"9a23414b496b5241"},{"watch_id":"scarpa_zodiac_tech_gtx","source":"Backcountry","title":"Scarpa Zodiac Tech GTX Mountaineering Boots — Blue, EU 44","url":"https://www.backcountry.com/scarpa-zodiac-tech-gtx?v=eu-44-blue","price":421.8,"currency":"USD","size":"EU 44","color":"Blue","condition":"new","availability":"in_stock","seller":"Backcountry","image":null,"list_price":null,"match_score":1.0,"fetched_at":"2026-07-19T03:24:14+00:00","id":"d43b9e9689ca092a"},{"watch_id":"scarpa_zodiac_tech_gtx","source":"REI Co-op","title":"Scarpa Zodiac Tech GTX Mountaineering Boots — Blue, EU 43","url":"https://www.rei.com/product/scarpa-zodiac-tech-gtx?v=eu-43-blue","price":438.35,"currency":"USD","size":"EU 43","color":"Blue","condition":"new","availability":"in_stock","seller":"REI Co-op","image":null,"list_price":null,"match_score":1.0,"fetched_at":"2026-07-19T03:24:14+00:00","id":"f3b9a454b3a7b9e1"},{"watch_id":"scarpa_zodiac_tech_gtx","source":"Brand Official","title":"Scarpa Zodiac Tech GTX Mountaineering Boots — Blue, EU 44","url":"https://example-brand.com/shop/scarpa-zodiac-tech-gtx?v=eu-44-blue","price":500.94,"currency":"USD","size":"EU 44","color":"Blue","condition":"new","availability":"in_stock","seller":"Brand Official","image":null,"list_price":null,"match_score":1.0,"fetched_at":"2026-07-19T03:24:14+00:00","id":"3bc6114231c5a218"}],"history":[{"ts":"2026-07-15T12:00:00+00:00","price":430.9,"source":"Backcountry"},{"ts":"2026-07-15T12:00:00+00:00","price":298.64,"source":"Brand Official"},{"ts":"2026-07-15T12:00:00+00:00","price":466.74,"source":"Amazon"},{"ts":"2026-07-15T12:00:00+00:00","price":347.32,"source":"eBay"},{"ts":"2026-07-16T12:00:00+00:00","price":345.77,"source":"REI Co-op"},{"ts":"2026-07-16T12:00:00+00:00","price":419.57,"source":"Backcountry"},{"ts":"2026-07-16T12:00:00+00:00","price":440.51,"source":"Brand Official"},{"ts":"2026-07-16T12:00:00+00:00","price":468.18,"source":"Amazon"},{"ts":"2026-07-16T12:00:00+00:00","price":373.03,"source":"eBay"},{"ts":"2026-07-17T12:00:00+00:00","price":412.06,"source":"REI Co-op"},{"ts":"2026-07-17T12:00:00+00:00","price":435.26,"source":"Backcountry"},{"ts":"2026-07-17T12:00:00+00:00","price":335.4,"source":"Brand Official"},{"ts":"2026-07-17T12:00:00+00:00","price":345.61,"source":"Amazon"},{"ts":"2026-07-17T12:00:00+00:00","price":371.09,"source":"eBay"},{"ts":"2026-07-18T12:00:00+00:00","price":427.01,"source":"REI Co-op"},{"ts":"2026-07-18T12:00:00+00:00","price":483.41,"source":"Backcountry"},{"ts":"2026-07-18T12:00:00+00:00","price":408.05,"source":"Brand Official"},{"ts":"2026-07-18T12:00:00+00:00","price":331.67,"source":"Amazon"},{"ts":"2026-07-18T12:00:00+00:00","price":257.37,"source":"eBay"},{"ts":"2026-07-19T03:24:14+00:00","price":438.35,"source":"REI Co-op"},{"ts":"2026-07-19T03:24:14+00:00","price":421.8,"source":"Backcountry"},{"ts":"2026-07-19T03:24:14+00:00","price":500.94,"source":"Brand Official"},{"ts":"2026-07-19T03:24:14+00:00","price":365.96,"source":"Amazon"},{"ts":"2026-07-19T03:24:14+00:00","price":360.18,"source":"eBay"}]},{"id":"exped_megamat_10","brand":"Exped","name":"MegaMat 10 Sleeping Pad","category":"Sleeping Pad","sizes":["LW"],"colors":[],"target_price":200.0,"currency":"USD","keywords":["insulated","self-inflating"],"upc":null,"mpn":null,"image":null,"active":true,"best_price":154.97,"best_source":"Backcountry","offer_count":5,"offers":[{"watch_id":"exped_megamat_10","source":"Backcountry","title":"Exped MegaMat 10 Sleeping Pad — Black, LW","url":"https://www.backcountry.com/exped-megamat-10?v=lw-black","price":154.97,"currency":"USD","size":"LW","color":"Black","condition":"new","availability":"in_stock","seller":"Backcountry","image":null,"list_price":266.67,"match_score":1.0,"fetched_at":"2026-07-19T03:24:14+00:00","id":"4553fda2d5f6a27a"},{"watch_id":"exped_megamat_10","source":"REI Co-op","title":"Exped MegaMat 10 Sleeping Pad — Blue, LW","url":"https://www.rei.com/product/exped-megamat-10?v=lw-blue","price":175.74,"currency":"USD","size":"LW","color":"Blue","condition":"new","availability":"in_stock","seller":"REI Co-op","image":null,"list_price":266.67,"match_score":1.0,"fetched_at":"2026-07-19T03:24:14+00:00","id":"6d36082169c9294b"},{"watch_id":"exped_megamat_10","source":"Brand Official","title":"Exped MegaMat 10 Sleeping Pad — Black, LW","url":"https://example-brand.com/shop/exped-megamat-10?v=lw-black","price":182.22,"currency":"USD","size":"LW","color":"Black","condition":"new","availability":"in_stock","seller":"Brand Official","image":null,"list_price":266.67,"match_score":1.0,"fetched_at":"2026-07-19T03:24:14+00:00","id":"4e586205c4185d85"},{"watch_id":"exped_megamat_10","source":"eBay","title":"Exped MegaMat 10 Sleeping Pad — Blue, LW","url":"https://www.ebay.com/itm/exped-megamat-10?v=lw-blue","price":197.97,"currency":"USD","size":"LW","color":"Blue","condition":"used","availability":"in_stock","seller":"eBay","image":null,"list_price":266.67,"match_score":1.0,"fetched_at":"2026-07-19T03:24:14+00:00","id":"5ab550d6955b5a96"},{"watch_id":"exped_megamat_10","source":"Amazon","title":"Exped MegaMat 10 Sleeping Pad — Blue, LW","url":"https://www.amazon.com/dp/exped-megamat-10?v=lw-blue","price":243.75,"currency":"USD","size":"LW","color":"Blue","condition":"new","availability":"in_stock","seller":"Amazon","image":null,"list_price":null,"match_score":1.0,"fetched_at":"2026-07-19T03:24:14+00:00","id":"b078b8128d23714d"}],"history":[{"ts":"2026-07-15T12:00:00+00:00","price":173.4,"source":"Backcountry"},{"ts":"2026-07-15T12:00:00+00:00","price":248.91,"source":"Brand Official"},{"ts":"2026-07-15T12:00:00+00:00","price":192.26,"source":"Amazon"},{"ts":"2026-07-15T12:00:00+00:00","price":200.61,"source":"eBay"},{"ts":"2026-07-16T12:00:00+00:00","price":264.7,"source":"REI Co-op"},{"ts":"2026-07-16T12:00:00+00:00","price":283.32,"source":"Backcountry"},{"ts":"2026-07-16T12:00:00+00:00","price":189.2,"source":"Brand Official"},{"ts":"2026-07-16T12:00:00+00:00","price":275.98,"source":"Amazon"},{"ts":"2026-07-16T12:00:00+00:00","price":236.94,"source":"eBay"},{"ts":"2026-07-17T12:00:00+00:00","price":282.89,"source":"REI Co-op"},{"ts":"2026-07-17T12:00:00+00:00","price":156.24,"source":"Backcountry"},{"ts":"2026-07-17T12:00:00+00:00","price":175.58,"source":"Brand Official"},{"ts":"2026-07-17T12:00:00+00:00","price":152.7,"source":"Amazon"},{"ts":"2026-07-17T12:00:00+00:00","price":230.67,"source":"eBay"},{"ts":"2026-07-18T12:00:00+00:00","price":254.15,"source":"REI Co-op"},{"ts":"2026-07-18T12:00:00+00:00","price":222.06,"source":"Backcountry"},{"ts":"2026-07-18T12:00:00+00:00","price":259.43,"source":"Brand Official"},{"ts":"2026-07-18T12:00:00+00:00","price":236.03,"source":"Amazon"},{"ts":"2026-07-18T12:00:00+00:00","price":214.5,"source":"eBay"},{"ts":"2026-07-19T03:24:14+00:00","price":175.74,"source":"REI Co-op"},{"ts":"2026-07-19T03:24:14+00:00","price":154.97,"source":"Backcountry"},{"ts":"2026-07-19T03:24:14+00:00","price":182.22,"source":"Brand Official"},{"ts":"2026-07-19T03:24:14+00:00","price":243.75,"source":"Amazon"},{"ts":"2026-07-19T03:24:14+00:00","price":197.97,"source":"eBay"}]}]},"deals":{"deals":[{"watch_id":"arcteryx_beta_ar_jacket","brand":"Arc'teryx","product_name":"Beta AR Jacket","source":"Brand Official","url":"https://example-brand.com/shop/arcteryx-beta-ar-jacket?v=l-blue","price":432.65,"currency":"USD","size":"L","color":"blue","condition":"new","reason":"At/below target (432.65 ≤ 449.00); 28% below list price","discount_pct":27.7,"reference_price":598.67,"target_price":449.0,"detected_at":"2026-07-19T03:24:14+00:00","key":"717a82891d501efd"},{"watch_id":"patagonia_nano_puff","brand":"Patagonia","product_name":"Nano Puff Jacket","source":"eBay","url":"https://www.ebay.com/itm/patagonia-nano-puff?v=l-green","price":135.95,"currency":"USD","size":"L","color":"Green","condition":"used","reason":"At/below target (135.95 ≤ 149.00); 32% below list price","discount_pct":31.6,"reference_price":198.67,"target_price":149.0,"detected_at":"2026-07-19T03:24:14+00:00","key":"192992318c6675c5"},{"watch_id":"blackdiamond_distance_carbon_z","brand":"Black Diamond","product_name":"Distance Carbon Z Trekking Poles","source":"REI Co-op","url":"https://www.rei.com/product/blackdiamond-distance-carbon-z?v=120-green","price":140.62,"currency":"USD","size":"120","color":"Green","condition":"new","reason":"At/below target (140.62 ≤ 150.00); 30% below list price","discount_pct":29.7,"reference_price":200.0,"target_price":150.0,"detected_at":"2026-07-19T03:24:14+00:00","key":"7053e8763edbf7c0"},{"watch_id":"deuter_aircontact_core_60_10","brand":"Deuter","product_name":"Aircontact Core 60+10 Backpack","source":"Backcountry","url":"https://www.backcountry.com/deuter-aircontact-core-60-10?v=70l-blue","price":167.89,"currency":"USD","size":"70L","color":"Blue","condition":"new","reason":"At/below target (167.89 ≤ 200.00); 37% below list price","discount_pct":37.0,"reference_price":266.67,"target_price":200.0,"detected_at":"2026-07-19T03:24:14+00:00","key":"899500a1d19cc54a"},{"watch_id":"deuter_aircontact_core_60_10","brand":"Deuter","product_name":"Aircontact Core 60+10 Backpack","source":"Brand Official","url":"https://example-brand.com/shop/deuter-aircontact-core-60-10?v=70l-green","price":207.12,"currency":"USD","size":"70L","color":"Green","condition":"new","reason":"22% below list price","discount_pct":22.3,"reference_price":266.67,"target_price":200.0,"detected_at":"2026-07-19T03:24:14+00:00","key":"4f625c2000baaa0d"},{"watch_id":"deuter_aircontact_core_60_10","brand":"Deuter","product_name":"Aircontact Core 60+10 Backpack","source":"Amazon","url":"https://www.amazon.com/dp/deuter-aircontact-core-60-10?v=70l-black","price":160.75,"currency":"USD","size":"70L","color":"Black","condition":"new","reason":"At/below target (160.75 ≤ 200.00); 40% below list price","discount_pct":39.7,"reference_price":266.67,"target_price":200.0,"detected_at":"2026-07-19T03:24:14+00:00","key":"d4f6e86f5cf85d97"},{"watch_id":"outdoor_research_helium_rain","brand":"Outdoor Research","product_name":"Helium Rain Jacket","source":"eBay","url":"https://www.ebay.com/itm/outdoor-research-helium-rain?v=l-black","price":118.06,"currency":"USD","size":"L","color":"Black","condition":"used","reason":"At/below target (118.06 ≤ 130.00); 32% below list price","discount_pct":31.9,"reference_price":173.33,"target_price":130.0,"detected_at":"2026-07-19T03:24:14+00:00","key":"b915fb7418565822"},{"watch_id":"mammut_ophir_harness","brand":"Mammut","product_name":"Ophir 3 Slide Climbing Harness","source":"Amazon","url":"https://www.amazon.com/dp/mammut-ophir-harness?v=m-green","price":60.76,"currency":"USD","size":"M","color":"Green","condition":"new","reason":"24% below list price","discount_pct":24.1,"reference_price":80.0,"target_price":60.0,"detected_at":"2026-07-19T03:24:14+00:00","key":"04ce1cf00617919e"},{"watch_id":"mammut_ophir_harness","brand":"Mammut","product_name":"Ophir 3 Slide Climbing Harness","source":"eBay","url":"https://www.ebay.com/itm/mammut-ophir-harness?v=m-blue","price":43.74,"currency":"USD","size":"M","color":"Blue","condition":"used","reason":"At/below target (43.74 ≤ 60.00); 45% below list price","discount_pct":45.3,"reference_price":80.0,"target_price":60.0,"detected_at":"2026-07-19T03:24:14+00:00","key":"8940328f347aacb0"},{"watch_id":"mountainhardwear_ghost_whisperer","brand":"Mountain Hardwear","product_name":"Ghost Whisperer 2 Hoody","source":"Backcountry","url":"https://www.backcountry.com/mountainhardwear-ghost-whisperer?v=m-black","price":261.65,"currency":"USD","size":"M","color":"black","condition":"new","reason":"At/below target (261.65 ≤ 300.00); 35% below list price","discount_pct":34.6,"reference_price":400.0,"target_price":300.0,"detected_at":"2026-07-19T03:24:14+00:00","key":"8ca0b835520c41ae"},{"watch_id":"marmot_precip_eco","brand":"Marmot","product_name":"PreCip Eco Jacket","source":"REI Co-op","url":"https://www.rei.com/product/marmot-precip-eco?v=l-green","price":61.74,"currency":"USD","size":"L","color":"Green","condition":"new","reason":"At/below target (61.74 ≤ 75.00); 38% below list price","discount_pct":38.3,"reference_price":100.0,"target_price":75.0,"detected_at":"2026-07-19T03:24:14+00:00","key":"aaee1e57f699a01d"},{"watch_id":"marmot_precip_eco","brand":"Marmot","product_name":"PreCip Eco Jacket","source":"Backcountry","url":"https://www.backcountry.com/marmot-precip-eco?v=l-black","price":71.97,"currency":"USD","size":"L","color":"Black","condition":"new","reason":"At/below target (71.97 ≤ 75.00); 28% below list price","discount_pct":28.0,"reference_price":100.0,"target_price":75.0,"detected_at":"2026-07-19T03:24:14+00:00","key":"e9a88a7154c96e13"},{"watch_id":"rab_microlight_alpine","brand":"Rab","product_name":"Microlight Alpine Down Jacket","source":"REI Co-op","url":"https://www.rei.com/product/rab-microlight-alpine?v=l-green","price":208.72,"currency":"USD","size":"L","color":"Green","condition":"new","reason":"22% below list price","discount_pct":21.7,"reference_price":266.67,"target_price":200.0,"detected_at":"2026-07-19T03:24:14+00:00","key":"2b6c0df3ca245723"},{"watch_id":"rab_microlight_alpine","brand":"Rab","product_name":"Microlight Alpine Down Jacket","source":"Brand Official","url":"https://example-brand.com/shop/rab-microlight-alpine?v=l-blue","price":193.85,"currency":"USD","size":"L","color":"Blue","condition":"new","reason":"At/below target (193.85 ≤ 200.00); 27% below list price","discount_pct":27.3,"reference_price":266.67,"target_price":200.0,"detected_at":"2026-07-19T03:24:14+00:00","key":"ca7c5999d5c2a9e8"},{"watch_id":"rab_microlight_alpine","brand":"Rab","product_name":"Microlight Alpine Down Jacket","source":"Amazon","url":"https://www.amazon.com/dp/rab-microlight-alpine?v=m-blue","price":162.97,"currency":"USD","size":"M","color":"Blue","condition":"new","reason":"At/below target (162.97 ≤ 200.00); 39% below list price","discount_pct":38.9,"reference_price":266.67,"target_price":200.0,"detected_at":"2026-07-19T03:24:14+00:00","key":"f1ec5eb9699b9301"},{"watch_id":"rab_microlight_alpine","brand":"Rab","product_name":"Microlight Alpine Down Jacket","source":"eBay","url":"https://www.ebay.com/itm/rab-microlight-alpine?v=l-black","price":156.54,"currency":"USD","size":"L","color":"Black","condition":"used","reason":"At/below target (156.54 ≤ 200.00); 41% below list price","discount_pct":41.3,"reference_price":266.67,"target_price":200.0,"detected_at":"2026-07-19T03:24:14+00:00","key":"f541c3c92cd3b1cf"},{"watch_id":"fjallraven_kanken","brand":"Fjällräven","product_name":"Kånken Backpack","source":"Backcountry","url":"https://www.backcountry.com/fjallraven-kanken?v=16l-black","price":61.96,"currency":"USD","size":"16L","color":"Black","condition":"new","reason":"At/below target (61.96 ≤ 65.00); 28% below list price","discount_pct":28.5,"reference_price":86.67,"target_price":65.0,"detected_at":"2026-07-19T03:24:14+00:00","key":"6cb7c4f43a3988b5"},{"watch_id":"fjallraven_kanken","brand":"Fjällräven","product_name":"Kånken Backpack","source":"Amazon","url":"https://www.amazon.com/dp/fjallraven-kanken?v=16l-blue","price":61.06,"currency":"USD","size":"16L","color":"Blue","condition":"new","reason":"At/below target (61.06 ≤ 65.00); 30% below list price","discount_pct":29.5,"reference_price":86.67,"target_price":65.0,"detected_at":"2026-07-19T03:24:14+00:00","key":"f4e8e3395a5486bd"},{"watch_id":"fjallraven_kanken","brand":"Fjällräven","product_name":"Kånken Backpack","source":"eBay","url":"https://www.ebay.com/itm/fjallraven-kanken?v=16l-blue","price":51.54,"currency":"USD","size":"16L","color":"Blue","condition":"used","reason":"At/below target (51.54 ≤ 65.00); 40% below list price","discount_pct":40.5,"reference_price":86.67,"target_price":65.0,"detected_at":"2026-07-19T03:24:14+00:00","key":"aeb1211b2b5b030a"},{"watch_id":"norrona_lofoten_goretex_pro","brand":"Norrøna","product_name":"Lofoten Gore-Tex Pro Jacket","source":"REI Co-op","url":"https://www.rei.com/product/norrona-lofoten-goretex-pro?v=l-blue","price":492.8,"currency":"USD","size":"L","color":"Blue","condition":"new","reason":"At/below target (492.80 ≤ 550.00); 33% below list price","discount_pct":32.8,"reference_price":733.33,"target_price":550.0,"detected_at":"2026-07-19T03:24:14+00:00","key":"f04e639bd1ea72c4"},{"watch_id":"norrona_lofoten_goretex_pro","brand":"Norrøna","product_name":"Lofoten Gore-Tex Pro Jacket","source":"Amazon","url":"https://www.amazon.com/dp/norrona-lofoten-goretex-pro?v=m-blue","price":602.19,"currency":"USD","size":"M","color":"Blue","condition":"new","reason":"18% below list price","discount_pct":17.9,"reference_price":733.33,"target_price":550.0,"detected_at":"2026-07-19T03:24:14+00:00","key":"2f52e09daaaec3d9"},{"watch_id":"petzl_actik_core","brand":"Petzl","product_name":"Actik Core Headlamp","source":"REI Co-op","url":"https://www.rei.com/product/petzl-actik-core?v=xl-black","price":52.03,"currency":"USD","size":"XL","color":"Black","condition":"new","reason":"At/below target (52.03 ≤ 55.00); 29% below list price","discount_pct":29.0,"reference_price":73.33,"target_price":55.0,"detected_at":"2026-07-19T03:24:14+00:00","key":"7cf0949823e599d3"},{"watch_id":"petzl_actik_core","brand":"Petzl","product_name":"Actik Core Headlamp","source":"Backcountry","url":"https://www.backcountry.com/petzl-actik-core?v=xl-green","price":51.19,"currency":"USD","size":"XL","color":"Green","condition":"new","reason":"At/below target (51.19 ≤ 55.00); 30% below list price","discount_pct":30.2,"reference_price":73.33,"target_price":55.0,"detected_at":"2026-07-19T03:24:14+00:00","key":"df56fa1c370dadca"},{"watch_id":"petzl_actik_core","brand":"Petzl","product_name":"Actik Core Headlamp","source":"Amazon","url":"https://www.amazon.com/dp/petzl-actik-core?v=m-blue","price":53.88,"currency":"USD","size":"M","color":"Blue","condition":"new","reason":"At/below target (53.88 ≤ 55.00); 26% below list price","discount_pct":26.5,"reference_price":73.33,"target_price":55.0,"detected_at":"2026-07-19T03:24:14+00:00","key":"c1715924dcd7f33b"},{"watch_id":"petzl_actik_core","brand":"Petzl","product_name":"Actik Core Headlamp","source":"eBay","url":"https://www.ebay.com/itm/petzl-actik-core?v=m-green","price":42.21,"currency":"USD","size":"M","color":"Green","condition":"used","reason":"At/below target (42.21 ≤ 55.00); 42% below list price","discount_pct":42.4,"reference_price":73.33,"target_price":55.0,"detected_at":"2026-07-19T03:24:14+00:00","key":"ad90b8517c1f0763"},{"watch_id":"osprey_atmos_ag_65","brand":"Osprey","product_name":"Atmos AG 65 Backpack","source":"REI Co-op","url":"https://www.rei.com/product/osprey-atmos-ag-65?v=65l-blue","price":182.13,"currency":"USD","size":"65L","color":"Blue","condition":"new","reason":"At/below target (182.13 ≤ 220.00); 38% below list price","discount_pct":37.9,"reference_price":293.33,"target_price":220.0,"detected_at":"2026-07-19T03:24:14+00:00","key":"117d5ce4a9337eaa"},{"watch_id":"osprey_atmos_ag_65","brand":"Osprey","product_name":"Atmos AG 65 Backpack","source":"eBay","url":"https://www.ebay.com/itm/osprey-atmos-ag-65?v=65l-black","price":157.02,"currency":"USD","size":"65L","color":"Black","condition":"used","reason":"At/below target (157.02 ≤ 220.00); 46% below list price","discount_pct":46.5,"reference_price":293.33,"target_price":220.0,"detected_at":"2026-07-19T03:24:14+00:00","key":"a67ba48328c89f47"},{"watch_id":"gregory_baltoro_65","brand":"Gregory","product_name":"Baltoro 65 Backpack","source":"REI Co-op","url":"https://www.rei.com/product/gregory-baltoro-65?v=65l-black","price":232.98,"currency":"USD","size":"65L","color":"Black","condition":"new","reason":"At/below target (232.98 ≤ 250.00); 30% below list price","discount_pct":30.1,"reference_price":333.33,"target_price":250.0,"detected_at":"2026-07-19T03:24:14+00:00","key":"10a0204044560828"},{"watch_id":"gregory_baltoro_65","brand":"Gregory","product_name":"Baltoro 65 Backpack","source":"Backcountry","url":"https://www.backcountry.com/gregory-baltoro-65?v=65l-green","price":217.0,"currency":"USD","size":"65L","color":"Green","condition":"new","reason":"At/below target (217.00 ≤ 250.00); 35% below list price","discount_pct":34.9,"reference_price":333.33,"target_price":250.0,"detected_at":"2026-07-19T03:24:14+00:00","key":"62fb284cc341a019"},{"watch_id":"gregory_baltoro_65","brand":"Gregory","product_name":"Baltoro 65 Backpack","source":"Brand Official","url":"https://example-brand.com/shop/gregory-baltoro-65?v=65l-green","price":218.84,"currency":"USD","size":"65L","color":"Green","condition":"new","reason":"At/below target (218.84 ≤ 250.00); 34% below list price","discount_pct":34.3,"reference_price":333.33,"target_price":250.0,"detected_at":"2026-07-19T03:24:14+00:00","key":"0e56eaa6ce7129e6"},{"watch_id":"salomon_x_ultra_4_gtx","brand":"Salomon","product_name":"X Ultra 4 GTX Hiking Shoes","source":"REI Co-op","url":"https://www.rei.com/product/salomon-x-ultra-4-gtx?v=us-10-green","price":108.13,"currency":"USD","size":"US 10","color":"Green","condition":"new","reason":"At/below target (108.13 ≤ 110.00); 26% below list price","discount_pct":26.3,"reference_price":146.67,"target_price":110.0,"detected_at":"2026-07-19T03:24:14+00:00","key":"295affd49e1a0500"},{"watch_id":"salomon_x_ultra_4_gtx","brand":"Salomon","product_name":"X Ultra 4 GTX Hiking Shoes","source":"eBay","url":"https://www.ebay.com/itm/salomon-x-ultra-4-gtx?v=us-10.5-black","price":99.71,"currency":"USD","size":"US 10.5","color":"Black","condition":"used","reason":"At/below target (99.71 ≤ 110.00); 32% below list price","discount_pct":32.0,"reference_price":146.67,"target_price":110.0,"detected_at":"2026-07-19T03:24:14+00:00","key":"95c830e1958d6d7b"},{"watch_id":"lowa_renegade_gtx_mid","brand":"Lowa","product_name":"Renegade GTX Mid Boots","source":"REI Co-op","url":"https://www.rei.com/product/lowa-renegade-gtx-mid?v=us-10-blue","price":154.52,"currency":"USD","size":"US 10","color":"Blue","condition":"new","reason":"At/below target (154.52 ≤ 200.00); 42% below list price","discount_pct":42.1,"reference_price":266.67,"target_price":200.0,"detected_at":"2026-07-19T03:24:14+00:00","key":"d98a8910a8e90769"},{"watch_id":"lowa_renegade_gtx_mid","brand":"Lowa","product_name":"Renegade GTX Mid Boots","source":"Backcountry","url":"https://www.backcountry.com/lowa-renegade-gtx-mid?v=us-11-green","price":170.66,"currency":"USD","size":"US 11","color":"Green","condition":"new","reason":"At/below target (170.66 ≤ 200.00); 36% below list price","discount_pct":36.0,"reference_price":266.67,"target_price":200.0,"detected_at":"2026-07-19T03:24:14+00:00","key":"023c7f76145587be"},{"watch_id":"lowa_renegade_gtx_mid","brand":"Lowa","product_name":"Renegade GTX Mid Boots","source":"eBay","url":"https://www.ebay.com/itm/lowa-renegade-gtx-mid?v=us-10-green","price":204.93,"currency":"USD","size":"US 10","color":"Green","condition":"used","reason":"23% below list price","discount_pct":23.2,"reference_price":266.67,"target_price":200.0,"detected_at":"2026-07-19T03:24:14+00:00","key":"4990f6ceb69d4069"},{"watch_id":"scarpa_zodiac_tech_gtx","brand":"Scarpa","product_name":"Zodiac Tech GTX Mountaineering Boots","source":"Amazon","url":"https://www.amazon.com/dp/scarpa-zodiac-tech-gtx?v=eu-43-black","price":365.96,"currency":"USD","size":"EU 43","color":"Black","condition":"new","reason":"19% below list price","discount_pct":19.3,"reference_price":453.33,"target_price":340.0,"detected_at":"2026-07-19T03:24:14+00:00","key":"9fe08445a1262d93"},{"watch_id":"exped_megamat_10","brand":"Exped","product_name":"MegaMat 10 Sleeping Pad","source":"REI Co-op","url":"https://www.rei.com/product/exped-megamat-10?v=lw-blue","price":175.74,"currency":"USD","size":"LW","color":"Blue","condition":"new","reason":"At/below target (175.74 ≤ 200.00); 34% below list price","discount_pct":34.1,"reference_price":266.67,"target_price":200.0,"detected_at":"2026-07-19T03:24:14+00:00","key":"2793b9def3f09d5f"},{"watch_id":"exped_megamat_10","brand":"Exped","product_name":"MegaMat 10 Sleeping Pad","source":"Backcountry","url":"https://www.backcountry.com/exped-megamat-10?v=lw-black","price":154.97,"currency":"USD","size":"LW","color":"Black","condition":"new","reason":"At/below target (154.97 ≤ 200.00); 42% below list price","discount_pct":41.9,"reference_price":266.67,"target_price":200.0,"detected_at":"2026-07-19T03:24:14+00:00","key":"d81180e51b1a8b62"},{"watch_id":"exped_megamat_10","brand":"Exped","product_name":"MegaMat 10 Sleeping Pad","source":"Brand Official","url":"https://example-brand.com/shop/exped-megamat-10?v=lw-black","price":182.22,"currency":"USD","size":"LW","color":"Black","condition":"new","reason":"At/below target (182.22 ≤ 200.00); 32% below list price","discount_pct":31.7,"reference_price":266.67,"target_price":200.0,"detected_at":"2026-07-19T03:24:14+00:00","key":"5f514b4b9d8bd52a"},{"watch_id":"exped_megamat_10","brand":"Exped","product_name":"MegaMat 10 Sleeping Pad","source":"eBay","url":"https://www.ebay.com/itm/exped-megamat-10?v=lw-blue","price":197.97,"currency":"USD","size":"LW","color":"Blue","condition":"used","reason":"At/below target (197.97 ≤ 200.00); 26% below list price","discount_pct":25.8,"reference_price":266.67,"target_price":200.0,"detected_at":"2026-07-19T03:24:14+00:00","key":"97be20770a4c0f2b"}]}};</script>
+<script>
+/* Elite Brand Engine — front-end. Zero dependencies; reads the JSON snapshot
+   the Python engine writes to ./data/. Search-first: predictive suggestions +
+   an exclusive brand filter that scopes the whole dataset to one brand. */
+
+(() => {
+  "use strict";
+
+  const state = {
+    meta: null,
+    products: [],
+    deals: [],
+    byId: new Map(),
+    view: "deals",
+    search: "",
+    brand: null,        // exclusive brand filter (null = all brands)
+  };
+
+  const $ = (sel, root = document) => root.querySelector(sel);
+  const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
+  const deburr = (s) =>
+    (s || "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+
+  const money = (n, cur) => {
+    if (n == null) return "—";
+    try {
+      return new Intl.NumberFormat("en-US", { style: "currency", currency: cur || (state.meta && state.meta.currency) || "USD" }).format(n);
+    } catch { return `$${Number(n).toFixed(2)}`; }
+  };
+
+  function brandArt(brand) {
+    let h = 0;
+    for (const c of brand) h = (h * 31 + c.charCodeAt(0)) % 360;
+    const h2 = (h + 40) % 360;
+    return `linear-gradient(135deg, hsl(${h} 45% 24%), hsl(${h2} 50% 16%)),
+            radial-gradient(120px 60px at 78% 120%, hsl(${h} 55% 40% / .5), transparent)`;
+  }
+
+  // --- Data load ---------------------------------------------------------- //
+  async function load() {
+    try {
+      const meta = window.__DATA__.meta;
+      const products = window.__DATA__.products;
+      const deals = window.__DATA__.deals;
+      state.meta = meta;
+      state.products = products.products || [];
+      state.deals = deals.deals || [];
+      state.byId = new Map(state.products.map((p) => [p.id, p]));
+      hydrateChrome();
+      buildBrandMenu();
+      render();
+    } catch (err) {
+      $("#grid").innerHTML =
+        `<div class="empty">No se pudieron cargar los datos (${err}).<br>
+         Ejecutá <code>python -m engine.run</code> para generar <code>web/data/*.json</code>.</div>`;
+    }
+  }
+
+  function hydrateChrome() {
+    const m = state.meta || {};
+    if (m.site) {
+      $("#site-title").textContent = m.site.title || "Elite Brand Engine";
+      $("#site-tagline").textContent = m.site.tagline || "";
+    }
+    $("#demo-badge").hidden = !m.demo;
+    if (m.generated_at) {
+      const d = new Date(m.generated_at);
+      $("#updated").textContent = "Actualizado " + d.toLocaleString("es", { dateStyle: "medium", timeStyle: "short" });
+    }
+    $("#deals-count").textContent = m.deal_count ?? state.deals.length;
+    const srcs = (m.sources || []);
+    $("#foot-stats").textContent =
+      `${m.product_count ?? state.products.length} productos · ${m.offer_count ?? "—"} precios comparados · ${srcs.filter((s) => s.available).length} tiendas`;
+    $("#sources").innerHTML = srcs
+      .map((s) => `<span class="source-pill ${s.available ? "" : "off"}">${s.name}${s.available ? ` · ${s.offers}` : " · off"}</span>`)
+      .join("") || "—";
+  }
+
+  // --- Brand filter (exclusive) ------------------------------------------- //
+  function buildBrandMenu() {
+    const counts = new Map();
+    for (const p of state.products) counts.set(p.brand, (counts.get(p.brand) || 0) + 1);
+    const brands = Array.from(counts.keys()).sort();
+    const menu = $("#brand-menu");
+    const item = (label, brand, n) =>
+      `<li role="option" data-brand="${brand === null ? "" : escapeAttr(brand)}" class="${state.brand === brand ? "is-active" : ""}">
+        <span>${escapeHtml(label)}</span>${n != null ? `<span class="n">${n}</span>` : ""}</li>`;
+    menu.innerHTML =
+      item("Todas las marcas", null, state.products.length) +
+      brands.map((b) => item(b, b, counts.get(b))).join("");
+    $$("#brand-menu li").forEach((li) =>
+      li.addEventListener("click", () => selectBrand(li.dataset.brand || null)));
+  }
+
+  function selectBrand(brand) {
+    state.brand = brand;
+    $("#brand-btn-label").textContent = brand || "Todas las marcas";
+    $("#brand-btn").classList.toggle("is-set", !!brand);
+    closeBrandMenu();
+    buildBrandMenu();            // refresh active highlight
+    renderSuggestions();         // scope predictions to the brand
+    render();
+  }
+
+  function toggleBrandMenu(force) {
+    const menu = $("#brand-menu");
+    const open = force != null ? force : menu.hidden;
+    menu.hidden = !open;
+    $("#brand-btn").setAttribute("aria-expanded", String(open));
+  }
+  const closeBrandMenu = () => toggleBrandMenu(false);
+
+  // --- Predictive suggestions --------------------------------------------- //
+  function computeSuggestions(q) {
+    q = deburr(q.trim());
+    if (!q) return [];
+    let pool = state.products;
+    if (state.brand) pool = pool.filter((p) => p.brand === state.brand);
+    const scored = [];
+    for (const p of pool) {
+      const hay = deburr(`${p.brand} ${p.name} ${p.category} ${(p.keywords || []).join(" ")}`);
+      const idx = hay.indexOf(q);
+      if (idx >= 0) scored.push([idx, p]);
+    }
+    scored.sort((a, b) => a[0] - b[0] || a[1].name.localeCompare(b[1].name));
+    return scored.slice(0, 10).map((s) => s[1]);
+  }
+
+  function renderSuggestions() {
+    const box = $("#suggestions");
+    const q = $("#search").value;
+    const items = computeSuggestions(q);
+    if (!q.trim() || items.length === 0) { box.hidden = true; box.innerHTML = ""; $("#search").setAttribute("aria-expanded", "false"); return; }
+    box.hidden = false;
+    box.innerHTML = items
+      .map((p) => `<button class="sugg" data-pick="${escapeAttr(p.id)}">
+          <span class="sugg-brand">${escapeHtml(p.brand)}</span> <b>${escapeHtml(p.name)}</b></button>`)
+      .join("");
+    $$(".sugg", box).forEach((el) => el.addEventListener("click", () => pickSuggestion(el.dataset.pick)));
+    $("#search").setAttribute("aria-expanded", "true");
+  }
+
+  function pickSuggestion(id) {
+    const p = state.byId.get(id);
+    if (!p) return;
+    $("#search").value = p.name;
+    state.search = deburr(p.name);
+    $("#search-clear").hidden = false;
+    $("#suggestions").hidden = true;
+    render();
+    openModal(id);               // deliver the payoff: the price comparison
+  }
+
+  // --- Filtering / rendering ---------------------------------------------- //
+  const matchesSearch = (text) => !state.search || deburr(text).includes(state.search);
+  const inBrand = (b) => !state.brand || b === state.brand;
+
+  function bestDiscount(p) {
+    let best = 0;
+    for (const d of state.deals) if (d.watch_id === p.id && d.discount_pct) best = Math.max(best, d.discount_pct);
+    return best;
+  }
+
+  function currentItems() {
+    if (state.view === "deals") {
+      return state.deals
+        .filter((d) => inBrand(d.brand) && matchesSearch(`${d.brand} ${d.product_name} ${d.source} ${d.size || ""} ${d.color || ""}`))
+        .sort((a, b) => (b.discount_pct || 0) - (a.discount_pct || 0));
+    }
+    return state.products
+      .filter((p) => inBrand(p.brand) && matchesSearch(`${p.brand} ${p.name} ${p.category} ${(p.keywords || []).join(" ")}`))
+      .sort((a, b) => bestDiscount(b) - bestDiscount(a) || a.brand.localeCompare(b.brand));
+  }
+
+  function render() {
+    const grid = $("#grid");
+    const items = currentItems();
+    const noun = state.view === "deals" ? "oferta" : "producto";
+    $("#result-info").textContent =
+      `${items.length} ${noun}${items.length === 1 ? "" : "s"}` + (state.brand ? ` · ${state.brand}` : "");
+    grid.innerHTML = state.view === "deals" ? items.map(dealCard).join("") : items.map(productCard).join("");
+    $$("[data-open]", grid).forEach((el) => el.addEventListener("click", () => openModal(el.dataset.open)));
+    renderEmpty(items.length);
+  }
+
+  function catalogMatchCount() {
+    return state.products.filter((p) =>
+      inBrand(p.brand) && matchesSearch(`${p.brand} ${p.name} ${p.category} ${(p.keywords || []).join(" ")}`)).length;
+  }
+
+  function renderEmpty(count) {
+    const empty = $("#empty");
+    if (count > 0) { empty.hidden = true; return; }
+    empty.hidden = false;
+    // Browsing "Ofertas" with a query that matches products but has no active
+    // deal: guide the user to the catalog instead of a dead end.
+    if (state.view === "deals" && state.search) {
+      const n = catalogMatchCount();
+      if (n > 0) {
+        empty.innerHTML = `Sin ofertas activas para tu búsqueda. <button class="btn btn-ghost" id="goto-catalog">Ver ${n} en el catálogo →</button>`;
+        $("#goto-catalog").addEventListener("click", () => switchView("catalog"));
+        return;
+      }
+    }
+    empty.textContent = "Sin resultados. Probá con otro nombre o cambiá la marca.";
+  }
+
+  function switchView(v) {
+    state.view = v;
+    $$(".view-link").forEach((t) => t.classList.toggle("is-active", t.dataset.view === v));
+    render();
+  }
+
+  function dealCard(d) {
+    const was = d.reference_price ? `<span class="price-was">${money(d.reference_price, d.currency)}</span>` : "";
+    const disc = d.discount_pct ? `<div class="discount-tag">-${Math.round(d.discount_pct)}%</div>` : "";
+    const cond = d.condition && d.condition !== "new" ? `<span class="cond-used">${d.condition}</span>` : "";
+    const variant = [d.size ? `Talla <b>${escapeHtml(d.size)}</b>` : "", d.color ? cap(escapeHtml(d.color)) : ""].filter(Boolean).join(" · ");
+    return `
+    <article class="card">
+      <div class="card-media" style="background:${brandArt(d.brand)}">
+        ${disc}<span class="card-cat">${escapeHtml(catOf(d.watch_id))}</span>
+        <span class="card-brand">${escapeHtml(d.brand)}</span>
+      </div>
+      <div class="card-body">
+        <h3 class="card-name">${escapeHtml(d.product_name)}</h3>
+        <div class="variant">${variant || "&nbsp;"} ${cond}</div>
+        <div class="reason">${escapeHtml(d.reason || "")}</div>
+        <div class="price-row">
+          <span class="price">${money(d.price, d.currency)}</span> ${was}
+          <span class="src-badge">${escapeHtml(d.source)}</span>
+        </div>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="${escapeAttr(d.url)}" target="_blank" rel="noopener">Ver oferta →</a>
+          <button class="btn btn-ghost" data-open="${escapeAttr(d.watch_id)}">Comparar</button>
+        </div>
+      </div>
+    </article>`;
+  }
+
+  function productCard(p) {
+    const disc = bestDiscount(p);
+    const tag = disc ? `<div class="discount-tag">-${Math.round(disc)}%</div>` : "";
+    return `
+    <article class="card">
+      <div class="card-media" style="background:${brandArt(p.brand)}">
+        ${tag}<span class="card-cat">${escapeHtml(p.category || "")}</span>
+        <span class="card-brand">${escapeHtml(p.brand)}</span>
+      </div>
+      <div class="card-body">
+        <h3 class="card-name">${escapeHtml(p.name)}</h3>
+        <div class="variant">${p.offer_count} oferta(s)${p.best_source ? ` · mejor en <b>${escapeHtml(p.best_source)}</b>` : ""}</div>
+        <div class="price-row">
+          <span class="price">${money(p.best_price, p.currency)}</span>
+          ${p.target_price ? `<span class="src-badge">objetivo ${money(p.target_price, p.currency)}</span>` : ""}
+        </div>
+        <div class="card-actions">
+          <button class="btn btn-primary" data-open="${escapeAttr(p.id)}">Comparar precios</button>
+        </div>
+      </div>
+    </article>`;
+  }
+
+  const catOf = (id) => { const p = state.byId.get(id); return p ? p.category : ""; };
+  const cap = (s) => (s ? s.charAt(0).toUpperCase() + s.slice(1) : s);
+
+  // --- Modal -------------------------------------------------------------- //
+  function openModal(id) {
+    const p = state.byId.get(id);
+    if (!p) return;
+    const offers = (p.offers || []).slice().sort((a, b) => a.price - b.price);
+    const best = offers[0];
+    const rows = offers.map((o, i) => `
+      <tr class="${i === 0 ? "best" : ""}">
+        <td>${escapeHtml(o.source)}${o.condition && o.condition !== "new" ? ` <span class="cond-used">(${o.condition})</span>` : ""}</td>
+        <td>${o.size ? escapeHtml(o.size) : "—"}</td>
+        <td>${o.color ? cap(escapeHtml(o.color)) : "—"}</td>
+        <td class="offer-price">${money(o.price, o.currency)}${o.list_price ? ` <span class="price-was">${money(o.list_price, o.currency)}</span>` : ""}</td>
+        <td><a class="mini-link" href="${escapeAttr(o.url)}" target="_blank" rel="noopener">Abrir →</a></td>
+      </tr>`).join("");
+    const dealsFor = state.deals.filter((d) => d.watch_id === id);
+    const dealNote = dealsFor.length
+      ? `<div class="reason" style="margin:2px 0 12px">🔥 ${dealsFor.length} oferta(s) activa(s) — ${escapeHtml(dealsFor.map((d) => d.reason).sort()[0] || "")}</div>` : "";
+    $("#modal-body").innerHTML = `
+      <h3 class="modal-title" id="modal-title">${escapeHtml(p.brand)} — ${escapeHtml(p.name)}</h3>
+      <div class="modal-sub">${escapeHtml(p.category || "")}${best ? ` · mejor precio ${money(best.price, best.currency)} en ${escapeHtml(best.source)}` : ""}</div>
+      ${dealNote}
+      <table class="offer-table">
+        <thead><tr><th>Tienda</th><th>Talla</th><th>Color</th><th>Precio</th><th></th></tr></thead>
+        <tbody>${rows || `<tr><td colspan="5">Sin ofertas registradas.</td></tr>`}</tbody>
+      </table>
+      ${sparkline(p.history)}`;
+    $("#modal").hidden = false;
+    document.body.style.overflow = "hidden";
+  }
+  function closeModal() { $("#modal").hidden = true; document.body.style.overflow = ""; }
+
+  function sparkline(history) {
+    const pts = (history || []).filter((h) => typeof h.price === "number");
+    if (pts.length < 2) return "";
+    const w = 560, h = 60, pad = 6;
+    const prices = pts.map((p) => p.price);
+    const min = Math.min(...prices), max = Math.max(...prices), span = max - min || 1;
+    const step = (w - pad * 2) / (pts.length - 1);
+    const coords = pts.map((p, i) => [pad + i * step, pad + (h - pad * 2) * (1 - (p.price - min) / span)]);
+    const path = coords.map(([x, y], i) => `${i ? "L" : "M"}${x.toFixed(1)},${y.toFixed(1)}`).join(" ");
+    const area = `${path} L${coords[coords.length - 1][0].toFixed(1)},${h - pad} L${coords[0][0].toFixed(1)},${h - pad} Z`;
+    const last = coords[coords.length - 1];
+    return `
+      <div class="hist-wrap">
+        <h4>Historial de precio (${money(min)} – ${money(max)})</h4>
+        <svg class="spark" viewBox="0 0 ${w} ${h}" preserveAspectRatio="none" role="img" aria-label="Historial de precio">
+          <path d="${area}" fill="rgba(46,163,111,.14)" />
+          <path d="${path}" fill="none" stroke="#2ea36f" stroke-width="2" />
+          <circle cx="${last[0].toFixed(1)}" cy="${last[1].toFixed(1)}" r="3" fill="#2ea36f" />
+        </svg>
+      </div>`;
+  }
+
+  // --- Escaping ----------------------------------------------------------- //
+  function escapeHtml(s) {
+    return String(s == null ? "" : s).replace(/[&<>"']/g, (c) =>
+      ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+  }
+  const escapeAttr = (s) => escapeHtml(s).replace(/`/g, "&#96;");
+
+  // --- Wiring ------------------------------------------------------------- //
+  function wire() {
+    $$(".view-link").forEach((tab) =>
+      tab.addEventListener("click", () => switchView(tab.dataset.view)));
+
+    const input = $("#search");
+    let t;
+    input.addEventListener("input", () => {
+      $("#search-clear").hidden = !input.value;
+      clearTimeout(t);
+      t = setTimeout(() => { state.search = deburr(input.value.trim()); renderSuggestions(); render(); }, 110);
+    });
+    input.addEventListener("focus", renderSuggestions);
+    input.addEventListener("keydown", (e) => {
+      if (e.key === "Enter") {
+        const first = computeSuggestions(input.value)[0];
+        if (first) { e.preventDefault(); pickSuggestion(first.id); }
+      } else if (e.key === "Escape") { $("#suggestions").hidden = true; }
+    });
+    $("#search-clear").addEventListener("click", () => {
+      input.value = ""; state.search = ""; $("#search-clear").hidden = true;
+      $("#suggestions").hidden = true; render(); input.focus();
+    });
+
+    $("#brand-btn").addEventListener("click", (e) => { e.stopPropagation(); toggleBrandMenu(); });
+
+    // Close menus/suggestions on outside click.
+    document.addEventListener("click", (e) => {
+      if (!e.target.closest(".brand-select")) closeBrandMenu();
+      if (!e.target.closest(".search-input-wrap") && !e.target.closest(".suggestions"))
+        $("#suggestions").hidden = true;
+    });
+
+    $$("[data-close]").forEach((el) => el.addEventListener("click", closeModal));
+    document.addEventListener("keydown", (e) => { if (e.key === "Escape") { closeModal(); closeBrandMenu(); } });
+
+    setupBackgroundVideo();
+  }
+
+  // Reveal the real footage layer ONLY if a source actually exists; otherwise
+  // the animated CSS/SVG scene remains the background. Local paths are probed
+  // with a HEAD request first so a missing file doesn't spam the console.
+  async function setupBackgroundVideo() {
+    const v = document.getElementById("bg-video");
+    if (!v) return;
+    const setSrc = (url) => {
+      v.src = url;
+      v.addEventListener("loadeddata", () => v.classList.add("is-on"), { once: true });
+      v.addEventListener("error", () => v.classList.remove("is-on"), { once: true });
+      const p = v.play && v.play();
+      if (p && p.catch) p.catch(() => {});
+    };
+    const sources = (v.dataset.sources || "").split(",").map((s) => s.trim()).filter(Boolean);
+    for (const url of sources) {
+      if (/^https?:/i.test(url)) { setSrc(url); return; }  // external: try directly
+      try {
+        const r = await fetch(url, { method: "HEAD" });
+        if (r.ok) { setSrc(url); return; }
+      } catch (_) { /* try next candidate */ }
+    }
+  }
+
+  wire();
+  load();
+})();
+
+</script>
+</body>
+</html>
