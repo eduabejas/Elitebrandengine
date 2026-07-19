@@ -209,3 +209,96 @@ a { color: inherit; }
   .footer-inner { grid-template-columns: 1fr; }
   .brand-btn-label { max-width: 140px; }
 }
+
+/* ======================================================================== */
+/* Cinematic looping mountain background                                     */
+/* ======================================================================== */
+html { background: var(--bg); }
+body { background: transparent; }
+
+.bg { position: fixed; inset: 0; z-index: -1; overflow: hidden; }
+.bg-scene { position: absolute; inset: 0; transform-origin: 50% 68%;
+  animation: bgPush 52s ease-in-out infinite alternate; }
+.bg-sky { position: absolute; inset: 0;
+  background: linear-gradient(180deg,#081826 0%,#0f2c3c 40%,#1d4c5f 66%,#356f86 84%,#5f93a0 100%); }
+.bg-sun { position: absolute; left: 62%; top: 40%; width: 55vw; height: 55vw;
+  transform: translate(-50%,-50%);
+  background: radial-gradient(circle, rgba(255,216,170,.5), rgba(255,190,140,0) 62%);
+  filter: blur(6px); }
+
+/* mist / clouds drifting slowly */
+.bg-cloud { position: absolute; height: 26vh; width: 60vw; border-radius: 50%;
+  background: radial-gradient(closest-side, rgba(226,238,244,.16), rgba(226,238,244,0));
+  filter: blur(18px); will-change: transform; }
+.bg-cloud-1 { top: 30%; left: -20%; animation: cloudDrift 150s linear infinite; }
+.bg-cloud-2 { top: 46%; left: -30%; opacity: .8; height: 20vh; animation: cloudDrift 210s linear infinite; animation-delay: -60s; }
+.bg-cloud-3 { top: 20%; left: -25%; opacity: .6; height: 16vh; animation: cloudDrift 260s linear infinite; animation-delay: -120s; }
+
+/* layered ridgelines (aerial perspective: farther = lighter/hazier) */
+.bg-range { position: absolute; left: 0; bottom: 0; width: 200%; will-change: transform; }
+.bg-range-3 { height: 52vh; background: linear-gradient(180deg,#4a7890,#37627a);
+  clip-path: polygon(0% 100%,0% 55%,5% 63%,11% 42%,17% 60%,24% 38%,31% 57%,39% 46%,47% 28%,55% 50%,63% 40%,71% 58%,79% 44%,87% 62%,93% 48%,100% 60%,100% 100%);
+  animation: driftFar 92s ease-in-out infinite alternate; opacity: .92; }
+.bg-range-2 { height: 44vh; background: linear-gradient(180deg,#294f5f,#1c3d4b);
+  clip-path: polygon(0% 100%,0% 68%,8% 54%,15% 72%,22% 50%,30% 70%,38% 56%,46% 76%,54% 52%,62% 74%,70% 58%,78% 78%,86% 60%,94% 80%,100% 64%,100% 100%);
+  animation: driftMid 72s ease-in-out infinite alternate; }
+.bg-range-1 { height: 34vh; background: linear-gradient(180deg,#0e2029,#091920);
+  clip-path: polygon(0% 100%,0% 84%,10% 72%,20% 88%,30% 74%,40% 90%,50% 76%,60% 92%,70% 78%,80% 94%,90% 80%,100% 90%,100% 100%);
+  animation: driftNear 58s ease-in-out infinite alternate; }
+.bg-grain { position: absolute; inset: 0; opacity: .04; mix-blend-mode: overlay;
+  background-image: radial-gradient(rgba(255,255,255,.7) .5px, transparent .5px);
+  background-size: 3px 3px; }
+
+/* real footage layer (revealed by JS only if it actually loads) */
+.bg-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
+  opacity: 0; transition: opacity 1.4s ease; }
+.bg-video.is-on { opacity: 1; }
+
+/* readability scrim + fade into the dark content theme */
+.bg-scrim { position: absolute; inset: 0; pointer-events: none;
+  background:
+    linear-gradient(180deg, rgba(8,16,22,.3) 0%, rgba(8,16,22,.02) 26%, rgba(13,21,25,.08) 64%, rgba(13,21,25,.55) 88%, var(--bg) 100%),
+    radial-gradient(120% 80% at 50% 0%, transparent 45%, rgba(8,16,22,.3) 100%); }
+
+@keyframes bgPush { 0% { transform: scale(1.04) translateY(0); } 100% { transform: scale(1.13) translateY(-1.6%); } }
+@keyframes driftFar { to { transform: translate3d(-9%,0,0); } }
+@keyframes driftMid { to { transform: translate3d(-5%,0,0); } }
+@keyframes driftNear { to { transform: translate3d(-3%,0,0); } }
+@keyframes cloudDrift { from { transform: translateX(-15%); } to { transform: translateX(115%); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .bg-scene, .bg-range, .bg-cloud, .bg-video { animation: none !important; }
+}
+
+/* Hero fills the first screen so the whole scene sits behind the search bar */
+.hero {
+  min-height: calc(100svh - 66px);
+  display: flex; flex-direction: column; justify-content: center;
+  padding: 24px 0 48px;
+  background: linear-gradient(180deg, transparent 0%, transparent 68%, rgba(13,21,25,.5) 88%, var(--bg) 100%);
+}
+.hero-hint { text-align: center; color: var(--muted); font-size: 12.5px; margin: 18px 0 0;
+  letter-spacing: .04em; text-shadow: 0 1px 6px rgba(0,0,0,.5); }
+
+/* Content below the hero is opaque so it scrolls cleanly over the fixed scene */
+.results-head, .main { background: var(--bg); position: relative; z-index: 1; }
+.site-footer { position: relative; z-index: 1; }
+
+/* Header sits over the sky — strengthen text for contrast */
+.site-header { background: linear-gradient(180deg, rgba(6,14,20,.55), transparent); position: relative; z-index: 1; }
+.brand-title, .brand-tagline { text-shadow: 0 1px 8px rgba(0,0,0,.55); }
+
+/* Search bar: gradient shadow glow so it stands out over the scenery */
+.searchbar { position: relative; z-index: 1; }
+.searchbar::before {
+  content: ""; position: absolute; inset: -26px -16px; z-index: -1; border-radius: 30px;
+  background:
+    radial-gradient(60% 130% at 50% 50%, rgba(46,163,111,.55), transparent 72%),
+    linear-gradient(115deg, rgba(46,163,111,.62), rgba(52,140,162,.5) 45%, rgba(255,176,46,.42));
+  filter: blur(34px); opacity: .95;
+}
+.brand-btn, .search-input-wrap {
+  background: rgba(18,32,40,.72); backdrop-filter: blur(12px);
+  box-shadow: 0 26px 60px -18px rgba(0,0,0,.7);
+}
+.search-input-wrap:focus-within { box-shadow: 0 26px 60px -14px rgba(0,0,0,.7), 0 0 0 3px rgba(46,163,111,.35); }

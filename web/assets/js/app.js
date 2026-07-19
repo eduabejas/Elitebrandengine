@@ -360,6 +360,31 @@
 
     $$("[data-close]").forEach((el) => el.addEventListener("click", closeModal));
     document.addEventListener("keydown", (e) => { if (e.key === "Escape") { closeModal(); closeBrandMenu(); } });
+
+    setupBackgroundVideo();
+  }
+
+  // Reveal the real footage layer ONLY if a source actually exists; otherwise
+  // the animated CSS/SVG scene remains the background. Local paths are probed
+  // with a HEAD request first so a missing file doesn't spam the console.
+  async function setupBackgroundVideo() {
+    const v = document.getElementById("bg-video");
+    if (!v) return;
+    const setSrc = (url) => {
+      v.src = url;
+      v.addEventListener("loadeddata", () => v.classList.add("is-on"), { once: true });
+      v.addEventListener("error", () => v.classList.remove("is-on"), { once: true });
+      const p = v.play && v.play();
+      if (p && p.catch) p.catch(() => {});
+    };
+    const sources = (v.dataset.sources || "").split(",").map((s) => s.trim()).filter(Boolean);
+    for (const url of sources) {
+      if (/^https?:/i.test(url)) { setSrc(url); return; }  // external: try directly
+      try {
+        const r = await fetch(url, { method: "HEAD" });
+        if (r.ok) { setSrc(url); return; }
+      } catch (_) { /* try next candidate */ }
+    }
   }
 
   wire();

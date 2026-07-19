@@ -9,6 +9,30 @@
   <link rel="stylesheet" href="./assets/css/styles.css" />
 </head>
 <body>
+  <!-- Cinematic looping mountain background. It is an animated CSS/SVG scene by
+       default (works offline, zero deps). To use REAL drone/mountain footage,
+       drop a clip at web/assets/video/mountain.mp4 (and/or .webm) — see that
+       folder's README.md for a free, commercial-use source. The video auto-
+       reveals only if it loads; otherwise the animated scene shows. -->
+  <div class="bg" aria-hidden="true">
+    <div class="bg-scene">
+      <div class="bg-sky"></div>
+      <div class="bg-sun"></div>
+      <div class="bg-cloud bg-cloud-1"></div>
+      <div class="bg-cloud bg-cloud-2"></div>
+      <div class="bg-cloud bg-cloud-3"></div>
+      <div class="bg-range bg-range-3"></div>
+      <div class="bg-range bg-range-2"></div>
+      <div class="bg-range bg-range-1"></div>
+      <div class="bg-grain"></div>
+    </div>
+    <!-- data-sources: comma-separated candidates (local paths or a hotlink URL).
+         The first that exists is used; if none load, the animated scene stays. -->
+    <video class="bg-video" id="bg-video" muted loop playsinline preload="auto"
+           data-sources="./assets/video/mountain.mp4"></video>
+    <div class="bg-scrim"></div>
+  </div>
+
   <header class="site-header">
     <div class="wrap header-inner">
       <div class="brand">
@@ -49,6 +73,7 @@
 
       <!-- horizontal predictive suggestions -->
       <div class="suggestions" id="suggestions" role="listbox" aria-label="Sugerencias" hidden></div>
+      <p class="hero-hint" id="hero-hint">Escribí un producto y elegí una predicción · filtrá por una sola marca para acotar la búsqueda</p>
     </div>
   </section>
 
