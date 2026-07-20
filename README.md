@@ -234,7 +234,8 @@ web/                    static GitHub Pages site (search / compare / deals)
 scripts/seed_demo.py    generate backdated demo history
 tests/                  unit tests for normalisation & detection
 .github/workflows/      collect.yml (cron) + deploy-pages.yml + ci.yml (tests)
-docs/                   operator guide + legal/Honey explainer (Español)
+docs/                   operator guide · legal/Honey explainer · autonomous-engine
+                        architecture & grey-zone strategy (Español)
 ```
 
 ---
