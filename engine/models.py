@@ -51,6 +51,7 @@ class WatchItem:
     # Identity graph:
     lineage: list[str] = field(default_factory=list)  # alt / previous-model names
     home_region: Optional[str] = None                 # else inferred from brand
+    urls: list[str] = field(default_factory=list)     # product pages for JSON-LD reads
 
     @staticmethod
     def from_dict(d: dict[str, Any]) -> "WatchItem":

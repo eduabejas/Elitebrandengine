@@ -104,6 +104,13 @@ def write_json(path: Path, obj) -> None:
     path.write_text(json.dumps(obj, indent=2, ensure_ascii=False), encoding="utf-8")
 
 
+def write_status(cfg: Config, status: dict) -> None:
+    """Write run observability (timings, per-source health, counts) to a served
+    copy (web/data/status.json) and a persisted copy (data/status.json)."""
+    write_json(cfg.path("web_data") / "status.json", status)
+    write_json(cfg.path("status"), status)
+
+
 def write_snapshot(
     cfg: Config,
     watchlist: list[WatchItem],

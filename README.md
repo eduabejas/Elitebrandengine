@@ -194,6 +194,18 @@ higher** (surfacing them a bit earlier too). Every deal gets a 0–100 **score**
 and a **tier** (good / great / excellent / suspect) so you act on the best first;
 it also tags known sale windows (Black Friday, REI Anniversary, end-of-season).
 
+**Performance & observability.** Sources are fetched **concurrently**
+(`performance.max_workers`) with a per-source **time budget** (a slow source
+stops being called instead of stalling the run), on top of the resilient HTTP
+layer. Every run writes `data/status.json` (durations, per-source health, counts).
+
+**Reliable extra source (no API gate).** `sources.structured` reads the
+**schema.org JSON-LD** a retailer publishes on the product pages you list on a
+watch item (`urls`) — authoritative price/availability/GTIN, fetched politely
+(robots.txt + rate limits). **Community signals** are handled *with tweezers*:
+they are low-trust **leads that must be corroborated by a real observed price**
+before they count (see `engine/community.py`), and are off by default.
+
 ### Turning on real sources
 Set `enabled: true` under `sources.<name>` in `config.yml` and provide the
 credentials as environment variables / GitHub Secrets:
@@ -246,10 +258,12 @@ engine/                 Python collection engine
   effective.py          landed-cost stacking (coupon+cashback+gift-card+ship+tax)
   identity.py           product identity graph: channel/region + model lineage
   http.py               shared resilient HTTP (retries, backoff, rate-limit)
-  run.py                orchestrator + CLI (python -m engine.run)
+  metrics.py            thread-safe run metrics + per-source time budgets
+  community.py          community signals as corroborated leads (anti fake-news)
+  run.py                orchestrator + CLI (concurrent; python -m engine.run)
   probe.py              inspect a single source (python -m engine.probe)
   validate.py           watchlist validation (python -m engine.validate)
-  connectors/           sample · ebay · amazon · affiliate_feed · polite_html
+  connectors/           sample · ebay · amazon · affiliate_feed · structured · polite_html
   notify/email.py       SMTP / SendGrid / Resend / dry-run alerts
 data/                   watchlist.json + committed price history (the "database")
 web/                    static GitHub Pages site (search / compare / deals)

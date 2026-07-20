@@ -24,6 +24,7 @@ DEFAULTS: dict[str, Any] = {
         "history_dir": "data/history",
         "alerts_ledger": "data/alerts_ledger.json",
         "promos": "data/promos.json",
+        "status": "data/status.json",
         "web_data": "web/data",
     },
     "detection": {
@@ -61,6 +62,20 @@ DEFAULTS: dict[str, Any] = {
         # International shipping is the buyer's known cost and is NOT penalised.
         "scope": "standard",
     },
+    "performance": {
+        "max_workers": 6,            # concurrent source fetches (network-bound)
+        "source_time_budget_s": 60,  # per-source soft circuit breaker per run
+    },
+    "community": {
+        # Community/deal-forum posts are LEADS only, never trusted on their own.
+        # Off by default; when enabled, every lead must be corroborated by a real
+        # observed offer (see engine/community.py). Bounded so volume can't slow
+        # the engine.
+        "enabled": False,
+        "max_signals": 200,
+        "corroboration_tolerance": 0.10,
+        "trust_table": {},           # source -> reputation 0..1
+    },
     "seasonality": {
         # Where the operator/buyers are (drives current-season logic).
         "hemisphere": "north",
@@ -82,6 +97,9 @@ DEFAULTS: dict[str, Any] = {
         "ebay": {"enabled": False, "marketplace": "EBAY_US", "limit": 8},
         "amazon": {"enabled": False, "marketplace": "www.amazon.com", "region": "us-east-1"},
         "affiliate_feed": {"enabled": False, "feeds": []},
+        # Reads schema.org JSON-LD from product pages listed on a watch item's
+        # `urls`. Authoritative retailer data; polite (robots.txt + rate limit).
+        "structured": {"enabled": False, "min_delay_seconds": 3.0},
     },
     "email": {
         "enabled": True,

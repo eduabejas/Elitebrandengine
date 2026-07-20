@@ -36,6 +36,7 @@ from __future__ import annotations
 
 import csv
 import io
+import threading
 import xml.etree.ElementTree as ET
 from collections import defaultdict
 from pathlib import Path
@@ -75,6 +76,7 @@ class AffiliateFeedConnector(Connector):
         self.feeds = self.settings.get("feeds", []) or []
         # brand -> list[row], one index per feed, built lazily and cached.
         self._index: Optional[dict[int, dict[str, list[dict]]]] = None
+        self._index_lock = threading.Lock()
 
     def available(self) -> bool:
         return bool(self.feeds)
@@ -159,7 +161,9 @@ class AffiliateFeedConnector(Connector):
 
     def search(self, watch: WatchItem) -> list[Offer]:
         if self._index is None:
-            self._index = self._build_index()
+            with self._index_lock:      # build feeds once, even under concurrency
+                if self._index is None:
+                    self._index = self._build_index()
         brand_c = canonical_brand(watch.brand)
         if not brand_c:
             return []

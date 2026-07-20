@@ -19,12 +19,15 @@ from __future__ import annotations
 
 import argparse
 import sys
+import time
 from collections import defaultdict
+from concurrent.futures import ThreadPoolExecutor
 
 from .config import load_config
 from .connectors import build_connectors
 from .dealdetector import detect_deals
 from .identity import enrich_offer, regions_for_scope
+from .metrics import Metrics
 from .models import Deal, Offer, PricePoint, WatchItem, now_iso
 from .normalize import match_score
 from .pricing import to_base
@@ -37,18 +40,26 @@ from .store import (
     load_watchlist,
     save_ledger,
     write_snapshot,
+    write_status,
 )
 
 
-def _gather_offers(connectors, watch: WatchItem, min_score: float) -> list[Offer]:
+def _gather_offers(connectors, watch: WatchItem, min_score: float,
+                   metrics: Metrics | None = None, budget: float = 0.0) -> list[Offer]:
     seen: dict[str, Offer] = {}
     for conn in connectors:
+        name = getattr(conn, "name", str(conn))
+        if metrics is not None and metrics.over_budget(name, budget):
+            continue  # soft circuit breaker: this source ate its time budget
+        t = time.monotonic()
+        err = False
         try:
             found = conn.search(watch) or []
         except Exception as exc:  # noqa: BLE001 - one bad source must not kill the run
-            print(f"[run] connector {getattr(conn, 'name', conn)} failed on "
-                  f"{watch.id}: {exc}")
-            continue
+            found, err = [], True
+            print(f"[run] connector {name} failed on {watch.id}: {exc}")
+        if metrics is not None:
+            metrics.record_connector(name, time.monotonic() - t, len(found), err)
         for o in found:
             if o.match_score < min_score:
                 continue
@@ -95,29 +106,44 @@ def run(config_file: str | None = None, send_email: bool = True,
 
     ledger = load_ledger(cfg)
     promos = load_promos(cfg)
-    offers_by_watch: dict[str, list[Offer]] = {}
+    metrics = Metrics()
+    max_workers = int(cfg.get("performance.max_workers", 6))
+    budget = float(cfg.get("performance.source_time_budget_s", 0) or 0)
+
+    # --- Phase 1: gather offers (network-bound) — concurrent across items ---- #
+    def gather(w: WatchItem):
+        offers = _gather_offers(connectors, w, min_score, metrics, budget)
+        return w.id, [o for o in offers if o.region in allowed_regions]  # scope
+
+    t0 = time.monotonic()
+    if max_workers > 1 and len(watchlist) > 1:
+        with ThreadPoolExecutor(max_workers=min(max_workers, len(watchlist))) as ex:
+            gathered = list(ex.map(gather, watchlist))
+    else:
+        gathered = [gather(w) for w in watchlist]
+    metrics.phase("gather", time.monotonic() - t0)
+    offers_by_watch: dict[str, list[Offer]] = dict(gathered)
+
+    # --- Phase 2: detect + persist (CPU + file I/O) — sequential ------------- #
     all_active: list[Deal] = []
     all_new: list[Deal] = []
     source_offer_counts: dict[str, int] = defaultdict(int)
-
+    t1 = time.monotonic()
     for w in watchlist:
-        offers = _gather_offers(connectors, w, min_score)
-        offers = [o for o in offers if o.region in allowed_regions]  # regional scope
-        offers_by_watch[w.id] = offers
+        offers = offers_by_watch.get(w.id, [])
         for o in offers:
             source_offer_counts[o.source] += 1
-
         history = load_history(cfg, w.id)  # PRIOR history = the reference
         active, new = detect_deals(cfg, w, offers, history, ledger, promos=promos)
         all_active.extend(active)
         all_new.extend(new)
-
         append_history(cfg, w.id, _history_points(offers, rates, base))
         if offers:
             cheapest = min(offers, key=lambda o: o.price)
             print(f"  · {w.id}: {len(offers)} offer(s), "
                   f"best {cheapest.price:.2f} @ {cheapest.source}"
                   + (f"  [{len(active)} deal(s)]" if active else ""))
+    metrics.phase("detect", time.monotonic() - t1)
 
     # Record newly-alerted deals so we don't email them again within the TTL.
     ts = now_iso()
@@ -130,16 +156,28 @@ def run(config_file: str | None = None, send_email: bool = True,
     write_snapshot(cfg, watchlist, offers_by_watch, all_active, sources_status,
                    demo=demo)
 
-    print(f"[run] active deals: {len(all_active)} | new to alert: {len(all_new)}")
-    if send_email:
-        send_deal_alerts(cfg, all_new)
-
-    return {
+    summary = {
         "watch_items": len(watchlist),
         "offers": sum(len(v) for v in offers_by_watch.values()),
         "active_deals": len(all_active),
         "new_deals": len(all_new),
     }
+    write_status(cfg, {
+        "generated_at": now_iso(),
+        "duration_seconds": metrics.elapsed(),
+        "scope": cfg.get("search.scope", "standard"),
+        "max_workers": max_workers,
+        **summary,
+        **metrics.snapshot(),
+        "sources": sources_status,
+    })
+
+    print(f"[run] active deals: {len(all_active)} | new to alert: {len(all_new)} "
+          f"| {metrics.elapsed()}s (gather {metrics.phases.get('gather')}s, "
+          f"detect {metrics.phases.get('detect')}s)")
+    if send_email:
+        send_deal_alerts(cfg, all_new)
+    return summary
 
 
 def _sources_status(cfg, connectors, counts) -> list[dict]:
@@ -149,7 +187,7 @@ def _sources_status(cfg, connectors, counts) -> list[dict]:
               for name, n in sorted(counts.items(), key=lambda kv: -kv[1])]
     configured = cfg.get("sources", {}) or {}
     label_by_key = {"ebay": "eBay", "amazon": "Amazon",
-                    "affiliate_feed": "AffiliateFeed"}
+                    "affiliate_feed": "AffiliateFeed", "structured": "StructuredData"}
     ran_conn = {c.name for c in connectors}
     for key, s in configured.items():
         if key == "sample":

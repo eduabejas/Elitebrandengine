@@ -15,6 +15,7 @@ callers use :func:`get` / :func:`post`.
 from __future__ import annotations
 
 import random
+import threading
 import time
 from typing import Callable, Optional
 from urllib.parse import urlparse
@@ -38,22 +39,30 @@ class HttpError(RuntimeError):
 
 
 class RateLimiter:
-    """Enforce a minimum interval between requests to the same host."""
+    """Enforce a minimum interval between requests to the same host.
+
+    Thread-safe: the next slot is reserved atomically under a lock, but the
+    actual sleep happens outside it so different hosts never block each other.
+    """
 
     def __init__(self) -> None:
         self._last: dict[str, float] = {}
+        self._lock = threading.Lock()
 
     def wait(self, host: Optional[str], min_interval: float) -> None:
         if not host or min_interval <= 0:
             return
-        now = time.monotonic()
-        last = self._last.get(host)
-        if last is not None:
-            gap = min_interval - (now - last)
-            if gap > 0:
-                SLEEP(gap)
-                now = time.monotonic()
-        self._last[host] = now
+        with self._lock:
+            now = time.monotonic()
+            last = self._last.get(host)
+            wait_for = 0.0
+            if last is not None:
+                gap = min_interval - (now - last)
+                if gap > 0:
+                    wait_for = gap
+            self._last[host] = now + wait_for   # reserve the slot
+        if wait_for > 0:
+            SLEEP(wait_for)
 
 
 _LIMITER = RateLimiter()

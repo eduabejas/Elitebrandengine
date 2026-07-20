@@ -13,12 +13,14 @@ from .amazon import AmazonConnector
 from .base import Connector
 from .ebay import EbayConnector
 from .sample import SampleConnector
+from .structured import StructuredDataConnector
 
 _REGISTRY = {
     "sample": SampleConnector,
     "ebay": EbayConnector,
     "amazon": AmazonConnector,
     "affiliate_feed": AffiliateFeedConnector,
+    "structured": StructuredDataConnector,
 }
 
 

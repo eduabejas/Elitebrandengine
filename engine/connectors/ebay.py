@@ -17,6 +17,7 @@ from __future__ import annotations
 
 import base64
 import os
+import threading
 import time
 from typing import Optional
 
@@ -52,6 +53,7 @@ class EbayConnector(Connector):
         self._token_exp = 0.0
         self.min_interval = float(self.settings.get("min_interval", 0.25))
         self.attempts = int(self.settings.get("attempts", 3))
+        self._token_lock = threading.Lock()
 
     def available(self) -> bool:
         return bool(self.client_id and self.client_secret)
@@ -60,6 +62,12 @@ class EbayConnector(Connector):
     def _get_token(self) -> Optional[str]:
         if self._token and time.time() < self._token_exp - 60:
             return self._token
+        with self._token_lock:
+            if self._token and time.time() < self._token_exp - 60:
+                return self._token  # another thread refreshed it
+            return self._refresh_token()
+
+    def _refresh_token(self) -> Optional[str]:
         basic = base64.b64encode(
             f"{self.client_id}:{self.client_secret}".encode()
         ).decode()
