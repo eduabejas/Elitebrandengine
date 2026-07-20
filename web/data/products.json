@@ -24,16 +24,70 @@
       "mpn": null,
       "image": null,
       "active": true,
-      "best_price": 432.65,
-      "best_source": "Brand Official",
+      "best_price": 348.1,
+      "best_source": "eBay",
       "offer_count": 5,
       "offers": [
+        {
+          "watch_id": "arcteryx_beta_ar_jacket",
+          "source": "eBay",
+          "title": "Arc'teryx Beta AR Jacket — black, L",
+          "url": "https://www.ebay.com/itm/arcteryx-beta-ar-jacket?v=l-black",
+          "price": 348.1,
+          "currency": "USD",
+          "size": "L",
+          "color": "black",
+          "condition": "used",
+          "availability": "in_stock",
+          "seller": "eBay",
+          "image": null,
+          "list_price": 598.67,
+          "match_score": 1.0,
+          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "id": "e39ee716b644379a"
+        },
+        {
+          "watch_id": "arcteryx_beta_ar_jacket",
+          "source": "Amazon",
+          "title": "Arc'teryx Beta AR Jacket — black, M",
+          "url": "https://www.amazon.com/dp/arcteryx-beta-ar-jacket?v=m-black",
+          "price": 555.89,
+          "currency": "USD",
+          "size": "M",
+          "color": "black",
+          "condition": "new",
+          "availability": "in_stock",
+          "seller": "Amazon",
+          "image": null,
+          "list_price": null,
+          "match_score": 1.0,
+          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "id": "d6bf3ddc92f361bb"
+        },
+        {
+          "watch_id": "arcteryx_beta_ar_jacket",
+          "source": "Backcountry",
+          "title": "Arc'teryx Beta AR Jacket — blue, M",
+          "url": "https://www.backcountry.com/arcteryx-beta-ar-jacket?v=m-blue",
+          "price": 561.86,
+          "currency": "USD",
+          "size": "M",
+          "color": "blue",
+          "condition": "new",
+          "availability": "in_stock",
+          "seller": "Backcountry",
+          "image": null,
+          "list_price": null,
+          "match_score": 1.0,
+          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "id": "97828206cf2b5c53"
+        },
         {
           "watch_id": "arcteryx_beta_ar_jacket",
           "source": "Brand Official",
           "title": "Arc'teryx Beta AR Jacket — blue, L",
           "url": "https://example-brand.com/shop/arcteryx-beta-ar-jacket?v=l-blue",
-          "price": 432.65,
+          "price": 563.27,
           "currency": "USD",
           "size": "L",
           "color": "blue",
@@ -43,108 +97,29 @@
           "image": null,
           "list_price": 598.67,
           "match_score": 1.0,
-          "fetched_at": "2026-07-19T20:33:11+00:00",
+          "fetched_at": "2026-07-20T10:34:49+00:00",
           "id": "82ed37a1c1c7a53f"
         },
         {
           "watch_id": "arcteryx_beta_ar_jacket",
-          "source": "eBay",
-          "title": "Arc'teryx Beta AR Jacket — blue, M",
-          "url": "https://www.ebay.com/itm/arcteryx-beta-ar-jacket?v=m-blue",
-          "price": 545.99,
-          "currency": "USD",
-          "size": "M",
-          "color": "blue",
-          "condition": "used",
-          "availability": "in_stock",
-          "seller": "eBay",
-          "image": null,
-          "list_price": null,
-          "match_score": 1.0,
-          "fetched_at": "2026-07-19T20:33:11+00:00",
-          "id": "dc3de077a03708db"
-        },
-        {
-          "watch_id": "arcteryx_beta_ar_jacket",
-          "source": "Amazon",
-          "title": "Arc'teryx Beta AR Jacket — black, L",
-          "url": "https://www.amazon.com/dp/arcteryx-beta-ar-jacket?v=l-black",
-          "price": 573.02,
-          "currency": "USD",
-          "size": "L",
-          "color": "black",
-          "condition": "new",
-          "availability": "in_stock",
-          "seller": "Amazon",
-          "image": null,
-          "list_price": null,
-          "match_score": 1.0,
-          "fetched_at": "2026-07-19T20:33:11+00:00",
-          "id": "b4632d2cb054a263"
-        },
-        {
-          "watch_id": "arcteryx_beta_ar_jacket",
           "source": "REI Co-op",
-          "title": "Arc'teryx Beta AR Jacket — blue, M",
-          "url": "https://www.rei.com/product/arcteryx-beta-ar-jacket?v=m-blue",
-          "price": 621.03,
+          "title": "Arc'teryx Beta AR Jacket — black, M",
+          "url": "https://www.rei.com/product/arcteryx-beta-ar-jacket?v=m-black",
+          "price": 584.13,
           "currency": "USD",
           "size": "M",
-          "color": "blue",
+          "color": "black",
           "condition": "new",
           "availability": "in_stock",
           "seller": "REI Co-op",
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-19T20:33:11+00:00",
-          "id": "d55c1d78bd3d0272"
-        },
-        {
-          "watch_id": "arcteryx_beta_ar_jacket",
-          "source": "Backcountry",
-          "title": "Arc'teryx Beta AR Jacket — black, L",
-          "url": "https://www.backcountry.com/arcteryx-beta-ar-jacket?v=l-black",
-          "price": 638.64,
-          "currency": "USD",
-          "size": "L",
-          "color": "black",
-          "condition": "new",
-          "availability": "in_stock",
-          "seller": "Backcountry",
-          "image": null,
-          "list_price": null,
-          "match_score": 1.0,
-          "fetched_at": "2026-07-19T20:33:11+00:00",
-          "id": "3242f3a53412e108"
+          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "id": "5b51916399ebdd2f"
         }
       ],
       "history": [
-        {
-          "ts": "2026-07-11T12:00:00+00:00",
-          "price": 462.79,
-          "source": "REI Co-op"
-        },
-        {
-          "ts": "2026-07-11T12:00:00+00:00",
-          "price": 353.72,
-          "source": "Backcountry"
-        },
-        {
-          "ts": "2026-07-11T12:00:00+00:00",
-          "price": 564.59,
-          "source": "Brand Official"
-        },
-        {
-          "ts": "2026-07-11T12:00:00+00:00",
-          "price": 378.41,
-          "source": "Amazon"
-        },
-        {
-          "ts": "2026-07-11T12:00:00+00:00",
-          "price": 382.57,
-          "source": "eBay"
-        },
         {
           "ts": "2026-07-12T12:00:00+00:00",
           "price": 409.84,
@@ -419,6 +394,31 @@
           "ts": "2026-07-19T20:33:11+00:00",
           "price": 545.99,
           "source": "eBay"
+        },
+        {
+          "ts": "2026-07-20T10:34:49+00:00",
+          "price": 584.13,
+          "source": "REI Co-op"
+        },
+        {
+          "ts": "2026-07-20T10:34:49+00:00",
+          "price": 561.86,
+          "source": "Backcountry"
+        },
+        {
+          "ts": "2026-07-20T10:34:49+00:00",
+          "price": 563.27,
+          "source": "Brand Official"
+        },
+        {
+          "ts": "2026-07-20T10:34:49+00:00",
+          "price": 555.89,
+          "source": "Amazon"
+        },
+        {
+          "ts": "2026-07-20T10:34:49+00:00",
+          "price": 348.1,
+          "source": "eBay"
         }
       ]
     },
@@ -445,34 +445,16 @@
       "mpn": null,
       "image": null,
       "active": true,
-      "best_price": 253.21,
-      "best_source": "Amazon",
+      "best_price": 184.68,
+      "best_source": "eBay",
       "offer_count": 5,
       "offers": [
-        {
-          "watch_id": "tnf_nuptse_1996",
-          "source": "Amazon",
-          "title": "The North Face 1996 Retro Nuptse Jacket — black, XL",
-          "url": "https://www.amazon.com/dp/tnf-nuptse-1996?v=xl-black",
-          "price": 253.21,
-          "currency": "USD",
-          "size": "XL",
-          "color": "black",
-          "condition": "new",
-          "availability": "in_stock",
-          "seller": "Amazon",
-          "image": null,
-          "list_price": null,
-          "match_score": 1.0,
-          "fetched_at": "2026-07-19T20:33:11+00:00",
-          "id": "44434ae33e7711bf"
-        },
         {
           "watch_id": "tnf_nuptse_1996",
           "source": "eBay",
           "title": "The North Face 1996 Retro Nuptse Jacket — black, XL",
           "url": "https://www.ebay.com/itm/tnf-nuptse-1996?v=xl-black",
-          "price": 258.6,
+          "price": 184.68,
           "currency": "USD",
           "size": "XL",
           "color": "black",
@@ -480,19 +462,55 @@
           "availability": "in_stock",
           "seller": "eBay",
           "image": null,
-          "list_price": null,
+          "list_price": 280.0,
           "match_score": 1.0,
-          "fetched_at": "2026-07-19T20:33:11+00:00",
+          "fetched_at": "2026-07-20T10:34:49+00:00",
           "id": "ec101c3b6e285519"
         },
         {
           "watch_id": "tnf_nuptse_1996",
-          "source": "REI Co-op",
+          "source": "Brand Official",
           "title": "The North Face 1996 Retro Nuptse Jacket — black, M",
-          "url": "https://www.rei.com/product/tnf-nuptse-1996?v=m-black",
-          "price": 277.01,
+          "url": "https://example-brand.com/shop/tnf-nuptse-1996?v=m-black",
+          "price": 199.52,
           "currency": "USD",
           "size": "M",
+          "color": "black",
+          "condition": "new",
+          "availability": "in_stock",
+          "seller": "Brand Official",
+          "image": null,
+          "list_price": 280.0,
+          "match_score": 1.0,
+          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "id": "0051ad81d14d0907"
+        },
+        {
+          "watch_id": "tnf_nuptse_1996",
+          "source": "Amazon",
+          "title": "The North Face 1996 Retro Nuptse Jacket — black, XL",
+          "url": "https://www.amazon.com/dp/tnf-nuptse-1996?v=xl-black",
+          "price": 221.62,
+          "currency": "USD",
+          "size": "XL",
+          "color": "black",
+          "condition": "new",
+          "availability": "in_stock",
+          "seller": "Amazon",
+          "image": null,
+          "list_price": 280.0,
+          "match_score": 1.0,
+          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "id": "44434ae33e7711bf"
+        },
+        {
+          "watch_id": "tnf_nuptse_1996",
+          "source": "REI Co-op",
+          "title": "The North Face 1996 Retro Nuptse Jacket — black, XL",
+          "url": "https://www.rei.com/product/tnf-nuptse-1996?v=xl-black",
+          "price": 263.09,
+          "currency": "USD",
+          "size": "XL",
           "color": "black",
           "condition": "new",
           "availability": "in_stock",
@@ -500,15 +518,15 @@
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-19T20:33:11+00:00",
-          "id": "b52618706f25f640"
+          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "id": "2606bdf463a62ebc"
         },
         {
           "watch_id": "tnf_nuptse_1996",
           "source": "Backcountry",
           "title": "The North Face 1996 Retro Nuptse Jacket — black, XL",
           "url": "https://www.backcountry.com/tnf-nuptse-1996?v=xl-black",
-          "price": 294.41,
+          "price": 284.96,
           "currency": "USD",
           "size": "XL",
           "color": "black",
@@ -518,54 +536,11 @@
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-19T20:33:11+00:00",
+          "fetched_at": "2026-07-20T10:34:49+00:00",
           "id": "88a1bd3e2855bea6"
-        },
-        {
-          "watch_id": "tnf_nuptse_1996",
-          "source": "Brand Official",
-          "title": "The North Face 1996 Retro Nuptse Jacket — black, XL",
-          "url": "https://example-brand.com/shop/tnf-nuptse-1996?v=xl-black",
-          "price": 313.7,
-          "currency": "USD",
-          "size": "XL",
-          "color": "black",
-          "condition": "new",
-          "availability": "in_stock",
-          "seller": "Brand Official",
-          "image": null,
-          "list_price": null,
-          "match_score": 1.0,
-          "fetched_at": "2026-07-19T20:33:11+00:00",
-          "id": "fd0f5e3d00c5a1ee"
         }
       ],
       "history": [
-        {
-          "ts": "2026-07-11T12:00:00+00:00",
-          "price": 288.6,
-          "source": "REI Co-op"
-        },
-        {
-          "ts": "2026-07-11T12:00:00+00:00",
-          "price": 180.78,
-          "source": "Backcountry"
-        },
-        {
-          "ts": "2026-07-11T12:00:00+00:00",
-          "price": 313.52,
-          "source": "Brand Official"
-        },
-        {
-          "ts": "2026-07-11T12:00:00+00:00",
-          "price": 231.13,
-          "source": "Amazon"
-        },
-        {
-          "ts": "2026-07-11T12:00:00+00:00",
-          "price": 233.98,
-          "source": "eBay"
-        },
         {
           "ts": "2026-07-12T12:00:00+00:00",
           "price": 221.29,
@@ -840,6 +815,31 @@
           "ts": "2026-07-19T20:33:11+00:00",
           "price": 258.6,
           "source": "eBay"
+        },
+        {
+          "ts": "2026-07-20T10:34:49+00:00",
+          "price": 263.09,
+          "source": "REI Co-op"
+        },
+        {
+          "ts": "2026-07-20T10:34:49+00:00",
+          "price": 284.96,
+          "source": "Backcountry"
+        },
+        {
+          "ts": "2026-07-20T10:34:49+00:00",
+          "price": 199.52,
+          "source": "Brand Official"
+        },
+        {
+          "ts": "2026-07-20T10:34:49+00:00",
+          "price": 221.62,
+          "source": "Amazon"
+        },
+        {
+          "ts": "2026-07-20T10:34:49+00:00",
+          "price": 184.68,
+          "source": "eBay"
         }
       ]
     },
@@ -863,127 +863,102 @@
       "mpn": null,
       "image": null,
       "active": true,
-      "best_price": 135.95,
+      "best_price": 136.69,
       "best_source": "eBay",
       "offer_count": 5,
       "offers": [
         {
           "watch_id": "patagonia_nano_puff",
           "source": "eBay",
-          "title": "Patagonia Nano Puff Jacket — Green, L",
-          "url": "https://www.ebay.com/itm/patagonia-nano-puff?v=l-green",
-          "price": 135.95,
+          "title": "Patagonia Nano Puff Jacket — Blue, L",
+          "url": "https://www.ebay.com/itm/patagonia-nano-puff?v=l-blue",
+          "price": 136.69,
           "currency": "USD",
           "size": "L",
-          "color": "Green",
+          "color": "Blue",
           "condition": "used",
           "availability": "in_stock",
           "seller": "eBay",
           "image": null,
           "list_price": 198.67,
           "match_score": 1.0,
-          "fetched_at": "2026-07-19T20:33:11+00:00",
-          "id": "58547536530cb602"
+          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "id": "262a1570cccd606a"
+        },
+        {
+          "watch_id": "patagonia_nano_puff",
+          "source": "Backcountry",
+          "title": "Patagonia Nano Puff Jacket — Blue, L",
+          "url": "https://www.backcountry.com/patagonia-nano-puff?v=l-blue",
+          "price": 147.12,
+          "currency": "USD",
+          "size": "L",
+          "color": "Blue",
+          "condition": "new",
+          "availability": "in_stock",
+          "seller": "Backcountry",
+          "image": null,
+          "list_price": 198.67,
+          "match_score": 1.0,
+          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "id": "a5b5a07c2099e083"
+        },
+        {
+          "watch_id": "patagonia_nano_puff",
+          "source": "Brand Official",
+          "title": "Patagonia Nano Puff Jacket — Black, L",
+          "url": "https://example-brand.com/shop/patagonia-nano-puff?v=l-black",
+          "price": 159.52,
+          "currency": "USD",
+          "size": "L",
+          "color": "Black",
+          "condition": "new",
+          "availability": "in_stock",
+          "seller": "Brand Official",
+          "image": null,
+          "list_price": 198.67,
+          "match_score": 1.0,
+          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "id": "f6400a6accfee527"
         },
         {
           "watch_id": "patagonia_nano_puff",
           "source": "Amazon",
-          "title": "Patagonia Nano Puff Jacket — Blue, S",
-          "url": "https://www.amazon.com/dp/patagonia-nano-puff?v=s-blue",
-          "price": 181.77,
+          "title": "Patagonia Nano Puff Jacket — Green, M",
+          "url": "https://www.amazon.com/dp/patagonia-nano-puff?v=m-green",
+          "price": 191.62,
           "currency": "USD",
-          "size": "S",
-          "color": "Blue",
+          "size": "M",
+          "color": "Green",
           "condition": "new",
           "availability": "in_stock",
           "seller": "Amazon",
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-19T20:33:11+00:00",
-          "id": "7b287bd4c44e92fa"
+          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "id": "bc77a58102d8013d"
         },
         {
           "watch_id": "patagonia_nano_puff",
           "source": "REI Co-op",
-          "title": "Patagonia Nano Puff Jacket — Green, M",
-          "url": "https://www.rei.com/product/patagonia-nano-puff?v=m-green",
-          "price": 186.5,
+          "title": "Patagonia Nano Puff Jacket — Black, M",
+          "url": "https://www.rei.com/product/patagonia-nano-puff?v=m-black",
+          "price": 212.92,
           "currency": "USD",
           "size": "M",
-          "color": "Green",
+          "color": "Black",
           "condition": "new",
           "availability": "in_stock",
           "seller": "REI Co-op",
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-19T20:33:11+00:00",
-          "id": "5c25780a792c6464"
-        },
-        {
-          "watch_id": "patagonia_nano_puff",
-          "source": "Backcountry",
-          "title": "Patagonia Nano Puff Jacket — Green, L",
-          "url": "https://www.backcountry.com/patagonia-nano-puff?v=l-green",
-          "price": 197.21,
-          "currency": "USD",
-          "size": "L",
-          "color": "Green",
-          "condition": "new",
-          "availability": "in_stock",
-          "seller": "Backcountry",
-          "image": null,
-          "list_price": null,
-          "match_score": 1.0,
-          "fetched_at": "2026-07-19T20:33:11+00:00",
-          "id": "51e67e847cc1891a"
-        },
-        {
-          "watch_id": "patagonia_nano_puff",
-          "source": "Brand Official",
-          "title": "Patagonia Nano Puff Jacket — Blue, L",
-          "url": "https://example-brand.com/shop/patagonia-nano-puff?v=l-blue",
-          "price": 214.07,
-          "currency": "USD",
-          "size": "L",
-          "color": "Blue",
-          "condition": "new",
-          "availability": "in_stock",
-          "seller": "Brand Official",
-          "image": null,
-          "list_price": null,
-          "match_score": 1.0,
-          "fetched_at": "2026-07-19T20:33:11+00:00",
-          "id": "724d789c575b4ba2"
+          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "id": "af88f0db27ea323d"
         }
       ],
       "history": [
-        {
-          "ts": "2026-07-11T12:00:00+00:00",
-          "price": 206.84,
-          "source": "REI Co-op"
-        },
-        {
-          "ts": "2026-07-11T12:00:00+00:00",
-          "price": 181.37,
-          "source": "Backcountry"
-        },
-        {
-          "ts": "2026-07-11T12:00:00+00:00",
-          "price": 179.56,
-          "source": "Brand Official"
-        },
-        {
-          "ts": "2026-07-11T12:00:00+00:00",
-          "price": 171.59,
-          "source": "Amazon"
-        },
-        {
-          "ts": "2026-07-11T12:00:00+00:00",
-          "price": 109.18,
-          "source": "eBay"
-        },
         {
           "ts": "2026-07-12T12:00:00+00:00",
           "price": 119.97,
@@ -1258,6 +1233,31 @@
           "ts": "2026-07-19T20:33:11+00:00",
           "price": 135.95,
           "source": "eBay"
+        },
+        {
+          "ts": "2026-07-20T10:34:49+00:00",
+          "price": 212.92,
+          "source": "REI Co-op"
+        },
+        {
+          "ts": "2026-07-20T10:34:49+00:00",
+          "price": 147.12,
+          "source": "Backcountry"
+        },
+        {
+          "ts": "2026-07-20T10:34:49+00:00",
+          "price": 159.52,
+          "source": "Brand Official"
+        },
+        {
+          "ts": "2026-07-20T10:34:49+00:00",
+          "price": 191.62,
+          "source": "Amazon"
+        },
+        {
+          "ts": "2026-07-20T10:34:49+00:00",
+          "price": 136.69,
+          "source": "eBay"
         }
       ]
     },
@@ -1282,34 +1282,16 @@
       "mpn": null,
       "image": null,
       "active": true,
-      "best_price": 140.62,
-      "best_source": "REI Co-op",
+      "best_price": 109.73,
+      "best_source": "eBay",
       "offer_count": 5,
       "offers": [
-        {
-          "watch_id": "blackdiamond_distance_carbon_z",
-          "source": "REI Co-op",
-          "title": "Black Diamond Distance Carbon Z Trekking Poles — Green, 120",
-          "url": "https://www.rei.com/product/blackdiamond-distance-carbon-z?v=120-green",
-          "price": 140.62,
-          "currency": "USD",
-          "size": "120",
-          "color": "Green",
-          "condition": "new",
-          "availability": "in_stock",
-          "seller": "REI Co-op",
-          "image": null,
-          "list_price": 200.0,
-          "match_score": 1.0,
-          "fetched_at": "2026-07-19T20:33:11+00:00",
-          "id": "f393a67652ccbe0c"
-        },
         {
           "watch_id": "blackdiamond_distance_carbon_z",
           "source": "eBay",
           "title": "Black Diamond Distance Carbon Z Trekking Poles — Blue, 130",
           "url": "https://www.ebay.com/itm/blackdiamond-distance-carbon-z?v=130-blue",
-          "price": 170.37,
+          "price": 109.73,
           "currency": "USD",
           "size": "130",
           "color": "Blue",
@@ -1317,19 +1299,37 @@
           "availability": "in_stock",
           "seller": "eBay",
           "image": null,
-          "list_price": null,
+          "list_price": 200.0,
           "match_score": 1.0,
-          "fetched_at": "2026-07-19T20:33:11+00:00",
+          "fetched_at": "2026-07-20T10:34:49+00:00",
           "id": "6b36789e7c4706e6"
         },
         {
           "watch_id": "blackdiamond_distance_carbon_z",
-          "source": "Amazon",
-          "title": "Black Diamond Distance Carbon Z Trekking Poles — Black, 130",
-          "url": "https://www.amazon.com/dp/blackdiamond-distance-carbon-z?v=130-black",
-          "price": 184.3,
+          "source": "Backcountry",
+          "title": "Black Diamond Distance Carbon Z Trekking Poles — Blue, 110",
+          "url": "https://www.backcountry.com/blackdiamond-distance-carbon-z?v=110-blue",
+          "price": 125.51,
           "currency": "USD",
-          "size": "130",
+          "size": "110",
+          "color": "Blue",
+          "condition": "new",
+          "availability": "in_stock",
+          "seller": "Backcountry",
+          "image": null,
+          "list_price": 200.0,
+          "match_score": 1.0,
+          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "id": "ccac2fb1c5ecf182"
+        },
+        {
+          "watch_id": "blackdiamond_distance_carbon_z",
+          "source": "Amazon",
+          "title": "Black Diamond Distance Carbon Z Trekking Poles — Black, 110",
+          "url": "https://www.amazon.com/dp/blackdiamond-distance-carbon-z?v=110-black",
+          "price": 172.06,
+          "currency": "USD",
+          "size": "110",
           "color": "Black",
           "condition": "new",
           "availability": "in_stock",
@@ -1337,35 +1337,17 @@
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-19T20:33:11+00:00",
-          "id": "7b744411fdef607a"
-        },
-        {
-          "watch_id": "blackdiamond_distance_carbon_z",
-          "source": "Backcountry",
-          "title": "Black Diamond Distance Carbon Z Trekking Poles — Black, 130",
-          "url": "https://www.backcountry.com/blackdiamond-distance-carbon-z?v=130-black",
-          "price": 199.05,
-          "currency": "USD",
-          "size": "130",
-          "color": "Black",
-          "condition": "new",
-          "availability": "in_stock",
-          "seller": "Backcountry",
-          "image": null,
-          "list_price": null,
-          "match_score": 1.0,
-          "fetched_at": "2026-07-19T20:33:11+00:00",
-          "id": "4f93c0b68c51f6cf"
+          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "id": "e43ac6d319e0815e"
         },
         {
           "watch_id": "blackdiamond_distance_carbon_z",
           "source": "Brand Official",
-          "title": "Black Diamond Distance Carbon Z Trekking Poles — Blue, 120",
-          "url": "https://example-brand.com/shop/blackdiamond-distance-carbon-z?v=120-blue",
-          "price": 202.31,
+          "title": "Black Diamond Distance Carbon Z Trekking Poles — Blue, 130",
+          "url": "https://example-brand.com/shop/blackdiamond-distance-carbon-z?v=130-blue",
+          "price": 215.37,
           "currency": "USD",
-          "size": "120",
+          "size": "130",
           "color": "Blue",
           "condition": "new",
           "availability": "in_stock",
@@ -1373,36 +1355,29 @@
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-19T20:33:11+00:00",
-          "id": "556acb8eed245033"
+          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "id": "f5a8d738980b7a2b"
+        },
+        {
+          "watch_id": "blackdiamond_distance_carbon_z",
+          "source": "REI Co-op",
+          "title": "Black Diamond Distance Carbon Z Trekking Poles — Black, 130",
+          "url": "https://www.rei.com/product/blackdiamond-distance-carbon-z?v=130-black",
+          "price": 216.65,
+          "currency": "USD",
+          "size": "130",
+          "color": "Black",
+          "condition": "new",
+          "availability": "in_stock",
+          "seller": "REI Co-op",
+          "image": null,
+          "list_price": null,
+          "match_score": 1.0,
+          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "id": "80c74515d5d2aabc"
         }
       ],
       "history": [
-        {
-          "ts": "2026-07-11T12:00:00+00:00",
-          "price": 200.19,
-          "source": "REI Co-op"
-        },
-        {
-          "ts": "2026-07-11T12:00:00+00:00",
-          "price": 206.86,
-          "source": "Backcountry"
-        },
-        {
-          "ts": "2026-07-11T12:00:00+00:00",
-          "price": 198.6,
-          "source": "Brand Official"
-        },
-        {
-          "ts": "2026-07-11T12:00:00+00:00",
-          "price": 204.46,
-          "source": "Amazon"
-        },
-        {
-          "ts": "2026-07-11T12:00:00+00:00",
-          "price": 121.4,
-          "source": "eBay"
-        },
         {
           "ts": "2026-07-12T12:00:00+00:00",
           "price": 196.63,
@@ -1677,6 +1652,31 @@
           "ts": "2026-07-19T20:33:11+00:00",
           "price": 170.37,
           "source": "eBay"
+        },
+        {
+          "ts": "2026-07-20T10:34:49+00:00",
+          "price": 216.65,
+          "source": "REI Co-op"
+        },
+        {
+          "ts": "2026-07-20T10:34:49+00:00",
+          "price": 125.51,
+          "source": "Backcountry"
+        },
+        {
+          "ts": "2026-07-20T10:34:49+00:00",
+          "price": 215.37,
+          "source": "Brand Official"
+        },
+        {
+          "ts": "2026-07-20T10:34:49+00:00",
+          "price": 172.06,
+          "source": "Amazon"
+        },
+        {
+          "ts": "2026-07-20T10:34:49+00:00",
+          "price": 109.73,
+          "source": "eBay"
         }
       ]
     },
@@ -1699,70 +1699,34 @@
       "mpn": null,
       "image": null,
       "active": true,
-      "best_price": 160.75,
-      "best_source": "Amazon",
+      "best_price": 196.32,
+      "best_source": "REI Co-op",
       "offer_count": 5,
       "offers": [
         {
           "watch_id": "deuter_aircontact_core_60_10",
-          "source": "Amazon",
-          "title": "Deuter Aircontact Core 60+10 Backpack — Black, 70L",
-          "url": "https://www.amazon.com/dp/deuter-aircontact-core-60-10?v=70l-black",
-          "price": 160.75,
-          "currency": "USD",
-          "size": "70L",
-          "color": "Black",
-          "condition": "new",
-          "availability": "in_stock",
-          "seller": "Amazon",
-          "image": null,
-          "list_price": 266.67,
-          "match_score": 1.0,
-          "fetched_at": "2026-07-19T20:33:11+00:00",
-          "id": "ac7af2b90efcf757"
-        },
-        {
-          "watch_id": "deuter_aircontact_core_60_10",
-          "source": "Backcountry",
-          "title": "Deuter Aircontact Core 60+10 Backpack — Blue, 70L",
-          "url": "https://www.backcountry.com/deuter-aircontact-core-60-10?v=70l-blue",
-          "price": 167.89,
-          "currency": "USD",
-          "size": "70L",
-          "color": "Blue",
-          "condition": "new",
-          "availability": "in_stock",
-          "seller": "Backcountry",
-          "image": null,
-          "list_price": 266.67,
-          "match_score": 1.0,
-          "fetched_at": "2026-07-19T20:33:11+00:00",
-          "id": "fa0d637830cdd068"
-        },
-        {
-          "watch_id": "deuter_aircontact_core_60_10",
-          "source": "Brand Official",
+          "source": "REI Co-op",
           "title": "Deuter Aircontact Core 60+10 Backpack — Green, 70L",
-          "url": "https://example-brand.com/shop/deuter-aircontact-core-60-10?v=70l-green",
-          "price": 207.12,
+          "url": "https://www.rei.com/product/deuter-aircontact-core-60-10?v=70l-green",
+          "price": 196.32,
           "currency": "USD",
           "size": "70L",
           "color": "Green",
           "condition": "new",
           "availability": "in_stock",
-          "seller": "Brand Official",
+          "seller": "REI Co-op",
           "image": null,
           "list_price": 266.67,
           "match_score": 1.0,
-          "fetched_at": "2026-07-19T20:33:11+00:00",
-          "id": "3dd5d7e80d77bdaa"
+          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "id": "ffa49ee0d5b297b8"
         },
         {
           "watch_id": "deuter_aircontact_core_60_10",
           "source": "eBay",
           "title": "Deuter Aircontact Core 60+10 Backpack — Black, 70L",
           "url": "https://www.ebay.com/itm/deuter-aircontact-core-60-10?v=70l-black",
-          "price": 214.58,
+          "price": 217.18,
           "currency": "USD",
           "size": "70L",
           "color": "Black",
@@ -1772,54 +1736,65 @@
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-19T20:33:11+00:00",
+          "fetched_at": "2026-07-20T10:34:49+00:00",
           "id": "46a5ccc73ec70981"
         },
         {
           "watch_id": "deuter_aircontact_core_60_10",
-          "source": "REI Co-op",
+          "source": "Amazon",
           "title": "Deuter Aircontact Core 60+10 Backpack — Green, 70L",
-          "url": "https://www.rei.com/product/deuter-aircontact-core-60-10?v=70l-green",
-          "price": 258.67,
+          "url": "https://www.amazon.com/dp/deuter-aircontact-core-60-10?v=70l-green",
+          "price": 225.69,
           "currency": "USD",
           "size": "70L",
           "color": "Green",
           "condition": "new",
           "availability": "in_stock",
-          "seller": "REI Co-op",
+          "seller": "Amazon",
+          "image": null,
+          "list_price": 266.67,
+          "match_score": 1.0,
+          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "id": "c26812ddf7261260"
+        },
+        {
+          "watch_id": "deuter_aircontact_core_60_10",
+          "source": "Backcountry",
+          "title": "Deuter Aircontact Core 60+10 Backpack — Black, 70L",
+          "url": "https://www.backcountry.com/deuter-aircontact-core-60-10?v=70l-black",
+          "price": 262.01,
+          "currency": "USD",
+          "size": "70L",
+          "color": "Black",
+          "condition": "new",
+          "availability": "in_stock",
+          "seller": "Backcountry",
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-19T20:33:11+00:00",
-          "id": "ffa49ee0d5b297b8"
+          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "id": "84fbcf2be6613e10"
+        },
+        {
+          "watch_id": "deuter_aircontact_core_60_10",
+          "source": "Brand Official",
+          "title": "Deuter Aircontact Core 60+10 Backpack — Black, 70L",
+          "url": "https://example-brand.com/shop/deuter-aircontact-core-60-10?v=70l-black",
+          "price": 281.27,
+          "currency": "USD",
+          "size": "70L",
+          "color": "Black",
+          "condition": "new",
+          "availability": "in_stock",
+          "seller": "Brand Official",
+          "image": null,
+          "list_price": null,
+          "match_score": 1.0,
+          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "id": "ee4c6b0f915c0d64"
         }
       ],
       "history": [
-        {
-          "ts": "2026-07-11T12:00:00+00:00",
-          "price": 244.61,
-          "source": "REI Co-op"
-        },
-        {
-          "ts": "2026-07-11T12:00:00+00:00",
-          "price": 283.58,
-          "source": "Backcountry"
-        },
-        {
-          "ts": "2026-07-11T12:00:00+00:00",
-          "price": 295.28,
-          "source": "Brand Official"
-        },
-        {
-          "ts": "2026-07-11T12:00:00+00:00",
-          "price": 171.67,
-          "source": "Amazon"
-        },
-        {
-          "ts": "2026-07-11T12:00:00+00:00",
-          "price": 217.18,
-          "source": "eBay"
-        },
         {
           "ts": "2026-07-12T12:00:00+00:00",
           "price": 186.66,
@@ -2094,6 +2069,31 @@
           "ts": "2026-07-19T20:33:11+00:00",
           "price": 214.58,
           "source": "eBay"
+        },
+        {
+          "ts": "2026-07-20T10:34:49+00:00",
+          "price": 196.32,
+          "source": "REI Co-op"
+        },
+        {
+          "ts": "2026-07-20T10:34:49+00:00",
+          "price": 262.01,
+          "source": "Backcountry"
+        },
+        {
+          "ts": "2026-07-20T10:34:49+00:00",
+          "price": 281.27,
+          "source": "Brand Official"
+        },
+        {
+          "ts": "2026-07-20T10:34:49+00:00",
+          "price": 225.69,
+          "source": "Amazon"
+        },
+        {
+          "ts": "2026-07-20T10:34:49+00:00",
+          "price": 217.18,
+          "source": "eBay"
         }
       ]
     },
@@ -2117,127 +2117,102 @@
       "mpn": null,
       "image": null,
       "active": true,
-      "best_price": 118.06,
-      "best_source": "eBay",
+      "best_price": 103.47,
+      "best_source": "Backcountry",
       "offer_count": 5,
       "offers": [
         {
           "watch_id": "outdoor_research_helium_rain",
-          "source": "eBay",
+          "source": "Backcountry",
           "title": "Outdoor Research Helium Rain Jacket — Black, L",
-          "url": "https://www.ebay.com/itm/outdoor-research-helium-rain?v=l-black",
-          "price": 118.06,
+          "url": "https://www.backcountry.com/outdoor-research-helium-rain?v=l-black",
+          "price": 103.47,
           "currency": "USD",
           "size": "L",
           "color": "Black",
-          "condition": "used",
-          "availability": "in_stock",
-          "seller": "eBay",
-          "image": null,
-          "list_price": 173.33,
-          "match_score": 1.0,
-          "fetched_at": "2026-07-19T20:33:11+00:00",
-          "id": "bba08eb82f11adf7"
-        },
-        {
-          "watch_id": "outdoor_research_helium_rain",
-          "source": "Backcountry",
-          "title": "Outdoor Research Helium Rain Jacket — Green, M",
-          "url": "https://www.backcountry.com/outdoor-research-helium-rain?v=m-green",
-          "price": 168.16,
-          "currency": "USD",
-          "size": "M",
-          "color": "Green",
           "condition": "new",
           "availability": "in_stock",
           "seller": "Backcountry",
           "image": null,
+          "list_price": 173.33,
+          "match_score": 1.0,
+          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "id": "47177e5bd190a833"
+        },
+        {
+          "watch_id": "outdoor_research_helium_rain",
+          "source": "Brand Official",
+          "title": "Outdoor Research Helium Rain Jacket — Blue, M",
+          "url": "https://example-brand.com/shop/outdoor-research-helium-rain?v=m-blue",
+          "price": 115.45,
+          "currency": "USD",
+          "size": "M",
+          "color": "Blue",
+          "condition": "new",
+          "availability": "in_stock",
+          "seller": "Brand Official",
+          "image": null,
+          "list_price": 173.33,
+          "match_score": 1.0,
+          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "id": "b5c205326912faa5"
+        },
+        {
+          "watch_id": "outdoor_research_helium_rain",
+          "source": "eBay",
+          "title": "Outdoor Research Helium Rain Jacket — Blue, L",
+          "url": "https://www.ebay.com/itm/outdoor-research-helium-rain?v=l-blue",
+          "price": 153.48,
+          "currency": "USD",
+          "size": "L",
+          "color": "Blue",
+          "condition": "used",
+          "availability": "in_stock",
+          "seller": "eBay",
+          "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-19T20:33:11+00:00",
-          "id": "1cb360e14377a4c8"
+          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "id": "f7875c9cd0473800"
         },
         {
           "watch_id": "outdoor_research_helium_rain",
           "source": "Amazon",
-          "title": "Outdoor Research Helium Rain Jacket — Blue, L",
-          "url": "https://www.amazon.com/dp/outdoor-research-helium-rain?v=l-blue",
-          "price": 168.68,
+          "title": "Outdoor Research Helium Rain Jacket — Black, M",
+          "url": "https://www.amazon.com/dp/outdoor-research-helium-rain?v=m-black",
+          "price": 163.82,
           "currency": "USD",
-          "size": "L",
-          "color": "Blue",
+          "size": "M",
+          "color": "Black",
           "condition": "new",
           "availability": "in_stock",
           "seller": "Amazon",
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-19T20:33:11+00:00",
-          "id": "2f931ec3a8be2fa7"
+          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "id": "baeed51333964048"
         },
         {
           "watch_id": "outdoor_research_helium_rain",
           "source": "REI Co-op",
-          "title": "Outdoor Research Helium Rain Jacket — Green, M",
-          "url": "https://www.rei.com/product/outdoor-research-helium-rain?v=m-green",
-          "price": 177.82,
+          "title": "Outdoor Research Helium Rain Jacket — Black, M",
+          "url": "https://www.rei.com/product/outdoor-research-helium-rain?v=m-black",
+          "price": 170.15,
           "currency": "USD",
           "size": "M",
-          "color": "Green",
+          "color": "Black",
           "condition": "new",
           "availability": "in_stock",
           "seller": "REI Co-op",
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-19T20:33:11+00:00",
-          "id": "2338f0b6c2855d14"
-        },
-        {
-          "watch_id": "outdoor_research_helium_rain",
-          "source": "Brand Official",
-          "title": "Outdoor Research Helium Rain Jacket — Green, L",
-          "url": "https://example-brand.com/shop/outdoor-research-helium-rain?v=l-green",
-          "price": 195.51,
-          "currency": "USD",
-          "size": "L",
-          "color": "Green",
-          "condition": "new",
-          "availability": "in_stock",
-          "seller": "Brand Official",
-          "image": null,
-          "list_price": null,
-          "match_score": 1.0,
-          "fetched_at": "2026-07-19T20:33:11+00:00",
-          "id": "8fb1f7d40074da34"
+          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "id": "14ba1d2aaf398886"
         }
       ],
       "history": [
-        {
-          "ts": "2026-07-11T12:00:00+00:00",
-          "price": 132.29,
-          "source": "REI Co-op"
-        },
-        {
-          "ts": "2026-07-11T12:00:00+00:00",
-          "price": 159.05,
-          "source": "Backcountry"
-        },
-        {
-          "ts": "2026-07-11T12:00:00+00:00",
-          "price": 168.44,
-          "source": "Brand Official"
-        },
-        {
-          "ts": "2026-07-11T12:00:00+00:00",
-          "price": 134.56,
-          "source": "Amazon"
-        },
-        {
-          "ts": "2026-07-11T12:00:00+00:00",
-          "price": 117.8,
-          "source": "eBay"
-        },
         {
           "ts": "2026-07-12T12:00:00+00:00",
           "price": 113.54,
@@ -2512,6 +2487,31 @@
           "ts": "2026-07-19T20:33:11+00:00",
           "price": 118.06,
           "source": "eBay"
+        },
+        {
+          "ts": "2026-07-20T10:34:49+00:00",
+          "price": 170.15,
+          "source": "REI Co-op"
+        },
+        {
+          "ts": "2026-07-20T10:34:49+00:00",
+          "price": 103.47,
+          "source": "Backcountry"
+        },
+        {
+          "ts": "2026-07-20T10:34:49+00:00",
+          "price": 115.45,
+          "source": "Brand Official"
+        },
+        {
+          "ts": "2026-07-20T10:34:49+00:00",
+          "price": 163.82,
+          "source": "Amazon"
+        },
+        {
+          "ts": "2026-07-20T10:34:49+00:00",
+          "price": 153.48,
+          "source": "eBay"
         }
       ]
     },
@@ -2534,18 +2534,72 @@
       "mpn": null,
       "image": null,
       "active": true,
-      "best_price": 43.74,
-      "best_source": "eBay",
+      "best_price": 51.13,
+      "best_source": "Brand Official",
       "offer_count": 5,
       "offers": [
         {
           "watch_id": "mammut_ophir_harness",
-          "source": "eBay",
-          "title": "Mammut Ophir 3 Slide Climbing Harness — Blue, M",
-          "url": "https://www.ebay.com/itm/mammut-ophir-harness?v=m-blue",
-          "price": 43.74,
+          "source": "Brand Official",
+          "title": "Mammut Ophir 3 Slide Climbing Harness — Blue, L",
+          "url": "https://example-brand.com/shop/mammut-ophir-harness?v=l-blue",
+          "price": 51.13,
+          "currency": "USD",
+          "size": "L",
+          "color": "Blue",
+          "condition": "new",
+          "availability": "in_stock",
+          "seller": "Brand Official",
+          "image": null,
+          "list_price": 80.0,
+          "match_score": 1.0,
+          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "id": "b8948c357acf142e"
+        },
+        {
+          "watch_id": "mammut_ophir_harness",
+          "source": "REI Co-op",
+          "title": "Mammut Ophir 3 Slide Climbing Harness — Black, M",
+          "url": "https://www.rei.com/product/mammut-ophir-harness?v=m-black",
+          "price": 56.15,
           "currency": "USD",
           "size": "M",
+          "color": "Black",
+          "condition": "new",
+          "availability": "in_stock",
+          "seller": "REI Co-op",
+          "image": null,
+          "list_price": 80.0,
+          "match_score": 1.0,
+          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "id": "0250e26438a1714f"
+        },
+        {
+          "watch_id": "mammut_ophir_harness",
+          "source": "Amazon",
+          "title": "Mammut Ophir 3 Slide Climbing Harness — Blue, L",
+          "url": "https://www.amazon.com/dp/mammut-ophir-harness?v=l-blue",
+          "price": 56.84,
+          "currency": "USD",
+          "size": "L",
+          "color": "Blue",
+          "condition": "new",
+          "availability": "in_stock",
+          "seller": "Amazon",
+          "image": null,
+          "list_price": 80.0,
+          "match_score": 1.0,
+          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "id": "5a2047eafc9e3d8d"
+        },
+        {
+          "watch_id": "mammut_ophir_harness",
+          "source": "eBay",
+          "title": "Mammut Ophir 3 Slide Climbing Harness — Blue, L",
+          "url": "https://www.ebay.com/itm/mammut-ophir-harness?v=l-blue",
+          "price": 64.51,
+          "currency": "USD",
+          "size": "L",
           "color": "Blue",
           "condition": "used",
           "availability": "in_stock",
@@ -2553,35 +2607,17 @@
           "image": null,
           "list_price": 80.0,
           "match_score": 1.0,
-          "fetched_at": "2026-07-19T20:33:11+00:00",
-          "id": "c5f613f086571132"
-        },
-        {
-          "watch_id": "mammut_ophir_harness",
-          "source": "Amazon",
-          "title": "Mammut Ophir 3 Slide Climbing Harness — Green, M",
-          "url": "https://www.amazon.com/dp/mammut-ophir-harness?v=m-green",
-          "price": 60.76,
-          "currency": "USD",
-          "size": "M",
-          "color": "Green",
-          "condition": "new",
-          "availability": "in_stock",
-          "seller": "Amazon",
-          "image": null,
-          "list_price": 80.0,
-          "match_score": 1.0,
-          "fetched_at": "2026-07-19T20:33:11+00:00",
-          "id": "28ae265844befff8"
+          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "id": "16bf9c17c0f9ce42"
         },
         {
           "watch_id": "mammut_ophir_harness",
           "source": "Backcountry",
-          "title": "Mammut Ophir 3 Slide Climbing Harness — Blue, M",
-          "url": "https://www.backcountry.com/mammut-ophir-harness?v=m-blue",
-          "price": 73.05,
+          "title": "Mammut Ophir 3 Slide Climbing Harness — Blue, L",
+          "url": "https://www.backcountry.com/mammut-ophir-harness?v=l-blue",
+          "price": 78.39,
           "currency": "USD",
-          "size": "M",
+          "size": "L",
           "color": "Blue",
           "condition": "new",
           "availability": "in_stock",
@@ -2589,72 +2625,11 @@
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-19T20:33:11+00:00",
-          "id": "884d2b3678641416"
-        },
-        {
-          "watch_id": "mammut_ophir_harness",
-          "source": "REI Co-op",
-          "title": "Mammut Ophir 3 Slide Climbing Harness — Blue, L",
-          "url": "https://www.rei.com/product/mammut-ophir-harness?v=l-blue",
-          "price": 82.42,
-          "currency": "USD",
-          "size": "L",
-          "color": "Blue",
-          "condition": "new",
-          "availability": "in_stock",
-          "seller": "REI Co-op",
-          "image": null,
-          "list_price": null,
-          "match_score": 1.0,
-          "fetched_at": "2026-07-19T20:33:11+00:00",
-          "id": "c287320967b92846"
-        },
-        {
-          "watch_id": "mammut_ophir_harness",
-          "source": "Brand Official",
-          "title": "Mammut Ophir 3 Slide Climbing Harness — Blue, M",
-          "url": "https://example-brand.com/shop/mammut-ophir-harness?v=m-blue",
-          "price": 84.64,
-          "currency": "USD",
-          "size": "M",
-          "color": "Blue",
-          "condition": "new",
-          "availability": "in_stock",
-          "seller": "Brand Official",
-          "image": null,
-          "list_price": null,
-          "match_score": 1.0,
-          "fetched_at": "2026-07-19T20:33:11+00:00",
-          "id": "9e4d9e73284e7742"
+          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "id": "3a9758067430db30"
         }
       ],
       "history": [
-        {
-          "ts": "2026-07-11T12:00:00+00:00",
-          "price": 60.07,
-          "source": "REI Co-op"
-        },
-        {
-          "ts": "2026-07-11T12:00:00+00:00",
-          "price": 70.56,
-          "source": "Backcountry"
-        },
-        {
-          "ts": "2026-07-11T12:00:00+00:00",
-          "price": 89.42,
-          "source": "Brand Official"
-        },
-        {
-          "ts": "2026-07-11T12:00:00+00:00",
-          "price": 50.35,
-          "source": "Amazon"
-        },
-        {
-          "ts": "2026-07-11T12:00:00+00:00",
-          "price": 49.68,
-          "source": "eBay"
-        },
         {
           "ts": "2026-07-12T12:00:00+00:00",
           "price": 72.49,
@@ -2929,6 +2904,31 @@
           "ts": "2026-07-19T20:33:11+00:00",
           "price": 43.74,
           "source": "eBay"
+        },
+        {
+          "ts": "2026-07-20T10:34:49+00:00",
+          "price": 56.15,
+          "source": "REI Co-op"
+        },
+        {
+          "ts": "2026-07-20T10:34:49+00:00",
+          "price": 78.39,
+          "source": "Backcountry"
+        },
+        {
+          "ts": "2026-07-20T10:34:49+00:00",
+          "price": 51.13,
+          "source": "Brand Official"
+        },
+        {
+          "ts": "2026-07-20T10:34:49+00:00",
+          "price": 56.84,
+          "source": "Amazon"
+        },
+        {
+          "ts": "2026-07-20T10:34:49+00:00",
+          "price": 64.51,
+          "source": "eBay"
         }
       ]
     },
@@ -2955,70 +2955,16 @@
       "mpn": null,
       "image": null,
       "active": true,
-      "best_price": 261.65,
-      "best_source": "Backcountry",
+      "best_price": 356.55,
+      "best_source": "Amazon",
       "offer_count": 5,
       "offers": [
-        {
-          "watch_id": "mountainhardwear_ghost_whisperer",
-          "source": "Backcountry",
-          "title": "Mountain Hardwear Ghost Whisperer 2 Hoody — black, M",
-          "url": "https://www.backcountry.com/mountainhardwear-ghost-whisperer?v=m-black",
-          "price": 261.65,
-          "currency": "USD",
-          "size": "M",
-          "color": "black",
-          "condition": "new",
-          "availability": "in_stock",
-          "seller": "Backcountry",
-          "image": null,
-          "list_price": 400.0,
-          "match_score": 1.0,
-          "fetched_at": "2026-07-19T20:33:11+00:00",
-          "id": "74fdc34bfc639339"
-        },
-        {
-          "watch_id": "mountainhardwear_ghost_whisperer",
-          "source": "eBay",
-          "title": "Mountain Hardwear Ghost Whisperer 2 Hoody — black, L",
-          "url": "https://www.ebay.com/itm/mountainhardwear-ghost-whisperer?v=l-black",
-          "price": 331.48,
-          "currency": "USD",
-          "size": "L",
-          "color": "black",
-          "condition": "used",
-          "availability": "in_stock",
-          "seller": "eBay",
-          "image": null,
-          "list_price": null,
-          "match_score": 1.0,
-          "fetched_at": "2026-07-19T20:33:11+00:00",
-          "id": "fccebc0968011d75"
-        },
-        {
-          "watch_id": "mountainhardwear_ghost_whisperer",
-          "source": "REI Co-op",
-          "title": "Mountain Hardwear Ghost Whisperer 2 Hoody — black, L",
-          "url": "https://www.rei.com/product/mountainhardwear-ghost-whisperer?v=l-black",
-          "price": 399.69,
-          "currency": "USD",
-          "size": "L",
-          "color": "black",
-          "condition": "new",
-          "availability": "in_stock",
-          "seller": "REI Co-op",
-          "image": null,
-          "list_price": null,
-          "match_score": 1.0,
-          "fetched_at": "2026-07-19T20:33:11+00:00",
-          "id": "ac95689e63982a8e"
-        },
         {
           "watch_id": "mountainhardwear_ghost_whisperer",
           "source": "Amazon",
           "title": "Mountain Hardwear Ghost Whisperer 2 Hoody — blue, L",
           "url": "https://www.amazon.com/dp/mountainhardwear-ghost-whisperer?v=l-blue",
-          "price": 401.8,
+          "price": 356.55,
           "currency": "USD",
           "size": "L",
           "color": "blue",
@@ -3028,54 +2974,83 @@
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-19T20:33:11+00:00",
+          "fetched_at": "2026-07-20T10:34:49+00:00",
           "id": "867da22e1edaba51"
         },
         {
           "watch_id": "mountainhardwear_ghost_whisperer",
-          "source": "Brand Official",
+          "source": "eBay",
           "title": "Mountain Hardwear Ghost Whisperer 2 Hoody — black, M",
-          "url": "https://example-brand.com/shop/mountainhardwear-ghost-whisperer?v=m-black",
-          "price": 426.17,
+          "url": "https://www.ebay.com/itm/mountainhardwear-ghost-whisperer?v=m-black",
+          "price": 374.93,
           "currency": "USD",
           "size": "M",
           "color": "black",
+          "condition": "used",
+          "availability": "in_stock",
+          "seller": "eBay",
+          "image": null,
+          "list_price": null,
+          "match_score": 1.0,
+          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "id": "29d078c13c0cde2a"
+        },
+        {
+          "watch_id": "mountainhardwear_ghost_whisperer",
+          "source": "Brand Official",
+          "title": "Mountain Hardwear Ghost Whisperer 2 Hoody — blue, M",
+          "url": "https://example-brand.com/shop/mountainhardwear-ghost-whisperer?v=m-blue",
+          "price": 382.14,
+          "currency": "USD",
+          "size": "M",
+          "color": "blue",
           "condition": "new",
           "availability": "in_stock",
           "seller": "Brand Official",
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-19T20:33:11+00:00",
-          "id": "06b5e575d0186193"
+          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "id": "541447023b76824b"
+        },
+        {
+          "watch_id": "mountainhardwear_ghost_whisperer",
+          "source": "REI Co-op",
+          "title": "Mountain Hardwear Ghost Whisperer 2 Hoody — black, L",
+          "url": "https://www.rei.com/product/mountainhardwear-ghost-whisperer?v=l-black",
+          "price": 387.37,
+          "currency": "USD",
+          "size": "L",
+          "color": "black",
+          "condition": "new",
+          "availability": "in_stock",
+          "seller": "REI Co-op",
+          "image": null,
+          "list_price": null,
+          "match_score": 1.0,
+          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "id": "ac95689e63982a8e"
+        },
+        {
+          "watch_id": "mountainhardwear_ghost_whisperer",
+          "source": "Backcountry",
+          "title": "Mountain Hardwear Ghost Whisperer 2 Hoody — black, L",
+          "url": "https://www.backcountry.com/mountainhardwear-ghost-whisperer?v=l-black",
+          "price": 424.64,
+          "currency": "USD",
+          "size": "L",
+          "color": "black",
+          "condition": "new",
+          "availability": "in_stock",
+          "seller": "Backcountry",
+          "image": null,
+          "list_price": null,
+          "match_score": 1.0,
+          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "id": "e5a1821ec6898d73"
         }
       ],
       "history": [
-        {
-          "ts": "2026-07-11T12:00:00+00:00",
-          "price": 429.69,
-          "source": "REI Co-op"
-        },
-        {
-          "ts": "2026-07-11T12:00:00+00:00",
-          "price": 380.43,
-          "source": "Backcountry"
-        },
-        {
-          "ts": "2026-07-11T12:00:00+00:00",
-          "price": 427.31,
-          "source": "Brand Official"
-        },
-        {
-          "ts": "2026-07-11T12:00:00+00:00",
-          "price": 278.13,
-          "source": "Amazon"
-        },
-        {
-          "ts": "2026-07-11T12:00:00+00:00",
-          "price": 339.98,
-          "source": "eBay"
-        },
         {
           "ts": "2026-07-12T12:00:00+00:00",
           "price": 393.32,
@@ -3350,6 +3325,31 @@
           "ts": "2026-07-19T20:33:11+00:00",
           "price": 331.48,
           "source": "eBay"
+        },
+        {
+          "ts": "2026-07-20T10:34:49+00:00",
+          "price": 387.37,
+          "source": "REI Co-op"
+        },
+        {
+          "ts": "2026-07-20T10:34:49+00:00",
+          "price": 424.64,
+          "source": "Backcountry"
+        },
+        {
+          "ts": "2026-07-20T10:34:49+00:00",
+          "price": 382.14,
+          "source": "Brand Official"
+        },
+        {
+          "ts": "2026-07-20T10:34:49+00:00",
+          "price": 356.55,
+          "source": "Amazon"
+        },
+        {
+          "ts": "2026-07-20T10:34:49+00:00",
+          "price": 374.93,
+          "source": "eBay"
         }
       ]
     },
@@ -3373,70 +3373,88 @@
       "mpn": null,
       "image": null,
       "active": true,
-      "best_price": 61.74,
-      "best_source": "REI Co-op",
+      "best_price": 65.37,
+      "best_source": "eBay",
       "offer_count": 5,
       "offers": [
         {
           "watch_id": "marmot_precip_eco",
-          "source": "REI Co-op",
-          "title": "Marmot PreCip Eco Jacket — Green, L",
-          "url": "https://www.rei.com/product/marmot-precip-eco?v=l-green",
-          "price": 61.74,
+          "source": "eBay",
+          "title": "Marmot PreCip Eco Jacket — Blue, XL",
+          "url": "https://www.ebay.com/itm/marmot-precip-eco?v=xl-blue",
+          "price": 65.37,
           "currency": "USD",
-          "size": "L",
-          "color": "Green",
-          "condition": "new",
+          "size": "XL",
+          "color": "Blue",
+          "condition": "used",
           "availability": "in_stock",
-          "seller": "REI Co-op",
+          "seller": "eBay",
           "image": null,
           "list_price": 100.0,
           "match_score": 1.0,
-          "fetched_at": "2026-07-19T20:33:11+00:00",
-          "id": "a3d893c7dd2f45ce"
+          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "id": "5293b710a0dfc5b5"
+        },
+        {
+          "watch_id": "marmot_precip_eco",
+          "source": "Amazon",
+          "title": "Marmot PreCip Eco Jacket — Black, M",
+          "url": "https://www.amazon.com/dp/marmot-precip-eco?v=m-black",
+          "price": 72.16,
+          "currency": "USD",
+          "size": "M",
+          "color": "Black",
+          "condition": "new",
+          "availability": "in_stock",
+          "seller": "Amazon",
+          "image": null,
+          "list_price": 100.0,
+          "match_score": 1.0,
+          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "id": "17b1f2ec9b9bc3ef"
         },
         {
           "watch_id": "marmot_precip_eco",
           "source": "Backcountry",
-          "title": "Marmot PreCip Eco Jacket — Black, L",
-          "url": "https://www.backcountry.com/marmot-precip-eco?v=l-black",
-          "price": 71.97,
+          "title": "Marmot PreCip Eco Jacket — Black, XL",
+          "url": "https://www.backcountry.com/marmot-precip-eco?v=xl-black",
+          "price": 97.28,
           "currency": "USD",
-          "size": "L",
+          "size": "XL",
           "color": "Black",
           "condition": "new",
           "availability": "in_stock",
           "seller": "Backcountry",
           "image": null,
-          "list_price": 100.0,
+          "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-19T20:33:11+00:00",
-          "id": "53186a2323e9f921"
+          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "id": "68b9891990e97979"
         },
         {
           "watch_id": "marmot_precip_eco",
-          "source": "eBay",
-          "title": "Marmot PreCip Eco Jacket — Green, M",
-          "url": "https://www.ebay.com/itm/marmot-precip-eco?v=m-green",
-          "price": 86.91,
+          "source": "REI Co-op",
+          "title": "Marmot PreCip Eco Jacket — Green, XL",
+          "url": "https://www.rei.com/product/marmot-precip-eco?v=xl-green",
+          "price": 107.13,
           "currency": "USD",
-          "size": "M",
+          "size": "XL",
           "color": "Green",
-          "condition": "used",
+          "condition": "new",
           "availability": "in_stock",
-          "seller": "eBay",
+          "seller": "REI Co-op",
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-19T20:33:11+00:00",
-          "id": "0c7f7315956f2385"
+          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "id": "20af22b159050e34"
         },
         {
           "watch_id": "marmot_precip_eco",
           "source": "Brand Official",
           "title": "Marmot PreCip Eco Jacket — Green, XL",
           "url": "https://example-brand.com/shop/marmot-precip-eco?v=xl-green",
-          "price": 93.88,
+          "price": 109.2,
           "currency": "USD",
           "size": "XL",
           "color": "Green",
@@ -3446,54 +3464,11 @@
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-19T20:33:11+00:00",
+          "fetched_at": "2026-07-20T10:34:49+00:00",
           "id": "867a354d3d8ae881"
-        },
-        {
-          "watch_id": "marmot_precip_eco",
-          "source": "Amazon",
-          "title": "Marmot PreCip Eco Jacket — Blue, M",
-          "url": "https://www.amazon.com/dp/marmot-precip-eco?v=m-blue",
-          "price": 94.2,
-          "currency": "USD",
-          "size": "M",
-          "color": "Blue",
-          "condition": "new",
-          "availability": "in_stock",
-          "seller": "Amazon",
-          "image": null,
-          "list_price": null,
-          "match_score": 1.0,
-          "fetched_at": "2026-07-19T20:33:11+00:00",
-          "id": "607481d4fb0b5c66"
         }
       ],
       "history": [
-        {
-          "ts": "2026-07-11T12:00:00+00:00",
-          "price": 88.23,
-          "source": "REI Co-op"
-        },
-        {
-          "ts": "2026-07-11T12:00:00+00:00",
-          "price": 101.33,
-          "source": "Backcountry"
-        },
-        {
-          "ts": "2026-07-11T12:00:00+00:00",
-          "price": 97.03,
-          "source": "Brand Official"
-        },
-        {
-          "ts": "2026-07-11T12:00:00+00:00",
-          "price": 73.55,
-          "source": "Amazon"
-        },
-        {
-          "ts": "2026-07-11T12:00:00+00:00",
-          "price": 92.2,
-          "source": "eBay"
-        },
         {
           "ts": "2026-07-12T12:00:00+00:00",
           "price": 91.21,
@@ -3768,6 +3743,31 @@
           "ts": "2026-07-19T20:33:11+00:00",
           "price": 86.91,
           "source": "eBay"
+        },
+        {
+          "ts": "2026-07-20T10:34:49+00:00",
+          "price": 107.13,
+          "source": "REI Co-op"
+        },
+        {
+          "ts": "2026-07-20T10:34:49+00:00",
+          "price": 97.28,
+          "source": "Backcountry"
+        },
+        {
+          "ts": "2026-07-20T10:34:49+00:00",
+          "price": 109.2,
+          "source": "Brand Official"
+        },
+        {
+          "ts": "2026-07-20T10:34:49+00:00",
+          "price": 72.16,
+          "source": "Amazon"
+        },
+        {
+          "ts": "2026-07-20T10:34:49+00:00",
+          "price": 65.37,
+          "source": "eBay"
         }
       ]
     },
@@ -3791,54 +3791,72 @@
       "mpn": null,
       "image": null,
       "active": true,
-      "best_price": 156.54,
+      "best_price": 146.82,
       "best_source": "eBay",
       "offer_count": 5,
       "offers": [
         {
           "watch_id": "rab_microlight_alpine",
           "source": "eBay",
-          "title": "Rab Microlight Alpine Down Jacket — Black, L",
-          "url": "https://www.ebay.com/itm/rab-microlight-alpine?v=l-black",
-          "price": 156.54,
+          "title": "Rab Microlight Alpine Down Jacket — Green, L",
+          "url": "https://www.ebay.com/itm/rab-microlight-alpine?v=l-green",
+          "price": 146.82,
           "currency": "USD",
           "size": "L",
-          "color": "Black",
+          "color": "Green",
           "condition": "used",
           "availability": "in_stock",
           "seller": "eBay",
           "image": null,
           "list_price": 266.67,
           "match_score": 1.0,
-          "fetched_at": "2026-07-19T20:33:11+00:00",
-          "id": "d67349048a09d1d5"
+          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "id": "d88b17c8e14bf92a"
+        },
+        {
+          "watch_id": "rab_microlight_alpine",
+          "source": "Backcountry",
+          "title": "Rab Microlight Alpine Down Jacket — Black, M",
+          "url": "https://www.backcountry.com/rab-microlight-alpine?v=m-black",
+          "price": 186.37,
+          "currency": "USD",
+          "size": "M",
+          "color": "Black",
+          "condition": "new",
+          "availability": "in_stock",
+          "seller": "Backcountry",
+          "image": null,
+          "list_price": 266.67,
+          "match_score": 1.0,
+          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "id": "67a053ee9be46d8b"
         },
         {
           "watch_id": "rab_microlight_alpine",
           "source": "Amazon",
-          "title": "Rab Microlight Alpine Down Jacket — Blue, M",
-          "url": "https://www.amazon.com/dp/rab-microlight-alpine?v=m-blue",
-          "price": 162.97,
+          "title": "Rab Microlight Alpine Down Jacket — Green, L",
+          "url": "https://www.amazon.com/dp/rab-microlight-alpine?v=l-green",
+          "price": 199.46,
           "currency": "USD",
-          "size": "M",
-          "color": "Blue",
+          "size": "L",
+          "color": "Green",
           "condition": "new",
           "availability": "in_stock",
           "seller": "Amazon",
           "image": null,
           "list_price": 266.67,
           "match_score": 1.0,
-          "fetched_at": "2026-07-19T20:33:11+00:00",
-          "id": "a1b0ea42be4eff52"
+          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "id": "4b29cc797418c0d6"
         },
         {
           "watch_id": "rab_microlight_alpine",
           "source": "Brand Official",
-          "title": "Rab Microlight Alpine Down Jacket — Blue, L",
-          "url": "https://example-brand.com/shop/rab-microlight-alpine?v=l-blue",
-          "price": 193.85,
+          "title": "Rab Microlight Alpine Down Jacket — Blue, M",
+          "url": "https://example-brand.com/shop/rab-microlight-alpine?v=m-blue",
+          "price": 225.88,
           "currency": "USD",
-          "size": "L",
+          "size": "M",
           "color": "Blue",
           "condition": "new",
           "availability": "in_stock",
@@ -3846,72 +3864,29 @@
           "image": null,
           "list_price": 266.67,
           "match_score": 1.0,
-          "fetched_at": "2026-07-19T20:33:11+00:00",
-          "id": "bacb9396318869b9"
+          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "id": "c13f71cd2aa5d598"
         },
         {
           "watch_id": "rab_microlight_alpine",
           "source": "REI Co-op",
-          "title": "Rab Microlight Alpine Down Jacket — Green, L",
-          "url": "https://www.rei.com/product/rab-microlight-alpine?v=l-green",
-          "price": 208.72,
+          "title": "Rab Microlight Alpine Down Jacket — Black, L",
+          "url": "https://www.rei.com/product/rab-microlight-alpine?v=l-black",
+          "price": 291.56,
           "currency": "USD",
           "size": "L",
-          "color": "Green",
+          "color": "Black",
           "condition": "new",
           "availability": "in_stock",
           "seller": "REI Co-op",
           "image": null,
-          "list_price": 266.67,
-          "match_score": 1.0,
-          "fetched_at": "2026-07-19T20:33:11+00:00",
-          "id": "2d614a088dda9cf3"
-        },
-        {
-          "watch_id": "rab_microlight_alpine",
-          "source": "Backcountry",
-          "title": "Rab Microlight Alpine Down Jacket — Green, L",
-          "url": "https://www.backcountry.com/rab-microlight-alpine?v=l-green",
-          "price": 274.42,
-          "currency": "USD",
-          "size": "L",
-          "color": "Green",
-          "condition": "new",
-          "availability": "in_stock",
-          "seller": "Backcountry",
-          "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-19T20:33:11+00:00",
-          "id": "a7ad4f169d4e0901"
+          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "id": "164839dd18c7fefa"
         }
       ],
       "history": [
-        {
-          "ts": "2026-07-11T12:00:00+00:00",
-          "price": 176.66,
-          "source": "REI Co-op"
-        },
-        {
-          "ts": "2026-07-11T12:00:00+00:00",
-          "price": 201.95,
-          "source": "Backcountry"
-        },
-        {
-          "ts": "2026-07-11T12:00:00+00:00",
-          "price": 271.55,
-          "source": "Brand Official"
-        },
-        {
-          "ts": "2026-07-11T12:00:00+00:00",
-          "price": 269.72,
-          "source": "Amazon"
-        },
-        {
-          "ts": "2026-07-11T12:00:00+00:00",
-          "price": 243.28,
-          "source": "eBay"
-        },
         {
           "ts": "2026-07-12T12:00:00+00:00",
           "price": 261.48,
@@ -4186,6 +4161,31 @@
           "ts": "2026-07-19T20:33:11+00:00",
           "price": 156.54,
           "source": "eBay"
+        },
+        {
+          "ts": "2026-07-20T10:34:49+00:00",
+          "price": 291.56,
+          "source": "REI Co-op"
+        },
+        {
+          "ts": "2026-07-20T10:34:49+00:00",
+          "price": 186.37,
+          "source": "Backcountry"
+        },
+        {
+          "ts": "2026-07-20T10:34:49+00:00",
+          "price": 225.88,
+          "source": "Brand Official"
+        },
+        {
+          "ts": "2026-07-20T10:34:49+00:00",
+          "price": 199.46,
+          "source": "Amazon"
+        },
+        {
+          "ts": "2026-07-20T10:34:49+00:00",
+          "price": 146.82,
+          "source": "eBay"
         }
       ]
     },
@@ -4207,34 +4207,52 @@
       "mpn": null,
       "image": null,
       "active": true,
-      "best_price": 51.54,
+      "best_price": 53.1,
       "best_source": "eBay",
       "offer_count": 5,
       "offers": [
         {
           "watch_id": "fjallraven_kanken",
           "source": "eBay",
-          "title": "Fjällräven Kånken Backpack — Blue, 16L",
-          "url": "https://www.ebay.com/itm/fjallraven-kanken?v=16l-blue",
-          "price": 51.54,
+          "title": "Fjällräven Kånken Backpack — Black, 16L",
+          "url": "https://www.ebay.com/itm/fjallraven-kanken?v=16l-black",
+          "price": 53.1,
           "currency": "USD",
           "size": "16L",
-          "color": "Blue",
+          "color": "Black",
           "condition": "used",
           "availability": "in_stock",
           "seller": "eBay",
           "image": null,
           "list_price": 86.67,
           "match_score": 1.0,
-          "fetched_at": "2026-07-19T20:33:11+00:00",
-          "id": "a07fef950ab5f1f6"
+          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "id": "6c5354816d1c4289"
+        },
+        {
+          "watch_id": "fjallraven_kanken",
+          "source": "REI Co-op",
+          "title": "Fjällräven Kånken Backpack — Black, 16L",
+          "url": "https://www.rei.com/product/fjallraven-kanken?v=16l-black",
+          "price": 60.59,
+          "currency": "USD",
+          "size": "16L",
+          "color": "Black",
+          "condition": "new",
+          "availability": "in_stock",
+          "seller": "REI Co-op",
+          "image": null,
+          "list_price": 86.67,
+          "match_score": 1.0,
+          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "id": "58c72e03a0e9ad96"
         },
         {
           "watch_id": "fjallraven_kanken",
           "source": "Amazon",
           "title": "Fjällräven Kånken Backpack — Blue, 16L",
           "url": "https://www.amazon.com/dp/fjallraven-kanken?v=16l-blue",
-          "price": 61.06,
+          "price": 61.79,
           "currency": "USD",
           "size": "16L",
           "color": "Blue",
@@ -4244,51 +4262,33 @@
           "image": null,
           "list_price": 86.67,
           "match_score": 1.0,
-          "fetched_at": "2026-07-19T20:33:11+00:00",
+          "fetched_at": "2026-07-20T10:34:49+00:00",
           "id": "dfa7ffa8cd0f409e"
         },
         {
           "watch_id": "fjallraven_kanken",
           "source": "Backcountry",
-          "title": "Fjällräven Kånken Backpack — Black, 16L",
-          "url": "https://www.backcountry.com/fjallraven-kanken?v=16l-black",
-          "price": 61.96,
+          "title": "Fjällräven Kånken Backpack — Blue, 16L",
+          "url": "https://www.backcountry.com/fjallraven-kanken?v=16l-blue",
+          "price": 62.49,
           "currency": "USD",
           "size": "16L",
-          "color": "Black",
+          "color": "Blue",
           "condition": "new",
           "availability": "in_stock",
           "seller": "Backcountry",
           "image": null,
           "list_price": 86.67,
           "match_score": 1.0,
-          "fetched_at": "2026-07-19T20:33:11+00:00",
-          "id": "6ba4495708ced2dd"
-        },
-        {
-          "watch_id": "fjallraven_kanken",
-          "source": "REI Co-op",
-          "title": "Fjällräven Kånken Backpack — Green, 16L",
-          "url": "https://www.rei.com/product/fjallraven-kanken?v=16l-green",
-          "price": 87.07,
-          "currency": "USD",
-          "size": "16L",
-          "color": "Green",
-          "condition": "new",
-          "availability": "in_stock",
-          "seller": "REI Co-op",
-          "image": null,
-          "list_price": null,
-          "match_score": 1.0,
-          "fetched_at": "2026-07-19T20:33:11+00:00",
-          "id": "c845451d53096c79"
+          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "id": "0ec73fb5a7a555f6"
         },
         {
           "watch_id": "fjallraven_kanken",
           "source": "Brand Official",
           "title": "Fjällräven Kånken Backpack — Blue, 16L",
           "url": "https://example-brand.com/shop/fjallraven-kanken?v=16l-blue",
-          "price": 87.67,
+          "price": 65.04,
           "currency": "USD",
           "size": "16L",
           "color": "Blue",
@@ -4296,38 +4296,13 @@
           "availability": "in_stock",
           "seller": "Brand Official",
           "image": null,
-          "list_price": null,
+          "list_price": 86.67,
           "match_score": 1.0,
-          "fetched_at": "2026-07-19T20:33:11+00:00",
+          "fetched_at": "2026-07-20T10:34:49+00:00",
           "id": "1a3f410b5b196451"
         }
       ],
       "history": [
-        {
-          "ts": "2026-07-11T12:00:00+00:00",
-          "price": 58.35,
-          "source": "REI Co-op"
-        },
-        {
-          "ts": "2026-07-11T12:00:00+00:00",
-          "price": 63.04,
-          "source": "Backcountry"
-        },
-        {
-          "ts": "2026-07-11T12:00:00+00:00",
-          "price": 69.3,
-          "source": "Brand Official"
-        },
-        {
-          "ts": "2026-07-11T12:00:00+00:00",
-          "price": 70.85,
-          "source": "Amazon"
-        },
-        {
-          "ts": "2026-07-11T12:00:00+00:00",
-          "price": 69.7,
-          "source": "eBay"
-        },
         {
           "ts": "2026-07-12T12:00:00+00:00",
           "price": 68.14,
@@ -4602,6 +4577,31 @@
           "ts": "2026-07-19T20:33:11+00:00",
           "price": 51.54,
           "source": "eBay"
+        },
+        {
+          "ts": "2026-07-20T10:34:49+00:00",
+          "price": 60.59,
+          "source": "REI Co-op"
+        },
+        {
+          "ts": "2026-07-20T10:34:49+00:00",
+          "price": 62.49,
+          "source": "Backcountry"
+        },
+        {
+          "ts": "2026-07-20T10:34:49+00:00",
+          "price": 65.04,
+          "source": "Brand Official"
+        },
+        {
+          "ts": "2026-07-20T10:34:49+00:00",
+          "price": 61.79,
+          "source": "Amazon"
+        },
+        {
+          "ts": "2026-07-20T10:34:49+00:00",
+          "price": 53.1,
+          "source": "eBay"
         }
       ]
     },
@@ -4625,70 +4625,52 @@
       "mpn": null,
       "image": null,
       "active": true,
-      "best_price": 492.8,
+      "best_price": 484.11,
       "best_source": "REI Co-op",
       "offer_count": 5,
       "offers": [
         {
           "watch_id": "norrona_lofoten_goretex_pro",
           "source": "REI Co-op",
-          "title": "Norrøna Lofoten Gore-Tex Pro Jacket — Blue, L",
-          "url": "https://www.rei.com/product/norrona-lofoten-goretex-pro?v=l-blue",
-          "price": 492.8,
+          "title": "Norrøna Lofoten Gore-Tex Pro Jacket — Black, L",
+          "url": "https://www.rei.com/product/norrona-lofoten-goretex-pro?v=l-black",
+          "price": 484.11,
           "currency": "USD",
           "size": "L",
-          "color": "Blue",
+          "color": "Black",
           "condition": "new",
           "availability": "in_stock",
           "seller": "REI Co-op",
           "image": null,
           "list_price": 733.33,
           "match_score": 1.0,
-          "fetched_at": "2026-07-19T20:33:11+00:00",
-          "id": "bc629e33735a08fa"
+          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "id": "3e17e836853aa359"
         },
         {
           "watch_id": "norrona_lofoten_goretex_pro",
-          "source": "Amazon",
-          "title": "Norrøna Lofoten Gore-Tex Pro Jacket — Blue, M",
-          "url": "https://www.amazon.com/dp/norrona-lofoten-goretex-pro?v=m-blue",
-          "price": 602.19,
-          "currency": "USD",
-          "size": "M",
-          "color": "Blue",
-          "condition": "new",
-          "availability": "in_stock",
-          "seller": "Amazon",
-          "image": null,
-          "list_price": 733.33,
-          "match_score": 1.0,
-          "fetched_at": "2026-07-19T20:33:11+00:00",
-          "id": "92cb5b92e9fb18b4"
-        },
-        {
-          "watch_id": "norrona_lofoten_goretex_pro",
-          "source": "Backcountry",
-          "title": "Norrøna Lofoten Gore-Tex Pro Jacket — Green, L",
-          "url": "https://www.backcountry.com/norrona-lofoten-goretex-pro?v=l-green",
-          "price": 628.66,
+          "source": "Brand Official",
+          "title": "Norrøna Lofoten Gore-Tex Pro Jacket — Black, L",
+          "url": "https://example-brand.com/shop/norrona-lofoten-goretex-pro?v=l-black",
+          "price": 581.33,
           "currency": "USD",
           "size": "L",
-          "color": "Green",
+          "color": "Black",
           "condition": "new",
           "availability": "in_stock",
-          "seller": "Backcountry",
+          "seller": "Brand Official",
           "image": null,
           "list_price": 733.33,
           "match_score": 1.0,
-          "fetched_at": "2026-07-19T20:33:11+00:00",
-          "id": "e8620b14b06c4d4f"
+          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "id": "930808dbfbc0f8e0"
         },
         {
           "watch_id": "norrona_lofoten_goretex_pro",
           "source": "eBay",
           "title": "Norrøna Lofoten Gore-Tex Pro Jacket — Green, L",
           "url": "https://www.ebay.com/itm/norrona-lofoten-goretex-pro?v=l-green",
-          "price": 676.91,
+          "price": 583.56,
           "currency": "USD",
           "size": "L",
           "color": "Green",
@@ -4698,54 +4680,47 @@
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-19T20:33:11+00:00",
+          "fetched_at": "2026-07-20T10:34:49+00:00",
           "id": "8b30b04420505ac0"
         },
         {
           "watch_id": "norrona_lofoten_goretex_pro",
-          "source": "Brand Official",
-          "title": "Norrøna Lofoten Gore-Tex Pro Jacket — Green, L",
-          "url": "https://example-brand.com/shop/norrona-lofoten-goretex-pro?v=l-green",
-          "price": 739.69,
+          "source": "Backcountry",
+          "title": "Norrøna Lofoten Gore-Tex Pro Jacket — Blue, M",
+          "url": "https://www.backcountry.com/norrona-lofoten-goretex-pro?v=m-blue",
+          "price": 719.44,
           "currency": "USD",
-          "size": "L",
-          "color": "Green",
+          "size": "M",
+          "color": "Blue",
           "condition": "new",
           "availability": "in_stock",
-          "seller": "Brand Official",
+          "seller": "Backcountry",
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-19T20:33:11+00:00",
-          "id": "c0ff4fdd45bb2826"
+          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "id": "ef58170150a0ff56"
+        },
+        {
+          "watch_id": "norrona_lofoten_goretex_pro",
+          "source": "Amazon",
+          "title": "Norrøna Lofoten Gore-Tex Pro Jacket — Black, L",
+          "url": "https://www.amazon.com/dp/norrona-lofoten-goretex-pro?v=l-black",
+          "price": 740.12,
+          "currency": "USD",
+          "size": "L",
+          "color": "Black",
+          "condition": "new",
+          "availability": "in_stock",
+          "seller": "Amazon",
+          "image": null,
+          "list_price": null,
+          "match_score": 1.0,
+          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "id": "0907a8a61499f2fe"
         }
       ],
       "history": [
-        {
-          "ts": "2026-07-11T12:00:00+00:00",
-          "price": 798.54,
-          "source": "REI Co-op"
-        },
-        {
-          "ts": "2026-07-11T12:00:00+00:00",
-          "price": 650.59,
-          "source": "Backcountry"
-        },
-        {
-          "ts": "2026-07-11T12:00:00+00:00",
-          "price": 700.69,
-          "source": "Brand Official"
-        },
-        {
-          "ts": "2026-07-11T12:00:00+00:00",
-          "price": 667.17,
-          "source": "Amazon"
-        },
-        {
-          "ts": "2026-07-11T12:00:00+00:00",
-          "price": 631.12,
-          "source": "eBay"
-        },
         {
           "ts": "2026-07-12T12:00:00+00:00",
           "price": 724.0,
@@ -5020,6 +4995,31 @@
           "ts": "2026-07-19T20:33:11+00:00",
           "price": 676.91,
           "source": "eBay"
+        },
+        {
+          "ts": "2026-07-20T10:34:49+00:00",
+          "price": 484.11,
+          "source": "REI Co-op"
+        },
+        {
+          "ts": "2026-07-20T10:34:49+00:00",
+          "price": 719.44,
+          "source": "Backcountry"
+        },
+        {
+          "ts": "2026-07-20T10:34:49+00:00",
+          "price": 581.33,
+          "source": "Brand Official"
+        },
+        {
+          "ts": "2026-07-20T10:34:49+00:00",
+          "price": 740.12,
+          "source": "Amazon"
+        },
+        {
+          "ts": "2026-07-20T10:34:49+00:00",
+          "price": 583.56,
+          "source": "eBay"
         }
       ]
     },
@@ -5040,127 +5040,102 @@
       "mpn": null,
       "image": null,
       "active": true,
-      "best_price": 42.21,
-      "best_source": "eBay",
+      "best_price": 50.04,
+      "best_source": "Amazon",
       "offer_count": 5,
       "offers": [
         {
           "watch_id": "petzl_actik_core",
-          "source": "eBay",
-          "title": "Petzl Actik Core Headlamp — Green, M",
-          "url": "https://www.ebay.com/itm/petzl-actik-core?v=m-green",
-          "price": 42.21,
-          "currency": "USD",
-          "size": "M",
-          "color": "Green",
-          "condition": "used",
-          "availability": "in_stock",
-          "seller": "eBay",
-          "image": null,
-          "list_price": 73.33,
-          "match_score": 1.0,
-          "fetched_at": "2026-07-19T20:33:11+00:00",
-          "id": "2ddc3318f1d85dea"
-        },
-        {
-          "watch_id": "petzl_actik_core",
-          "source": "Backcountry",
-          "title": "Petzl Actik Core Headlamp — Green, XL",
-          "url": "https://www.backcountry.com/petzl-actik-core?v=xl-green",
-          "price": 51.19,
-          "currency": "USD",
-          "size": "XL",
-          "color": "Green",
-          "condition": "new",
-          "availability": "in_stock",
-          "seller": "Backcountry",
-          "image": null,
-          "list_price": 73.33,
-          "match_score": 1.0,
-          "fetched_at": "2026-07-19T20:33:11+00:00",
-          "id": "047fe446281ad5db"
-        },
-        {
-          "watch_id": "petzl_actik_core",
-          "source": "REI Co-op",
+          "source": "Amazon",
           "title": "Petzl Actik Core Headlamp — Black, XL",
-          "url": "https://www.rei.com/product/petzl-actik-core?v=xl-black",
-          "price": 52.03,
+          "url": "https://www.amazon.com/dp/petzl-actik-core?v=xl-black",
+          "price": 50.04,
           "currency": "USD",
           "size": "XL",
           "color": "Black",
-          "condition": "new",
-          "availability": "in_stock",
-          "seller": "REI Co-op",
-          "image": null,
-          "list_price": 73.33,
-          "match_score": 1.0,
-          "fetched_at": "2026-07-19T20:33:11+00:00",
-          "id": "12c281eac9c8030f"
-        },
-        {
-          "watch_id": "petzl_actik_core",
-          "source": "Amazon",
-          "title": "Petzl Actik Core Headlamp — Blue, M",
-          "url": "https://www.amazon.com/dp/petzl-actik-core?v=m-blue",
-          "price": 53.88,
-          "currency": "USD",
-          "size": "M",
-          "color": "Blue",
           "condition": "new",
           "availability": "in_stock",
           "seller": "Amazon",
           "image": null,
           "list_price": 73.33,
           "match_score": 1.0,
-          "fetched_at": "2026-07-19T20:33:11+00:00",
-          "id": "8de4078c6f4ecaff"
+          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "id": "b0993b788d869e18"
         },
         {
           "watch_id": "petzl_actik_core",
           "source": "Brand Official",
-          "title": "Petzl Actik Core Headlamp — Black, S",
-          "url": "https://example-brand.com/shop/petzl-actik-core?v=s-black",
-          "price": 78.61,
+          "title": "Petzl Actik Core Headlamp — Blue, L",
+          "url": "https://example-brand.com/shop/petzl-actik-core?v=l-blue",
+          "price": 53.57,
           "currency": "USD",
-          "size": "S",
-          "color": "Black",
+          "size": "L",
+          "color": "Blue",
           "condition": "new",
           "availability": "in_stock",
           "seller": "Brand Official",
           "image": null,
+          "list_price": 73.33,
+          "match_score": 1.0,
+          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "id": "8f12906a5bcfb99b"
+        },
+        {
+          "watch_id": "petzl_actik_core",
+          "source": "eBay",
+          "title": "Petzl Actik Core Headlamp — Black, XL",
+          "url": "https://www.ebay.com/itm/petzl-actik-core?v=xl-black",
+          "price": 61.99,
+          "currency": "USD",
+          "size": "XL",
+          "color": "Black",
+          "condition": "used",
+          "availability": "in_stock",
+          "seller": "eBay",
+          "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-19T20:33:11+00:00",
-          "id": "a8e66ae389e5050b"
+          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "id": "e8ccf966f63d473d"
+        },
+        {
+          "watch_id": "petzl_actik_core",
+          "source": "Backcountry",
+          "title": "Petzl Actik Core Headlamp — Green, M",
+          "url": "https://www.backcountry.com/petzl-actik-core?v=m-green",
+          "price": 69.18,
+          "currency": "USD",
+          "size": "M",
+          "color": "Green",
+          "condition": "new",
+          "availability": "in_stock",
+          "seller": "Backcountry",
+          "image": null,
+          "list_price": null,
+          "match_score": 1.0,
+          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "id": "23b5848a51cc83e6"
+        },
+        {
+          "watch_id": "petzl_actik_core",
+          "source": "REI Co-op",
+          "title": "Petzl Actik Core Headlamp — Blue, XL",
+          "url": "https://www.rei.com/product/petzl-actik-core?v=xl-blue",
+          "price": 80.63,
+          "currency": "USD",
+          "size": "XL",
+          "color": "Blue",
+          "condition": "new",
+          "availability": "in_stock",
+          "seller": "REI Co-op",
+          "image": null,
+          "list_price": null,
+          "match_score": 1.0,
+          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "id": "89d0ba221cc7ed85"
         }
       ],
       "history": [
-        {
-          "ts": "2026-07-11T12:00:00+00:00",
-          "price": 58.85,
-          "source": "REI Co-op"
-        },
-        {
-          "ts": "2026-07-11T12:00:00+00:00",
-          "price": 55.65,
-          "source": "Backcountry"
-        },
-        {
-          "ts": "2026-07-11T12:00:00+00:00",
-          "price": 72.46,
-          "source": "Brand Official"
-        },
-        {
-          "ts": "2026-07-11T12:00:00+00:00",
-          "price": 65.03,
-          "source": "Amazon"
-        },
-        {
-          "ts": "2026-07-11T12:00:00+00:00",
-          "price": 59.56,
-          "source": "eBay"
-        },
         {
           "ts": "2026-07-12T12:00:00+00:00",
           "price": 61.85,
@@ -5435,6 +5410,31 @@
           "ts": "2026-07-19T20:33:11+00:00",
           "price": 42.21,
           "source": "eBay"
+        },
+        {
+          "ts": "2026-07-20T10:34:49+00:00",
+          "price": 80.63,
+          "source": "REI Co-op"
+        },
+        {
+          "ts": "2026-07-20T10:34:49+00:00",
+          "price": 69.18,
+          "source": "Backcountry"
+        },
+        {
+          "ts": "2026-07-20T10:34:49+00:00",
+          "price": 53.57,
+          "source": "Brand Official"
+        },
+        {
+          "ts": "2026-07-20T10:34:49+00:00",
+          "price": 50.04,
+          "source": "Amazon"
+        },
+        {
+          "ts": "2026-07-20T10:34:49+00:00",
+          "price": 61.99,
+          "source": "eBay"
         }
       ]
     },
@@ -5457,16 +5457,34 @@
       "mpn": null,
       "image": null,
       "active": true,
-      "best_price": 80.34,
-      "best_source": "eBay",
+      "best_price": 62.63,
+      "best_source": "Brand Official",
       "offer_count": 5,
       "offers": [
+        {
+          "watch_id": "lasportiva_tarantulace",
+          "source": "Brand Official",
+          "title": "La Sportiva Tarantulace Climbing Shoes — Black, EU 42",
+          "url": "https://example-brand.com/shop/lasportiva-tarantulace?v=eu-42-black",
+          "price": 62.63,
+          "currency": "USD",
+          "size": "EU 42",
+          "color": "Black",
+          "condition": "new",
+          "availability": "in_stock",
+          "seller": "Brand Official",
+          "image": null,
+          "list_price": 100.0,
+          "match_score": 1.0,
+          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "id": "8be076ab9704278c"
+        },
         {
           "watch_id": "lasportiva_tarantulace",
           "source": "eBay",
           "title": "La Sportiva Tarantulace Climbing Shoes — Green, EU 43",
           "url": "https://www.ebay.com/itm/lasportiva-tarantulace?v=eu-43-green",
-          "price": 80.34,
+          "price": 67.88,
           "currency": "USD",
           "size": "EU 43",
           "color": "Green",
@@ -5474,53 +5492,17 @@
           "availability": "in_stock",
           "seller": "eBay",
           "image": null,
-          "list_price": null,
+          "list_price": 100.0,
           "match_score": 1.0,
-          "fetched_at": "2026-07-19T20:33:11+00:00",
+          "fetched_at": "2026-07-20T10:34:49+00:00",
           "id": "67bed151d75a4ef3"
-        },
-        {
-          "watch_id": "lasportiva_tarantulace",
-          "source": "Brand Official",
-          "title": "La Sportiva Tarantulace Climbing Shoes — Blue, EU 42",
-          "url": "https://example-brand.com/shop/lasportiva-tarantulace?v=eu-42-blue",
-          "price": 93.53,
-          "currency": "USD",
-          "size": "EU 42",
-          "color": "Blue",
-          "condition": "new",
-          "availability": "in_stock",
-          "seller": "Brand Official",
-          "image": null,
-          "list_price": null,
-          "match_score": 1.0,
-          "fetched_at": "2026-07-19T20:33:11+00:00",
-          "id": "efa1fd6504aa797f"
-        },
-        {
-          "watch_id": "lasportiva_tarantulace",
-          "source": "REI Co-op",
-          "title": "La Sportiva Tarantulace Climbing Shoes — Green, EU 42",
-          "url": "https://www.rei.com/product/lasportiva-tarantulace?v=eu-42-green",
-          "price": 100.34,
-          "currency": "USD",
-          "size": "EU 42",
-          "color": "Green",
-          "condition": "new",
-          "availability": "in_stock",
-          "seller": "REI Co-op",
-          "image": null,
-          "list_price": null,
-          "match_score": 1.0,
-          "fetched_at": "2026-07-19T20:33:11+00:00",
-          "id": "41dd8e64542e2cdd"
         },
         {
           "watch_id": "lasportiva_tarantulace",
           "source": "Backcountry",
           "title": "La Sportiva Tarantulace Climbing Shoes — Green, EU 42",
           "url": "https://www.backcountry.com/lasportiva-tarantulace?v=eu-42-green",
-          "price": 103.05,
+          "price": 74.62,
           "currency": "USD",
           "size": "EU 42",
           "color": "Green",
@@ -5528,17 +5510,35 @@
           "availability": "in_stock",
           "seller": "Backcountry",
           "image": null,
-          "list_price": null,
+          "list_price": 100.0,
           "match_score": 1.0,
-          "fetched_at": "2026-07-19T20:33:11+00:00",
+          "fetched_at": "2026-07-20T10:34:49+00:00",
           "id": "b2982f7dd67000fe"
+        },
+        {
+          "watch_id": "lasportiva_tarantulace",
+          "source": "REI Co-op",
+          "title": "La Sportiva Tarantulace Climbing Shoes — Blue, EU 42",
+          "url": "https://www.rei.com/product/lasportiva-tarantulace?v=eu-42-blue",
+          "price": 88.6,
+          "currency": "USD",
+          "size": "EU 42",
+          "color": "Blue",
+          "condition": "new",
+          "availability": "in_stock",
+          "seller": "REI Co-op",
+          "image": null,
+          "list_price": 100.0,
+          "match_score": 1.0,
+          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "id": "d9df3e210a29b258"
         },
         {
           "watch_id": "lasportiva_tarantulace",
           "source": "Amazon",
           "title": "La Sportiva Tarantulace Climbing Shoes — Green, EU 43",
           "url": "https://www.amazon.com/dp/lasportiva-tarantulace?v=eu-43-green",
-          "price": 103.64,
+          "price": 89.48,
           "currency": "USD",
           "size": "EU 43",
           "color": "Green",
@@ -5548,36 +5548,11 @@
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-19T20:33:11+00:00",
+          "fetched_at": "2026-07-20T10:34:49+00:00",
           "id": "65678f0e3ffea4a5"
         }
       ],
       "history": [
-        {
-          "ts": "2026-07-11T12:00:00+00:00",
-          "price": 76.73,
-          "source": "REI Co-op"
-        },
-        {
-          "ts": "2026-07-11T12:00:00+00:00",
-          "price": 97.2,
-          "source": "Backcountry"
-        },
-        {
-          "ts": "2026-07-11T12:00:00+00:00",
-          "price": 104.09,
-          "source": "Brand Official"
-        },
-        {
-          "ts": "2026-07-11T12:00:00+00:00",
-          "price": 89.52,
-          "source": "Amazon"
-        },
-        {
-          "ts": "2026-07-11T12:00:00+00:00",
-          "price": 63.71,
-          "source": "eBay"
-        },
         {
           "ts": "2026-07-12T12:00:00+00:00",
           "price": 76.28,
@@ -5852,6 +5827,31 @@
           "ts": "2026-07-19T20:33:11+00:00",
           "price": 80.34,
           "source": "eBay"
+        },
+        {
+          "ts": "2026-07-20T10:34:49+00:00",
+          "price": 88.6,
+          "source": "REI Co-op"
+        },
+        {
+          "ts": "2026-07-20T10:34:49+00:00",
+          "price": 74.62,
+          "source": "Backcountry"
+        },
+        {
+          "ts": "2026-07-20T10:34:49+00:00",
+          "price": 62.63,
+          "source": "Brand Official"
+        },
+        {
+          "ts": "2026-07-20T10:34:49+00:00",
+          "price": 89.48,
+          "source": "Amazon"
+        },
+        {
+          "ts": "2026-07-20T10:34:49+00:00",
+          "price": 67.88,
+          "source": "eBay"
         }
       ]
     },
@@ -5874,34 +5874,52 @@
       "mpn": null,
       "image": null,
       "active": true,
-      "best_price": 157.02,
-      "best_source": "eBay",
+      "best_price": 199.37,
+      "best_source": "Amazon",
       "offer_count": 5,
       "offers": [
         {
           "watch_id": "osprey_atmos_ag_65",
-          "source": "eBay",
-          "title": "Osprey Atmos AG 65 Backpack — Black, 65L",
-          "url": "https://www.ebay.com/itm/osprey-atmos-ag-65?v=65l-black",
-          "price": 157.02,
+          "source": "Amazon",
+          "title": "Osprey Atmos AG 65 Backpack — Blue, 65L",
+          "url": "https://www.amazon.com/dp/osprey-atmos-ag-65?v=65l-blue",
+          "price": 199.37,
           "currency": "USD",
           "size": "65L",
-          "color": "Black",
+          "color": "Blue",
+          "condition": "new",
+          "availability": "in_stock",
+          "seller": "Amazon",
+          "image": null,
+          "list_price": 293.33,
+          "match_score": 1.0,
+          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "id": "16943d7b5270aef9"
+        },
+        {
+          "watch_id": "osprey_atmos_ag_65",
+          "source": "eBay",
+          "title": "Osprey Atmos AG 65 Backpack — Blue, 65L",
+          "url": "https://www.ebay.com/itm/osprey-atmos-ag-65?v=65l-blue",
+          "price": 245.49,
+          "currency": "USD",
+          "size": "65L",
+          "color": "Blue",
           "condition": "used",
           "availability": "in_stock",
           "seller": "eBay",
           "image": null,
-          "list_price": 293.33,
+          "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-19T20:33:11+00:00",
-          "id": "8edcac1c178a41c2"
+          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "id": "9612cd15be3bc940"
         },
         {
           "watch_id": "osprey_atmos_ag_65",
           "source": "REI Co-op",
           "title": "Osprey Atmos AG 65 Backpack — Blue, 65L",
           "url": "https://www.rei.com/product/osprey-atmos-ag-65?v=65l-blue",
-          "price": 182.13,
+          "price": 266.92,
           "currency": "USD",
           "size": "65L",
           "color": "Blue",
@@ -5909,92 +5927,49 @@
           "availability": "in_stock",
           "seller": "REI Co-op",
           "image": null,
-          "list_price": 293.33,
+          "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-19T20:33:11+00:00",
+          "fetched_at": "2026-07-20T10:34:49+00:00",
           "id": "8ed9964876e9698c"
         },
         {
           "watch_id": "osprey_atmos_ag_65",
-          "source": "Brand Official",
+          "source": "Backcountry",
           "title": "Osprey Atmos AG 65 Backpack — Black, 65L",
-          "url": "https://example-brand.com/shop/osprey-atmos-ag-65?v=65l-black",
-          "price": 304.81,
+          "url": "https://www.backcountry.com/osprey-atmos-ag-65?v=65l-black",
+          "price": 284.3,
           "currency": "USD",
           "size": "65L",
           "color": "Black",
-          "condition": "new",
-          "availability": "in_stock",
-          "seller": "Brand Official",
-          "image": null,
-          "list_price": null,
-          "match_score": 1.0,
-          "fetched_at": "2026-07-19T20:33:11+00:00",
-          "id": "8ef22d0ac7cc69ae"
-        },
-        {
-          "watch_id": "osprey_atmos_ag_65",
-          "source": "Amazon",
-          "title": "Osprey Atmos AG 65 Backpack — Green, 65L",
-          "url": "https://www.amazon.com/dp/osprey-atmos-ag-65?v=65l-green",
-          "price": 305.03,
-          "currency": "USD",
-          "size": "65L",
-          "color": "Green",
-          "condition": "new",
-          "availability": "in_stock",
-          "seller": "Amazon",
-          "image": null,
-          "list_price": null,
-          "match_score": 1.0,
-          "fetched_at": "2026-07-19T20:33:11+00:00",
-          "id": "5dc3642c671b14e8"
-        },
-        {
-          "watch_id": "osprey_atmos_ag_65",
-          "source": "Backcountry",
-          "title": "Osprey Atmos AG 65 Backpack — Blue, 65L",
-          "url": "https://www.backcountry.com/osprey-atmos-ag-65?v=65l-blue",
-          "price": 305.83,
-          "currency": "USD",
-          "size": "65L",
-          "color": "Blue",
           "condition": "new",
           "availability": "in_stock",
           "seller": "Backcountry",
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-19T20:33:11+00:00",
-          "id": "301c03cadeba15e8"
+          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "id": "94adff0e08a92733"
+        },
+        {
+          "watch_id": "osprey_atmos_ag_65",
+          "source": "Brand Official",
+          "title": "Osprey Atmos AG 65 Backpack — Green, 65L",
+          "url": "https://example-brand.com/shop/osprey-atmos-ag-65?v=65l-green",
+          "price": 305.09,
+          "currency": "USD",
+          "size": "65L",
+          "color": "Green",
+          "condition": "new",
+          "availability": "in_stock",
+          "seller": "Brand Official",
+          "image": null,
+          "list_price": null,
+          "match_score": 1.0,
+          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "id": "e07024f517605651"
         }
       ],
       "history": [
-        {
-          "ts": "2026-07-11T12:00:00+00:00",
-          "price": 194.59,
-          "source": "REI Co-op"
-        },
-        {
-          "ts": "2026-07-11T12:00:00+00:00",
-          "price": 311.48,
-          "source": "Backcountry"
-        },
-        {
-          "ts": "2026-07-11T12:00:00+00:00",
-          "price": 320.7,
-          "source": "Brand Official"
-        },
-        {
-          "ts": "2026-07-11T12:00:00+00:00",
-          "price": 299.5,
-          "source": "Amazon"
-        },
-        {
-          "ts": "2026-07-11T12:00:00+00:00",
-          "price": 272.25,
-          "source": "eBay"
-        },
         {
           "ts": "2026-07-12T12:00:00+00:00",
           "price": 290.11,
@@ -6269,6 +6244,31 @@
           "ts": "2026-07-19T20:33:11+00:00",
           "price": 157.02,
           "source": "eBay"
+        },
+        {
+          "ts": "2026-07-20T10:34:49+00:00",
+          "price": 266.92,
+          "source": "REI Co-op"
+        },
+        {
+          "ts": "2026-07-20T10:34:49+00:00",
+          "price": 284.3,
+          "source": "Backcountry"
+        },
+        {
+          "ts": "2026-07-20T10:34:49+00:00",
+          "price": 305.09,
+          "source": "Brand Official"
+        },
+        {
+          "ts": "2026-07-20T10:34:49+00:00",
+          "price": 199.37,
+          "source": "Amazon"
+        },
+        {
+          "ts": "2026-07-20T10:34:49+00:00",
+          "price": 245.49,
+          "source": "eBay"
         }
       ]
     },
@@ -6290,52 +6290,16 @@
       "mpn": null,
       "image": null,
       "active": true,
-      "best_price": 217.0,
-      "best_source": "Backcountry",
+      "best_price": 229.32,
+      "best_source": "REI Co-op",
       "offer_count": 5,
       "offers": [
-        {
-          "watch_id": "gregory_baltoro_65",
-          "source": "Backcountry",
-          "title": "Gregory Baltoro 65 Backpack — Green, 65L",
-          "url": "https://www.backcountry.com/gregory-baltoro-65?v=65l-green",
-          "price": 217.0,
-          "currency": "USD",
-          "size": "65L",
-          "color": "Green",
-          "condition": "new",
-          "availability": "in_stock",
-          "seller": "Backcountry",
-          "image": null,
-          "list_price": 333.33,
-          "match_score": 1.0,
-          "fetched_at": "2026-07-19T20:33:11+00:00",
-          "id": "8eb1ed4130b80a8f"
-        },
-        {
-          "watch_id": "gregory_baltoro_65",
-          "source": "Brand Official",
-          "title": "Gregory Baltoro 65 Backpack — Green, 65L",
-          "url": "https://example-brand.com/shop/gregory-baltoro-65?v=65l-green",
-          "price": 218.84,
-          "currency": "USD",
-          "size": "65L",
-          "color": "Green",
-          "condition": "new",
-          "availability": "in_stock",
-          "seller": "Brand Official",
-          "image": null,
-          "list_price": 333.33,
-          "match_score": 1.0,
-          "fetched_at": "2026-07-19T20:33:11+00:00",
-          "id": "ac576f85b2dc32a9"
-        },
         {
           "watch_id": "gregory_baltoro_65",
           "source": "REI Co-op",
           "title": "Gregory Baltoro 65 Backpack — Black, 65L",
           "url": "https://www.rei.com/product/gregory-baltoro-65?v=65l-black",
-          "price": 232.98,
+          "price": 229.32,
           "currency": "USD",
           "size": "65L",
           "color": "Black",
@@ -6345,72 +6309,83 @@
           "image": null,
           "list_price": 333.33,
           "match_score": 1.0,
-          "fetched_at": "2026-07-19T20:33:11+00:00",
+          "fetched_at": "2026-07-20T10:34:49+00:00",
           "id": "b4b903b29b62fd21"
         },
         {
           "watch_id": "gregory_baltoro_65",
-          "source": "eBay",
+          "source": "Amazon",
           "title": "Gregory Baltoro 65 Backpack — Blue, 65L",
-          "url": "https://www.ebay.com/itm/gregory-baltoro-65?v=65l-blue",
-          "price": 299.96,
+          "url": "https://www.amazon.com/dp/gregory-baltoro-65?v=65l-blue",
+          "price": 232.15,
           "currency": "USD",
           "size": "65L",
           "color": "Blue",
+          "condition": "new",
+          "availability": "in_stock",
+          "seller": "Amazon",
+          "image": null,
+          "list_price": 333.33,
+          "match_score": 1.0,
+          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "id": "0d5697530899d8fb"
+        },
+        {
+          "watch_id": "gregory_baltoro_65",
+          "source": "eBay",
+          "title": "Gregory Baltoro 65 Backpack — Black, 65L",
+          "url": "https://www.ebay.com/itm/gregory-baltoro-65?v=65l-black",
+          "price": 275.15,
+          "currency": "USD",
+          "size": "65L",
+          "color": "Black",
           "condition": "used",
           "availability": "in_stock",
           "seller": "eBay",
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-19T20:33:11+00:00",
-          "id": "26e3680823bf7048"
+          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "id": "6d958ca76ff27390"
         },
         {
           "watch_id": "gregory_baltoro_65",
-          "source": "Amazon",
-          "title": "Gregory Baltoro 65 Backpack — Black, 65L",
-          "url": "https://www.amazon.com/dp/gregory-baltoro-65?v=65l-black",
-          "price": 319.67,
+          "source": "Backcountry",
+          "title": "Gregory Baltoro 65 Backpack — Green, 65L",
+          "url": "https://www.backcountry.com/gregory-baltoro-65?v=65l-green",
+          "price": 313.76,
           "currency": "USD",
           "size": "65L",
-          "color": "Black",
+          "color": "Green",
           "condition": "new",
           "availability": "in_stock",
-          "seller": "Amazon",
+          "seller": "Backcountry",
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-19T20:33:11+00:00",
-          "id": "20efc2e65ff1c24c"
+          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "id": "8eb1ed4130b80a8f"
+        },
+        {
+          "watch_id": "gregory_baltoro_65",
+          "source": "Brand Official",
+          "title": "Gregory Baltoro 65 Backpack — Green, 65L",
+          "url": "https://example-brand.com/shop/gregory-baltoro-65?v=65l-green",
+          "price": 321.68,
+          "currency": "USD",
+          "size": "65L",
+          "color": "Green",
+          "condition": "new",
+          "availability": "in_stock",
+          "seller": "Brand Official",
+          "image": null,
+          "list_price": null,
+          "match_score": 1.0,
+          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "id": "ac576f85b2dc32a9"
         }
       ],
       "history": [
-        {
-          "ts": "2026-07-11T12:00:00+00:00",
-          "price": 262.63,
-          "source": "REI Co-op"
-        },
-        {
-          "ts": "2026-07-11T12:00:00+00:00",
-          "price": 221.15,
-          "source": "Backcountry"
-        },
-        {
-          "ts": "2026-07-11T12:00:00+00:00",
-          "price": 376.22,
-          "source": "Brand Official"
-        },
-        {
-          "ts": "2026-07-11T12:00:00+00:00",
-          "price": 296.42,
-          "source": "Amazon"
-        },
-        {
-          "ts": "2026-07-11T12:00:00+00:00",
-          "price": 246.38,
-          "source": "eBay"
-        },
         {
           "ts": "2026-07-12T12:00:00+00:00",
           "price": 303.14,
@@ -6685,6 +6660,31 @@
           "ts": "2026-07-19T20:33:11+00:00",
           "price": 299.96,
           "source": "eBay"
+        },
+        {
+          "ts": "2026-07-20T10:34:49+00:00",
+          "price": 229.32,
+          "source": "REI Co-op"
+        },
+        {
+          "ts": "2026-07-20T10:34:49+00:00",
+          "price": 313.76,
+          "source": "Backcountry"
+        },
+        {
+          "ts": "2026-07-20T10:34:49+00:00",
+          "price": 321.68,
+          "source": "Brand Official"
+        },
+        {
+          "ts": "2026-07-20T10:34:49+00:00",
+          "price": 232.15,
+          "source": "Amazon"
+        },
+        {
+          "ts": "2026-07-20T10:34:49+00:00",
+          "price": 275.15,
+          "source": "eBay"
         }
       ]
     },
@@ -6709,52 +6709,16 @@
       "mpn": null,
       "image": null,
       "active": true,
-      "best_price": 99.71,
-      "best_source": "eBay",
+      "best_price": 106.18,
+      "best_source": "Amazon",
       "offer_count": 5,
       "offers": [
-        {
-          "watch_id": "salomon_x_ultra_4_gtx",
-          "source": "eBay",
-          "title": "Salomon X Ultra 4 GTX Hiking Shoes — Black, US 10.5",
-          "url": "https://www.ebay.com/itm/salomon-x-ultra-4-gtx?v=us-10.5-black",
-          "price": 99.71,
-          "currency": "USD",
-          "size": "US 10.5",
-          "color": "Black",
-          "condition": "used",
-          "availability": "in_stock",
-          "seller": "eBay",
-          "image": null,
-          "list_price": 146.67,
-          "match_score": 1.0,
-          "fetched_at": "2026-07-19T20:33:11+00:00",
-          "id": "00915dc14fa5d819"
-        },
-        {
-          "watch_id": "salomon_x_ultra_4_gtx",
-          "source": "REI Co-op",
-          "title": "Salomon X Ultra 4 GTX Hiking Shoes — Green, US 10",
-          "url": "https://www.rei.com/product/salomon-x-ultra-4-gtx?v=us-10-green",
-          "price": 108.13,
-          "currency": "USD",
-          "size": "US 10",
-          "color": "Green",
-          "condition": "new",
-          "availability": "in_stock",
-          "seller": "REI Co-op",
-          "image": null,
-          "list_price": 146.67,
-          "match_score": 1.0,
-          "fetched_at": "2026-07-19T20:33:11+00:00",
-          "id": "5e1bb34802eba89c"
-        },
         {
           "watch_id": "salomon_x_ultra_4_gtx",
           "source": "Amazon",
           "title": "Salomon X Ultra 4 GTX Hiking Shoes — Black, US 10",
           "url": "https://www.amazon.com/dp/salomon-x-ultra-4-gtx?v=us-10-black",
-          "price": 126.1,
+          "price": 106.18,
           "currency": "USD",
           "size": "US 10",
           "color": "Black",
@@ -6762,74 +6726,85 @@
           "availability": "in_stock",
           "seller": "Amazon",
           "image": null,
-          "list_price": null,
+          "list_price": 146.67,
           "match_score": 1.0,
-          "fetched_at": "2026-07-19T20:33:11+00:00",
+          "fetched_at": "2026-07-20T10:34:49+00:00",
           "id": "38548cec59ac648a"
         },
         {
           "watch_id": "salomon_x_ultra_4_gtx",
-          "source": "Brand Official",
-          "title": "Salomon X Ultra 4 GTX Hiking Shoes — Green, US 11",
-          "url": "https://example-brand.com/shop/salomon-x-ultra-4-gtx?v=us-11-green",
-          "price": 140.17,
+          "source": "REI Co-op",
+          "title": "Salomon X Ultra 4 GTX Hiking Shoes — Blue, US 10",
+          "url": "https://www.rei.com/product/salomon-x-ultra-4-gtx?v=us-10-blue",
+          "price": 114.91,
           "currency": "USD",
-          "size": "US 11",
-          "color": "Green",
+          "size": "US 10",
+          "color": "Blue",
+          "condition": "new",
+          "availability": "in_stock",
+          "seller": "REI Co-op",
+          "image": null,
+          "list_price": 146.67,
+          "match_score": 1.0,
+          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "id": "be1a59f6a98d21f1"
+        },
+        {
+          "watch_id": "salomon_x_ultra_4_gtx",
+          "source": "eBay",
+          "title": "Salomon X Ultra 4 GTX Hiking Shoes — Blue, US 10",
+          "url": "https://www.ebay.com/itm/salomon-x-ultra-4-gtx?v=us-10-blue",
+          "price": 124.77,
+          "currency": "USD",
+          "size": "US 10",
+          "color": "Blue",
+          "condition": "used",
+          "availability": "in_stock",
+          "seller": "eBay",
+          "image": null,
+          "list_price": null,
+          "match_score": 1.0,
+          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "id": "d7a063b3c0b6b403"
+        },
+        {
+          "watch_id": "salomon_x_ultra_4_gtx",
+          "source": "Brand Official",
+          "title": "Salomon X Ultra 4 GTX Hiking Shoes — Black, US 10.5",
+          "url": "https://example-brand.com/shop/salomon-x-ultra-4-gtx?v=us-10.5-black",
+          "price": 133.2,
+          "currency": "USD",
+          "size": "US 10.5",
+          "color": "Black",
           "condition": "new",
           "availability": "in_stock",
           "seller": "Brand Official",
           "image": null,
-          "list_price": null,
+          "list_price": 146.67,
           "match_score": 1.0,
-          "fetched_at": "2026-07-19T20:33:11+00:00",
-          "id": "e353b45c581056fb"
+          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "id": "5bef14c5481d1025"
         },
         {
           "watch_id": "salomon_x_ultra_4_gtx",
           "source": "Backcountry",
-          "title": "Salomon X Ultra 4 GTX Hiking Shoes — Blue, US 10.5",
-          "url": "https://www.backcountry.com/salomon-x-ultra-4-gtx?v=us-10.5-blue",
-          "price": 152.93,
+          "title": "Salomon X Ultra 4 GTX Hiking Shoes — Black, US 10",
+          "url": "https://www.backcountry.com/salomon-x-ultra-4-gtx?v=us-10-black",
+          "price": 148.53,
           "currency": "USD",
-          "size": "US 10.5",
-          "color": "Blue",
+          "size": "US 10",
+          "color": "Black",
           "condition": "new",
           "availability": "in_stock",
           "seller": "Backcountry",
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-19T20:33:11+00:00",
-          "id": "61b60e0d38e76dc8"
+          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "id": "56da4cf3985f5ddd"
         }
       ],
       "history": [
-        {
-          "ts": "2026-07-11T12:00:00+00:00",
-          "price": 128.83,
-          "source": "REI Co-op"
-        },
-        {
-          "ts": "2026-07-11T12:00:00+00:00",
-          "price": 135.21,
-          "source": "Backcountry"
-        },
-        {
-          "ts": "2026-07-11T12:00:00+00:00",
-          "price": 164.95,
-          "source": "Brand Official"
-        },
-        {
-          "ts": "2026-07-11T12:00:00+00:00",
-          "price": 119.66,
-          "source": "Amazon"
-        },
-        {
-          "ts": "2026-07-11T12:00:00+00:00",
-          "price": 87.22,
-          "source": "eBay"
-        },
         {
           "ts": "2026-07-12T12:00:00+00:00",
           "price": 108.78,
@@ -7104,6 +7079,31 @@
           "ts": "2026-07-19T20:33:11+00:00",
           "price": 99.71,
           "source": "eBay"
+        },
+        {
+          "ts": "2026-07-20T10:34:49+00:00",
+          "price": 114.91,
+          "source": "REI Co-op"
+        },
+        {
+          "ts": "2026-07-20T10:34:49+00:00",
+          "price": 148.53,
+          "source": "Backcountry"
+        },
+        {
+          "ts": "2026-07-20T10:34:49+00:00",
+          "price": 133.2,
+          "source": "Brand Official"
+        },
+        {
+          "ts": "2026-07-20T10:34:49+00:00",
+          "price": 106.18,
+          "source": "Amazon"
+        },
+        {
+          "ts": "2026-07-20T10:34:49+00:00",
+          "price": 124.77,
+          "source": "eBay"
         }
       ]
     },
@@ -7127,54 +7127,54 @@
       "mpn": null,
       "image": null,
       "active": true,
-      "best_price": 154.52,
-      "best_source": "REI Co-op",
+      "best_price": 177.74,
+      "best_source": "Backcountry",
       "offer_count": 5,
       "offers": [
         {
           "watch_id": "lowa_renegade_gtx_mid",
-          "source": "REI Co-op",
-          "title": "Lowa Renegade GTX Mid Boots — Blue, US 10",
-          "url": "https://www.rei.com/product/lowa-renegade-gtx-mid?v=us-10-blue",
-          "price": 154.52,
+          "source": "Backcountry",
+          "title": "Lowa Renegade GTX Mid Boots — Black, US 10",
+          "url": "https://www.backcountry.com/lowa-renegade-gtx-mid?v=us-10-black",
+          "price": 177.74,
           "currency": "USD",
           "size": "US 10",
-          "color": "Blue",
-          "condition": "new",
-          "availability": "in_stock",
-          "seller": "REI Co-op",
-          "image": null,
-          "list_price": 266.67,
-          "match_score": 1.0,
-          "fetched_at": "2026-07-19T20:33:11+00:00",
-          "id": "edc41b8edcf5a783"
-        },
-        {
-          "watch_id": "lowa_renegade_gtx_mid",
-          "source": "Backcountry",
-          "title": "Lowa Renegade GTX Mid Boots — Green, US 11",
-          "url": "https://www.backcountry.com/lowa-renegade-gtx-mid?v=us-11-green",
-          "price": 170.66,
-          "currency": "USD",
-          "size": "US 11",
-          "color": "Green",
+          "color": "Black",
           "condition": "new",
           "availability": "in_stock",
           "seller": "Backcountry",
           "image": null,
           "list_price": 266.67,
           "match_score": 1.0,
-          "fetched_at": "2026-07-19T20:33:11+00:00",
-          "id": "1cf785e4451750e3"
+          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "id": "018515e6bc5dd018"
+        },
+        {
+          "watch_id": "lowa_renegade_gtx_mid",
+          "source": "REI Co-op",
+          "title": "Lowa Renegade GTX Mid Boots — Black, US 10",
+          "url": "https://www.rei.com/product/lowa-renegade-gtx-mid?v=us-10-black",
+          "price": 203.89,
+          "currency": "USD",
+          "size": "US 10",
+          "color": "Black",
+          "condition": "new",
+          "availability": "in_stock",
+          "seller": "REI Co-op",
+          "image": null,
+          "list_price": 266.67,
+          "match_score": 1.0,
+          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "id": "57b8f4c27932ac5d"
         },
         {
           "watch_id": "lowa_renegade_gtx_mid",
           "source": "eBay",
-          "title": "Lowa Renegade GTX Mid Boots — Green, US 10",
-          "url": "https://www.ebay.com/itm/lowa-renegade-gtx-mid?v=us-10-green",
-          "price": 204.93,
+          "title": "Lowa Renegade GTX Mid Boots — Green, US 11",
+          "url": "https://www.ebay.com/itm/lowa-renegade-gtx-mid?v=us-11-green",
+          "price": 211.31,
           "currency": "USD",
-          "size": "US 10",
+          "size": "US 11",
           "color": "Green",
           "condition": "used",
           "availability": "in_stock",
@@ -7182,72 +7182,47 @@
           "image": null,
           "list_price": 266.67,
           "match_score": 1.0,
-          "fetched_at": "2026-07-19T20:33:11+00:00",
-          "id": "6be339908bba6d6d"
-        },
-        {
-          "watch_id": "lowa_renegade_gtx_mid",
-          "source": "Amazon",
-          "title": "Lowa Renegade GTX Mid Boots — Green, US 10",
-          "url": "https://www.amazon.com/dp/lowa-renegade-gtx-mid?v=us-10-green",
-          "price": 265.26,
-          "currency": "USD",
-          "size": "US 10",
-          "color": "Green",
-          "condition": "new",
-          "availability": "in_stock",
-          "seller": "Amazon",
-          "image": null,
-          "list_price": null,
-          "match_score": 1.0,
-          "fetched_at": "2026-07-19T20:33:11+00:00",
-          "id": "517d1dac4bb7f0f9"
+          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "id": "ebcb30f74117e050"
         },
         {
           "watch_id": "lowa_renegade_gtx_mid",
           "source": "Brand Official",
-          "title": "Lowa Renegade GTX Mid Boots — Green, US 10",
-          "url": "https://example-brand.com/shop/lowa-renegade-gtx-mid?v=us-10-green",
-          "price": 297.31,
+          "title": "Lowa Renegade GTX Mid Boots — Black, US 10",
+          "url": "https://example-brand.com/shop/lowa-renegade-gtx-mid?v=us-10-black",
+          "price": 254.71,
           "currency": "USD",
           "size": "US 10",
-          "color": "Green",
+          "color": "Black",
           "condition": "new",
           "availability": "in_stock",
           "seller": "Brand Official",
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-19T20:33:11+00:00",
-          "id": "b90e8028fff973b3"
+          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "id": "76220041560b5eb1"
+        },
+        {
+          "watch_id": "lowa_renegade_gtx_mid",
+          "source": "Amazon",
+          "title": "Lowa Renegade GTX Mid Boots — Blue, US 11",
+          "url": "https://www.amazon.com/dp/lowa-renegade-gtx-mid?v=us-11-blue",
+          "price": 268.45,
+          "currency": "USD",
+          "size": "US 11",
+          "color": "Blue",
+          "condition": "new",
+          "availability": "in_stock",
+          "seller": "Amazon",
+          "image": null,
+          "list_price": null,
+          "match_score": 1.0,
+          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "id": "1c6eff6582494efd"
         }
       ],
       "history": [
-        {
-          "ts": "2026-07-11T12:00:00+00:00",
-          "price": 285.83,
-          "source": "REI Co-op"
-        },
-        {
-          "ts": "2026-07-11T12:00:00+00:00",
-          "price": 246.28,
-          "source": "Backcountry"
-        },
-        {
-          "ts": "2026-07-11T12:00:00+00:00",
-          "price": 193.87,
-          "source": "Brand Official"
-        },
-        {
-          "ts": "2026-07-11T12:00:00+00:00",
-          "price": 260.98,
-          "source": "Amazon"
-        },
-        {
-          "ts": "2026-07-11T12:00:00+00:00",
-          "price": 244.94,
-          "source": "eBay"
-        },
         {
           "ts": "2026-07-12T12:00:00+00:00",
           "price": 191.78,
@@ -7522,6 +7497,31 @@
           "ts": "2026-07-19T20:33:11+00:00",
           "price": 204.93,
           "source": "eBay"
+        },
+        {
+          "ts": "2026-07-20T10:34:49+00:00",
+          "price": 203.89,
+          "source": "REI Co-op"
+        },
+        {
+          "ts": "2026-07-20T10:34:49+00:00",
+          "price": 177.74,
+          "source": "Backcountry"
+        },
+        {
+          "ts": "2026-07-20T10:34:49+00:00",
+          "price": 254.71,
+          "source": "Brand Official"
+        },
+        {
+          "ts": "2026-07-20T10:34:49+00:00",
+          "price": 268.45,
+          "source": "Amazon"
+        },
+        {
+          "ts": "2026-07-20T10:34:49+00:00",
+          "price": 211.31,
+          "source": "eBay"
         }
       ]
     },
@@ -7545,54 +7545,72 @@
       "mpn": null,
       "image": null,
       "active": true,
-      "best_price": 360.18,
-      "best_source": "eBay",
+      "best_price": 299.72,
+      "best_source": "Amazon",
       "offer_count": 5,
       "offers": [
         {
           "watch_id": "scarpa_zodiac_tech_gtx",
-          "source": "eBay",
-          "title": "Scarpa Zodiac Tech GTX Mountaineering Boots — Green, EU 44",
-          "url": "https://www.ebay.com/itm/scarpa-zodiac-tech-gtx?v=eu-44-green",
-          "price": 360.18,
-          "currency": "USD",
-          "size": "EU 44",
-          "color": "Green",
-          "condition": "used",
-          "availability": "in_stock",
-          "seller": "eBay",
-          "image": null,
-          "list_price": null,
-          "match_score": 1.0,
-          "fetched_at": "2026-07-19T20:33:11+00:00",
-          "id": "956bfd0d774b1535"
-        },
-        {
-          "watch_id": "scarpa_zodiac_tech_gtx",
           "source": "Amazon",
-          "title": "Scarpa Zodiac Tech GTX Mountaineering Boots — Black, EU 43",
-          "url": "https://www.amazon.com/dp/scarpa-zodiac-tech-gtx?v=eu-43-black",
-          "price": 365.96,
+          "title": "Scarpa Zodiac Tech GTX Mountaineering Boots — Blue, EU 43",
+          "url": "https://www.amazon.com/dp/scarpa-zodiac-tech-gtx?v=eu-43-blue",
+          "price": 299.72,
           "currency": "USD",
           "size": "EU 43",
-          "color": "Black",
+          "color": "Blue",
           "condition": "new",
           "availability": "in_stock",
           "seller": "Amazon",
           "image": null,
           "list_price": 453.33,
           "match_score": 1.0,
-          "fetched_at": "2026-07-19T20:33:11+00:00",
-          "id": "9a23414b496b5241"
+          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "id": "b772d040b5b40d86"
+        },
+        {
+          "watch_id": "scarpa_zodiac_tech_gtx",
+          "source": "REI Co-op",
+          "title": "Scarpa Zodiac Tech GTX Mountaineering Boots — Black, EU 43",
+          "url": "https://www.rei.com/product/scarpa-zodiac-tech-gtx?v=eu-43-black",
+          "price": 308.69,
+          "currency": "USD",
+          "size": "EU 43",
+          "color": "Black",
+          "condition": "new",
+          "availability": "in_stock",
+          "seller": "REI Co-op",
+          "image": null,
+          "list_price": 453.33,
+          "match_score": 1.0,
+          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "id": "dc54a15ada3af14f"
+        },
+        {
+          "watch_id": "scarpa_zodiac_tech_gtx",
+          "source": "eBay",
+          "title": "Scarpa Zodiac Tech GTX Mountaineering Boots — Blue, EU 44",
+          "url": "https://www.ebay.com/itm/scarpa-zodiac-tech-gtx?v=eu-44-blue",
+          "price": 389.18,
+          "currency": "USD",
+          "size": "EU 44",
+          "color": "Blue",
+          "condition": "used",
+          "availability": "in_stock",
+          "seller": "eBay",
+          "image": null,
+          "list_price": null,
+          "match_score": 1.0,
+          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "id": "a2378acdef87a692"
         },
         {
           "watch_id": "scarpa_zodiac_tech_gtx",
           "source": "Backcountry",
-          "title": "Scarpa Zodiac Tech GTX Mountaineering Boots — Blue, EU 44",
-          "url": "https://www.backcountry.com/scarpa-zodiac-tech-gtx?v=eu-44-blue",
-          "price": 421.8,
+          "title": "Scarpa Zodiac Tech GTX Mountaineering Boots — Blue, EU 43",
+          "url": "https://www.backcountry.com/scarpa-zodiac-tech-gtx?v=eu-43-blue",
+          "price": 424.01,
           "currency": "USD",
-          "size": "EU 44",
+          "size": "EU 43",
           "color": "Blue",
           "condition": "new",
           "availability": "in_stock",
@@ -7600,35 +7618,17 @@
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-19T20:33:11+00:00",
-          "id": "d43b9e9689ca092a"
-        },
-        {
-          "watch_id": "scarpa_zodiac_tech_gtx",
-          "source": "REI Co-op",
-          "title": "Scarpa Zodiac Tech GTX Mountaineering Boots — Blue, EU 43",
-          "url": "https://www.rei.com/product/scarpa-zodiac-tech-gtx?v=eu-43-blue",
-          "price": 438.35,
-          "currency": "USD",
-          "size": "EU 43",
-          "color": "Blue",
-          "condition": "new",
-          "availability": "in_stock",
-          "seller": "REI Co-op",
-          "image": null,
-          "list_price": null,
-          "match_score": 1.0,
-          "fetched_at": "2026-07-19T20:33:11+00:00",
-          "id": "f3b9a454b3a7b9e1"
+          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "id": "629ad697c04670df"
         },
         {
           "watch_id": "scarpa_zodiac_tech_gtx",
           "source": "Brand Official",
-          "title": "Scarpa Zodiac Tech GTX Mountaineering Boots — Blue, EU 44",
-          "url": "https://example-brand.com/shop/scarpa-zodiac-tech-gtx?v=eu-44-blue",
-          "price": 500.94,
+          "title": "Scarpa Zodiac Tech GTX Mountaineering Boots — Blue, EU 43",
+          "url": "https://example-brand.com/shop/scarpa-zodiac-tech-gtx?v=eu-43-blue",
+          "price": 499.78,
           "currency": "USD",
-          "size": "EU 44",
+          "size": "EU 43",
           "color": "Blue",
           "condition": "new",
           "availability": "in_stock",
@@ -7636,36 +7636,11 @@
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-19T20:33:11+00:00",
-          "id": "3bc6114231c5a218"
+          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "id": "8f27a70707057333"
         }
       ],
       "history": [
-        {
-          "ts": "2026-07-11T12:00:00+00:00",
-          "price": 329.0,
-          "source": "REI Co-op"
-        },
-        {
-          "ts": "2026-07-11T12:00:00+00:00",
-          "price": 479.13,
-          "source": "Backcountry"
-        },
-        {
-          "ts": "2026-07-11T12:00:00+00:00",
-          "price": 484.74,
-          "source": "Brand Official"
-        },
-        {
-          "ts": "2026-07-11T12:00:00+00:00",
-          "price": 283.89,
-          "source": "Amazon"
-        },
-        {
-          "ts": "2026-07-11T12:00:00+00:00",
-          "price": 427.81,
-          "source": "eBay"
-        },
         {
           "ts": "2026-07-12T12:00:00+00:00",
           "price": 426.37,
@@ -7940,6 +7915,31 @@
           "ts": "2026-07-19T20:33:11+00:00",
           "price": 360.18,
           "source": "eBay"
+        },
+        {
+          "ts": "2026-07-20T10:34:49+00:00",
+          "price": 308.69,
+          "source": "REI Co-op"
+        },
+        {
+          "ts": "2026-07-20T10:34:49+00:00",
+          "price": 424.01,
+          "source": "Backcountry"
+        },
+        {
+          "ts": "2026-07-20T10:34:49+00:00",
+          "price": 499.78,
+          "source": "Brand Official"
+        },
+        {
+          "ts": "2026-07-20T10:34:49+00:00",
+          "price": 299.72,
+          "source": "Amazon"
+        },
+        {
+          "ts": "2026-07-20T10:34:49+00:00",
+          "price": 389.18,
+          "source": "eBay"
         }
       ]
     },
@@ -7962,34 +7962,88 @@
       "mpn": null,
       "image": null,
       "active": true,
-      "best_price": 154.97,
-      "best_source": "Backcountry",
+      "best_price": 155.33,
+      "best_source": "Amazon",
       "offer_count": 5,
       "offers": [
         {
           "watch_id": "exped_megamat_10",
-          "source": "Backcountry",
+          "source": "Amazon",
           "title": "Exped MegaMat 10 Sleeping Pad — Black, LW",
-          "url": "https://www.backcountry.com/exped-megamat-10?v=lw-black",
-          "price": 154.97,
+          "url": "https://www.amazon.com/dp/exped-megamat-10?v=lw-black",
+          "price": 155.33,
           "currency": "USD",
           "size": "LW",
           "color": "Black",
           "condition": "new",
           "availability": "in_stock",
-          "seller": "Backcountry",
+          "seller": "Amazon",
           "image": null,
           "list_price": 266.67,
           "match_score": 1.0,
-          "fetched_at": "2026-07-19T20:33:11+00:00",
-          "id": "4553fda2d5f6a27a"
+          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "id": "447bdaafb42ebebf"
+        },
+        {
+          "watch_id": "exped_megamat_10",
+          "source": "eBay",
+          "title": "Exped MegaMat 10 Sleeping Pad — Green, LW",
+          "url": "https://www.ebay.com/itm/exped-megamat-10?v=lw-green",
+          "price": 230.02,
+          "currency": "USD",
+          "size": "LW",
+          "color": "Green",
+          "condition": "used",
+          "availability": "in_stock",
+          "seller": "eBay",
+          "image": null,
+          "list_price": null,
+          "match_score": 1.0,
+          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "id": "3b0da4cdf05dde31"
+        },
+        {
+          "watch_id": "exped_megamat_10",
+          "source": "Backcountry",
+          "title": "Exped MegaMat 10 Sleeping Pad — Green, LW",
+          "url": "https://www.backcountry.com/exped-megamat-10?v=lw-green",
+          "price": 248.43,
+          "currency": "USD",
+          "size": "LW",
+          "color": "Green",
+          "condition": "new",
+          "availability": "in_stock",
+          "seller": "Backcountry",
+          "image": null,
+          "list_price": null,
+          "match_score": 1.0,
+          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "id": "77ff88e067bfb851"
+        },
+        {
+          "watch_id": "exped_megamat_10",
+          "source": "Brand Official",
+          "title": "Exped MegaMat 10 Sleeping Pad — Green, LW",
+          "url": "https://example-brand.com/shop/exped-megamat-10?v=lw-green",
+          "price": 266.96,
+          "currency": "USD",
+          "size": "LW",
+          "color": "Green",
+          "condition": "new",
+          "availability": "in_stock",
+          "seller": "Brand Official",
+          "image": null,
+          "list_price": null,
+          "match_score": 1.0,
+          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "id": "e6b3283ad8744231"
         },
         {
           "watch_id": "exped_megamat_10",
           "source": "REI Co-op",
           "title": "Exped MegaMat 10 Sleeping Pad — Blue, LW",
           "url": "https://www.rei.com/product/exped-megamat-10?v=lw-blue",
-          "price": 175.74,
+          "price": 279.79,
           "currency": "USD",
           "size": "LW",
           "color": "Blue",
@@ -7997,92 +8051,13 @@
           "availability": "in_stock",
           "seller": "REI Co-op",
           "image": null,
-          "list_price": 266.67,
-          "match_score": 1.0,
-          "fetched_at": "2026-07-19T20:33:11+00:00",
-          "id": "6d36082169c9294b"
-        },
-        {
-          "watch_id": "exped_megamat_10",
-          "source": "Brand Official",
-          "title": "Exped MegaMat 10 Sleeping Pad — Black, LW",
-          "url": "https://example-brand.com/shop/exped-megamat-10?v=lw-black",
-          "price": 182.22,
-          "currency": "USD",
-          "size": "LW",
-          "color": "Black",
-          "condition": "new",
-          "availability": "in_stock",
-          "seller": "Brand Official",
-          "image": null,
-          "list_price": 266.67,
-          "match_score": 1.0,
-          "fetched_at": "2026-07-19T20:33:11+00:00",
-          "id": "4e586205c4185d85"
-        },
-        {
-          "watch_id": "exped_megamat_10",
-          "source": "eBay",
-          "title": "Exped MegaMat 10 Sleeping Pad — Blue, LW",
-          "url": "https://www.ebay.com/itm/exped-megamat-10?v=lw-blue",
-          "price": 197.97,
-          "currency": "USD",
-          "size": "LW",
-          "color": "Blue",
-          "condition": "used",
-          "availability": "in_stock",
-          "seller": "eBay",
-          "image": null,
-          "list_price": 266.67,
-          "match_score": 1.0,
-          "fetched_at": "2026-07-19T20:33:11+00:00",
-          "id": "5ab550d6955b5a96"
-        },
-        {
-          "watch_id": "exped_megamat_10",
-          "source": "Amazon",
-          "title": "Exped MegaMat 10 Sleeping Pad — Blue, LW",
-          "url": "https://www.amazon.com/dp/exped-megamat-10?v=lw-blue",
-          "price": 243.75,
-          "currency": "USD",
-          "size": "LW",
-          "color": "Blue",
-          "condition": "new",
-          "availability": "in_stock",
-          "seller": "Amazon",
-          "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-19T20:33:11+00:00",
-          "id": "b078b8128d23714d"
+          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "id": "6d36082169c9294b"
         }
       ],
       "history": [
-        {
-          "ts": "2026-07-11T12:00:00+00:00",
-          "price": 261.82,
-          "source": "REI Co-op"
-        },
-        {
-          "ts": "2026-07-11T12:00:00+00:00",
-          "price": 282.07,
-          "source": "Backcountry"
-        },
-        {
-          "ts": "2026-07-11T12:00:00+00:00",
-          "price": 178.79,
-          "source": "Brand Official"
-        },
-        {
-          "ts": "2026-07-11T12:00:00+00:00",
-          "price": 273.03,
-          "source": "Amazon"
-        },
-        {
-          "ts": "2026-07-11T12:00:00+00:00",
-          "price": 152.56,
-          "source": "eBay"
-        },
         {
           "ts": "2026-07-12T12:00:00+00:00",
           "price": 239.24,
@@ -8356,6 +8331,31 @@
         {
           "ts": "2026-07-19T20:33:11+00:00",
           "price": 197.97,
+          "source": "eBay"
+        },
+        {
+          "ts": "2026-07-20T10:34:49+00:00",
+          "price": 279.79,
+          "source": "REI Co-op"
+        },
+        {
+          "ts": "2026-07-20T10:34:49+00:00",
+          "price": 248.43,
+          "source": "Backcountry"
+        },
+        {
+          "ts": "2026-07-20T10:34:49+00:00",
+          "price": 266.96,
+          "source": "Brand Official"
+        },
+        {
+          "ts": "2026-07-20T10:34:49+00:00",
+          "price": 155.33,
+          "source": "Amazon"
+        },
+        {
+          "ts": "2026-07-20T10:34:49+00:00",
+          "price": 230.02,
           "source": "eBay"
         }
       ]
