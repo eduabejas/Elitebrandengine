@@ -24,6 +24,9 @@
       "mpn": null,
       "image": null,
       "active": true,
+      "season": "auto",
+      "msrp": null,
+      "min_discount_pct": null,
       "best_price": 348.1,
       "best_source": "eBay",
       "offer_count": 5,
@@ -43,7 +46,7 @@
           "image": null,
           "list_price": 598.67,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "fetched_at": "2026-07-20T17:09:37+00:00",
           "id": "e39ee716b644379a"
         },
         {
@@ -61,7 +64,7 @@
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "fetched_at": "2026-07-20T17:09:37+00:00",
           "id": "d6bf3ddc92f361bb"
         },
         {
@@ -79,7 +82,7 @@
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "fetched_at": "2026-07-20T17:09:37+00:00",
           "id": "97828206cf2b5c53"
         },
         {
@@ -97,7 +100,7 @@
           "image": null,
           "list_price": 598.67,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "fetched_at": "2026-07-20T17:09:37+00:00",
           "id": "82ed37a1c1c7a53f"
         },
         {
@@ -115,36 +118,11 @@
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "fetched_at": "2026-07-20T17:09:37+00:00",
           "id": "5b51916399ebdd2f"
         }
       ],
       "history": [
-        {
-          "ts": "2026-07-12T12:00:00+00:00",
-          "price": 409.84,
-          "source": "REI Co-op"
-        },
-        {
-          "ts": "2026-07-12T12:00:00+00:00",
-          "price": 368.13,
-          "source": "Backcountry"
-        },
-        {
-          "ts": "2026-07-12T12:00:00+00:00",
-          "price": 460.19,
-          "source": "Brand Official"
-        },
-        {
-          "ts": "2026-07-12T12:00:00+00:00",
-          "price": 399.29,
-          "source": "Amazon"
-        },
-        {
-          "ts": "2026-07-12T12:00:00+00:00",
-          "price": 575.94,
-          "source": "eBay"
-        },
         {
           "ts": "2026-07-13T12:00:00+00:00",
           "price": 633.25,
@@ -419,6 +397,31 @@
           "ts": "2026-07-20T10:34:49+00:00",
           "price": 348.1,
           "source": "eBay"
+        },
+        {
+          "ts": "2026-07-20T17:09:37+00:00",
+          "price": 584.13,
+          "source": "REI Co-op"
+        },
+        {
+          "ts": "2026-07-20T17:09:37+00:00",
+          "price": 561.86,
+          "source": "Backcountry"
+        },
+        {
+          "ts": "2026-07-20T17:09:37+00:00",
+          "price": 563.27,
+          "source": "Brand Official"
+        },
+        {
+          "ts": "2026-07-20T17:09:37+00:00",
+          "price": 555.89,
+          "source": "Amazon"
+        },
+        {
+          "ts": "2026-07-20T17:09:37+00:00",
+          "price": 348.1,
+          "source": "eBay"
         }
       ]
     },
@@ -445,6 +448,9 @@
       "mpn": null,
       "image": null,
       "active": true,
+      "season": "auto",
+      "msrp": null,
+      "min_discount_pct": null,
       "best_price": 184.68,
       "best_source": "eBay",
       "offer_count": 5,
@@ -464,7 +470,7 @@
           "image": null,
           "list_price": 280.0,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "fetched_at": "2026-07-20T17:09:37+00:00",
           "id": "ec101c3b6e285519"
         },
         {
@@ -482,7 +488,7 @@
           "image": null,
           "list_price": 280.0,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "fetched_at": "2026-07-20T17:09:37+00:00",
           "id": "0051ad81d14d0907"
         },
         {
@@ -500,7 +506,7 @@
           "image": null,
           "list_price": 280.0,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "fetched_at": "2026-07-20T17:09:37+00:00",
           "id": "44434ae33e7711bf"
         },
         {
@@ -518,7 +524,7 @@
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "fetched_at": "2026-07-20T17:09:37+00:00",
           "id": "2606bdf463a62ebc"
         },
         {
@@ -536,36 +542,11 @@
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "fetched_at": "2026-07-20T17:09:37+00:00",
           "id": "88a1bd3e2855bea6"
         }
       ],
       "history": [
-        {
-          "ts": "2026-07-12T12:00:00+00:00",
-          "price": 221.29,
-          "source": "REI Co-op"
-        },
-        {
-          "ts": "2026-07-12T12:00:00+00:00",
-          "price": 291.94,
-          "source": "Backcountry"
-        },
-        {
-          "ts": "2026-07-12T12:00:00+00:00",
-          "price": 267.89,
-          "source": "Brand Official"
-        },
-        {
-          "ts": "2026-07-12T12:00:00+00:00",
-          "price": 220.31,
-          "source": "Amazon"
-        },
-        {
-          "ts": "2026-07-12T12:00:00+00:00",
-          "price": 236.0,
-          "source": "eBay"
-        },
         {
           "ts": "2026-07-13T12:00:00+00:00",
           "price": 303.65,
@@ -840,6 +821,31 @@
           "ts": "2026-07-20T10:34:49+00:00",
           "price": 184.68,
           "source": "eBay"
+        },
+        {
+          "ts": "2026-07-20T17:09:37+00:00",
+          "price": 263.09,
+          "source": "REI Co-op"
+        },
+        {
+          "ts": "2026-07-20T17:09:37+00:00",
+          "price": 284.96,
+          "source": "Backcountry"
+        },
+        {
+          "ts": "2026-07-20T17:09:37+00:00",
+          "price": 199.52,
+          "source": "Brand Official"
+        },
+        {
+          "ts": "2026-07-20T17:09:37+00:00",
+          "price": 221.62,
+          "source": "Amazon"
+        },
+        {
+          "ts": "2026-07-20T17:09:37+00:00",
+          "price": 184.68,
+          "source": "eBay"
         }
       ]
     },
@@ -863,6 +869,9 @@
       "mpn": null,
       "image": null,
       "active": true,
+      "season": "auto",
+      "msrp": null,
+      "min_discount_pct": null,
       "best_price": 136.69,
       "best_source": "eBay",
       "offer_count": 5,
@@ -882,7 +891,7 @@
           "image": null,
           "list_price": 198.67,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "fetched_at": "2026-07-20T17:09:37+00:00",
           "id": "262a1570cccd606a"
         },
         {
@@ -900,7 +909,7 @@
           "image": null,
           "list_price": 198.67,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "fetched_at": "2026-07-20T17:09:37+00:00",
           "id": "a5b5a07c2099e083"
         },
         {
@@ -918,7 +927,7 @@
           "image": null,
           "list_price": 198.67,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "fetched_at": "2026-07-20T17:09:37+00:00",
           "id": "f6400a6accfee527"
         },
         {
@@ -936,7 +945,7 @@
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "fetched_at": "2026-07-20T17:09:37+00:00",
           "id": "bc77a58102d8013d"
         },
         {
@@ -954,36 +963,11 @@
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "fetched_at": "2026-07-20T17:09:37+00:00",
           "id": "af88f0db27ea323d"
         }
       ],
       "history": [
-        {
-          "ts": "2026-07-12T12:00:00+00:00",
-          "price": 119.97,
-          "source": "REI Co-op"
-        },
-        {
-          "ts": "2026-07-12T12:00:00+00:00",
-          "price": 167.04,
-          "source": "Backcountry"
-        },
-        {
-          "ts": "2026-07-12T12:00:00+00:00",
-          "price": 209.56,
-          "source": "Brand Official"
-        },
-        {
-          "ts": "2026-07-12T12:00:00+00:00",
-          "price": 170.51,
-          "source": "Amazon"
-        },
-        {
-          "ts": "2026-07-12T12:00:00+00:00",
-          "price": 140.34,
-          "source": "eBay"
-        },
         {
           "ts": "2026-07-13T12:00:00+00:00",
           "price": 188.66,
@@ -1258,6 +1242,31 @@
           "ts": "2026-07-20T10:34:49+00:00",
           "price": 136.69,
           "source": "eBay"
+        },
+        {
+          "ts": "2026-07-20T17:09:37+00:00",
+          "price": 212.92,
+          "source": "REI Co-op"
+        },
+        {
+          "ts": "2026-07-20T17:09:37+00:00",
+          "price": 147.12,
+          "source": "Backcountry"
+        },
+        {
+          "ts": "2026-07-20T17:09:37+00:00",
+          "price": 159.52,
+          "source": "Brand Official"
+        },
+        {
+          "ts": "2026-07-20T17:09:37+00:00",
+          "price": 191.62,
+          "source": "Amazon"
+        },
+        {
+          "ts": "2026-07-20T17:09:37+00:00",
+          "price": 136.69,
+          "source": "eBay"
         }
       ]
     },
@@ -1282,6 +1291,9 @@
       "mpn": null,
       "image": null,
       "active": true,
+      "season": "auto",
+      "msrp": null,
+      "min_discount_pct": null,
       "best_price": 109.73,
       "best_source": "eBay",
       "offer_count": 5,
@@ -1301,7 +1313,7 @@
           "image": null,
           "list_price": 200.0,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "fetched_at": "2026-07-20T17:09:37+00:00",
           "id": "6b36789e7c4706e6"
         },
         {
@@ -1319,7 +1331,7 @@
           "image": null,
           "list_price": 200.0,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "fetched_at": "2026-07-20T17:09:37+00:00",
           "id": "ccac2fb1c5ecf182"
         },
         {
@@ -1337,7 +1349,7 @@
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "fetched_at": "2026-07-20T17:09:37+00:00",
           "id": "e43ac6d319e0815e"
         },
         {
@@ -1355,7 +1367,7 @@
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "fetched_at": "2026-07-20T17:09:37+00:00",
           "id": "f5a8d738980b7a2b"
         },
         {
@@ -1373,36 +1385,11 @@
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "fetched_at": "2026-07-20T17:09:37+00:00",
           "id": "80c74515d5d2aabc"
         }
       ],
       "history": [
-        {
-          "ts": "2026-07-12T12:00:00+00:00",
-          "price": 196.63,
-          "source": "REI Co-op"
-        },
-        {
-          "ts": "2026-07-12T12:00:00+00:00",
-          "price": 168.04,
-          "source": "Backcountry"
-        },
-        {
-          "ts": "2026-07-12T12:00:00+00:00",
-          "price": 138.33,
-          "source": "Brand Official"
-        },
-        {
-          "ts": "2026-07-12T12:00:00+00:00",
-          "price": 174.14,
-          "source": "Amazon"
-        },
-        {
-          "ts": "2026-07-12T12:00:00+00:00",
-          "price": 177.43,
-          "source": "eBay"
-        },
         {
           "ts": "2026-07-13T12:00:00+00:00",
           "price": 196.55,
@@ -1677,6 +1664,31 @@
           "ts": "2026-07-20T10:34:49+00:00",
           "price": 109.73,
           "source": "eBay"
+        },
+        {
+          "ts": "2026-07-20T17:09:37+00:00",
+          "price": 216.65,
+          "source": "REI Co-op"
+        },
+        {
+          "ts": "2026-07-20T17:09:37+00:00",
+          "price": 125.51,
+          "source": "Backcountry"
+        },
+        {
+          "ts": "2026-07-20T17:09:37+00:00",
+          "price": 215.37,
+          "source": "Brand Official"
+        },
+        {
+          "ts": "2026-07-20T17:09:37+00:00",
+          "price": 172.06,
+          "source": "Amazon"
+        },
+        {
+          "ts": "2026-07-20T17:09:37+00:00",
+          "price": 109.73,
+          "source": "eBay"
         }
       ]
     },
@@ -1699,6 +1711,9 @@
       "mpn": null,
       "image": null,
       "active": true,
+      "season": "auto",
+      "msrp": null,
+      "min_discount_pct": null,
       "best_price": 196.32,
       "best_source": "REI Co-op",
       "offer_count": 5,
@@ -1718,7 +1733,7 @@
           "image": null,
           "list_price": 266.67,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "fetched_at": "2026-07-20T17:09:37+00:00",
           "id": "ffa49ee0d5b297b8"
         },
         {
@@ -1736,7 +1751,7 @@
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "fetched_at": "2026-07-20T17:09:37+00:00",
           "id": "46a5ccc73ec70981"
         },
         {
@@ -1754,7 +1769,7 @@
           "image": null,
           "list_price": 266.67,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "fetched_at": "2026-07-20T17:09:37+00:00",
           "id": "c26812ddf7261260"
         },
         {
@@ -1772,7 +1787,7 @@
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "fetched_at": "2026-07-20T17:09:37+00:00",
           "id": "84fbcf2be6613e10"
         },
         {
@@ -1790,36 +1805,11 @@
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "fetched_at": "2026-07-20T17:09:37+00:00",
           "id": "ee4c6b0f915c0d64"
         }
       ],
       "history": [
-        {
-          "ts": "2026-07-12T12:00:00+00:00",
-          "price": 186.66,
-          "source": "REI Co-op"
-        },
-        {
-          "ts": "2026-07-12T12:00:00+00:00",
-          "price": 213.02,
-          "source": "Backcountry"
-        },
-        {
-          "ts": "2026-07-12T12:00:00+00:00",
-          "price": 257.82,
-          "source": "Brand Official"
-        },
-        {
-          "ts": "2026-07-12T12:00:00+00:00",
-          "price": 178.69,
-          "source": "Amazon"
-        },
-        {
-          "ts": "2026-07-12T12:00:00+00:00",
-          "price": 150.84,
-          "source": "eBay"
-        },
         {
           "ts": "2026-07-13T12:00:00+00:00",
           "price": 211.57,
@@ -2094,6 +2084,31 @@
           "ts": "2026-07-20T10:34:49+00:00",
           "price": 217.18,
           "source": "eBay"
+        },
+        {
+          "ts": "2026-07-20T17:09:37+00:00",
+          "price": 196.32,
+          "source": "REI Co-op"
+        },
+        {
+          "ts": "2026-07-20T17:09:37+00:00",
+          "price": 262.01,
+          "source": "Backcountry"
+        },
+        {
+          "ts": "2026-07-20T17:09:37+00:00",
+          "price": 281.27,
+          "source": "Brand Official"
+        },
+        {
+          "ts": "2026-07-20T17:09:37+00:00",
+          "price": 225.69,
+          "source": "Amazon"
+        },
+        {
+          "ts": "2026-07-20T17:09:37+00:00",
+          "price": 217.18,
+          "source": "eBay"
         }
       ]
     },
@@ -2117,6 +2132,9 @@
       "mpn": null,
       "image": null,
       "active": true,
+      "season": "auto",
+      "msrp": null,
+      "min_discount_pct": null,
       "best_price": 103.47,
       "best_source": "Backcountry",
       "offer_count": 5,
@@ -2136,7 +2154,7 @@
           "image": null,
           "list_price": 173.33,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "fetched_at": "2026-07-20T17:09:37+00:00",
           "id": "47177e5bd190a833"
         },
         {
@@ -2154,7 +2172,7 @@
           "image": null,
           "list_price": 173.33,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "fetched_at": "2026-07-20T17:09:37+00:00",
           "id": "b5c205326912faa5"
         },
         {
@@ -2172,7 +2190,7 @@
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "fetched_at": "2026-07-20T17:09:37+00:00",
           "id": "f7875c9cd0473800"
         },
         {
@@ -2190,7 +2208,7 @@
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "fetched_at": "2026-07-20T17:09:37+00:00",
           "id": "baeed51333964048"
         },
         {
@@ -2208,36 +2226,11 @@
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "fetched_at": "2026-07-20T17:09:37+00:00",
           "id": "14ba1d2aaf398886"
         }
       ],
       "history": [
-        {
-          "ts": "2026-07-12T12:00:00+00:00",
-          "price": 113.54,
-          "source": "REI Co-op"
-        },
-        {
-          "ts": "2026-07-12T12:00:00+00:00",
-          "price": 111.82,
-          "source": "Backcountry"
-        },
-        {
-          "ts": "2026-07-12T12:00:00+00:00",
-          "price": 124.79,
-          "source": "Brand Official"
-        },
-        {
-          "ts": "2026-07-12T12:00:00+00:00",
-          "price": 175.99,
-          "source": "Amazon"
-        },
-        {
-          "ts": "2026-07-12T12:00:00+00:00",
-          "price": 162.06,
-          "source": "eBay"
-        },
         {
           "ts": "2026-07-13T12:00:00+00:00",
           "price": 167.72,
@@ -2512,6 +2505,31 @@
           "ts": "2026-07-20T10:34:49+00:00",
           "price": 153.48,
           "source": "eBay"
+        },
+        {
+          "ts": "2026-07-20T17:09:37+00:00",
+          "price": 170.15,
+          "source": "REI Co-op"
+        },
+        {
+          "ts": "2026-07-20T17:09:37+00:00",
+          "price": 103.47,
+          "source": "Backcountry"
+        },
+        {
+          "ts": "2026-07-20T17:09:37+00:00",
+          "price": 115.45,
+          "source": "Brand Official"
+        },
+        {
+          "ts": "2026-07-20T17:09:37+00:00",
+          "price": 163.82,
+          "source": "Amazon"
+        },
+        {
+          "ts": "2026-07-20T17:09:37+00:00",
+          "price": 153.48,
+          "source": "eBay"
         }
       ]
     },
@@ -2534,6 +2552,9 @@
       "mpn": null,
       "image": null,
       "active": true,
+      "season": "auto",
+      "msrp": null,
+      "min_discount_pct": null,
       "best_price": 51.13,
       "best_source": "Brand Official",
       "offer_count": 5,
@@ -2553,7 +2574,7 @@
           "image": null,
           "list_price": 80.0,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "fetched_at": "2026-07-20T17:09:37+00:00",
           "id": "b8948c357acf142e"
         },
         {
@@ -2571,7 +2592,7 @@
           "image": null,
           "list_price": 80.0,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "fetched_at": "2026-07-20T17:09:37+00:00",
           "id": "0250e26438a1714f"
         },
         {
@@ -2589,7 +2610,7 @@
           "image": null,
           "list_price": 80.0,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "fetched_at": "2026-07-20T17:09:37+00:00",
           "id": "5a2047eafc9e3d8d"
         },
         {
@@ -2607,7 +2628,7 @@
           "image": null,
           "list_price": 80.0,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "fetched_at": "2026-07-20T17:09:37+00:00",
           "id": "16bf9c17c0f9ce42"
         },
         {
@@ -2625,36 +2646,11 @@
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "fetched_at": "2026-07-20T17:09:37+00:00",
           "id": "3a9758067430db30"
         }
       ],
       "history": [
-        {
-          "ts": "2026-07-12T12:00:00+00:00",
-          "price": 72.49,
-          "source": "REI Co-op"
-        },
-        {
-          "ts": "2026-07-12T12:00:00+00:00",
-          "price": 82.68,
-          "source": "Backcountry"
-        },
-        {
-          "ts": "2026-07-12T12:00:00+00:00",
-          "price": 57.98,
-          "source": "Brand Official"
-        },
-        {
-          "ts": "2026-07-12T12:00:00+00:00",
-          "price": 81.22,
-          "source": "Amazon"
-        },
-        {
-          "ts": "2026-07-12T12:00:00+00:00",
-          "price": 54.82,
-          "source": "eBay"
-        },
         {
           "ts": "2026-07-13T12:00:00+00:00",
           "price": 59.56,
@@ -2929,6 +2925,31 @@
           "ts": "2026-07-20T10:34:49+00:00",
           "price": 64.51,
           "source": "eBay"
+        },
+        {
+          "ts": "2026-07-20T17:09:37+00:00",
+          "price": 56.15,
+          "source": "REI Co-op"
+        },
+        {
+          "ts": "2026-07-20T17:09:37+00:00",
+          "price": 78.39,
+          "source": "Backcountry"
+        },
+        {
+          "ts": "2026-07-20T17:09:37+00:00",
+          "price": 51.13,
+          "source": "Brand Official"
+        },
+        {
+          "ts": "2026-07-20T17:09:37+00:00",
+          "price": 56.84,
+          "source": "Amazon"
+        },
+        {
+          "ts": "2026-07-20T17:09:37+00:00",
+          "price": 64.51,
+          "source": "eBay"
         }
       ]
     },
@@ -2955,6 +2976,9 @@
       "mpn": null,
       "image": null,
       "active": true,
+      "season": "auto",
+      "msrp": null,
+      "min_discount_pct": null,
       "best_price": 356.55,
       "best_source": "Amazon",
       "offer_count": 5,
@@ -2974,7 +2998,7 @@
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "fetched_at": "2026-07-20T17:09:37+00:00",
           "id": "867da22e1edaba51"
         },
         {
@@ -2992,7 +3016,7 @@
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "fetched_at": "2026-07-20T17:09:37+00:00",
           "id": "29d078c13c0cde2a"
         },
         {
@@ -3010,7 +3034,7 @@
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "fetched_at": "2026-07-20T17:09:37+00:00",
           "id": "541447023b76824b"
         },
         {
@@ -3028,7 +3052,7 @@
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "fetched_at": "2026-07-20T17:09:37+00:00",
           "id": "ac95689e63982a8e"
         },
         {
@@ -3046,36 +3070,11 @@
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "fetched_at": "2026-07-20T17:09:37+00:00",
           "id": "e5a1821ec6898d73"
         }
       ],
       "history": [
-        {
-          "ts": "2026-07-12T12:00:00+00:00",
-          "price": 393.32,
-          "source": "REI Co-op"
-        },
-        {
-          "ts": "2026-07-12T12:00:00+00:00",
-          "price": 384.34,
-          "source": "Backcountry"
-        },
-        {
-          "ts": "2026-07-12T12:00:00+00:00",
-          "price": 294.2,
-          "source": "Brand Official"
-        },
-        {
-          "ts": "2026-07-12T12:00:00+00:00",
-          "price": 287.88,
-          "source": "Amazon"
-        },
-        {
-          "ts": "2026-07-12T12:00:00+00:00",
-          "price": 352.22,
-          "source": "eBay"
-        },
         {
           "ts": "2026-07-13T12:00:00+00:00",
           "price": 432.91,
@@ -3350,6 +3349,31 @@
           "ts": "2026-07-20T10:34:49+00:00",
           "price": 374.93,
           "source": "eBay"
+        },
+        {
+          "ts": "2026-07-20T17:09:37+00:00",
+          "price": 387.37,
+          "source": "REI Co-op"
+        },
+        {
+          "ts": "2026-07-20T17:09:37+00:00",
+          "price": 424.64,
+          "source": "Backcountry"
+        },
+        {
+          "ts": "2026-07-20T17:09:37+00:00",
+          "price": 382.14,
+          "source": "Brand Official"
+        },
+        {
+          "ts": "2026-07-20T17:09:37+00:00",
+          "price": 356.55,
+          "source": "Amazon"
+        },
+        {
+          "ts": "2026-07-20T17:09:37+00:00",
+          "price": 374.93,
+          "source": "eBay"
         }
       ]
     },
@@ -3373,6 +3397,9 @@
       "mpn": null,
       "image": null,
       "active": true,
+      "season": "auto",
+      "msrp": null,
+      "min_discount_pct": null,
       "best_price": 65.37,
       "best_source": "eBay",
       "offer_count": 5,
@@ -3392,7 +3419,7 @@
           "image": null,
           "list_price": 100.0,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "fetched_at": "2026-07-20T17:09:37+00:00",
           "id": "5293b710a0dfc5b5"
         },
         {
@@ -3410,7 +3437,7 @@
           "image": null,
           "list_price": 100.0,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "fetched_at": "2026-07-20T17:09:37+00:00",
           "id": "17b1f2ec9b9bc3ef"
         },
         {
@@ -3428,7 +3455,7 @@
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "fetched_at": "2026-07-20T17:09:37+00:00",
           "id": "68b9891990e97979"
         },
         {
@@ -3446,7 +3473,7 @@
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "fetched_at": "2026-07-20T17:09:37+00:00",
           "id": "20af22b159050e34"
         },
         {
@@ -3464,36 +3491,11 @@
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "fetched_at": "2026-07-20T17:09:37+00:00",
           "id": "867a354d3d8ae881"
         }
       ],
       "history": [
-        {
-          "ts": "2026-07-12T12:00:00+00:00",
-          "price": 91.21,
-          "source": "REI Co-op"
-        },
-        {
-          "ts": "2026-07-12T12:00:00+00:00",
-          "price": 92.86,
-          "source": "Backcountry"
-        },
-        {
-          "ts": "2026-07-12T12:00:00+00:00",
-          "price": 101.28,
-          "source": "Brand Official"
-        },
-        {
-          "ts": "2026-07-12T12:00:00+00:00",
-          "price": 88.23,
-          "source": "Amazon"
-        },
-        {
-          "ts": "2026-07-12T12:00:00+00:00",
-          "price": 61.2,
-          "source": "eBay"
-        },
         {
           "ts": "2026-07-13T12:00:00+00:00",
           "price": 65.62,
@@ -3768,6 +3770,31 @@
           "ts": "2026-07-20T10:34:49+00:00",
           "price": 65.37,
           "source": "eBay"
+        },
+        {
+          "ts": "2026-07-20T17:09:37+00:00",
+          "price": 107.13,
+          "source": "REI Co-op"
+        },
+        {
+          "ts": "2026-07-20T17:09:37+00:00",
+          "price": 97.28,
+          "source": "Backcountry"
+        },
+        {
+          "ts": "2026-07-20T17:09:37+00:00",
+          "price": 109.2,
+          "source": "Brand Official"
+        },
+        {
+          "ts": "2026-07-20T17:09:37+00:00",
+          "price": 72.16,
+          "source": "Amazon"
+        },
+        {
+          "ts": "2026-07-20T17:09:37+00:00",
+          "price": 65.37,
+          "source": "eBay"
         }
       ]
     },
@@ -3791,6 +3818,9 @@
       "mpn": null,
       "image": null,
       "active": true,
+      "season": "auto",
+      "msrp": null,
+      "min_discount_pct": null,
       "best_price": 146.82,
       "best_source": "eBay",
       "offer_count": 5,
@@ -3810,7 +3840,7 @@
           "image": null,
           "list_price": 266.67,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "fetched_at": "2026-07-20T17:09:37+00:00",
           "id": "d88b17c8e14bf92a"
         },
         {
@@ -3828,7 +3858,7 @@
           "image": null,
           "list_price": 266.67,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "fetched_at": "2026-07-20T17:09:37+00:00",
           "id": "67a053ee9be46d8b"
         },
         {
@@ -3846,7 +3876,7 @@
           "image": null,
           "list_price": 266.67,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "fetched_at": "2026-07-20T17:09:37+00:00",
           "id": "4b29cc797418c0d6"
         },
         {
@@ -3864,7 +3894,7 @@
           "image": null,
           "list_price": 266.67,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "fetched_at": "2026-07-20T17:09:37+00:00",
           "id": "c13f71cd2aa5d598"
         },
         {
@@ -3882,36 +3912,11 @@
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "fetched_at": "2026-07-20T17:09:37+00:00",
           "id": "164839dd18c7fefa"
         }
       ],
       "history": [
-        {
-          "ts": "2026-07-12T12:00:00+00:00",
-          "price": 261.48,
-          "source": "REI Co-op"
-        },
-        {
-          "ts": "2026-07-12T12:00:00+00:00",
-          "price": 262.65,
-          "source": "Backcountry"
-        },
-        {
-          "ts": "2026-07-12T12:00:00+00:00",
-          "price": 291.35,
-          "source": "Brand Official"
-        },
-        {
-          "ts": "2026-07-12T12:00:00+00:00",
-          "price": 185.12,
-          "source": "Amazon"
-        },
-        {
-          "ts": "2026-07-12T12:00:00+00:00",
-          "price": 243.19,
-          "source": "eBay"
-        },
         {
           "ts": "2026-07-13T12:00:00+00:00",
           "price": 243.63,
@@ -4186,6 +4191,31 @@
           "ts": "2026-07-20T10:34:49+00:00",
           "price": 146.82,
           "source": "eBay"
+        },
+        {
+          "ts": "2026-07-20T17:09:37+00:00",
+          "price": 291.56,
+          "source": "REI Co-op"
+        },
+        {
+          "ts": "2026-07-20T17:09:37+00:00",
+          "price": 186.37,
+          "source": "Backcountry"
+        },
+        {
+          "ts": "2026-07-20T17:09:37+00:00",
+          "price": 225.88,
+          "source": "Brand Official"
+        },
+        {
+          "ts": "2026-07-20T17:09:37+00:00",
+          "price": 199.46,
+          "source": "Amazon"
+        },
+        {
+          "ts": "2026-07-20T17:09:37+00:00",
+          "price": 146.82,
+          "source": "eBay"
         }
       ]
     },
@@ -4207,6 +4237,9 @@
       "mpn": null,
       "image": null,
       "active": true,
+      "season": "auto",
+      "msrp": null,
+      "min_discount_pct": null,
       "best_price": 53.1,
       "best_source": "eBay",
       "offer_count": 5,
@@ -4226,7 +4259,7 @@
           "image": null,
           "list_price": 86.67,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "fetched_at": "2026-07-20T17:09:37+00:00",
           "id": "6c5354816d1c4289"
         },
         {
@@ -4244,7 +4277,7 @@
           "image": null,
           "list_price": 86.67,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "fetched_at": "2026-07-20T17:09:37+00:00",
           "id": "58c72e03a0e9ad96"
         },
         {
@@ -4262,7 +4295,7 @@
           "image": null,
           "list_price": 86.67,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "fetched_at": "2026-07-20T17:09:37+00:00",
           "id": "dfa7ffa8cd0f409e"
         },
         {
@@ -4280,7 +4313,7 @@
           "image": null,
           "list_price": 86.67,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "fetched_at": "2026-07-20T17:09:37+00:00",
           "id": "0ec73fb5a7a555f6"
         },
         {
@@ -4298,36 +4331,11 @@
           "image": null,
           "list_price": 86.67,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "fetched_at": "2026-07-20T17:09:37+00:00",
           "id": "1a3f410b5b196451"
         }
       ],
       "history": [
-        {
-          "ts": "2026-07-12T12:00:00+00:00",
-          "price": 68.14,
-          "source": "REI Co-op"
-        },
-        {
-          "ts": "2026-07-12T12:00:00+00:00",
-          "price": 64.28,
-          "source": "Backcountry"
-        },
-        {
-          "ts": "2026-07-12T12:00:00+00:00",
-          "price": 67.45,
-          "source": "Brand Official"
-        },
-        {
-          "ts": "2026-07-12T12:00:00+00:00",
-          "price": 84.69,
-          "source": "Amazon"
-        },
-        {
-          "ts": "2026-07-12T12:00:00+00:00",
-          "price": 73.87,
-          "source": "eBay"
-        },
         {
           "ts": "2026-07-13T12:00:00+00:00",
           "price": 82.02,
@@ -4602,6 +4610,31 @@
           "ts": "2026-07-20T10:34:49+00:00",
           "price": 53.1,
           "source": "eBay"
+        },
+        {
+          "ts": "2026-07-20T17:09:37+00:00",
+          "price": 60.59,
+          "source": "REI Co-op"
+        },
+        {
+          "ts": "2026-07-20T17:09:37+00:00",
+          "price": 62.49,
+          "source": "Backcountry"
+        },
+        {
+          "ts": "2026-07-20T17:09:37+00:00",
+          "price": 65.04,
+          "source": "Brand Official"
+        },
+        {
+          "ts": "2026-07-20T17:09:37+00:00",
+          "price": 61.79,
+          "source": "Amazon"
+        },
+        {
+          "ts": "2026-07-20T17:09:37+00:00",
+          "price": 53.1,
+          "source": "eBay"
         }
       ]
     },
@@ -4625,6 +4658,9 @@
       "mpn": null,
       "image": null,
       "active": true,
+      "season": "auto",
+      "msrp": null,
+      "min_discount_pct": null,
       "best_price": 484.11,
       "best_source": "REI Co-op",
       "offer_count": 5,
@@ -4644,7 +4680,7 @@
           "image": null,
           "list_price": 733.33,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "fetched_at": "2026-07-20T17:09:37+00:00",
           "id": "3e17e836853aa359"
         },
         {
@@ -4662,7 +4698,7 @@
           "image": null,
           "list_price": 733.33,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "fetched_at": "2026-07-20T17:09:37+00:00",
           "id": "930808dbfbc0f8e0"
         },
         {
@@ -4680,7 +4716,7 @@
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "fetched_at": "2026-07-20T17:09:37+00:00",
           "id": "8b30b04420505ac0"
         },
         {
@@ -4698,7 +4734,7 @@
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "fetched_at": "2026-07-20T17:09:37+00:00",
           "id": "ef58170150a0ff56"
         },
         {
@@ -4716,36 +4752,11 @@
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "fetched_at": "2026-07-20T17:09:37+00:00",
           "id": "0907a8a61499f2fe"
         }
       ],
       "history": [
-        {
-          "ts": "2026-07-12T12:00:00+00:00",
-          "price": 724.0,
-          "source": "REI Co-op"
-        },
-        {
-          "ts": "2026-07-12T12:00:00+00:00",
-          "price": 664.42,
-          "source": "Backcountry"
-        },
-        {
-          "ts": "2026-07-12T12:00:00+00:00",
-          "price": 464.52,
-          "source": "Brand Official"
-        },
-        {
-          "ts": "2026-07-12T12:00:00+00:00",
-          "price": 734.81,
-          "source": "Amazon"
-        },
-        {
-          "ts": "2026-07-12T12:00:00+00:00",
-          "price": 691.25,
-          "source": "eBay"
-        },
         {
           "ts": "2026-07-13T12:00:00+00:00",
           "price": 663.53,
@@ -5020,6 +5031,31 @@
           "ts": "2026-07-20T10:34:49+00:00",
           "price": 583.56,
           "source": "eBay"
+        },
+        {
+          "ts": "2026-07-20T17:09:37+00:00",
+          "price": 484.11,
+          "source": "REI Co-op"
+        },
+        {
+          "ts": "2026-07-20T17:09:37+00:00",
+          "price": 719.44,
+          "source": "Backcountry"
+        },
+        {
+          "ts": "2026-07-20T17:09:37+00:00",
+          "price": 581.33,
+          "source": "Brand Official"
+        },
+        {
+          "ts": "2026-07-20T17:09:37+00:00",
+          "price": 740.12,
+          "source": "Amazon"
+        },
+        {
+          "ts": "2026-07-20T17:09:37+00:00",
+          "price": 583.56,
+          "source": "eBay"
         }
       ]
     },
@@ -5040,6 +5076,9 @@
       "mpn": null,
       "image": null,
       "active": true,
+      "season": "auto",
+      "msrp": null,
+      "min_discount_pct": null,
       "best_price": 50.04,
       "best_source": "Amazon",
       "offer_count": 5,
@@ -5059,7 +5098,7 @@
           "image": null,
           "list_price": 73.33,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "fetched_at": "2026-07-20T17:09:37+00:00",
           "id": "b0993b788d869e18"
         },
         {
@@ -5077,7 +5116,7 @@
           "image": null,
           "list_price": 73.33,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "fetched_at": "2026-07-20T17:09:37+00:00",
           "id": "8f12906a5bcfb99b"
         },
         {
@@ -5095,7 +5134,7 @@
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "fetched_at": "2026-07-20T17:09:37+00:00",
           "id": "e8ccf966f63d473d"
         },
         {
@@ -5113,7 +5152,7 @@
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "fetched_at": "2026-07-20T17:09:37+00:00",
           "id": "23b5848a51cc83e6"
         },
         {
@@ -5131,36 +5170,11 @@
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "fetched_at": "2026-07-20T17:09:37+00:00",
           "id": "89d0ba221cc7ed85"
         }
       ],
       "history": [
-        {
-          "ts": "2026-07-12T12:00:00+00:00",
-          "price": 61.85,
-          "source": "REI Co-op"
-        },
-        {
-          "ts": "2026-07-12T12:00:00+00:00",
-          "price": 50.48,
-          "source": "Backcountry"
-        },
-        {
-          "ts": "2026-07-12T12:00:00+00:00",
-          "price": 52.11,
-          "source": "Brand Official"
-        },
-        {
-          "ts": "2026-07-12T12:00:00+00:00",
-          "price": 73.15,
-          "source": "Amazon"
-        },
-        {
-          "ts": "2026-07-12T12:00:00+00:00",
-          "price": 49.42,
-          "source": "eBay"
-        },
         {
           "ts": "2026-07-13T12:00:00+00:00",
           "price": 78.71,
@@ -5435,6 +5449,31 @@
           "ts": "2026-07-20T10:34:49+00:00",
           "price": 61.99,
           "source": "eBay"
+        },
+        {
+          "ts": "2026-07-20T17:09:37+00:00",
+          "price": 80.63,
+          "source": "REI Co-op"
+        },
+        {
+          "ts": "2026-07-20T17:09:37+00:00",
+          "price": 69.18,
+          "source": "Backcountry"
+        },
+        {
+          "ts": "2026-07-20T17:09:37+00:00",
+          "price": 53.57,
+          "source": "Brand Official"
+        },
+        {
+          "ts": "2026-07-20T17:09:37+00:00",
+          "price": 50.04,
+          "source": "Amazon"
+        },
+        {
+          "ts": "2026-07-20T17:09:37+00:00",
+          "price": 61.99,
+          "source": "eBay"
         }
       ]
     },
@@ -5457,6 +5496,9 @@
       "mpn": null,
       "image": null,
       "active": true,
+      "season": "auto",
+      "msrp": null,
+      "min_discount_pct": null,
       "best_price": 62.63,
       "best_source": "Brand Official",
       "offer_count": 5,
@@ -5476,7 +5518,7 @@
           "image": null,
           "list_price": 100.0,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "fetched_at": "2026-07-20T17:09:37+00:00",
           "id": "8be076ab9704278c"
         },
         {
@@ -5494,7 +5536,7 @@
           "image": null,
           "list_price": 100.0,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "fetched_at": "2026-07-20T17:09:37+00:00",
           "id": "67bed151d75a4ef3"
         },
         {
@@ -5512,7 +5554,7 @@
           "image": null,
           "list_price": 100.0,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "fetched_at": "2026-07-20T17:09:37+00:00",
           "id": "b2982f7dd67000fe"
         },
         {
@@ -5530,7 +5572,7 @@
           "image": null,
           "list_price": 100.0,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "fetched_at": "2026-07-20T17:09:37+00:00",
           "id": "d9df3e210a29b258"
         },
         {
@@ -5548,36 +5590,11 @@
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "fetched_at": "2026-07-20T17:09:37+00:00",
           "id": "65678f0e3ffea4a5"
         }
       ],
       "history": [
-        {
-          "ts": "2026-07-12T12:00:00+00:00",
-          "price": 76.28,
-          "source": "REI Co-op"
-        },
-        {
-          "ts": "2026-07-12T12:00:00+00:00",
-          "price": 90.86,
-          "source": "Backcountry"
-        },
-        {
-          "ts": "2026-07-12T12:00:00+00:00",
-          "price": 76.99,
-          "source": "Brand Official"
-        },
-        {
-          "ts": "2026-07-12T12:00:00+00:00",
-          "price": 65.92,
-          "source": "Amazon"
-        },
-        {
-          "ts": "2026-07-12T12:00:00+00:00",
-          "price": 66.64,
-          "source": "eBay"
-        },
         {
           "ts": "2026-07-13T12:00:00+00:00",
           "price": 95.65,
@@ -5852,6 +5869,31 @@
           "ts": "2026-07-20T10:34:49+00:00",
           "price": 67.88,
           "source": "eBay"
+        },
+        {
+          "ts": "2026-07-20T17:09:37+00:00",
+          "price": 88.6,
+          "source": "REI Co-op"
+        },
+        {
+          "ts": "2026-07-20T17:09:37+00:00",
+          "price": 74.62,
+          "source": "Backcountry"
+        },
+        {
+          "ts": "2026-07-20T17:09:37+00:00",
+          "price": 62.63,
+          "source": "Brand Official"
+        },
+        {
+          "ts": "2026-07-20T17:09:37+00:00",
+          "price": 89.48,
+          "source": "Amazon"
+        },
+        {
+          "ts": "2026-07-20T17:09:37+00:00",
+          "price": 67.88,
+          "source": "eBay"
         }
       ]
     },
@@ -5874,6 +5916,9 @@
       "mpn": null,
       "image": null,
       "active": true,
+      "season": "auto",
+      "msrp": null,
+      "min_discount_pct": null,
       "best_price": 199.37,
       "best_source": "Amazon",
       "offer_count": 5,
@@ -5893,7 +5938,7 @@
           "image": null,
           "list_price": 293.33,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "fetched_at": "2026-07-20T17:09:37+00:00",
           "id": "16943d7b5270aef9"
         },
         {
@@ -5911,7 +5956,7 @@
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "fetched_at": "2026-07-20T17:09:37+00:00",
           "id": "9612cd15be3bc940"
         },
         {
@@ -5929,7 +5974,7 @@
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "fetched_at": "2026-07-20T17:09:37+00:00",
           "id": "8ed9964876e9698c"
         },
         {
@@ -5947,7 +5992,7 @@
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "fetched_at": "2026-07-20T17:09:37+00:00",
           "id": "94adff0e08a92733"
         },
         {
@@ -5965,36 +6010,11 @@
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "fetched_at": "2026-07-20T17:09:37+00:00",
           "id": "e07024f517605651"
         }
       ],
       "history": [
-        {
-          "ts": "2026-07-12T12:00:00+00:00",
-          "price": 290.11,
-          "source": "REI Co-op"
-        },
-        {
-          "ts": "2026-07-12T12:00:00+00:00",
-          "price": 290.69,
-          "source": "Backcountry"
-        },
-        {
-          "ts": "2026-07-12T12:00:00+00:00",
-          "price": 225.86,
-          "source": "Brand Official"
-        },
-        {
-          "ts": "2026-07-12T12:00:00+00:00",
-          "price": 194.24,
-          "source": "Amazon"
-        },
-        {
-          "ts": "2026-07-12T12:00:00+00:00",
-          "price": 277.35,
-          "source": "eBay"
-        },
         {
           "ts": "2026-07-13T12:00:00+00:00",
           "price": 284.11,
@@ -6269,6 +6289,31 @@
           "ts": "2026-07-20T10:34:49+00:00",
           "price": 245.49,
           "source": "eBay"
+        },
+        {
+          "ts": "2026-07-20T17:09:37+00:00",
+          "price": 266.92,
+          "source": "REI Co-op"
+        },
+        {
+          "ts": "2026-07-20T17:09:37+00:00",
+          "price": 284.3,
+          "source": "Backcountry"
+        },
+        {
+          "ts": "2026-07-20T17:09:37+00:00",
+          "price": 305.09,
+          "source": "Brand Official"
+        },
+        {
+          "ts": "2026-07-20T17:09:37+00:00",
+          "price": 199.37,
+          "source": "Amazon"
+        },
+        {
+          "ts": "2026-07-20T17:09:37+00:00",
+          "price": 245.49,
+          "source": "eBay"
         }
       ]
     },
@@ -6290,6 +6335,9 @@
       "mpn": null,
       "image": null,
       "active": true,
+      "season": "auto",
+      "msrp": null,
+      "min_discount_pct": null,
       "best_price": 229.32,
       "best_source": "REI Co-op",
       "offer_count": 5,
@@ -6309,7 +6357,7 @@
           "image": null,
           "list_price": 333.33,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "fetched_at": "2026-07-20T17:09:37+00:00",
           "id": "b4b903b29b62fd21"
         },
         {
@@ -6327,7 +6375,7 @@
           "image": null,
           "list_price": 333.33,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "fetched_at": "2026-07-20T17:09:37+00:00",
           "id": "0d5697530899d8fb"
         },
         {
@@ -6345,7 +6393,7 @@
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "fetched_at": "2026-07-20T17:09:37+00:00",
           "id": "6d958ca76ff27390"
         },
         {
@@ -6363,7 +6411,7 @@
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "fetched_at": "2026-07-20T17:09:37+00:00",
           "id": "8eb1ed4130b80a8f"
         },
         {
@@ -6381,36 +6429,11 @@
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "fetched_at": "2026-07-20T17:09:37+00:00",
           "id": "ac576f85b2dc32a9"
         }
       ],
       "history": [
-        {
-          "ts": "2026-07-12T12:00:00+00:00",
-          "price": 303.14,
-          "source": "REI Co-op"
-        },
-        {
-          "ts": "2026-07-12T12:00:00+00:00",
-          "price": 350.78,
-          "source": "Backcountry"
-        },
-        {
-          "ts": "2026-07-12T12:00:00+00:00",
-          "price": 309.44,
-          "source": "Brand Official"
-        },
-        {
-          "ts": "2026-07-12T12:00:00+00:00",
-          "price": 323.25,
-          "source": "Amazon"
-        },
-        {
-          "ts": "2026-07-12T12:00:00+00:00",
-          "price": 187.29,
-          "source": "eBay"
-        },
         {
           "ts": "2026-07-13T12:00:00+00:00",
           "price": 338.02,
@@ -6685,6 +6708,31 @@
           "ts": "2026-07-20T10:34:49+00:00",
           "price": 275.15,
           "source": "eBay"
+        },
+        {
+          "ts": "2026-07-20T17:09:37+00:00",
+          "price": 229.32,
+          "source": "REI Co-op"
+        },
+        {
+          "ts": "2026-07-20T17:09:37+00:00",
+          "price": 313.76,
+          "source": "Backcountry"
+        },
+        {
+          "ts": "2026-07-20T17:09:37+00:00",
+          "price": 321.68,
+          "source": "Brand Official"
+        },
+        {
+          "ts": "2026-07-20T17:09:37+00:00",
+          "price": 232.15,
+          "source": "Amazon"
+        },
+        {
+          "ts": "2026-07-20T17:09:37+00:00",
+          "price": 275.15,
+          "source": "eBay"
         }
       ]
     },
@@ -6709,6 +6757,9 @@
       "mpn": null,
       "image": null,
       "active": true,
+      "season": "auto",
+      "msrp": null,
+      "min_discount_pct": null,
       "best_price": 106.18,
       "best_source": "Amazon",
       "offer_count": 5,
@@ -6728,7 +6779,7 @@
           "image": null,
           "list_price": 146.67,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "fetched_at": "2026-07-20T17:09:37+00:00",
           "id": "38548cec59ac648a"
         },
         {
@@ -6746,7 +6797,7 @@
           "image": null,
           "list_price": 146.67,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "fetched_at": "2026-07-20T17:09:37+00:00",
           "id": "be1a59f6a98d21f1"
         },
         {
@@ -6764,7 +6815,7 @@
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "fetched_at": "2026-07-20T17:09:37+00:00",
           "id": "d7a063b3c0b6b403"
         },
         {
@@ -6782,7 +6833,7 @@
           "image": null,
           "list_price": 146.67,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "fetched_at": "2026-07-20T17:09:37+00:00",
           "id": "5bef14c5481d1025"
         },
         {
@@ -6800,36 +6851,11 @@
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "fetched_at": "2026-07-20T17:09:37+00:00",
           "id": "56da4cf3985f5ddd"
         }
       ],
       "history": [
-        {
-          "ts": "2026-07-12T12:00:00+00:00",
-          "price": 108.78,
-          "source": "REI Co-op"
-        },
-        {
-          "ts": "2026-07-12T12:00:00+00:00",
-          "price": 105.87,
-          "source": "Backcountry"
-        },
-        {
-          "ts": "2026-07-12T12:00:00+00:00",
-          "price": 153.7,
-          "source": "Brand Official"
-        },
-        {
-          "ts": "2026-07-12T12:00:00+00:00",
-          "price": 100.67,
-          "source": "Amazon"
-        },
-        {
-          "ts": "2026-07-12T12:00:00+00:00",
-          "price": 110.69,
-          "source": "eBay"
-        },
         {
           "ts": "2026-07-13T12:00:00+00:00",
           "price": 141.39,
@@ -7104,6 +7130,31 @@
           "ts": "2026-07-20T10:34:49+00:00",
           "price": 124.77,
           "source": "eBay"
+        },
+        {
+          "ts": "2026-07-20T17:09:37+00:00",
+          "price": 114.91,
+          "source": "REI Co-op"
+        },
+        {
+          "ts": "2026-07-20T17:09:37+00:00",
+          "price": 148.53,
+          "source": "Backcountry"
+        },
+        {
+          "ts": "2026-07-20T17:09:37+00:00",
+          "price": 133.2,
+          "source": "Brand Official"
+        },
+        {
+          "ts": "2026-07-20T17:09:37+00:00",
+          "price": 106.18,
+          "source": "Amazon"
+        },
+        {
+          "ts": "2026-07-20T17:09:37+00:00",
+          "price": 124.77,
+          "source": "eBay"
         }
       ]
     },
@@ -7127,6 +7178,9 @@
       "mpn": null,
       "image": null,
       "active": true,
+      "season": "auto",
+      "msrp": null,
+      "min_discount_pct": null,
       "best_price": 177.74,
       "best_source": "Backcountry",
       "offer_count": 5,
@@ -7146,7 +7200,7 @@
           "image": null,
           "list_price": 266.67,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "fetched_at": "2026-07-20T17:09:37+00:00",
           "id": "018515e6bc5dd018"
         },
         {
@@ -7164,7 +7218,7 @@
           "image": null,
           "list_price": 266.67,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "fetched_at": "2026-07-20T17:09:37+00:00",
           "id": "57b8f4c27932ac5d"
         },
         {
@@ -7182,7 +7236,7 @@
           "image": null,
           "list_price": 266.67,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "fetched_at": "2026-07-20T17:09:37+00:00",
           "id": "ebcb30f74117e050"
         },
         {
@@ -7200,7 +7254,7 @@
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "fetched_at": "2026-07-20T17:09:37+00:00",
           "id": "76220041560b5eb1"
         },
         {
@@ -7218,36 +7272,11 @@
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "fetched_at": "2026-07-20T17:09:37+00:00",
           "id": "1c6eff6582494efd"
         }
       ],
       "history": [
-        {
-          "ts": "2026-07-12T12:00:00+00:00",
-          "price": 191.78,
-          "source": "REI Co-op"
-        },
-        {
-          "ts": "2026-07-12T12:00:00+00:00",
-          "price": 239.16,
-          "source": "Backcountry"
-        },
-        {
-          "ts": "2026-07-12T12:00:00+00:00",
-          "price": 231.34,
-          "source": "Brand Official"
-        },
-        {
-          "ts": "2026-07-12T12:00:00+00:00",
-          "price": 249.72,
-          "source": "Amazon"
-        },
-        {
-          "ts": "2026-07-12T12:00:00+00:00",
-          "price": 153.47,
-          "source": "eBay"
-        },
         {
           "ts": "2026-07-13T12:00:00+00:00",
           "price": 195.2,
@@ -7522,6 +7551,31 @@
           "ts": "2026-07-20T10:34:49+00:00",
           "price": 211.31,
           "source": "eBay"
+        },
+        {
+          "ts": "2026-07-20T17:09:37+00:00",
+          "price": 203.89,
+          "source": "REI Co-op"
+        },
+        {
+          "ts": "2026-07-20T17:09:37+00:00",
+          "price": 177.74,
+          "source": "Backcountry"
+        },
+        {
+          "ts": "2026-07-20T17:09:37+00:00",
+          "price": 254.71,
+          "source": "Brand Official"
+        },
+        {
+          "ts": "2026-07-20T17:09:37+00:00",
+          "price": 268.45,
+          "source": "Amazon"
+        },
+        {
+          "ts": "2026-07-20T17:09:37+00:00",
+          "price": 211.31,
+          "source": "eBay"
         }
       ]
     },
@@ -7545,6 +7599,9 @@
       "mpn": null,
       "image": null,
       "active": true,
+      "season": "auto",
+      "msrp": null,
+      "min_discount_pct": null,
       "best_price": 299.72,
       "best_source": "Amazon",
       "offer_count": 5,
@@ -7564,7 +7621,7 @@
           "image": null,
           "list_price": 453.33,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "fetched_at": "2026-07-20T17:09:37+00:00",
           "id": "b772d040b5b40d86"
         },
         {
@@ -7582,7 +7639,7 @@
           "image": null,
           "list_price": 453.33,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "fetched_at": "2026-07-20T17:09:37+00:00",
           "id": "dc54a15ada3af14f"
         },
         {
@@ -7600,7 +7657,7 @@
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "fetched_at": "2026-07-20T17:09:37+00:00",
           "id": "a2378acdef87a692"
         },
         {
@@ -7618,7 +7675,7 @@
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "fetched_at": "2026-07-20T17:09:37+00:00",
           "id": "629ad697c04670df"
         },
         {
@@ -7636,36 +7693,11 @@
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "fetched_at": "2026-07-20T17:09:37+00:00",
           "id": "8f27a70707057333"
         }
       ],
       "history": [
-        {
-          "ts": "2026-07-12T12:00:00+00:00",
-          "price": 426.37,
-          "source": "REI Co-op"
-        },
-        {
-          "ts": "2026-07-12T12:00:00+00:00",
-          "price": 285.02,
-          "source": "Backcountry"
-        },
-        {
-          "ts": "2026-07-12T12:00:00+00:00",
-          "price": 486.84,
-          "source": "Brand Official"
-        },
-        {
-          "ts": "2026-07-12T12:00:00+00:00",
-          "price": 465.18,
-          "source": "Amazon"
-        },
-        {
-          "ts": "2026-07-12T12:00:00+00:00",
-          "price": 398.02,
-          "source": "eBay"
-        },
         {
           "ts": "2026-07-13T12:00:00+00:00",
           "price": 459.24,
@@ -7940,6 +7972,31 @@
           "ts": "2026-07-20T10:34:49+00:00",
           "price": 389.18,
           "source": "eBay"
+        },
+        {
+          "ts": "2026-07-20T17:09:37+00:00",
+          "price": 308.69,
+          "source": "REI Co-op"
+        },
+        {
+          "ts": "2026-07-20T17:09:37+00:00",
+          "price": 424.01,
+          "source": "Backcountry"
+        },
+        {
+          "ts": "2026-07-20T17:09:37+00:00",
+          "price": 499.78,
+          "source": "Brand Official"
+        },
+        {
+          "ts": "2026-07-20T17:09:37+00:00",
+          "price": 299.72,
+          "source": "Amazon"
+        },
+        {
+          "ts": "2026-07-20T17:09:37+00:00",
+          "price": 389.18,
+          "source": "eBay"
         }
       ]
     },
@@ -7962,6 +8019,9 @@
       "mpn": null,
       "image": null,
       "active": true,
+      "season": "auto",
+      "msrp": null,
+      "min_discount_pct": null,
       "best_price": 155.33,
       "best_source": "Amazon",
       "offer_count": 5,
@@ -7981,7 +8041,7 @@
           "image": null,
           "list_price": 266.67,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "fetched_at": "2026-07-20T17:09:37+00:00",
           "id": "447bdaafb42ebebf"
         },
         {
@@ -7999,7 +8059,7 @@
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "fetched_at": "2026-07-20T17:09:37+00:00",
           "id": "3b0da4cdf05dde31"
         },
         {
@@ -8017,7 +8077,7 @@
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "fetched_at": "2026-07-20T17:09:37+00:00",
           "id": "77ff88e067bfb851"
         },
         {
@@ -8035,7 +8095,7 @@
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "fetched_at": "2026-07-20T17:09:37+00:00",
           "id": "e6b3283ad8744231"
         },
         {
@@ -8053,36 +8113,11 @@
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T10:34:49+00:00",
+          "fetched_at": "2026-07-20T17:09:37+00:00",
           "id": "6d36082169c9294b"
         }
       ],
       "history": [
-        {
-          "ts": "2026-07-12T12:00:00+00:00",
-          "price": 239.24,
-          "source": "REI Co-op"
-        },
-        {
-          "ts": "2026-07-12T12:00:00+00:00",
-          "price": 163.78,
-          "source": "Backcountry"
-        },
-        {
-          "ts": "2026-07-12T12:00:00+00:00",
-          "price": 295.66,
-          "source": "Brand Official"
-        },
-        {
-          "ts": "2026-07-12T12:00:00+00:00",
-          "price": 243.56,
-          "source": "Amazon"
-        },
-        {
-          "ts": "2026-07-12T12:00:00+00:00",
-          "price": 158.99,
-          "source": "eBay"
-        },
         {
           "ts": "2026-07-13T12:00:00+00:00",
           "price": 291.77,
@@ -8355,6 +8390,31 @@
         },
         {
           "ts": "2026-07-20T10:34:49+00:00",
+          "price": 230.02,
+          "source": "eBay"
+        },
+        {
+          "ts": "2026-07-20T17:09:37+00:00",
+          "price": 279.79,
+          "source": "REI Co-op"
+        },
+        {
+          "ts": "2026-07-20T17:09:37+00:00",
+          "price": 248.43,
+          "source": "Backcountry"
+        },
+        {
+          "ts": "2026-07-20T17:09:37+00:00",
+          "price": 266.96,
+          "source": "Brand Official"
+        },
+        {
+          "ts": "2026-07-20T17:09:37+00:00",
+          "price": 155.33,
+          "source": "Amazon"
+        },
+        {
+          "ts": "2026-07-20T17:09:37+00:00",
           "price": 230.02,
           "source": "eBay"
         }
