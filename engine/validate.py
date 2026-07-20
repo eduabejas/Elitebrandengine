@@ -54,9 +54,18 @@ def validate_items(items: list[dict[str, Any]]) -> tuple[list[str], list[str]]:
             if field in it and not isinstance(it[field], list):
                 errors.append(f"{where}: '{field}' must be a list")
 
-        tp = it.get("target_price")
-        if tp is not None and (not isinstance(tp, (int, float)) or tp <= 0):
-            errors.append(f"{where}: 'target_price' must be a positive number")
+        for money_field in ("target_price", "msrp"):
+            v = it.get(money_field)
+            if v is not None and (not isinstance(v, (int, float)) or v <= 0):
+                errors.append(f"{where}: '{money_field}' must be a positive number")
+
+        md = it.get("min_discount_pct")
+        if md is not None and (not isinstance(md, (int, float)) or not 0 < md < 100):
+            errors.append(f"{where}: 'min_discount_pct' must be between 0 and 100")
+
+        season = it.get("season")
+        if season is not None and season not in ("winter", "summer", "3season", "all", "auto"):
+            errors.append(f"{where}: 'season' must be winter|summer|3season|all|auto")
 
         if "active" in it and not isinstance(it["active"], bool):
             errors.append(f"{where}: 'active' must be true/false")

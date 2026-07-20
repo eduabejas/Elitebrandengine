@@ -14,10 +14,37 @@ site:
 
 # --- How a price becomes a "deal" -------------------------------------------
 detection:
-  min_discount_pct: 15.0     # % below reference (list price or recent median)
-  min_history_points: 4      # observations needed before statistical detection
-  alert_ttl_days: 7          # don't re-email the same deal within N days
-  min_match_score: 0.6       # 0..1 confidence a listing is the right product
+  min_discount_pct: 15.0        # objective band is 15%–60% below regular price
+  suspect_discount_pct: 68.0    # above this = SUSPECT (likely mismatch/price error)
+  baseline_percentile: 85.0     # "regular price" = this percentile of recent prices
+  baseline_window_days: 120
+  min_history_points: 4         # observations needed before statistical baselining
+  require_in_stock: true        # ignore out-of-stock offers
+  include_used: false           # used ≠ "the same article new" (default off)
+  max_offer_age_days: 3         # ignore stale offers for alerting
+  alert_ttl_days: 7             # don't re-email the same deal within N days
+  min_match_score: 0.6          # confidence a listing is the right product
+  suspect_min_match_score: 0.9  # higher bar to trust an unusually large discount
+  category_min_discount: {}     # e.g. {"Hardshell": 12} for rarely-discounted lines
+
+# --- Seasonality: prioritise counter-seasonal buys --------------------------
+# In summer, winter gear (down/hardshell/mountaineering) hits end-of-season
+# clearance — and vice-versa. Off-season deals are surfaced earlier and ranked
+# higher. Product season is inferred from category, or set `season` on an item.
+seasonality:
+  hemisphere: north             # north | south (US = north)
+  offseason_boost: 12.0         # extra ranking score for off-season buys
+  offseason_discount_relax: 3.0 # lower the threshold a bit off-season
+
+# --- Currency normalisation (all prices compared in `base`) -----------------
+fx:
+  base: USD
+  rates:                        # value of 1 unit in USD; update as needed
+    USD: 1.0
+    EUR: 1.08
+    GBP: 1.27
+    CAD: 0.73
+    ARS: 0.0011
 
 # --- Where prices come from --------------------------------------------------
 # Only LEGITIMATE sources: official APIs + affiliate datafeeds + polite,

@@ -44,6 +44,10 @@ class WatchItem:
     mpn: Optional[str] = None                           # manufacturer part no.
     image: Optional[str] = None                         # optional image URL
     active: bool = True
+    # Seasonality & pricing hints (all optional):
+    season: str = "auto"          # winter | summer | 3season | all | auto(=infer from category)
+    msrp: Optional[float] = None  # explicit regular price anchor (else inferred)
+    min_discount_pct: Optional[float] = None  # per-item override of the threshold
 
     @staticmethod
     def from_dict(d: dict[str, Any]) -> "WatchItem":
@@ -134,8 +138,15 @@ class Deal:
     condition: str
     reason: str                        # why it qualified (human readable)
     discount_pct: Optional[float]      # vs reference_price, if known
-    reference_price: Optional[float]   # median/list used for comparison
+    reference_price: Optional[float]   # the "regular" (non-sale) anchor used
     target_price: Optional[float]
+    # Deal-intelligence fields (v2):
+    score: float = 0.0                 # 0..100 ranking (higher = act sooner)
+    tier: str = "good"                 # good | great | excellent | suspect | target
+    seasonal: bool = False             # True = off-season clearance opportunity
+    season_note: Optional[str] = None  # human context, e.g. end-of-winter clearance
+    suspect: bool = False              # discount too large to trust (verify first)
+    lowest_in_days: Optional[int] = None
     detected_at: str = field(default_factory=now_iso)
 
     @property

@@ -134,6 +134,7 @@ def write_snapshot(
         "site": cfg.get("site", {}),
     }
 
+    ranked = sorted(deals, key=lambda d: d.score, reverse=True)
     write_json(web / "products.json", {"products": products})
-    write_json(web / "deals.json", {"deals": [d.to_dict() for d in deals]})
+    write_json(web / "deals.json", {"deals": [d.to_dict() for d in ranked]})
     write_json(web / "meta.json", meta)

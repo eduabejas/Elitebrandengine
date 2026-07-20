@@ -26,14 +26,46 @@ DEFAULTS: dict[str, Any] = {
         "web_data": "web/data",
     },
     "detection": {
-        # A drop of at least this % below the reference price is a deal.
+        # A drop of at least this % below the regular price is a deal (objective
+        # sweet spot is 15-60%).
         "min_discount_pct": 15.0,
-        # Need at least this many history points before statistical detection.
+        # Above this %, a "discount" is treated as SUSPECT (likely a wrong match
+        # or price error) and only surfaces if the match is near-certain.
+        "suspect_discount_pct": 68.0,
+        # Regular (non-sale) price = this percentile of recent prices (plus MSRP
+        # / believable list price). Guards against sale-dragged medians.
+        "baseline_percentile": 85.0,
+        "baseline_window_days": 120,
+        # Need at least this many history points before statistical baselining.
         "min_history_points": 4,
+        # Only consider new, in-stock, fresh offers as "the same article".
+        "require_in_stock": True,
+        "include_used": False,
+        "max_offer_age_days": 3,
         # Don't re-email the same deal within this many days.
         "alert_ttl_days": 7,
-        # Match confidence required to trust an offer belongs to a product.
+        # Match confidence required to trust an offer belongs to a product...
         "min_match_score": 0.6,
+        # ...and the higher bar required to trust an unusually large discount.
+        "suspect_min_match_score": 0.9,
+        # Optional per-category threshold overrides (rarely-discounted lines):
+        # {"Hardshell": 12, "Down Jacket": 15}
+        "category_min_discount": {},
+    },
+    "seasonality": {
+        # Where the operator/buyers are (drives current-season logic).
+        "hemisphere": "north",
+        # Extra score for off-season (counter-seasonal) buys.
+        "offseason_boost": 12.0,
+        # Lower the discount threshold by this × strength when off-season, so we
+        # catch end-of-season clearances a little earlier.
+        "offseason_discount_relax": 3.0,
+    },
+    "fx": {
+        # Static rates = value of 1 unit in USD. Update when feeds add non-USD
+        # sources. All prices are normalised to `base` before comparison.
+        "base": "USD",
+        "rates": {"USD": 1.0, "EUR": 1.08, "GBP": 1.27, "CAD": 0.73, "ARS": 0.0011},
     },
     "sources": {
         # Demo source ships enabled so the whole system works with zero setup.

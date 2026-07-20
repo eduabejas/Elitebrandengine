@@ -156,10 +156,23 @@ Brands, detection thresholds, which sources are on, email options. Secrets are
 **never** stored here — they come from the environment. See the inline comments.
 
 Key detection knobs:
-- `min_discount_pct` (default 15) — how far below the reference a price must be.
-- `min_history_points` (default 4) — data needed before statistical detection.
-- `alert_ttl_days` (default 7) — don't re-email the same deal within N days.
-- `min_match_score` (default 0.6) — confidence a listing is the right product.
+- `min_discount_pct` (15) / `suspect_discount_pct` (68) — the objective band is
+  **15–60%** off; above ~68% is treated as *suspect* (likely a wrong match or a
+  price error) and only surfaces on a near-certain product match.
+- `baseline_percentile` (85) — the *regular* (non-sale) price is a high
+  percentile of recent prices plus MSRP / believable "was" price, so a
+  sale-heavy item's median can't fake a discount.
+- `require_in_stock`, `include_used`, `max_offer_age_days` — only compare
+  "the same article, new, in stock, fresh".
+- `min_match_score` (0.6) / `suspect_min_match_score` (0.9), `alert_ttl_days` (7).
+
+**Seasonality (buy off-season).** In summer, winter gear (down / hardshell /
+mountaineering) hits end-of-season clearance — and vice-versa. The engine infers
+each product's season from its category (or an explicit `season` on the item),
+knows the current season for your `hemisphere`, and **ranks off-season deals
+higher** (surfacing them a bit earlier too). Every deal gets a 0–100 **score**
+and a **tier** (good / great / excellent / suspect) so you act on the best first;
+it also tags known sale windows (Black Friday, REI Anniversary, end-of-season).
 
 ### Turning on real sources
 Set `enabled: true` under `sources.<name>` in `config.yml` and provide the
@@ -207,7 +220,9 @@ engine/                 Python collection engine
   normalize.py          brand/size/colour normalisation + fuzzy matching
   config.py             config.yml loader (+ env overrides for secrets)
   store.py              JSON store, price history, website snapshot
-  dealdetector.py       target / discount / new-low detection
+  dealdetector.py       scored, seasonal, false-positive-guarded detection (v2)
+  seasons.py            off-season logic + sale windows (buy counter-seasonal)
+  pricing.py            robust "regular price" + currency normalisation
   http.py               shared resilient HTTP (retries, backoff, rate-limit)
   run.py                orchestrator + CLI (python -m engine.run)
   probe.py              inspect a single source (python -m engine.probe)

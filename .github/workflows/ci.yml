@@ -31,6 +31,8 @@ jobs:
       - name: Unit tests
         run: |
           python -m tests.test_normalize
+          python -m tests.test_seasons
+          python -m tests.test_pricing
           python -m tests.test_dealdetector
           python -m tests.test_http
           python -m tests.test_validate

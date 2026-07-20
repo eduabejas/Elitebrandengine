@@ -26,6 +26,7 @@ from .connectors import build_connectors
 from .dealdetector import detect_deals
 from .models import Deal, Offer, PricePoint, WatchItem, now_iso
 from .normalize import match_score
+from .pricing import to_base
 from .notify import send_deal_alerts
 from .store import (
     append_history,
@@ -55,8 +56,9 @@ def _gather_offers(connectors, watch: WatchItem, min_score: float) -> list[Offer
     return list(seen.values())
 
 
-def _history_points(offers: list[Offer]) -> list[PricePoint]:
-    """One point per source (its lowest price this run) to bound history size."""
+def _history_points(offers: list[Offer], rates: dict, base: str) -> list[PricePoint]:
+    """One point per source (its lowest price this run) to bound history size.
+    Prices are normalised to the base currency so history stays comparable."""
     best_by_source: dict[str, Offer] = {}
     for o in offers:
         cur = best_by_source.get(o.source)
@@ -64,8 +66,9 @@ def _history_points(offers: list[Offer]) -> list[PricePoint]:
             best_by_source[o.source] = o
     ts = now_iso()
     return [
-        PricePoint(ts=ts, source=o.source, price=o.price, size=o.size,
-                   color=o.color, condition=o.condition)
+        PricePoint(ts=ts, source=o.source,
+                   price=round(to_base(o.price, o.currency, rates, base), 2),
+                   size=o.size, color=o.color, condition=o.condition)
         for o in best_by_source.values()
     ]
 
@@ -78,6 +81,8 @@ def run(config_file: str | None = None, send_email: bool = True,
         watchlist = watchlist[:limit]
     connectors = build_connectors(cfg)
     min_score = float(cfg.get("detection.min_match_score", 0.6))
+    rates = cfg.get("fx.rates", {}) or {}
+    base = cfg.get("fx.base", "USD")
 
     print(f"[run] {len(watchlist)} watch item(s), "
           f"{len(connectors)} source(s): {[c.name for c in connectors]}")
@@ -99,7 +104,7 @@ def run(config_file: str | None = None, send_email: bool = True,
         all_active.extend(active)
         all_new.extend(new)
 
-        append_history(cfg, w.id, _history_points(offers))
+        append_history(cfg, w.id, _history_points(offers, rates, base))
         if offers:
             cheapest = min(offers, key=lambda o: o.price)
             print(f"  · {w.id}: {len(offers)} offer(s), "

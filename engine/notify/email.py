@@ -44,21 +44,34 @@ def _recipients(cfg: Config) -> list[str]:
 # --------------------------------------------------------------------------- #
 # Rendering                                                                    #
 # --------------------------------------------------------------------------- #
+_TIER = {
+    "excellent": ("#0a7d33", "Excelente"), "great": ("#127a4a", "Muy buena"),
+    "good": ("#3a7a5a", "Buena"), "suspect": ("#b26a00", "Verificar"),
+    "target": ("#2a6a8a", "Objetivo"),
+}
+
+
 def render_html(cfg: Config, deals: list[Deal]) -> str:
     site = cfg.get("site.title", "Elite Brand Engine")
     rows = []
-    for d in sorted(deals, key=lambda x: (x.discount_pct or 0), reverse=True):
+    for d in sorted(deals, key=lambda x: x.score, reverse=True):
         disc = f'<span style="color:#0a7d33;font-weight:700">-{d.discount_pct:.0f}%</span>' if d.discount_pct else "—"
         ref = f'<span style="color:#8a8a8a;text-decoration:line-through">{_fmt_price(d.reference_price, d.currency)}</span>' if d.reference_price else ""
         size = d.size or "—"
         color = f" · {d.color.title()}" if d.color else ""
         cond = "" if d.condition == "new" else f' <span style="color:#b26a00">({d.condition})</span>'
+        tcolor, tlabel = _TIER.get(d.tier, ("#3a7a5a", d.tier or ""))
+        badge = (f'<span style="background:{tcolor};color:#fff;padding:2px 7px;'
+                 f'border-radius:9px;font-size:11px;font-weight:700;">{tlabel}</span>')
+        season = (f'<div style="color:#0a7d33;font-size:12px;margin-top:2px;">❄️☀️ {d.season_note}</div>'
+                  if d.seasonal and d.season_note else "")
         rows.append(f"""
         <tr>
           <td style="padding:12px 10px;border-bottom:1px solid #eee;">
-            <div style="font-weight:700;color:#12222b;font-size:15px;">{d.brand} — {d.product_name}</div>
+            <div style="font-weight:700;color:#12222b;font-size:15px;">{d.brand} — {d.product_name} &nbsp;{badge}</div>
             <div style="color:#5a6b73;font-size:13px;">Talla: <b>{size}</b>{color}{cond}</div>
             <div style="color:#5a6b73;font-size:12px;margin-top:2px;">{d.reason}</div>
+            {season}
           </td>
           <td style="padding:12px 10px;border-bottom:1px solid #eee;white-space:nowrap;">
             <span style="background:#eef6f0;color:#12222b;padding:3px 8px;border-radius:10px;font-size:12px;">{d.source}</span>
@@ -91,10 +104,11 @@ def render_html(cfg: Config, deals: list[Deal]) -> str:
 
 def render_text(cfg: Config, deals: list[Deal]) -> str:
     lines = [f"{cfg.get('site.title', 'Elite Brand Engine')} — {len(deals)} nueva(s) oferta(s)\n"]
-    for d in sorted(deals, key=lambda x: (x.discount_pct or 0), reverse=True):
+    for d in sorted(deals, key=lambda x: x.score, reverse=True):
         disc = f" (-{d.discount_pct:.0f}%)" if d.discount_pct else ""
+        _, tlabel = _TIER.get(d.tier, ("", d.tier or ""))
         lines.append(
-            f"• {d.brand} — {d.product_name}\n"
+            f"• [{tlabel}] {d.brand} — {d.product_name}\n"
             f"    Talla: {d.size or '—'}"
             + (f" · {d.color.title()}" if d.color else "")
             + (f" · {d.condition}" if d.condition != 'new' else "")
@@ -102,7 +116,8 @@ def render_text(cfg: Config, deals: list[Deal]) -> str:
             f"    Website: {d.source}\n"
             f"    Precio: {_fmt_price(d.price, d.currency)}{disc}\n"
             f"    Motivo: {d.reason}\n"
-            f"    Link: {d.url}\n"
+            + (f"    Temporada: {d.season_note}\n" if d.seasonal and d.season_note else "")
+            + f"    Link: {d.url}\n"
         )
     lines.append("\nVerifica el precio final en el sitio del comercio antes de comprar.")
     return "\n".join(lines)
@@ -113,7 +128,7 @@ def render_text(cfg: Config, deals: list[Deal]) -> str:
 # --------------------------------------------------------------------------- #
 def _subject(cfg: Config, deals: list[Deal]) -> str:
     prefix = cfg.get("email.subject_prefix", "")
-    top = max(deals, key=lambda x: (x.discount_pct or 0))
+    top = max(deals, key=lambda x: x.score)
     extra = f" — {top.brand} {top.product_name}" if len(deals) == 1 else ""
     return f"{prefix}{len(deals)} oferta(s) nueva(s){extra}"
 
