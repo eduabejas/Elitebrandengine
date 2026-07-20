@@ -55,7 +55,8 @@ def render_html(cfg: Config, deals: list[Deal]) -> str:
     site = cfg.get("site.title", "Elite Brand Engine")
     rows = []
     for d in sorted(deals, key=lambda x: x.score, reverse=True):
-        disc = f'<span style="color:#0a7d33;font-weight:700">-{d.discount_pct:.0f}%</span>' if d.discount_pct else "—"
+        eff_disc = d.effective_discount_pct if d.effective_discount_pct is not None else d.discount_pct
+        disc = f'<span style="color:#0a7d33;font-weight:700">-{eff_disc:.0f}%</span>' if eff_disc else "—"
         ref = f'<span style="color:#8a8a8a;text-decoration:line-through">{_fmt_price(d.reference_price, d.currency)}</span>' if d.reference_price else ""
         size = d.size or "—"
         color = f" · {d.color.title()}" if d.color else ""
@@ -65,19 +66,26 @@ def render_html(cfg: Config, deals: list[Deal]) -> str:
                  f'border-radius:9px;font-size:11px;font-weight:700;">{tlabel}</span>')
         season = (f'<div style="color:#0a7d33;font-size:12px;margin-top:2px;">❄️☀️ {d.season_note}</div>'
                   if d.seasonal and d.season_note else "")
+        stacked = bool(d.stack_note and d.effective_price is not None)
+        stack = (f'<div style="color:#0a7d33;font-size:12px;margin-top:2px;">🧩 {d.stack_note}</div>'
+                 if stacked else "")
+        headline = _fmt_price(d.effective_price if stacked else d.price, d.currency)
+        subprice = (f'<div style="font-size:11px;color:#8a8a8a;">sticker {_fmt_price(d.price, d.currency)} · efectivo</div>'
+                    if stacked else "")
         rows.append(f"""
         <tr>
           <td style="padding:12px 10px;border-bottom:1px solid #eee;">
             <div style="font-weight:700;color:#12222b;font-size:15px;">{d.brand} — {d.product_name} &nbsp;{badge}</div>
             <div style="color:#5a6b73;font-size:13px;">Talla: <b>{size}</b>{color}{cond}</div>
             <div style="color:#5a6b73;font-size:12px;margin-top:2px;">{d.reason}</div>
-            {season}
+            {season}{stack}
           </td>
           <td style="padding:12px 10px;border-bottom:1px solid #eee;white-space:nowrap;">
             <span style="background:#eef6f0;color:#12222b;padding:3px 8px;border-radius:10px;font-size:12px;">{d.source}</span>
           </td>
           <td style="padding:12px 10px;border-bottom:1px solid #eee;text-align:right;white-space:nowrap;">
-            <div style="font-size:17px;font-weight:800;color:#12222b;">{_fmt_price(d.price, d.currency)}</div>
+            <div style="font-size:17px;font-weight:800;color:#12222b;">{headline}</div>
+            {subprice}
             <div style="font-size:12px;">{ref} {disc}</div>
           </td>
           <td style="padding:12px 10px;border-bottom:1px solid #eee;text-align:right;white-space:nowrap;">
@@ -105,8 +113,14 @@ def render_html(cfg: Config, deals: list[Deal]) -> str:
 def render_text(cfg: Config, deals: list[Deal]) -> str:
     lines = [f"{cfg.get('site.title', 'Elite Brand Engine')} — {len(deals)} nueva(s) oferta(s)\n"]
     for d in sorted(deals, key=lambda x: x.score, reverse=True):
-        disc = f" (-{d.discount_pct:.0f}%)" if d.discount_pct else ""
+        eff_disc = d.effective_discount_pct if d.effective_discount_pct is not None else d.discount_pct
+        disc = f" (-{eff_disc:.0f}%)" if eff_disc else ""
         _, tlabel = _TIER.get(d.tier, ("", d.tier or ""))
+        stacked = bool(d.stack_note and d.effective_price is not None)
+        price_line = (f"    Precio efectivo: {_fmt_price(d.effective_price, d.currency)}{disc}"
+                      f"  (sticker {_fmt_price(d.price, d.currency)})\n"
+                      if stacked else
+                      f"    Precio: {_fmt_price(d.price, d.currency)}{disc}\n")
         lines.append(
             f"• [{tlabel}] {d.brand} — {d.product_name}\n"
             f"    Talla: {d.size or '—'}"
@@ -114,8 +128,9 @@ def render_text(cfg: Config, deals: list[Deal]) -> str:
             + (f" · {d.condition}" if d.condition != 'new' else "")
             + "\n"
             f"    Website: {d.source}\n"
-            f"    Precio: {_fmt_price(d.price, d.currency)}{disc}\n"
-            f"    Motivo: {d.reason}\n"
+            + price_line
+            + f"    Motivo: {d.reason}\n"
+            + (f"    Apilado: {d.stack_note}\n" if stacked else "")
             + (f"    Temporada: {d.season_note}\n" if d.seasonal and d.season_note else "")
             + f"    Link: {d.url}\n"
         )

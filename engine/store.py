@@ -33,6 +33,18 @@ def load_watchlist(cfg: Config) -> list[WatchItem]:
     return [WatchItem.from_dict(x) for x in items if x.get("active", True)]
 
 
+def load_promos(cfg: Config) -> dict:
+    """Retailer modifiers + active coupons for effective-price stacking.
+    Returns {} when data/promos.json is absent (=> effective price == price)."""
+    p = cfg.path("promos")
+    if not p.exists():
+        return {}
+    try:
+        return json.loads(p.read_text(encoding="utf-8")) or {}
+    except json.JSONDecodeError:
+        return {}
+
+
 # --------------------------------------------------------------------------- #
 # Price history (append-only JSONL, one file per watch item)                   #
 # --------------------------------------------------------------------------- #

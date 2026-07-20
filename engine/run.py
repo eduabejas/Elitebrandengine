@@ -32,6 +32,7 @@ from .store import (
     append_history,
     load_history,
     load_ledger,
+    load_promos,
     load_watchlist,
     save_ledger,
     write_snapshot,
@@ -88,6 +89,7 @@ def run(config_file: str | None = None, send_email: bool = True,
           f"{len(connectors)} source(s): {[c.name for c in connectors]}")
 
     ledger = load_ledger(cfg)
+    promos = load_promos(cfg)
     offers_by_watch: dict[str, list[Offer]] = {}
     all_active: list[Deal] = []
     all_new: list[Deal] = []
@@ -100,7 +102,7 @@ def run(config_file: str | None = None, send_email: bool = True,
             source_offer_counts[o.source] += 1
 
         history = load_history(cfg, w.id)  # PRIOR history = the reference
-        active, new = detect_deals(cfg, w, offers, history, ledger)
+        active, new = detect_deals(cfg, w, offers, history, ledger, promos=promos)
         all_active.extend(active)
         all_new.extend(new)
 

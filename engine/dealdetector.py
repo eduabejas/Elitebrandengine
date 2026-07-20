@@ -24,6 +24,7 @@ from datetime import date, datetime, timedelta, timezone
 from typing import Optional
 
 from .config import Config
+from .effective import compute_effective
 from .models import Deal, Offer, PricePoint, WatchItem, now_iso
 from .normalize import colors_match, sizes_match
 from .pricing import discount_pct, regular_price, to_base
@@ -95,6 +96,7 @@ def detect_deals(
     history: list[PricePoint],
     ledger: dict[str, str],
     today: Optional[date] = None,
+    promos: Optional[dict] = None,
 ) -> tuple[list[Deal], list[Deal]]:
     """Return (all_active_deals sorted by score desc, new_deals_to_alert)."""
     today = today or datetime.now(timezone.utc).date()
@@ -155,24 +157,37 @@ def detect_deals(
             continue
 
         price_base = to_base(o.price, o.currency, rates, base)
-        disc = discount_pct(regular, price_base)
-        target_hit = target_base is not None and price_base <= target_base
-        discount_ok = disc is not None and disc >= effective_min
+        merch_disc = discount_pct(regular, price_base)   # sticker discount
+
+        # Effective (all-in) price after stacking every legitimate lever.
+        eff = compute_effective(o.price, o.currency, o.source, watch.brand,
+                                watch.category, promos, rates, base, today)
+        eff_price = eff.effective_price
+        eff_disc = discount_pct(regular, eff_price)
+
+        target_hit = target_base is not None and eff_price <= target_base
+        discount_ok = eff_disc is not None and eff_disc >= effective_min
         if not (target_hit or discount_ok):
             continue
 
-        # Too-good-to-be-true: likely a mismatch or price error.
-        suspect = disc is not None and disc > suspect_pct
+        # Suspicion is about the RAW price being anomalously low (mismatch/price
+        # error) — a legitimately *stacked* effective discount is not suspect.
+        suspect = merch_disc is not None and merch_disc > suspect_pct
         if suspect and o.match_score < suspect_min_match:
             continue  # drop rather than raise a false alarm
 
         low_days = _lowest_in_days(history, price_base, today) if len(history) >= min_points else None
+        stacked = (eff_disc is not None and merch_disc is not None
+                   and eff_disc - merch_disc >= 1.0)
 
         reasons: list[str] = []
         if target_hit:
-            reasons.append(f"En/bajo objetivo ({price_base:.0f} ≤ {target_base:.0f})")
-        if disc is not None and disc > 0:
-            reasons.append(f"{disc:.0f}% bajo {basis}")
+            reasons.append(f"En/bajo objetivo ({eff_price:.0f} ≤ {target_base:.0f})")
+        if eff_disc is not None and eff_disc > 0:
+            if stacked:
+                reasons.append(f"{eff_disc:.0f}% efectivo ({merch_disc:.0f}% precio + apilado)")
+            else:
+                reasons.append(f"{eff_disc:.0f}% bajo {basis}")
         if low_days and low_days >= 30:
             reasons.append(f"precio más bajo en {low_days}+ días")
         if is_off and season_note:
@@ -187,10 +202,12 @@ def detect_deals(
             source=o.source, url=o.url, price=o.price, currency=o.currency,
             size=o.size, color=o.color, condition=o.condition,
             reason="; ".join(reasons),
-            discount_pct=disc, reference_price=regular, target_price=watch.target_price,
-            score=_score(disc, strength if is_off else 0, low_days, o.match_score,
+            discount_pct=merch_disc, reference_price=regular, target_price=watch.target_price,
+            effective_price=eff_price, effective_discount_pct=eff_disc,
+            coupon_code=eff.coupon_code, stack_note=(eff.note if stacked else None),
+            score=_score(eff_disc, strength if is_off else 0, low_days, o.match_score,
                          o.condition, suspect, bool(sale_window), offseason_boost),
-            tier=_tier(disc, suspect),
+            tier=_tier(eff_disc, suspect),
             seasonal=bool(is_off), season_note=season_note if is_off else None,
             suspect=suspect, lowest_in_days=low_days,
             detected_at=now_iso(),

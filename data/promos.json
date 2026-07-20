@@ -1,0 +1,16 @@
+{
+  "_comment": "Retailer modifiers + active coupons for effective-price stacking. Percentages are fractions (0.06 = 6%). Edit freely; delete this file to disable stacking. Coupons: source '*' = any retailer; type percent|fixed; value = fraction (percent) or dollars (fixed); brands_excluded uses brand names.",
+  "sources": {
+    "_default": {"shipping": {"free_over": 50, "flat": 7.0}, "tax_rate": 0.0, "tax_shipping": false, "cashback_pct": 0.0, "giftcard_discount_pct": 0.0, "rewards_pct": 0.0},
+    "REI Co-op": {"shipping": {"free_over": 60, "flat": 6.0}, "cashback_pct": 0.02, "rewards_pct": 0.10},
+    "Backcountry": {"shipping": {"free_over": 50, "flat": 6.99}, "cashback_pct": 0.06},
+    "Amazon": {"shipping": {"free_over": 35, "flat": 5.99}, "cashback_pct": 0.01},
+    "Brand Official": {"shipping": {"free_over": 75, "flat": 8.0}, "cashback_pct": 0.04, "giftcard_discount_pct": 0.08},
+    "eBay": {"shipping": {"free_over": 0, "flat": 0.0}, "cashback_pct": 0.01}
+  },
+  "coupons": [
+    {"code": "TRAIL15", "source": "Backcountry", "type": "percent", "value": 0.15, "min_subtotal": 100, "brands_excluded": ["Arc'teryx", "Patagonia"], "expires": "2026-12-31"},
+    {"code": "WELCOME10", "source": "Brand Official", "type": "percent", "value": 0.10, "min_subtotal": 0, "expires": "2026-12-31"},
+    {"code": "GEAR20", "source": "REI Co-op", "type": "fixed", "value": 20.0, "min_subtotal": 150, "expires": "2026-12-31"}
+  ]
+}

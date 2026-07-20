@@ -137,9 +137,15 @@ class Deal:
     color: Optional[str]
     condition: str
     reason: str                        # why it qualified (human readable)
-    discount_pct: Optional[float]      # vs reference_price, if known
+    discount_pct: Optional[float]      # sticker/merchandise discount vs regular
     reference_price: Optional[float]   # the "regular" (non-sale) anchor used
     target_price: Optional[float]
+    # Effective landed cost (v3): the real out-of-pocket after stacking coupons,
+    # cashback, gift-card discounts, shipping, tax and loyalty rewards.
+    effective_price: Optional[float] = None
+    effective_discount_pct: Optional[float] = None  # vs regular, all-in
+    coupon_code: Optional[str] = None
+    stack_note: Optional[str] = None   # human breakdown of the stacked savings
     # Deal-intelligence fields (v2):
     score: float = 0.0                 # 0..100 ranking (higher = act sooner)
     tier: str = "good"                 # good | great | excellent | suspect | target

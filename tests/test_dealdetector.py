@@ -114,6 +114,24 @@ def test_fake_inflated_list_price_is_ignored():
     assert active == []
 
 
+def test_effective_stacking_turns_sub_threshold_sale_into_a_deal():
+    w = WatchItem(id="c", brand="Rab", name="Microlight", msrp=200.0)
+    offers = [_offer("c", 180.0, size="M", source="Backcountry", match_score=1.0)]
+    # Sticker is only 10% off (< 15% threshold): not a deal on its own.
+    a0, _ = detect_deals(_cfg(), w, offers, history=[], ledger={})
+    assert a0 == []
+    # Add a 15% coupon + 5% cashback + free shipping -> effective ~27% off = deal.
+    promos = {
+        "sources": {"Backcountry": {"shipping": {"free_over": 50, "flat": 0}, "cashback_pct": 0.05}},
+        "coupons": [{"code": "TRAIL15", "source": "Backcountry", "type": "percent",
+                     "value": 0.15, "min_subtotal": 0, "expires": "2099-01-01"}],
+    }
+    a1, _ = detect_deals(_cfg(), w, offers, history=[], ledger={}, promos=promos)
+    assert len(a1) == 1
+    assert a1[0].effective_discount_pct >= 15 and a1[0].coupon_code == "TRAIL15"
+    assert a1[0].effective_price < 180 and a1[0].discount_pct == 10.0
+
+
 def test_offseason_winter_gear_in_summer_is_boosted():
     summer = date(2026, 7, 15)
     w_winter = WatchItem(id="w", brand="Rab", name="Down Jacket",

@@ -23,6 +23,7 @@ DEFAULTS: dict[str, Any] = {
         "watchlist": "data/watchlist.json",
         "history_dir": "data/history",
         "alerts_ledger": "data/alerts_ledger.json",
+        "promos": "data/promos.json",
         "web_data": "web/data",
     },
     "detection": {

@@ -166,6 +166,15 @@ Key detection knobs:
   "the same article, new, in stock, fresh".
 - `min_match_score` (0.6) / `suspect_min_match_score` (0.9), `alert_ttl_days` (7).
 
+**Effective landed cost (rank by what you actually pay).** The detector doesn't
+compare sticker prices — it computes each offer's *effective* price after
+stacking every legitimate lever (coupon + cashback + gift-card discount +
+shipping + tax − loyalty rewards) and ranks by that. A 10%-off sale plus a 15%
+coupon, 6% cashback and free shipping can beat a flashier 25%-off elsewhere.
+Retailer modifiers and active coupons live in `data/promos.json` (delete it to
+disable stacking). The *suspect* guard stays on the raw price, so a legitimately
+stacked discount is never mistaken for a price error.
+
 **Seasonality (buy off-season).** In summer, winter gear (down / hardshell /
 mountaineering) hits end-of-season clearance — and vice-versa. The engine infers
 each product's season from its category (or an explicit `season` on the item),
@@ -220,9 +229,10 @@ engine/                 Python collection engine
   normalize.py          brand/size/colour normalisation + fuzzy matching
   config.py             config.yml loader (+ env overrides for secrets)
   store.py              JSON store, price history, website snapshot
-  dealdetector.py       scored, seasonal, false-positive-guarded detection (v2)
+  dealdetector.py       scored, seasonal, effective-cost detection (v3)
   seasons.py            off-season logic + sale windows (buy counter-seasonal)
   pricing.py            robust "regular price" + currency normalisation
+  effective.py          landed-cost stacking (coupon+cashback+gift-card+ship+tax)
   http.py               shared resilient HTTP (retries, backoff, rate-limit)
   run.py                orchestrator + CLI (python -m engine.run)
   probe.py              inspect a single source (python -m engine.probe)
