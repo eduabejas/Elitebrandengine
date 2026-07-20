@@ -24,6 +24,7 @@ from collections import defaultdict
 from .config import load_config
 from .connectors import build_connectors
 from .dealdetector import detect_deals
+from .identity import enrich_offer, regions_for_scope
 from .models import Deal, Offer, PricePoint, WatchItem, now_iso
 from .normalize import match_score
 from .pricing import to_base
@@ -51,6 +52,7 @@ def _gather_offers(connectors, watch: WatchItem, min_score: float) -> list[Offer
         for o in found:
             if o.match_score < min_score:
                 continue
+            enrich_offer(o)  # tag channel (new/outlet/refurb/used) + region
             prev = seen.get(o.id)
             if prev is None or o.price < prev.price:
                 seen[o.id] = o
@@ -75,8 +77,10 @@ def _history_points(offers: list[Offer], rates: dict, base: str) -> list[PricePo
 
 
 def run(config_file: str | None = None, send_email: bool = True,
-        limit: int | None = None) -> dict:
+        limit: int | None = None, scope: str | None = None) -> dict:
     cfg = load_config(config_file)
+    if scope:
+        cfg.raw.setdefault("search", {})["scope"] = scope
     watchlist = load_watchlist(cfg)
     if limit:
         watchlist = watchlist[:limit]
@@ -84,6 +88,7 @@ def run(config_file: str | None = None, send_email: bool = True,
     min_score = float(cfg.get("detection.min_match_score", 0.6))
     rates = cfg.get("fx.rates", {}) or {}
     base = cfg.get("fx.base", "USD")
+    allowed_regions = regions_for_scope(cfg.get("search.scope", "standard"))
 
     print(f"[run] {len(watchlist)} watch item(s), "
           f"{len(connectors)} source(s): {[c.name for c in connectors]}")
@@ -97,6 +102,7 @@ def run(config_file: str | None = None, send_email: bool = True,
 
     for w in watchlist:
         offers = _gather_offers(connectors, w, min_score)
+        offers = [o for o in offers if o.region in allowed_regions]  # regional scope
         offers_by_watch[w.id] = offers
         for o in offers:
             source_offer_counts[o.source] += 1
@@ -159,8 +165,11 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--config", default=None, help="path to a config file")
     ap.add_argument("--no-email", action="store_true", help="collect without sending")
     ap.add_argument("--limit", type=int, default=None, help="limit watch items")
+    ap.add_argument("--scope", choices=["standard", "expanded"], default=None,
+                    help="standard = US only; expanded = US + Canada + Europe")
     args = ap.parse_args(argv)
-    summary = run(args.config, send_email=not args.no_email, limit=args.limit)
+    summary = run(args.config, send_email=not args.no_email, limit=args.limit,
+                  scope=args.scope)
     print(f"[run] done: {summary}")
     return 0
 

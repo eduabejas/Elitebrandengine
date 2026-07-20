@@ -132,6 +132,22 @@ def test_effective_stacking_turns_sub_threshold_sale_into_a_deal():
     assert a1[0].effective_price < 180 and a1[0].discount_pct == 10.0
 
 
+def test_outlet_offer_counts_as_deal():
+    w = WatchItem(id="ot", brand="Rab", name="Microlight", msrp=300.0)
+    offers = [_offer("ot", 150.0, size="M", channel="outlet", match_score=1.0)]
+    active, _ = detect_deals(_cfg(), w, offers, history=[], ledger={})
+    assert len(active) == 1 and active[0].channel == "outlet" and not active[0].suspect
+
+
+def test_home_region_advantage_marked_on_eu_offer():
+    w = WatchItem(id="hr", brand="Rab", name="Microlight", msrp=300.0)  # EU brand
+    offers = [_offer("hr", 220.0, size="M", region="US", match_score=1.0),
+              _offer("hr", 180.0, size="M", region="EU", match_score=1.0)]
+    active, _ = detect_deals(_cfg(), w, offers, history=[], ledger={})
+    eu = [a for a in active if a.region == "EU"]
+    assert eu and eu[0].home_region_advantage is True
+
+
 def test_offseason_winter_gear_in_summer_is_boosted():
     summer = date(2026, 7, 15)
     w_winter = WatchItem(id="w", brand="Rab", name="Down Jacket",

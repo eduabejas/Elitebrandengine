@@ -277,24 +277,28 @@ def match_score(watch, offer_title: str, offer_brand: Optional[str] = None) -> f
     if getattr(watch, "mpn", None) and watch.mpn and _slug(watch.mpn) in slug_title:
         return 1.0
 
-    want = significant_tokens(f"{watch.name} {' '.join(getattr(watch, 'keywords', []))}")
-    if not want:
-        return 0.5 if title_brand == brand_c else 0.0
     have = significant_tokens(offer_title)
+    keywords = " ".join(getattr(watch, "keywords", []) or [])
 
-    matched = want & have
-    # weight: generic words count half
-    def weight(tok: str) -> float:
+    def weight(tok: str) -> float:  # generic product words count half
         return 0.5 if tok in _GENERIC else 1.0
 
-    want_w = sum(weight(t) for t in want) or 1.0
-    got_w = sum(weight(t) for t in matched)
-    overlap = got_w / want_w
+    # Try the current name AND any lineage alias (previous-season / renamed
+    # models); the best-matching name wins so old SKUs still resolve.
+    names = [watch.name] + list(getattr(watch, "lineage", []) or [])
+    best = 0.0
+    for nm in names:
+        want = significant_tokens(f"{nm} {keywords}")
+        if not want:
+            cand = 0.5 if title_brand == brand_c else 0.0
+        else:
+            matched = want & have
+            want_w = sum(weight(t) for t in want) or 1.0
+            cand = sum(weight(t) for t in matched) / want_w
+            if title_brand and title_brand == brand_c:
+                cand = min(1.0, cand + 0.1)
+            elif not title_brand:
+                cand *= 0.85  # slight penalty when brand isn't confirmed
+        best = max(best, cand)
 
-    # brand confirmation bonus
-    if title_brand and title_brand == brand_c:
-        overlap = min(1.0, overlap + 0.1)
-    elif not title_brand:
-        overlap *= 0.85  # slight penalty when brand isn't confirmed in title
-
-    return round(min(1.0, overlap), 3)
+    return round(min(1.0, best), 3)

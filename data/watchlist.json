@@ -10,6 +10,7 @@
       "colors": ["black", "blue"],
       "target_price": 449.00,
       "keywords": ["gore-tex", "pro", "shell"],
+      "lineage": ["beta ar gore-tex", "beta ar 2023"],
       "active": true
     },
     {
@@ -21,6 +22,7 @@
       "colors": ["black"],
       "target_price": 210.00,
       "keywords": ["700 fill", "puffer"],
+      "lineage": ["nuptse 700", "1996 nuptse"],
       "active": true
     },
     {
@@ -219,6 +221,30 @@
       "colors": [],
       "target_price": 200.00,
       "keywords": ["insulated", "self-inflating"],
+      "active": true
+    },
+    {
+      "id": "peak_performance_helium_down",
+      "brand": "Peak Performance",
+      "name": "Helium Down Hood Jacket",
+      "category": "Down Jacket",
+      "sizes": ["M", "L"],
+      "colors": [],
+      "target_price": 240.00,
+      "keywords": ["down", "hood"],
+      "home_region": "EU",
+      "active": true
+    },
+    {
+      "id": "helly_hansen_verglas_down",
+      "brand": "Helly Hansen",
+      "name": "Verglas Icefall Down Jacket",
+      "category": "Down Jacket",
+      "sizes": ["M", "L"],
+      "colors": [],
+      "target_price": 260.00,
+      "keywords": ["down", "insulated"],
+      "home_region": "EU",
       "active": true
     }
   ]

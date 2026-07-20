@@ -42,6 +42,7 @@ DEFAULTS: dict[str, Any] = {
         # Only consider new, in-stock, fresh offers as "the same article".
         "require_in_stock": True,
         "include_used": False,
+        "include_refurbished": True,   # outlet/refurb count (with a small penalty)
         "max_offer_age_days": 3,
         # Don't re-email the same deal within this many days.
         "alert_ttl_days": 7,
@@ -52,6 +53,13 @@ DEFAULTS: dict[str, Any] = {
         # Optional per-category threshold overrides (rarely-discounted lines):
         # {"Hardshell": 12, "Down Jacket": 15}
         "category_min_discount": {},
+    },
+    "search": {
+        # standard = US only; expanded = US + Canada + Europe. European brands
+        # (Peak Performance, Helly Hansen, Norrøna, Rab, Mammut…) and Arc'teryx
+        # (Canada) are often cheapest in their home market — expanded surfaces it.
+        # International shipping is the buyer's known cost and is NOT penalised.
+        "scope": "standard",
     },
     "seasonality": {
         # Where the operator/buyers are (drives current-season logic).

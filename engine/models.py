@@ -48,6 +48,9 @@ class WatchItem:
     season: str = "auto"          # winter | summer | 3season | all | auto(=infer from category)
     msrp: Optional[float] = None  # explicit regular price anchor (else inferred)
     min_discount_pct: Optional[float] = None  # per-item override of the threshold
+    # Identity graph:
+    lineage: list[str] = field(default_factory=list)  # alt / previous-model names
+    home_region: Optional[str] = None                 # else inferred from brand
 
     @staticmethod
     def from_dict(d: dict[str, Any]) -> "WatchItem":
@@ -74,6 +77,8 @@ class Offer:
     size: Optional[str] = None
     color: Optional[str] = None
     condition: str = "new"            # new | used | refurbished
+    channel: str = "new"              # new | outlet | refurbished | used (derived)
+    region: str = "US"                # US | CA | EU | ... (source region)
     availability: str = "unknown"     # in_stock | out_of_stock | unknown
     seller: Optional[str] = None
     image: Optional[str] = None
@@ -153,6 +158,10 @@ class Deal:
     season_note: Optional[str] = None  # human context, e.g. end-of-winter clearance
     suspect: bool = False              # discount too large to trust (verify first)
     lowest_in_days: Optional[int] = None
+    # Identity graph:
+    channel: str = "new"               # new | outlet | refurbished | used
+    region: str = "US"                 # where the offer lives
+    home_region_advantage: bool = False  # brand's home market beats the US price
     detected_at: str = field(default_factory=now_iso)
 
     @property

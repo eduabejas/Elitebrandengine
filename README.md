@@ -166,6 +166,17 @@ Key detection knobs:
   "the same article, new, in stock, fresh".
 - `min_match_score` (0.6) / `suspect_min_match_score` (0.9), `alert_ttl_days` (7).
 
+**Identity graph & regional scope.** Offers are clustered into the same canonical
+article across channels — new / **outlet** / **refurbished** / used (used excluded
+by default) — and across regions. **Model lineage** (`lineage` on a watch item)
+lets previous-season/renamed SKUs resolve to the same product, so last-year's
+colourway counts. Search runs in two scopes: **standard** (US) or **expanded**
+(US + Canada + Europe). European brands (Peak Performance, Helly Hansen, Norrøna,
+Rab, Mammut, Scarpa…) and Arc'teryx (Canada) are often cheapest in their **home
+market**, which expanded scope surfaces and flags — international shipping is the
+buyer's known cost and is deliberately *not* penalised. Toggle with
+`search.scope` or `python -m engine.run --scope expanded`.
+
 **Effective landed cost (rank by what you actually pay).** The detector doesn't
 compare sticker prices — it computes each offer's *effective* price after
 stacking every legitimate lever (coupon + cashback + gift-card discount +
@@ -233,6 +244,7 @@ engine/                 Python collection engine
   seasons.py            off-season logic + sale windows (buy counter-seasonal)
   pricing.py            robust "regular price" + currency normalisation
   effective.py          landed-cost stacking (coupon+cashback+gift-card+ship+tax)
+  identity.py           product identity graph: channel/region + model lineage
   http.py               shared resilient HTTP (retries, backoff, rate-limit)
   run.py                orchestrator + CLI (python -m engine.run)
   probe.py              inspect a single source (python -m engine.probe)

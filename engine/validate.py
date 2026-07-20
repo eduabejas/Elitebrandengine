@@ -50,9 +50,13 @@ def validate_items(items: list[dict[str, Any]]) -> tuple[list[str], list[str]]:
             warnings.append(f"{where}: brand {brand!r} is not a known flagship "
                             f"brand — it won't match API/feed results")
 
-        for field in ("sizes", "colors", "keywords"):
+        for field in ("sizes", "colors", "keywords", "lineage"):
             if field in it and not isinstance(it[field], list):
                 errors.append(f"{where}: '{field}' must be a list")
+
+        hr = it.get("home_region")
+        if hr is not None and (not isinstance(hr, str) or not hr.strip()):
+            errors.append(f"{where}: 'home_region' must be a region code (US/CA/EU/...)")
 
         for money_field in ("target_price", "msrp"):
             v = it.get(money_field)

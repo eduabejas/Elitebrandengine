@@ -14,18 +14,35 @@ from __future__ import annotations
 import hashlib
 from datetime import date
 
+from ..identity import home_region
 from ..models import Offer, WatchItem
 from ..normalize import canonical_brand
 from .base import Connector
 
-# Simulated storefronts, mirroring the real targets (REI, official, eBay, Amazon).
+# Simulated storefronts across channels & regions, mirroring real targets.
+# (label, base_url, base_factor, condition, region)
 _SOURCES = [
-    ("REI Co-op", "https://www.rei.com/product/", 1.00, "new"),
-    ("Backcountry", "https://www.backcountry.com/", 0.97, "new"),
-    ("Brand Official", "https://example-brand.com/shop/", 1.03, "new"),
-    ("Amazon", "https://www.amazon.com/dp/", 0.95, "new"),
-    ("eBay", "https://www.ebay.com/itm/", 0.88, "used"),
+    ("REI Co-op", "https://www.rei.com/product/", 1.00, "new", "US"),
+    ("Backcountry", "https://www.backcountry.com/", 0.97, "new", "US"),
+    ("Brand Official", "https://example-brand.com/shop/", 1.03, "new", "US"),
+    ("Amazon", "https://www.amazon.com/dp/", 0.95, "new", "US"),
+    ("eBay", "https://www.ebay.com/itm/", 0.88, "used", "US"),
+    ("REI Re/Supply (outlet)", "https://www.rei.com/used/", 0.72, "new", "US"),
+    ("MEC (CA)", "https://www.mec.ca/en/product/", 0.95, "new", "CA"),
+    ("Bergfreunde (EU)", "https://www.bergfreunde.eu/", 0.99, "new", "EU"),
+    ("Brand Official EU", "https://eu.example-brand.com/shop/", 1.02, "new", "EU"),
 ]
+
+
+def _region_adjust(brand_home: str, region: str) -> float:
+    """Home-market advantage: EU/CA brands are cheaper in their home region."""
+    if region == brand_home and region != "US":
+        return 0.85
+    if brand_home == "US" and region == "EU":
+        return 1.06
+    if brand_home == "US" and region == "CA":
+        return 1.02
+    return 1.0
 
 _DEFAULT_SIZES = ["S", "M", "L", "XL"]
 _DEFAULT_COLORS = ["Black", "Blue", "Green"]
@@ -58,16 +75,18 @@ class SampleConnector(Connector):
         sizes = watch.sizes or _DEFAULT_SIZES
         colors = watch.colors or _DEFAULT_COLORS
         brand = canonical_brand(watch.brand) or watch.brand
+        brand_home = home_region(watch.brand, watch.home_region)
 
         offers: list[Offer] = []
-        for label, base_url, factor, cond in _SOURCES:
+        for label, base_url, factor, cond, region in _SOURCES:
             seed = f"{watch.id}|{label}|{today}"
             # Each storefront: a small price spread + a chance of a real sale.
             spread = 0.9 + _rand01(seed, "spread") * 0.2  # 0.90..1.10
             on_sale = _rand01(seed, "sale") < 0.45
             sale_factor = (0.62 + _rand01(seed, "depth") * 0.23) if on_sale else 1.0
+            adj = _region_adjust(brand_home, region)
 
-            price = round(msrp * factor * spread * sale_factor, 2)
+            price = round(msrp * factor * spread * sale_factor * adj, 2)
             list_price = msrp if on_sale else None
 
             size = _pick(sizes, seed + "size")
@@ -84,6 +103,7 @@ class SampleConnector(Connector):
                     size=size,
                     color=color,
                     condition=cond,
+                    region=region,
                     availability="in_stock",
                     seller=label,
                     list_price=list_price,

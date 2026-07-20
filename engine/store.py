@@ -18,6 +18,7 @@ from pathlib import Path
 from typing import Iterable
 
 from .config import Config
+from .identity import channel_region_summary
 from .models import Deal, Offer, PricePoint, WatchItem, now_iso
 
 
@@ -131,6 +132,7 @@ def write_snapshot(
                 "best_source": best.source if best else None,
                 "offer_count": len(offers),
                 "offers": [o.to_dict() for o in offers],
+                "summary": channel_region_summary(offers),  # best per channel/region
                 "history": series,
             }
         )
@@ -139,6 +141,7 @@ def write_snapshot(
         "generated_at": now_iso(),
         "currency": cfg.currency,
         "demo": demo,
+        "scope": cfg.get("search.scope", "standard"),
         "product_count": len(products),
         "offer_count": sum(len(v) for v in offers_by_watch.values()),
         "deal_count": len(deals),

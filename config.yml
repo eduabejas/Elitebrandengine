@@ -21,11 +21,20 @@ detection:
   min_history_points: 4         # observations needed before statistical baselining
   require_in_stock: true        # ignore out-of-stock offers
   include_used: false           # used ≠ "the same article new" (default off)
+  include_refurbished: true     # outlet/refurb count (small score penalty)
   max_offer_age_days: 3         # ignore stale offers for alerting
   alert_ttl_days: 7             # don't re-email the same deal within N days
   min_match_score: 0.6          # confidence a listing is the right product
   suspect_min_match_score: 0.9  # higher bar to trust an unusually large discount
   category_min_discount: {}     # e.g. {"Hardshell": 12} for rarely-discounted lines
+
+# --- Regional search scope --------------------------------------------------
+# standard = US only. expanded = US + Canada + Europe: European brands (Peak
+# Performance, Helly Hansen, Norrøna, Rab, Mammut, Scarpa…) and Arc'teryx
+# (Canada) are often cheapest in their home market. International shipping is
+# the buyer's known cost and is NOT penalised or hidden.
+search:
+  scope: standard               # standard | expanded
 
 # --- Seasonality: prioritise counter-seasonal buys --------------------------
 # In summer, winter gear (down/hardshell/mountaineering) hits end-of-season

@@ -25,6 +25,7 @@ from typing import Optional
 
 from .config import Config
 from .effective import compute_effective
+from .identity import home_region_advantage
 from .models import Deal, Offer, PricePoint, WatchItem, now_iso
 from .normalize import colors_match, sizes_match
 from .pricing import discount_pct, regular_price, to_base
@@ -71,7 +72,7 @@ def _tier(discount: Optional[float], suspect: bool) -> str:
 
 
 def _score(discount: Optional[float], strength: int, lowest_in_days: Optional[int],
-           match_score: float, condition: str, suspect: bool, in_window: bool,
+           match_score: float, channel: str, suspect: bool, in_window: bool,
            offseason_boost: float) -> float:
     disc = discount or 0.0
     s = min(max(disc, 0.0), 60.0) / 60.0 * 70.0        # discount up to +70
@@ -82,8 +83,10 @@ def _score(discount: Optional[float], strength: int, lowest_in_days: Optional[in
     if in_window:
         s += 3.0
     s *= 0.7 + 0.3 * max(0.0, min(match_score, 1.0))   # scale by match confidence
-    if condition and condition != "new":
-        s -= 20.0
+    if channel == "used":
+        s -= 20.0                                      # different market / risk
+    elif channel == "refurbished":
+        s -= 12.0                                      # restored, still a real buy
     if suspect:
         s -= 25.0
     return round(max(0.0, min(100.0, s)), 1)
@@ -116,6 +119,7 @@ def detect_deals(
     window_days = int(d.get("baseline_window_days", 120))
     require_stock = bool(d.get("require_in_stock", True))
     include_used = bool(d.get("include_used", False))
+    include_refurbished = bool(d.get("include_refurbished", True))
     max_age = int(d.get("max_offer_age_days", 3))
     ttl_days = int(d.get("alert_ttl_days", 7))
     suspect_min_match = float(d.get("suspect_min_match_score", 0.9))
@@ -127,6 +131,7 @@ def detect_deals(
     p_season = use_season(watch.category, watch.season)
     is_off, strength, season_note = offseason_status(p_season, today, hemisphere)
     sale_window = active_sale_window(today)
+    home_adv, hr = home_region_advantage(watch, offers)  # brand home market cheaper?
     effective_min = min_discount - (offseason_relax * strength if is_off else 0.0)
     effective_min = max(effective_min, 8.0)  # never chase sub-8% "deals"
 
@@ -148,7 +153,12 @@ def detect_deals(
     for o in offers:
         if not sizes_match(watch.sizes, o.size) or not colors_match(watch.colors, o.color):
             continue
-        if not include_used and o.condition != "new":
+        # Resolve channel (falls back to condition when offers aren't enriched).
+        ch = o.channel if o.channel and o.channel != "new" else (
+            o.condition if o.condition in ("used", "refurbished") else "new")
+        if ch == "used" and not include_used:
+            continue
+        if ch == "refurbished" and not include_refurbished:
             continue
         if require_stock and o.availability == "out_of_stock":
             continue
@@ -196,6 +206,14 @@ def detect_deals(
             reasons.append(f"ventana: {sale_window}")
         if suspect:
             reasons.append("⚠ descuento inusual — verificar")
+        if ch in ("outlet", "refurbished", "used"):
+            reasons.append({"outlet": "outlet", "refurbished": "reacondicionado",
+                            "used": "usado"}[ch])
+        offer_home_adv = bool(home_adv and o.region == hr)
+        if offer_home_adv:
+            reasons.append(f"mejor precio en su mercado de origen ({hr})")
+        elif o.region != "US":
+            reasons.append(f"región {o.region}")
 
         active.append(Deal(
             watch_id=watch.id, brand=watch.brand, product_name=watch.name,
@@ -206,10 +224,11 @@ def detect_deals(
             effective_price=eff_price, effective_discount_pct=eff_disc,
             coupon_code=eff.coupon_code, stack_note=(eff.note if stacked else None),
             score=_score(eff_disc, strength if is_off else 0, low_days, o.match_score,
-                         o.condition, suspect, bool(sale_window), offseason_boost),
+                         ch, suspect, bool(sale_window), offseason_boost),
             tier=_tier(eff_disc, suspect),
             seasonal=bool(is_off), season_note=season_note if is_off else None,
             suspect=suspect, lowest_in_days=low_days,
+            channel=ch, region=o.region, home_region_advantage=offer_home_adv,
             detected_at=now_iso(),
         ))
 
