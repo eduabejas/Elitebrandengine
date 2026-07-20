@@ -27,10 +27,36 @@
       "season": "auto",
       "msrp": null,
       "min_discount_pct": null,
-      "best_price": 348.1,
-      "best_source": "eBay",
-      "offer_count": 5,
+      "lineage": [
+        "beta ar gore-tex",
+        "beta ar 2023"
+      ],
+      "home_region": null,
+      "urls": [],
+      "best_price": 333.52,
+      "best_source": "REI Re/Supply (outlet)",
+      "offer_count": 6,
       "offers": [
+        {
+          "watch_id": "arcteryx_beta_ar_jacket",
+          "source": "REI Re/Supply (outlet)",
+          "title": "Arc'teryx Beta AR Jacket — black, L",
+          "url": "https://www.rei.com/used/arcteryx-beta-ar-jacket?v=l-black",
+          "price": 333.52,
+          "currency": "USD",
+          "size": "L",
+          "color": "black",
+          "condition": "new",
+          "channel": "outlet",
+          "region": "US",
+          "availability": "in_stock",
+          "seller": "REI Re/Supply (outlet)",
+          "image": null,
+          "list_price": 598.67,
+          "match_score": 1.0,
+          "fetched_at": "2026-07-20T21:52:06+00:00",
+          "id": "f5a1e82f34d6e7b2"
+        },
         {
           "watch_id": "arcteryx_beta_ar_jacket",
           "source": "eBay",
@@ -41,12 +67,14 @@
           "size": "L",
           "color": "black",
           "condition": "used",
+          "channel": "used",
+          "region": "US",
           "availability": "in_stock",
           "seller": "eBay",
           "image": null,
           "list_price": 598.67,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T17:09:37+00:00",
+          "fetched_at": "2026-07-20T21:52:06+00:00",
           "id": "e39ee716b644379a"
         },
         {
@@ -59,12 +87,14 @@
           "size": "M",
           "color": "black",
           "condition": "new",
+          "channel": "new",
+          "region": "US",
           "availability": "in_stock",
           "seller": "Amazon",
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T17:09:37+00:00",
+          "fetched_at": "2026-07-20T21:52:06+00:00",
           "id": "d6bf3ddc92f361bb"
         },
         {
@@ -77,12 +107,14 @@
           "size": "M",
           "color": "blue",
           "condition": "new",
+          "channel": "new",
+          "region": "US",
           "availability": "in_stock",
           "seller": "Backcountry",
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T17:09:37+00:00",
+          "fetched_at": "2026-07-20T21:52:06+00:00",
           "id": "97828206cf2b5c53"
         },
         {
@@ -95,12 +127,14 @@
           "size": "L",
           "color": "blue",
           "condition": "new",
+          "channel": "new",
+          "region": "US",
           "availability": "in_stock",
           "seller": "Brand Official",
           "image": null,
           "list_price": 598.67,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T17:09:37+00:00",
+          "fetched_at": "2026-07-20T21:52:06+00:00",
           "id": "82ed37a1c1c7a53f"
         },
         {
@@ -113,46 +147,28 @@
           "size": "M",
           "color": "black",
           "condition": "new",
+          "channel": "new",
+          "region": "US",
           "availability": "in_stock",
           "seller": "REI Co-op",
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T17:09:37+00:00",
+          "fetched_at": "2026-07-20T21:52:06+00:00",
           "id": "5b51916399ebdd2f"
         }
       ],
+      "summary": {
+        "by_channel": {
+          "outlet": 333.52,
+          "used": 348.1,
+          "new": 555.89
+        },
+        "by_region": {
+          "US": 333.52
+        }
+      },
       "history": [
-        {
-          "ts": "2026-07-13T12:00:00+00:00",
-          "price": 633.25,
-          "source": "REI Co-op"
-        },
-        {
-          "ts": "2026-07-13T12:00:00+00:00",
-          "price": 379.74,
-          "source": "Backcountry"
-        },
-        {
-          "ts": "2026-07-13T12:00:00+00:00",
-          "price": 504.56,
-          "source": "Brand Official"
-        },
-        {
-          "ts": "2026-07-13T12:00:00+00:00",
-          "price": 438.5,
-          "source": "Amazon"
-        },
-        {
-          "ts": "2026-07-13T12:00:00+00:00",
-          "price": 372.06,
-          "source": "eBay"
-        },
-        {
-          "ts": "2026-07-14T12:00:00+00:00",
-          "price": 585.02,
-          "source": "REI Co-op"
-        },
         {
           "ts": "2026-07-14T12:00:00+00:00",
           "price": 432.18,
@@ -422,6 +438,36 @@
           "ts": "2026-07-20T17:09:37+00:00",
           "price": 348.1,
           "source": "eBay"
+        },
+        {
+          "ts": "2026-07-20T21:52:06+00:00",
+          "price": 584.13,
+          "source": "REI Co-op"
+        },
+        {
+          "ts": "2026-07-20T21:52:06+00:00",
+          "price": 561.86,
+          "source": "Backcountry"
+        },
+        {
+          "ts": "2026-07-20T21:52:06+00:00",
+          "price": 563.27,
+          "source": "Brand Official"
+        },
+        {
+          "ts": "2026-07-20T21:52:06+00:00",
+          "price": 555.89,
+          "source": "Amazon"
+        },
+        {
+          "ts": "2026-07-20T21:52:06+00:00",
+          "price": 348.1,
+          "source": "eBay"
+        },
+        {
+          "ts": "2026-07-20T21:52:06+00:00",
+          "price": 333.52,
+          "source": "REI Re/Supply (outlet)"
         }
       ]
     },
@@ -451,10 +497,36 @@
       "season": "auto",
       "msrp": null,
       "min_discount_pct": null,
-      "best_price": 184.68,
-      "best_source": "eBay",
-      "offer_count": 5,
+      "lineage": [
+        "nuptse 700",
+        "1996 nuptse"
+      ],
+      "home_region": null,
+      "urls": [],
+      "best_price": 169.42,
+      "best_source": "REI Re/Supply (outlet)",
+      "offer_count": 6,
       "offers": [
+        {
+          "watch_id": "tnf_nuptse_1996",
+          "source": "REI Re/Supply (outlet)",
+          "title": "The North Face 1996 Retro Nuptse Jacket — black, L",
+          "url": "https://www.rei.com/used/tnf-nuptse-1996?v=l-black",
+          "price": 169.42,
+          "currency": "USD",
+          "size": "L",
+          "color": "black",
+          "condition": "new",
+          "channel": "outlet",
+          "region": "US",
+          "availability": "in_stock",
+          "seller": "REI Re/Supply (outlet)",
+          "image": null,
+          "list_price": 280.0,
+          "match_score": 1.0,
+          "fetched_at": "2026-07-20T21:52:06+00:00",
+          "id": "c0a148b05fb78cd4"
+        },
         {
           "watch_id": "tnf_nuptse_1996",
           "source": "eBay",
@@ -465,12 +537,14 @@
           "size": "XL",
           "color": "black",
           "condition": "used",
+          "channel": "used",
+          "region": "US",
           "availability": "in_stock",
           "seller": "eBay",
           "image": null,
           "list_price": 280.0,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T17:09:37+00:00",
+          "fetched_at": "2026-07-20T21:52:06+00:00",
           "id": "ec101c3b6e285519"
         },
         {
@@ -483,12 +557,14 @@
           "size": "M",
           "color": "black",
           "condition": "new",
+          "channel": "new",
+          "region": "US",
           "availability": "in_stock",
           "seller": "Brand Official",
           "image": null,
           "list_price": 280.0,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T17:09:37+00:00",
+          "fetched_at": "2026-07-20T21:52:06+00:00",
           "id": "0051ad81d14d0907"
         },
         {
@@ -501,12 +577,14 @@
           "size": "XL",
           "color": "black",
           "condition": "new",
+          "channel": "new",
+          "region": "US",
           "availability": "in_stock",
           "seller": "Amazon",
           "image": null,
           "list_price": 280.0,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T17:09:37+00:00",
+          "fetched_at": "2026-07-20T21:52:06+00:00",
           "id": "44434ae33e7711bf"
         },
         {
@@ -519,12 +597,14 @@
           "size": "XL",
           "color": "black",
           "condition": "new",
+          "channel": "new",
+          "region": "US",
           "availability": "in_stock",
           "seller": "REI Co-op",
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T17:09:37+00:00",
+          "fetched_at": "2026-07-20T21:52:06+00:00",
           "id": "2606bdf463a62ebc"
         },
         {
@@ -537,46 +617,28 @@
           "size": "XL",
           "color": "black",
           "condition": "new",
+          "channel": "new",
+          "region": "US",
           "availability": "in_stock",
           "seller": "Backcountry",
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T17:09:37+00:00",
+          "fetched_at": "2026-07-20T21:52:06+00:00",
           "id": "88a1bd3e2855bea6"
         }
       ],
+      "summary": {
+        "by_channel": {
+          "outlet": 169.42,
+          "used": 184.68,
+          "new": 199.52
+        },
+        "by_region": {
+          "US": 169.42
+        }
+      },
       "history": [
-        {
-          "ts": "2026-07-13T12:00:00+00:00",
-          "price": 303.65,
-          "source": "REI Co-op"
-        },
-        {
-          "ts": "2026-07-13T12:00:00+00:00",
-          "price": 211.94,
-          "source": "Backcountry"
-        },
-        {
-          "ts": "2026-07-13T12:00:00+00:00",
-          "price": 181.47,
-          "source": "Brand Official"
-        },
-        {
-          "ts": "2026-07-13T12:00:00+00:00",
-          "price": 185.56,
-          "source": "Amazon"
-        },
-        {
-          "ts": "2026-07-13T12:00:00+00:00",
-          "price": 179.77,
-          "source": "eBay"
-        },
-        {
-          "ts": "2026-07-14T12:00:00+00:00",
-          "price": 293.37,
-          "source": "REI Co-op"
-        },
         {
           "ts": "2026-07-14T12:00:00+00:00",
           "price": 192.2,
@@ -846,6 +908,36 @@
           "ts": "2026-07-20T17:09:37+00:00",
           "price": 184.68,
           "source": "eBay"
+        },
+        {
+          "ts": "2026-07-20T21:52:06+00:00",
+          "price": 263.09,
+          "source": "REI Co-op"
+        },
+        {
+          "ts": "2026-07-20T21:52:06+00:00",
+          "price": 284.96,
+          "source": "Backcountry"
+        },
+        {
+          "ts": "2026-07-20T21:52:06+00:00",
+          "price": 199.52,
+          "source": "Brand Official"
+        },
+        {
+          "ts": "2026-07-20T21:52:06+00:00",
+          "price": 221.62,
+          "source": "Amazon"
+        },
+        {
+          "ts": "2026-07-20T21:52:06+00:00",
+          "price": 184.68,
+          "source": "eBay"
+        },
+        {
+          "ts": "2026-07-20T21:52:06+00:00",
+          "price": 169.42,
+          "source": "REI Re/Supply (outlet)"
         }
       ]
     },
@@ -872,9 +964,12 @@
       "season": "auto",
       "msrp": null,
       "min_discount_pct": null,
+      "lineage": [],
+      "home_region": null,
+      "urls": [],
       "best_price": 136.69,
       "best_source": "eBay",
-      "offer_count": 5,
+      "offer_count": 6,
       "offers": [
         {
           "watch_id": "patagonia_nano_puff",
@@ -886,12 +981,14 @@
           "size": "L",
           "color": "Blue",
           "condition": "used",
+          "channel": "used",
+          "region": "US",
           "availability": "in_stock",
           "seller": "eBay",
           "image": null,
           "list_price": 198.67,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T17:09:37+00:00",
+          "fetched_at": "2026-07-20T21:52:06+00:00",
           "id": "262a1570cccd606a"
         },
         {
@@ -904,13 +1001,35 @@
           "size": "L",
           "color": "Blue",
           "condition": "new",
+          "channel": "new",
+          "region": "US",
           "availability": "in_stock",
           "seller": "Backcountry",
           "image": null,
           "list_price": 198.67,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T17:09:37+00:00",
+          "fetched_at": "2026-07-20T21:52:06+00:00",
           "id": "a5b5a07c2099e083"
+        },
+        {
+          "watch_id": "patagonia_nano_puff",
+          "source": "REI Re/Supply (outlet)",
+          "title": "Patagonia Nano Puff Jacket — Blue, S",
+          "url": "https://www.rei.com/used/patagonia-nano-puff?v=s-blue",
+          "price": 152.59,
+          "currency": "USD",
+          "size": "S",
+          "color": "Blue",
+          "condition": "new",
+          "channel": "outlet",
+          "region": "US",
+          "availability": "in_stock",
+          "seller": "REI Re/Supply (outlet)",
+          "image": null,
+          "list_price": null,
+          "match_score": 1.0,
+          "fetched_at": "2026-07-20T21:52:06+00:00",
+          "id": "e01107c877286e1f"
         },
         {
           "watch_id": "patagonia_nano_puff",
@@ -922,12 +1041,14 @@
           "size": "L",
           "color": "Black",
           "condition": "new",
+          "channel": "new",
+          "region": "US",
           "availability": "in_stock",
           "seller": "Brand Official",
           "image": null,
           "list_price": 198.67,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T17:09:37+00:00",
+          "fetched_at": "2026-07-20T21:52:06+00:00",
           "id": "f6400a6accfee527"
         },
         {
@@ -940,12 +1061,14 @@
           "size": "M",
           "color": "Green",
           "condition": "new",
+          "channel": "new",
+          "region": "US",
           "availability": "in_stock",
           "seller": "Amazon",
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T17:09:37+00:00",
+          "fetched_at": "2026-07-20T21:52:06+00:00",
           "id": "bc77a58102d8013d"
         },
         {
@@ -958,46 +1081,28 @@
           "size": "M",
           "color": "Black",
           "condition": "new",
+          "channel": "new",
+          "region": "US",
           "availability": "in_stock",
           "seller": "REI Co-op",
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T17:09:37+00:00",
+          "fetched_at": "2026-07-20T21:52:06+00:00",
           "id": "af88f0db27ea323d"
         }
       ],
+      "summary": {
+        "by_channel": {
+          "used": 136.69,
+          "new": 147.12,
+          "outlet": 152.59
+        },
+        "by_region": {
+          "US": 136.69
+        }
+      },
       "history": [
-        {
-          "ts": "2026-07-13T12:00:00+00:00",
-          "price": 188.66,
-          "source": "REI Co-op"
-        },
-        {
-          "ts": "2026-07-13T12:00:00+00:00",
-          "price": 124.06,
-          "source": "Backcountry"
-        },
-        {
-          "ts": "2026-07-13T12:00:00+00:00",
-          "price": 143.48,
-          "source": "Brand Official"
-        },
-        {
-          "ts": "2026-07-13T12:00:00+00:00",
-          "price": 177.15,
-          "source": "Amazon"
-        },
-        {
-          "ts": "2026-07-13T12:00:00+00:00",
-          "price": 191.69,
-          "source": "eBay"
-        },
-        {
-          "ts": "2026-07-14T12:00:00+00:00",
-          "price": 198.19,
-          "source": "REI Co-op"
-        },
         {
           "ts": "2026-07-14T12:00:00+00:00",
           "price": 146.1,
@@ -1267,6 +1372,36 @@
           "ts": "2026-07-20T17:09:37+00:00",
           "price": 136.69,
           "source": "eBay"
+        },
+        {
+          "ts": "2026-07-20T21:52:06+00:00",
+          "price": 212.92,
+          "source": "REI Co-op"
+        },
+        {
+          "ts": "2026-07-20T21:52:06+00:00",
+          "price": 147.12,
+          "source": "Backcountry"
+        },
+        {
+          "ts": "2026-07-20T21:52:06+00:00",
+          "price": 159.52,
+          "source": "Brand Official"
+        },
+        {
+          "ts": "2026-07-20T21:52:06+00:00",
+          "price": 191.62,
+          "source": "Amazon"
+        },
+        {
+          "ts": "2026-07-20T21:52:06+00:00",
+          "price": 136.69,
+          "source": "eBay"
+        },
+        {
+          "ts": "2026-07-20T21:52:06+00:00",
+          "price": 152.59,
+          "source": "REI Re/Supply (outlet)"
         }
       ]
     },
@@ -1294,10 +1429,33 @@
       "season": "auto",
       "msrp": null,
       "min_discount_pct": null,
-      "best_price": 109.73,
-      "best_source": "eBay",
-      "offer_count": 5,
+      "lineage": [],
+      "home_region": null,
+      "urls": [],
+      "best_price": 95.09,
+      "best_source": "REI Re/Supply (outlet)",
+      "offer_count": 6,
       "offers": [
+        {
+          "watch_id": "blackdiamond_distance_carbon_z",
+          "source": "REI Re/Supply (outlet)",
+          "title": "Black Diamond Distance Carbon Z Trekking Poles — Green, 120",
+          "url": "https://www.rei.com/used/blackdiamond-distance-carbon-z?v=120-green",
+          "price": 95.09,
+          "currency": "USD",
+          "size": "120",
+          "color": "Green",
+          "condition": "new",
+          "channel": "outlet",
+          "region": "US",
+          "availability": "in_stock",
+          "seller": "REI Re/Supply (outlet)",
+          "image": null,
+          "list_price": 200.0,
+          "match_score": 1.0,
+          "fetched_at": "2026-07-20T21:52:06+00:00",
+          "id": "e8967a1d42df844e"
+        },
         {
           "watch_id": "blackdiamond_distance_carbon_z",
           "source": "eBay",
@@ -1308,12 +1466,14 @@
           "size": "130",
           "color": "Blue",
           "condition": "used",
+          "channel": "used",
+          "region": "US",
           "availability": "in_stock",
           "seller": "eBay",
           "image": null,
           "list_price": 200.0,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T17:09:37+00:00",
+          "fetched_at": "2026-07-20T21:52:06+00:00",
           "id": "6b36789e7c4706e6"
         },
         {
@@ -1326,12 +1486,14 @@
           "size": "110",
           "color": "Blue",
           "condition": "new",
+          "channel": "new",
+          "region": "US",
           "availability": "in_stock",
           "seller": "Backcountry",
           "image": null,
           "list_price": 200.0,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T17:09:37+00:00",
+          "fetched_at": "2026-07-20T21:52:06+00:00",
           "id": "ccac2fb1c5ecf182"
         },
         {
@@ -1344,12 +1506,14 @@
           "size": "110",
           "color": "Black",
           "condition": "new",
+          "channel": "new",
+          "region": "US",
           "availability": "in_stock",
           "seller": "Amazon",
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T17:09:37+00:00",
+          "fetched_at": "2026-07-20T21:52:06+00:00",
           "id": "e43ac6d319e0815e"
         },
         {
@@ -1362,12 +1526,14 @@
           "size": "130",
           "color": "Blue",
           "condition": "new",
+          "channel": "new",
+          "region": "US",
           "availability": "in_stock",
           "seller": "Brand Official",
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T17:09:37+00:00",
+          "fetched_at": "2026-07-20T21:52:06+00:00",
           "id": "f5a8d738980b7a2b"
         },
         {
@@ -1380,46 +1546,28 @@
           "size": "130",
           "color": "Black",
           "condition": "new",
+          "channel": "new",
+          "region": "US",
           "availability": "in_stock",
           "seller": "REI Co-op",
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T17:09:37+00:00",
+          "fetched_at": "2026-07-20T21:52:06+00:00",
           "id": "80c74515d5d2aabc"
         }
       ],
+      "summary": {
+        "by_channel": {
+          "outlet": 95.09,
+          "used": 109.73,
+          "new": 125.51
+        },
+        "by_region": {
+          "US": 95.09
+        }
+      },
       "history": [
-        {
-          "ts": "2026-07-13T12:00:00+00:00",
-          "price": 196.55,
-          "source": "REI Co-op"
-        },
-        {
-          "ts": "2026-07-13T12:00:00+00:00",
-          "price": 207.84,
-          "source": "Backcountry"
-        },
-        {
-          "ts": "2026-07-13T12:00:00+00:00",
-          "price": 159.85,
-          "source": "Brand Official"
-        },
-        {
-          "ts": "2026-07-13T12:00:00+00:00",
-          "price": 202.25,
-          "source": "Amazon"
-        },
-        {
-          "ts": "2026-07-13T12:00:00+00:00",
-          "price": 133.88,
-          "source": "eBay"
-        },
-        {
-          "ts": "2026-07-14T12:00:00+00:00",
-          "price": 210.92,
-          "source": "REI Co-op"
-        },
         {
           "ts": "2026-07-14T12:00:00+00:00",
           "price": 116.12,
@@ -1689,6 +1837,36 @@
           "ts": "2026-07-20T17:09:37+00:00",
           "price": 109.73,
           "source": "eBay"
+        },
+        {
+          "ts": "2026-07-20T21:52:06+00:00",
+          "price": 216.65,
+          "source": "REI Co-op"
+        },
+        {
+          "ts": "2026-07-20T21:52:06+00:00",
+          "price": 125.51,
+          "source": "Backcountry"
+        },
+        {
+          "ts": "2026-07-20T21:52:06+00:00",
+          "price": 215.37,
+          "source": "Brand Official"
+        },
+        {
+          "ts": "2026-07-20T21:52:06+00:00",
+          "price": 172.06,
+          "source": "Amazon"
+        },
+        {
+          "ts": "2026-07-20T21:52:06+00:00",
+          "price": 109.73,
+          "source": "eBay"
+        },
+        {
+          "ts": "2026-07-20T21:52:06+00:00",
+          "price": 95.09,
+          "source": "REI Re/Supply (outlet)"
         }
       ]
     },
@@ -1714,9 +1892,12 @@
       "season": "auto",
       "msrp": null,
       "min_discount_pct": null,
+      "lineage": [],
+      "home_region": null,
+      "urls": [],
       "best_price": 196.32,
       "best_source": "REI Co-op",
-      "offer_count": 5,
+      "offer_count": 6,
       "offers": [
         {
           "watch_id": "deuter_aircontact_core_60_10",
@@ -1728,13 +1909,35 @@
           "size": "70L",
           "color": "Green",
           "condition": "new",
+          "channel": "new",
+          "region": "US",
           "availability": "in_stock",
           "seller": "REI Co-op",
           "image": null,
           "list_price": 266.67,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T17:09:37+00:00",
+          "fetched_at": "2026-07-20T21:52:06+00:00",
           "id": "ffa49ee0d5b297b8"
+        },
+        {
+          "watch_id": "deuter_aircontact_core_60_10",
+          "source": "REI Re/Supply (outlet)",
+          "title": "Deuter Aircontact Core 60+10 Backpack — Blue, 70L",
+          "url": "https://www.rei.com/used/deuter-aircontact-core-60-10?v=70l-blue",
+          "price": 210.85,
+          "currency": "USD",
+          "size": "70L",
+          "color": "Blue",
+          "condition": "new",
+          "channel": "outlet",
+          "region": "US",
+          "availability": "in_stock",
+          "seller": "REI Re/Supply (outlet)",
+          "image": null,
+          "list_price": null,
+          "match_score": 1.0,
+          "fetched_at": "2026-07-20T21:52:06+00:00",
+          "id": "0d7bcfcfc58a5881"
         },
         {
           "watch_id": "deuter_aircontact_core_60_10",
@@ -1746,12 +1949,14 @@
           "size": "70L",
           "color": "Black",
           "condition": "used",
+          "channel": "used",
+          "region": "US",
           "availability": "in_stock",
           "seller": "eBay",
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T17:09:37+00:00",
+          "fetched_at": "2026-07-20T21:52:06+00:00",
           "id": "46a5ccc73ec70981"
         },
         {
@@ -1764,12 +1969,14 @@
           "size": "70L",
           "color": "Green",
           "condition": "new",
+          "channel": "new",
+          "region": "US",
           "availability": "in_stock",
           "seller": "Amazon",
           "image": null,
           "list_price": 266.67,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T17:09:37+00:00",
+          "fetched_at": "2026-07-20T21:52:06+00:00",
           "id": "c26812ddf7261260"
         },
         {
@@ -1782,12 +1989,14 @@
           "size": "70L",
           "color": "Black",
           "condition": "new",
+          "channel": "new",
+          "region": "US",
           "availability": "in_stock",
           "seller": "Backcountry",
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T17:09:37+00:00",
+          "fetched_at": "2026-07-20T21:52:06+00:00",
           "id": "84fbcf2be6613e10"
         },
         {
@@ -1800,46 +2009,28 @@
           "size": "70L",
           "color": "Black",
           "condition": "new",
+          "channel": "new",
+          "region": "US",
           "availability": "in_stock",
           "seller": "Brand Official",
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T17:09:37+00:00",
+          "fetched_at": "2026-07-20T21:52:06+00:00",
           "id": "ee4c6b0f915c0d64"
         }
       ],
+      "summary": {
+        "by_channel": {
+          "new": 196.32,
+          "outlet": 210.85,
+          "used": 217.18
+        },
+        "by_region": {
+          "US": 196.32
+        }
+      },
       "history": [
-        {
-          "ts": "2026-07-13T12:00:00+00:00",
-          "price": 211.57,
-          "source": "REI Co-op"
-        },
-        {
-          "ts": "2026-07-13T12:00:00+00:00",
-          "price": 237.73,
-          "source": "Backcountry"
-        },
-        {
-          "ts": "2026-07-13T12:00:00+00:00",
-          "price": 171.64,
-          "source": "Brand Official"
-        },
-        {
-          "ts": "2026-07-13T12:00:00+00:00",
-          "price": 193.31,
-          "source": "Amazon"
-        },
-        {
-          "ts": "2026-07-13T12:00:00+00:00",
-          "price": 188.76,
-          "source": "eBay"
-        },
-        {
-          "ts": "2026-07-14T12:00:00+00:00",
-          "price": 266.54,
-          "source": "REI Co-op"
-        },
         {
           "ts": "2026-07-14T12:00:00+00:00",
           "price": 265.41,
@@ -2109,6 +2300,36 @@
           "ts": "2026-07-20T17:09:37+00:00",
           "price": 217.18,
           "source": "eBay"
+        },
+        {
+          "ts": "2026-07-20T21:52:06+00:00",
+          "price": 196.32,
+          "source": "REI Co-op"
+        },
+        {
+          "ts": "2026-07-20T21:52:06+00:00",
+          "price": 262.01,
+          "source": "Backcountry"
+        },
+        {
+          "ts": "2026-07-20T21:52:06+00:00",
+          "price": 281.27,
+          "source": "Brand Official"
+        },
+        {
+          "ts": "2026-07-20T21:52:06+00:00",
+          "price": 225.69,
+          "source": "Amazon"
+        },
+        {
+          "ts": "2026-07-20T21:52:06+00:00",
+          "price": 217.18,
+          "source": "eBay"
+        },
+        {
+          "ts": "2026-07-20T21:52:06+00:00",
+          "price": 210.85,
+          "source": "REI Re/Supply (outlet)"
         }
       ]
     },
@@ -2135,9 +2356,12 @@
       "season": "auto",
       "msrp": null,
       "min_discount_pct": null,
+      "lineage": [],
+      "home_region": null,
+      "urls": [],
       "best_price": 103.47,
       "best_source": "Backcountry",
-      "offer_count": 5,
+      "offer_count": 6,
       "offers": [
         {
           "watch_id": "outdoor_research_helium_rain",
@@ -2149,12 +2373,14 @@
           "size": "L",
           "color": "Black",
           "condition": "new",
+          "channel": "new",
+          "region": "US",
           "availability": "in_stock",
           "seller": "Backcountry",
           "image": null,
           "list_price": 173.33,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T17:09:37+00:00",
+          "fetched_at": "2026-07-20T21:52:06+00:00",
           "id": "47177e5bd190a833"
         },
         {
@@ -2167,13 +2393,35 @@
           "size": "M",
           "color": "Blue",
           "condition": "new",
+          "channel": "new",
+          "region": "US",
           "availability": "in_stock",
           "seller": "Brand Official",
           "image": null,
           "list_price": 173.33,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T17:09:37+00:00",
+          "fetched_at": "2026-07-20T21:52:06+00:00",
           "id": "b5c205326912faa5"
+        },
+        {
+          "watch_id": "outdoor_research_helium_rain",
+          "source": "REI Re/Supply (outlet)",
+          "title": "Outdoor Research Helium Rain Jacket — Black, M",
+          "url": "https://www.rei.com/used/outdoor-research-helium-rain?v=m-black",
+          "price": 128.27,
+          "currency": "USD",
+          "size": "M",
+          "color": "Black",
+          "condition": "new",
+          "channel": "outlet",
+          "region": "US",
+          "availability": "in_stock",
+          "seller": "REI Re/Supply (outlet)",
+          "image": null,
+          "list_price": null,
+          "match_score": 1.0,
+          "fetched_at": "2026-07-20T21:52:06+00:00",
+          "id": "744bf5ca6519b95e"
         },
         {
           "watch_id": "outdoor_research_helium_rain",
@@ -2185,12 +2433,14 @@
           "size": "L",
           "color": "Blue",
           "condition": "used",
+          "channel": "used",
+          "region": "US",
           "availability": "in_stock",
           "seller": "eBay",
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T17:09:37+00:00",
+          "fetched_at": "2026-07-20T21:52:06+00:00",
           "id": "f7875c9cd0473800"
         },
         {
@@ -2203,12 +2453,14 @@
           "size": "M",
           "color": "Black",
           "condition": "new",
+          "channel": "new",
+          "region": "US",
           "availability": "in_stock",
           "seller": "Amazon",
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T17:09:37+00:00",
+          "fetched_at": "2026-07-20T21:52:06+00:00",
           "id": "baeed51333964048"
         },
         {
@@ -2221,46 +2473,28 @@
           "size": "M",
           "color": "Black",
           "condition": "new",
+          "channel": "new",
+          "region": "US",
           "availability": "in_stock",
           "seller": "REI Co-op",
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T17:09:37+00:00",
+          "fetched_at": "2026-07-20T21:52:06+00:00",
           "id": "14ba1d2aaf398886"
         }
       ],
+      "summary": {
+        "by_channel": {
+          "new": 103.47,
+          "outlet": 128.27,
+          "used": 153.48
+        },
+        "by_region": {
+          "US": 103.47
+        }
+      },
       "history": [
-        {
-          "ts": "2026-07-13T12:00:00+00:00",
-          "price": 167.72,
-          "source": "REI Co-op"
-        },
-        {
-          "ts": "2026-07-13T12:00:00+00:00",
-          "price": 182.67,
-          "source": "Backcountry"
-        },
-        {
-          "ts": "2026-07-13T12:00:00+00:00",
-          "price": 114.16,
-          "source": "Brand Official"
-        },
-        {
-          "ts": "2026-07-13T12:00:00+00:00",
-          "price": 100.13,
-          "source": "Amazon"
-        },
-        {
-          "ts": "2026-07-13T12:00:00+00:00",
-          "price": 113.25,
-          "source": "eBay"
-        },
-        {
-          "ts": "2026-07-14T12:00:00+00:00",
-          "price": 161.5,
-          "source": "REI Co-op"
-        },
         {
           "ts": "2026-07-14T12:00:00+00:00",
           "price": 119.24,
@@ -2530,6 +2764,36 @@
           "ts": "2026-07-20T17:09:37+00:00",
           "price": 153.48,
           "source": "eBay"
+        },
+        {
+          "ts": "2026-07-20T21:52:06+00:00",
+          "price": 170.15,
+          "source": "REI Co-op"
+        },
+        {
+          "ts": "2026-07-20T21:52:06+00:00",
+          "price": 103.47,
+          "source": "Backcountry"
+        },
+        {
+          "ts": "2026-07-20T21:52:06+00:00",
+          "price": 115.45,
+          "source": "Brand Official"
+        },
+        {
+          "ts": "2026-07-20T21:52:06+00:00",
+          "price": 163.82,
+          "source": "Amazon"
+        },
+        {
+          "ts": "2026-07-20T21:52:06+00:00",
+          "price": 153.48,
+          "source": "eBay"
+        },
+        {
+          "ts": "2026-07-20T21:52:06+00:00",
+          "price": 128.27,
+          "source": "REI Re/Supply (outlet)"
         }
       ]
     },
@@ -2555,10 +2819,33 @@
       "season": "auto",
       "msrp": null,
       "min_discount_pct": null,
-      "best_price": 51.13,
-      "best_source": "Brand Official",
-      "offer_count": 5,
+      "lineage": [],
+      "home_region": null,
+      "urls": [],
+      "best_price": 43.02,
+      "best_source": "REI Re/Supply (outlet)",
+      "offer_count": 6,
       "offers": [
+        {
+          "watch_id": "mammut_ophir_harness",
+          "source": "REI Re/Supply (outlet)",
+          "title": "Mammut Ophir 3 Slide Climbing Harness — Green, M",
+          "url": "https://www.rei.com/used/mammut-ophir-harness?v=m-green",
+          "price": 43.02,
+          "currency": "USD",
+          "size": "M",
+          "color": "Green",
+          "condition": "new",
+          "channel": "outlet",
+          "region": "US",
+          "availability": "in_stock",
+          "seller": "REI Re/Supply (outlet)",
+          "image": null,
+          "list_price": 80.0,
+          "match_score": 1.0,
+          "fetched_at": "2026-07-20T21:52:06+00:00",
+          "id": "173a09e311215f65"
+        },
         {
           "watch_id": "mammut_ophir_harness",
           "source": "Brand Official",
@@ -2569,12 +2856,14 @@
           "size": "L",
           "color": "Blue",
           "condition": "new",
+          "channel": "new",
+          "region": "US",
           "availability": "in_stock",
           "seller": "Brand Official",
           "image": null,
           "list_price": 80.0,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T17:09:37+00:00",
+          "fetched_at": "2026-07-20T21:52:06+00:00",
           "id": "b8948c357acf142e"
         },
         {
@@ -2587,12 +2876,14 @@
           "size": "M",
           "color": "Black",
           "condition": "new",
+          "channel": "new",
+          "region": "US",
           "availability": "in_stock",
           "seller": "REI Co-op",
           "image": null,
           "list_price": 80.0,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T17:09:37+00:00",
+          "fetched_at": "2026-07-20T21:52:06+00:00",
           "id": "0250e26438a1714f"
         },
         {
@@ -2605,12 +2896,14 @@
           "size": "L",
           "color": "Blue",
           "condition": "new",
+          "channel": "new",
+          "region": "US",
           "availability": "in_stock",
           "seller": "Amazon",
           "image": null,
           "list_price": 80.0,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T17:09:37+00:00",
+          "fetched_at": "2026-07-20T21:52:06+00:00",
           "id": "5a2047eafc9e3d8d"
         },
         {
@@ -2623,12 +2916,14 @@
           "size": "L",
           "color": "Blue",
           "condition": "used",
+          "channel": "used",
+          "region": "US",
           "availability": "in_stock",
           "seller": "eBay",
           "image": null,
           "list_price": 80.0,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T17:09:37+00:00",
+          "fetched_at": "2026-07-20T21:52:06+00:00",
           "id": "16bf9c17c0f9ce42"
         },
         {
@@ -2641,46 +2936,28 @@
           "size": "L",
           "color": "Blue",
           "condition": "new",
+          "channel": "new",
+          "region": "US",
           "availability": "in_stock",
           "seller": "Backcountry",
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T17:09:37+00:00",
+          "fetched_at": "2026-07-20T21:52:06+00:00",
           "id": "3a9758067430db30"
         }
       ],
+      "summary": {
+        "by_channel": {
+          "outlet": 43.02,
+          "new": 51.13,
+          "used": 64.51
+        },
+        "by_region": {
+          "US": 43.02
+        }
+      },
       "history": [
-        {
-          "ts": "2026-07-13T12:00:00+00:00",
-          "price": 59.56,
-          "source": "REI Co-op"
-        },
-        {
-          "ts": "2026-07-13T12:00:00+00:00",
-          "price": 58.64,
-          "source": "Backcountry"
-        },
-        {
-          "ts": "2026-07-13T12:00:00+00:00",
-          "price": 90.27,
-          "source": "Brand Official"
-        },
-        {
-          "ts": "2026-07-13T12:00:00+00:00",
-          "price": 70.74,
-          "source": "Amazon"
-        },
-        {
-          "ts": "2026-07-13T12:00:00+00:00",
-          "price": 45.51,
-          "source": "eBay"
-        },
-        {
-          "ts": "2026-07-14T12:00:00+00:00",
-          "price": 72.16,
-          "source": "REI Co-op"
-        },
         {
           "ts": "2026-07-14T12:00:00+00:00",
           "price": 71.77,
@@ -2950,6 +3227,36 @@
           "ts": "2026-07-20T17:09:37+00:00",
           "price": 64.51,
           "source": "eBay"
+        },
+        {
+          "ts": "2026-07-20T21:52:06+00:00",
+          "price": 56.15,
+          "source": "REI Co-op"
+        },
+        {
+          "ts": "2026-07-20T21:52:06+00:00",
+          "price": 78.39,
+          "source": "Backcountry"
+        },
+        {
+          "ts": "2026-07-20T21:52:06+00:00",
+          "price": 51.13,
+          "source": "Brand Official"
+        },
+        {
+          "ts": "2026-07-20T21:52:06+00:00",
+          "price": 56.84,
+          "source": "Amazon"
+        },
+        {
+          "ts": "2026-07-20T21:52:06+00:00",
+          "price": 64.51,
+          "source": "eBay"
+        },
+        {
+          "ts": "2026-07-20T21:52:06+00:00",
+          "price": 43.02,
+          "source": "REI Re/Supply (outlet)"
         }
       ]
     },
@@ -2979,10 +3286,33 @@
       "season": "auto",
       "msrp": null,
       "min_discount_pct": null,
-      "best_price": 356.55,
-      "best_source": "Amazon",
-      "offer_count": 5,
+      "lineage": [],
+      "home_region": null,
+      "urls": [],
+      "best_price": 297.39,
+      "best_source": "REI Re/Supply (outlet)",
+      "offer_count": 6,
       "offers": [
+        {
+          "watch_id": "mountainhardwear_ghost_whisperer",
+          "source": "REI Re/Supply (outlet)",
+          "title": "Mountain Hardwear Ghost Whisperer 2 Hoody — blue, L",
+          "url": "https://www.rei.com/used/mountainhardwear-ghost-whisperer?v=l-blue",
+          "price": 297.39,
+          "currency": "USD",
+          "size": "L",
+          "color": "blue",
+          "condition": "new",
+          "channel": "outlet",
+          "region": "US",
+          "availability": "in_stock",
+          "seller": "REI Re/Supply (outlet)",
+          "image": null,
+          "list_price": null,
+          "match_score": 1.0,
+          "fetched_at": "2026-07-20T21:52:06+00:00",
+          "id": "6940328fdf368142"
+        },
         {
           "watch_id": "mountainhardwear_ghost_whisperer",
           "source": "Amazon",
@@ -2993,12 +3323,14 @@
           "size": "L",
           "color": "blue",
           "condition": "new",
+          "channel": "new",
+          "region": "US",
           "availability": "in_stock",
           "seller": "Amazon",
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T17:09:37+00:00",
+          "fetched_at": "2026-07-20T21:52:06+00:00",
           "id": "867da22e1edaba51"
         },
         {
@@ -3011,12 +3343,14 @@
           "size": "M",
           "color": "black",
           "condition": "used",
+          "channel": "used",
+          "region": "US",
           "availability": "in_stock",
           "seller": "eBay",
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T17:09:37+00:00",
+          "fetched_at": "2026-07-20T21:52:06+00:00",
           "id": "29d078c13c0cde2a"
         },
         {
@@ -3029,12 +3363,14 @@
           "size": "M",
           "color": "blue",
           "condition": "new",
+          "channel": "new",
+          "region": "US",
           "availability": "in_stock",
           "seller": "Brand Official",
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T17:09:37+00:00",
+          "fetched_at": "2026-07-20T21:52:06+00:00",
           "id": "541447023b76824b"
         },
         {
@@ -3047,12 +3383,14 @@
           "size": "L",
           "color": "black",
           "condition": "new",
+          "channel": "new",
+          "region": "US",
           "availability": "in_stock",
           "seller": "REI Co-op",
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T17:09:37+00:00",
+          "fetched_at": "2026-07-20T21:52:06+00:00",
           "id": "ac95689e63982a8e"
         },
         {
@@ -3065,46 +3403,28 @@
           "size": "L",
           "color": "black",
           "condition": "new",
+          "channel": "new",
+          "region": "US",
           "availability": "in_stock",
           "seller": "Backcountry",
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T17:09:37+00:00",
+          "fetched_at": "2026-07-20T21:52:06+00:00",
           "id": "e5a1821ec6898d73"
         }
       ],
+      "summary": {
+        "by_channel": {
+          "outlet": 297.39,
+          "new": 356.55,
+          "used": 374.93
+        },
+        "by_region": {
+          "US": 297.39
+        }
+      },
       "history": [
-        {
-          "ts": "2026-07-13T12:00:00+00:00",
-          "price": 432.91,
-          "source": "REI Co-op"
-        },
-        {
-          "ts": "2026-07-13T12:00:00+00:00",
-          "price": 376.13,
-          "source": "Backcountry"
-        },
-        {
-          "ts": "2026-07-13T12:00:00+00:00",
-          "price": 438.91,
-          "source": "Brand Official"
-        },
-        {
-          "ts": "2026-07-13T12:00:00+00:00",
-          "price": 293.76,
-          "source": "Amazon"
-        },
-        {
-          "ts": "2026-07-13T12:00:00+00:00",
-          "price": 361.93,
-          "source": "eBay"
-        },
-        {
-          "ts": "2026-07-14T12:00:00+00:00",
-          "price": 364.76,
-          "source": "REI Co-op"
-        },
         {
           "ts": "2026-07-14T12:00:00+00:00",
           "price": 357.89,
@@ -3374,6 +3694,36 @@
           "ts": "2026-07-20T17:09:37+00:00",
           "price": 374.93,
           "source": "eBay"
+        },
+        {
+          "ts": "2026-07-20T21:52:06+00:00",
+          "price": 387.37,
+          "source": "REI Co-op"
+        },
+        {
+          "ts": "2026-07-20T21:52:06+00:00",
+          "price": 424.64,
+          "source": "Backcountry"
+        },
+        {
+          "ts": "2026-07-20T21:52:06+00:00",
+          "price": 382.14,
+          "source": "Brand Official"
+        },
+        {
+          "ts": "2026-07-20T21:52:06+00:00",
+          "price": 356.55,
+          "source": "Amazon"
+        },
+        {
+          "ts": "2026-07-20T21:52:06+00:00",
+          "price": 374.93,
+          "source": "eBay"
+        },
+        {
+          "ts": "2026-07-20T21:52:06+00:00",
+          "price": 297.39,
+          "source": "REI Re/Supply (outlet)"
         }
       ]
     },
@@ -3400,9 +3750,12 @@
       "season": "auto",
       "msrp": null,
       "min_discount_pct": null,
+      "lineage": [],
+      "home_region": null,
+      "urls": [],
       "best_price": 65.37,
       "best_source": "eBay",
-      "offer_count": 5,
+      "offer_count": 6,
       "offers": [
         {
           "watch_id": "marmot_precip_eco",
@@ -3414,13 +3767,35 @@
           "size": "XL",
           "color": "Blue",
           "condition": "used",
+          "channel": "used",
+          "region": "US",
           "availability": "in_stock",
           "seller": "eBay",
           "image": null,
           "list_price": 100.0,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T17:09:37+00:00",
+          "fetched_at": "2026-07-20T21:52:06+00:00",
           "id": "5293b710a0dfc5b5"
+        },
+        {
+          "watch_id": "marmot_precip_eco",
+          "source": "REI Re/Supply (outlet)",
+          "title": "Marmot PreCip Eco Jacket — Blue, L",
+          "url": "https://www.rei.com/used/marmot-precip-eco?v=l-blue",
+          "price": 70.26,
+          "currency": "USD",
+          "size": "L",
+          "color": "Blue",
+          "condition": "new",
+          "channel": "outlet",
+          "region": "US",
+          "availability": "in_stock",
+          "seller": "REI Re/Supply (outlet)",
+          "image": null,
+          "list_price": null,
+          "match_score": 1.0,
+          "fetched_at": "2026-07-20T21:52:06+00:00",
+          "id": "9666f0251e453626"
         },
         {
           "watch_id": "marmot_precip_eco",
@@ -3432,12 +3807,14 @@
           "size": "M",
           "color": "Black",
           "condition": "new",
+          "channel": "new",
+          "region": "US",
           "availability": "in_stock",
           "seller": "Amazon",
           "image": null,
           "list_price": 100.0,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T17:09:37+00:00",
+          "fetched_at": "2026-07-20T21:52:06+00:00",
           "id": "17b1f2ec9b9bc3ef"
         },
         {
@@ -3450,12 +3827,14 @@
           "size": "XL",
           "color": "Black",
           "condition": "new",
+          "channel": "new",
+          "region": "US",
           "availability": "in_stock",
           "seller": "Backcountry",
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T17:09:37+00:00",
+          "fetched_at": "2026-07-20T21:52:06+00:00",
           "id": "68b9891990e97979"
         },
         {
@@ -3468,12 +3847,14 @@
           "size": "XL",
           "color": "Green",
           "condition": "new",
+          "channel": "new",
+          "region": "US",
           "availability": "in_stock",
           "seller": "REI Co-op",
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T17:09:37+00:00",
+          "fetched_at": "2026-07-20T21:52:06+00:00",
           "id": "20af22b159050e34"
         },
         {
@@ -3486,46 +3867,28 @@
           "size": "XL",
           "color": "Green",
           "condition": "new",
+          "channel": "new",
+          "region": "US",
           "availability": "in_stock",
           "seller": "Brand Official",
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T17:09:37+00:00",
+          "fetched_at": "2026-07-20T21:52:06+00:00",
           "id": "867a354d3d8ae881"
         }
       ],
+      "summary": {
+        "by_channel": {
+          "used": 65.37,
+          "outlet": 70.26,
+          "new": 72.16
+        },
+        "by_region": {
+          "US": 65.37
+        }
+      },
       "history": [
-        {
-          "ts": "2026-07-13T12:00:00+00:00",
-          "price": 65.62,
-          "source": "REI Co-op"
-        },
-        {
-          "ts": "2026-07-13T12:00:00+00:00",
-          "price": 64.31,
-          "source": "Backcountry"
-        },
-        {
-          "ts": "2026-07-13T12:00:00+00:00",
-          "price": 100.26,
-          "source": "Brand Official"
-        },
-        {
-          "ts": "2026-07-13T12:00:00+00:00",
-          "price": 64.5,
-          "source": "Amazon"
-        },
-        {
-          "ts": "2026-07-13T12:00:00+00:00",
-          "price": 86.22,
-          "source": "eBay"
-        },
-        {
-          "ts": "2026-07-14T12:00:00+00:00",
-          "price": 85.99,
-          "source": "REI Co-op"
-        },
         {
           "ts": "2026-07-14T12:00:00+00:00",
           "price": 73.46,
@@ -3795,6 +4158,36 @@
           "ts": "2026-07-20T17:09:37+00:00",
           "price": 65.37,
           "source": "eBay"
+        },
+        {
+          "ts": "2026-07-20T21:52:06+00:00",
+          "price": 107.13,
+          "source": "REI Co-op"
+        },
+        {
+          "ts": "2026-07-20T21:52:06+00:00",
+          "price": 97.28,
+          "source": "Backcountry"
+        },
+        {
+          "ts": "2026-07-20T21:52:06+00:00",
+          "price": 109.2,
+          "source": "Brand Official"
+        },
+        {
+          "ts": "2026-07-20T21:52:06+00:00",
+          "price": 72.16,
+          "source": "Amazon"
+        },
+        {
+          "ts": "2026-07-20T21:52:06+00:00",
+          "price": 65.37,
+          "source": "eBay"
+        },
+        {
+          "ts": "2026-07-20T21:52:06+00:00",
+          "price": 70.26,
+          "source": "REI Re/Supply (outlet)"
         }
       ]
     },
@@ -3821,9 +4214,12 @@
       "season": "auto",
       "msrp": null,
       "min_discount_pct": null,
+      "lineage": [],
+      "home_region": null,
+      "urls": [],
       "best_price": 146.82,
       "best_source": "eBay",
-      "offer_count": 5,
+      "offer_count": 6,
       "offers": [
         {
           "watch_id": "rab_microlight_alpine",
@@ -3835,12 +4231,14 @@
           "size": "L",
           "color": "Green",
           "condition": "used",
+          "channel": "used",
+          "region": "US",
           "availability": "in_stock",
           "seller": "eBay",
           "image": null,
           "list_price": 266.67,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T17:09:37+00:00",
+          "fetched_at": "2026-07-20T21:52:06+00:00",
           "id": "d88b17c8e14bf92a"
         },
         {
@@ -3853,13 +4251,35 @@
           "size": "M",
           "color": "Black",
           "condition": "new",
+          "channel": "new",
+          "region": "US",
           "availability": "in_stock",
           "seller": "Backcountry",
           "image": null,
           "list_price": 266.67,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T17:09:37+00:00",
+          "fetched_at": "2026-07-20T21:52:06+00:00",
           "id": "67a053ee9be46d8b"
+        },
+        {
+          "watch_id": "rab_microlight_alpine",
+          "source": "REI Re/Supply (outlet)",
+          "title": "Rab Microlight Alpine Down Jacket — Blue, M",
+          "url": "https://www.rei.com/used/rab-microlight-alpine?v=m-blue",
+          "price": 196.24,
+          "currency": "USD",
+          "size": "M",
+          "color": "Blue",
+          "condition": "new",
+          "channel": "outlet",
+          "region": "US",
+          "availability": "in_stock",
+          "seller": "REI Re/Supply (outlet)",
+          "image": null,
+          "list_price": null,
+          "match_score": 1.0,
+          "fetched_at": "2026-07-20T21:52:06+00:00",
+          "id": "e2648ade2db0a919"
         },
         {
           "watch_id": "rab_microlight_alpine",
@@ -3871,12 +4291,14 @@
           "size": "L",
           "color": "Green",
           "condition": "new",
+          "channel": "new",
+          "region": "US",
           "availability": "in_stock",
           "seller": "Amazon",
           "image": null,
           "list_price": 266.67,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T17:09:37+00:00",
+          "fetched_at": "2026-07-20T21:52:06+00:00",
           "id": "4b29cc797418c0d6"
         },
         {
@@ -3889,12 +4311,14 @@
           "size": "M",
           "color": "Blue",
           "condition": "new",
+          "channel": "new",
+          "region": "US",
           "availability": "in_stock",
           "seller": "Brand Official",
           "image": null,
           "list_price": 266.67,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T17:09:37+00:00",
+          "fetched_at": "2026-07-20T21:52:06+00:00",
           "id": "c13f71cd2aa5d598"
         },
         {
@@ -3907,46 +4331,28 @@
           "size": "L",
           "color": "Black",
           "condition": "new",
+          "channel": "new",
+          "region": "US",
           "availability": "in_stock",
           "seller": "REI Co-op",
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T17:09:37+00:00",
+          "fetched_at": "2026-07-20T21:52:06+00:00",
           "id": "164839dd18c7fefa"
         }
       ],
+      "summary": {
+        "by_channel": {
+          "used": 146.82,
+          "new": 186.37,
+          "outlet": 196.24
+        },
+        "by_region": {
+          "US": 146.82
+        }
+      },
       "history": [
-        {
-          "ts": "2026-07-13T12:00:00+00:00",
-          "price": 243.63,
-          "source": "REI Co-op"
-        },
-        {
-          "ts": "2026-07-13T12:00:00+00:00",
-          "price": 249.09,
-          "source": "Backcountry"
-        },
-        {
-          "ts": "2026-07-13T12:00:00+00:00",
-          "price": 301.07,
-          "source": "Brand Official"
-        },
-        {
-          "ts": "2026-07-13T12:00:00+00:00",
-          "price": 247.76,
-          "source": "Amazon"
-        },
-        {
-          "ts": "2026-07-13T12:00:00+00:00",
-          "price": 256.6,
-          "source": "eBay"
-        },
-        {
-          "ts": "2026-07-14T12:00:00+00:00",
-          "price": 263.21,
-          "source": "REI Co-op"
-        },
         {
           "ts": "2026-07-14T12:00:00+00:00",
           "price": 265.28,
@@ -4216,6 +4622,36 @@
           "ts": "2026-07-20T17:09:37+00:00",
           "price": 146.82,
           "source": "eBay"
+        },
+        {
+          "ts": "2026-07-20T21:52:06+00:00",
+          "price": 291.56,
+          "source": "REI Co-op"
+        },
+        {
+          "ts": "2026-07-20T21:52:06+00:00",
+          "price": 186.37,
+          "source": "Backcountry"
+        },
+        {
+          "ts": "2026-07-20T21:52:06+00:00",
+          "price": 225.88,
+          "source": "Brand Official"
+        },
+        {
+          "ts": "2026-07-20T21:52:06+00:00",
+          "price": 199.46,
+          "source": "Amazon"
+        },
+        {
+          "ts": "2026-07-20T21:52:06+00:00",
+          "price": 146.82,
+          "source": "eBay"
+        },
+        {
+          "ts": "2026-07-20T21:52:06+00:00",
+          "price": 196.24,
+          "source": "REI Re/Supply (outlet)"
         }
       ]
     },
@@ -4240,9 +4676,12 @@
       "season": "auto",
       "msrp": null,
       "min_discount_pct": null,
+      "lineage": [],
+      "home_region": null,
+      "urls": [],
       "best_price": 53.1,
       "best_source": "eBay",
-      "offer_count": 5,
+      "offer_count": 6,
       "offers": [
         {
           "watch_id": "fjallraven_kanken",
@@ -4254,13 +4693,35 @@
           "size": "16L",
           "color": "Black",
           "condition": "used",
+          "channel": "used",
+          "region": "US",
           "availability": "in_stock",
           "seller": "eBay",
           "image": null,
           "list_price": 86.67,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T17:09:37+00:00",
+          "fetched_at": "2026-07-20T21:52:06+00:00",
           "id": "6c5354816d1c4289"
+        },
+        {
+          "watch_id": "fjallraven_kanken",
+          "source": "REI Re/Supply (outlet)",
+          "title": "Fjällräven Kånken Backpack — Blue, 16L",
+          "url": "https://www.rei.com/used/fjallraven-kanken?v=16l-blue",
+          "price": 58.7,
+          "currency": "USD",
+          "size": "16L",
+          "color": "Blue",
+          "condition": "new",
+          "channel": "outlet",
+          "region": "US",
+          "availability": "in_stock",
+          "seller": "REI Re/Supply (outlet)",
+          "image": null,
+          "list_price": null,
+          "match_score": 1.0,
+          "fetched_at": "2026-07-20T21:52:06+00:00",
+          "id": "2decdb1595a7ff87"
         },
         {
           "watch_id": "fjallraven_kanken",
@@ -4272,12 +4733,14 @@
           "size": "16L",
           "color": "Black",
           "condition": "new",
+          "channel": "new",
+          "region": "US",
           "availability": "in_stock",
           "seller": "REI Co-op",
           "image": null,
           "list_price": 86.67,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T17:09:37+00:00",
+          "fetched_at": "2026-07-20T21:52:06+00:00",
           "id": "58c72e03a0e9ad96"
         },
         {
@@ -4290,12 +4753,14 @@
           "size": "16L",
           "color": "Blue",
           "condition": "new",
+          "channel": "new",
+          "region": "US",
           "availability": "in_stock",
           "seller": "Amazon",
           "image": null,
           "list_price": 86.67,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T17:09:37+00:00",
+          "fetched_at": "2026-07-20T21:52:06+00:00",
           "id": "dfa7ffa8cd0f409e"
         },
         {
@@ -4308,12 +4773,14 @@
           "size": "16L",
           "color": "Blue",
           "condition": "new",
+          "channel": "new",
+          "region": "US",
           "availability": "in_stock",
           "seller": "Backcountry",
           "image": null,
           "list_price": 86.67,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T17:09:37+00:00",
+          "fetched_at": "2026-07-20T21:52:06+00:00",
           "id": "0ec73fb5a7a555f6"
         },
         {
@@ -4326,46 +4793,28 @@
           "size": "16L",
           "color": "Blue",
           "condition": "new",
+          "channel": "new",
+          "region": "US",
           "availability": "in_stock",
           "seller": "Brand Official",
           "image": null,
           "list_price": 86.67,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T17:09:37+00:00",
+          "fetched_at": "2026-07-20T21:52:06+00:00",
           "id": "1a3f410b5b196451"
         }
       ],
+      "summary": {
+        "by_channel": {
+          "used": 53.1,
+          "outlet": 58.7,
+          "new": 60.59
+        },
+        "by_region": {
+          "US": 53.1
+        }
+      },
       "history": [
-        {
-          "ts": "2026-07-13T12:00:00+00:00",
-          "price": 82.02,
-          "source": "REI Co-op"
-        },
-        {
-          "ts": "2026-07-13T12:00:00+00:00",
-          "price": 76.37,
-          "source": "Backcountry"
-        },
-        {
-          "ts": "2026-07-13T12:00:00+00:00",
-          "price": 86.73,
-          "source": "Brand Official"
-        },
-        {
-          "ts": "2026-07-13T12:00:00+00:00",
-          "price": 83.7,
-          "source": "Amazon"
-        },
-        {
-          "ts": "2026-07-13T12:00:00+00:00",
-          "price": 71.66,
-          "source": "eBay"
-        },
-        {
-          "ts": "2026-07-14T12:00:00+00:00",
-          "price": 57.68,
-          "source": "REI Co-op"
-        },
         {
           "ts": "2026-07-14T12:00:00+00:00",
           "price": 90.99,
@@ -4635,6 +5084,36 @@
           "ts": "2026-07-20T17:09:37+00:00",
           "price": 53.1,
           "source": "eBay"
+        },
+        {
+          "ts": "2026-07-20T21:52:06+00:00",
+          "price": 60.59,
+          "source": "REI Co-op"
+        },
+        {
+          "ts": "2026-07-20T21:52:06+00:00",
+          "price": 62.49,
+          "source": "Backcountry"
+        },
+        {
+          "ts": "2026-07-20T21:52:06+00:00",
+          "price": 65.04,
+          "source": "Brand Official"
+        },
+        {
+          "ts": "2026-07-20T21:52:06+00:00",
+          "price": 61.79,
+          "source": "Amazon"
+        },
+        {
+          "ts": "2026-07-20T21:52:06+00:00",
+          "price": 53.1,
+          "source": "eBay"
+        },
+        {
+          "ts": "2026-07-20T21:52:06+00:00",
+          "price": 58.7,
+          "source": "REI Re/Supply (outlet)"
         }
       ]
     },
@@ -4661,10 +5140,33 @@
       "season": "auto",
       "msrp": null,
       "min_discount_pct": null,
-      "best_price": 484.11,
-      "best_source": "REI Co-op",
-      "offer_count": 5,
+      "lineage": [],
+      "home_region": null,
+      "urls": [],
+      "best_price": 402.2,
+      "best_source": "REI Re/Supply (outlet)",
+      "offer_count": 6,
       "offers": [
+        {
+          "watch_id": "norrona_lofoten_goretex_pro",
+          "source": "REI Re/Supply (outlet)",
+          "title": "Norrøna Lofoten Gore-Tex Pro Jacket — Black, L",
+          "url": "https://www.rei.com/used/norrona-lofoten-goretex-pro?v=l-black",
+          "price": 402.2,
+          "currency": "USD",
+          "size": "L",
+          "color": "Black",
+          "condition": "new",
+          "channel": "outlet",
+          "region": "US",
+          "availability": "in_stock",
+          "seller": "REI Re/Supply (outlet)",
+          "image": null,
+          "list_price": 733.33,
+          "match_score": 1.0,
+          "fetched_at": "2026-07-20T21:52:06+00:00",
+          "id": "62d4ec2d24aa1bc5"
+        },
         {
           "watch_id": "norrona_lofoten_goretex_pro",
           "source": "REI Co-op",
@@ -4675,12 +5177,14 @@
           "size": "L",
           "color": "Black",
           "condition": "new",
+          "channel": "new",
+          "region": "US",
           "availability": "in_stock",
           "seller": "REI Co-op",
           "image": null,
           "list_price": 733.33,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T17:09:37+00:00",
+          "fetched_at": "2026-07-20T21:52:06+00:00",
           "id": "3e17e836853aa359"
         },
         {
@@ -4693,12 +5197,14 @@
           "size": "L",
           "color": "Black",
           "condition": "new",
+          "channel": "new",
+          "region": "US",
           "availability": "in_stock",
           "seller": "Brand Official",
           "image": null,
           "list_price": 733.33,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T17:09:37+00:00",
+          "fetched_at": "2026-07-20T21:52:06+00:00",
           "id": "930808dbfbc0f8e0"
         },
         {
@@ -4711,12 +5217,14 @@
           "size": "L",
           "color": "Green",
           "condition": "used",
+          "channel": "used",
+          "region": "US",
           "availability": "in_stock",
           "seller": "eBay",
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T17:09:37+00:00",
+          "fetched_at": "2026-07-20T21:52:06+00:00",
           "id": "8b30b04420505ac0"
         },
         {
@@ -4729,12 +5237,14 @@
           "size": "M",
           "color": "Blue",
           "condition": "new",
+          "channel": "new",
+          "region": "US",
           "availability": "in_stock",
           "seller": "Backcountry",
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T17:09:37+00:00",
+          "fetched_at": "2026-07-20T21:52:06+00:00",
           "id": "ef58170150a0ff56"
         },
         {
@@ -4747,46 +5257,28 @@
           "size": "L",
           "color": "Black",
           "condition": "new",
+          "channel": "new",
+          "region": "US",
           "availability": "in_stock",
           "seller": "Amazon",
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T17:09:37+00:00",
+          "fetched_at": "2026-07-20T21:52:06+00:00",
           "id": "0907a8a61499f2fe"
         }
       ],
+      "summary": {
+        "by_channel": {
+          "outlet": 402.2,
+          "new": 484.11,
+          "used": 583.56
+        },
+        "by_region": {
+          "US": 402.2
+        }
+      },
       "history": [
-        {
-          "ts": "2026-07-13T12:00:00+00:00",
-          "price": 663.53,
-          "source": "REI Co-op"
-        },
-        {
-          "ts": "2026-07-13T12:00:00+00:00",
-          "price": 718.66,
-          "source": "Backcountry"
-        },
-        {
-          "ts": "2026-07-13T12:00:00+00:00",
-          "price": 523.29,
-          "source": "Brand Official"
-        },
-        {
-          "ts": "2026-07-13T12:00:00+00:00",
-          "price": 685.34,
-          "source": "Amazon"
-        },
-        {
-          "ts": "2026-07-13T12:00:00+00:00",
-          "price": 706.07,
-          "source": "eBay"
-        },
-        {
-          "ts": "2026-07-14T12:00:00+00:00",
-          "price": 661.53,
-          "source": "REI Co-op"
-        },
         {
           "ts": "2026-07-14T12:00:00+00:00",
           "price": 738.01,
@@ -5056,6 +5548,36 @@
           "ts": "2026-07-20T17:09:37+00:00",
           "price": 583.56,
           "source": "eBay"
+        },
+        {
+          "ts": "2026-07-20T21:52:06+00:00",
+          "price": 484.11,
+          "source": "REI Co-op"
+        },
+        {
+          "ts": "2026-07-20T21:52:06+00:00",
+          "price": 719.44,
+          "source": "Backcountry"
+        },
+        {
+          "ts": "2026-07-20T21:52:06+00:00",
+          "price": 581.33,
+          "source": "Brand Official"
+        },
+        {
+          "ts": "2026-07-20T21:52:06+00:00",
+          "price": 740.12,
+          "source": "Amazon"
+        },
+        {
+          "ts": "2026-07-20T21:52:06+00:00",
+          "price": 583.56,
+          "source": "eBay"
+        },
+        {
+          "ts": "2026-07-20T21:52:06+00:00",
+          "price": 402.2,
+          "source": "REI Re/Supply (outlet)"
         }
       ]
     },
@@ -5079,9 +5601,12 @@
       "season": "auto",
       "msrp": null,
       "min_discount_pct": null,
+      "lineage": [],
+      "home_region": null,
+      "urls": [],
       "best_price": 50.04,
       "best_source": "Amazon",
-      "offer_count": 5,
+      "offer_count": 6,
       "offers": [
         {
           "watch_id": "petzl_actik_core",
@@ -5093,12 +5618,14 @@
           "size": "XL",
           "color": "Black",
           "condition": "new",
+          "channel": "new",
+          "region": "US",
           "availability": "in_stock",
           "seller": "Amazon",
           "image": null,
           "list_price": 73.33,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T17:09:37+00:00",
+          "fetched_at": "2026-07-20T21:52:06+00:00",
           "id": "b0993b788d869e18"
         },
         {
@@ -5111,13 +5638,35 @@
           "size": "L",
           "color": "Blue",
           "condition": "new",
+          "channel": "new",
+          "region": "US",
           "availability": "in_stock",
           "seller": "Brand Official",
           "image": null,
           "list_price": 73.33,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T17:09:37+00:00",
+          "fetched_at": "2026-07-20T21:52:06+00:00",
           "id": "8f12906a5bcfb99b"
+        },
+        {
+          "watch_id": "petzl_actik_core",
+          "source": "REI Re/Supply (outlet)",
+          "title": "Petzl Actik Core Headlamp — Blue, XL",
+          "url": "https://www.rei.com/used/petzl-actik-core?v=xl-blue",
+          "price": 54.22,
+          "currency": "USD",
+          "size": "XL",
+          "color": "Blue",
+          "condition": "new",
+          "channel": "outlet",
+          "region": "US",
+          "availability": "in_stock",
+          "seller": "REI Re/Supply (outlet)",
+          "image": null,
+          "list_price": null,
+          "match_score": 1.0,
+          "fetched_at": "2026-07-20T21:52:06+00:00",
+          "id": "2c673ea3689ded6a"
         },
         {
           "watch_id": "petzl_actik_core",
@@ -5129,12 +5678,14 @@
           "size": "XL",
           "color": "Black",
           "condition": "used",
+          "channel": "used",
+          "region": "US",
           "availability": "in_stock",
           "seller": "eBay",
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T17:09:37+00:00",
+          "fetched_at": "2026-07-20T21:52:06+00:00",
           "id": "e8ccf966f63d473d"
         },
         {
@@ -5147,12 +5698,14 @@
           "size": "M",
           "color": "Green",
           "condition": "new",
+          "channel": "new",
+          "region": "US",
           "availability": "in_stock",
           "seller": "Backcountry",
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T17:09:37+00:00",
+          "fetched_at": "2026-07-20T21:52:06+00:00",
           "id": "23b5848a51cc83e6"
         },
         {
@@ -5165,46 +5718,28 @@
           "size": "XL",
           "color": "Blue",
           "condition": "new",
+          "channel": "new",
+          "region": "US",
           "availability": "in_stock",
           "seller": "REI Co-op",
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T17:09:37+00:00",
+          "fetched_at": "2026-07-20T21:52:06+00:00",
           "id": "89d0ba221cc7ed85"
         }
       ],
+      "summary": {
+        "by_channel": {
+          "new": 50.04,
+          "outlet": 54.22,
+          "used": 61.99
+        },
+        "by_region": {
+          "US": 50.04
+        }
+      },
       "history": [
-        {
-          "ts": "2026-07-13T12:00:00+00:00",
-          "price": 78.71,
-          "source": "REI Co-op"
-        },
-        {
-          "ts": "2026-07-13T12:00:00+00:00",
-          "price": 65.83,
-          "source": "Backcountry"
-        },
-        {
-          "ts": "2026-07-13T12:00:00+00:00",
-          "price": 82.64,
-          "source": "Brand Official"
-        },
-        {
-          "ts": "2026-07-13T12:00:00+00:00",
-          "price": 41.42,
-          "source": "Amazon"
-        },
-        {
-          "ts": "2026-07-13T12:00:00+00:00",
-          "price": 63.6,
-          "source": "eBay"
-        },
-        {
-          "ts": "2026-07-14T12:00:00+00:00",
-          "price": 53.9,
-          "source": "REI Co-op"
-        },
         {
           "ts": "2026-07-14T12:00:00+00:00",
           "price": 63.7,
@@ -5474,6 +6009,36 @@
           "ts": "2026-07-20T17:09:37+00:00",
           "price": 61.99,
           "source": "eBay"
+        },
+        {
+          "ts": "2026-07-20T21:52:06+00:00",
+          "price": 80.63,
+          "source": "REI Co-op"
+        },
+        {
+          "ts": "2026-07-20T21:52:06+00:00",
+          "price": 69.18,
+          "source": "Backcountry"
+        },
+        {
+          "ts": "2026-07-20T21:52:06+00:00",
+          "price": 53.57,
+          "source": "Brand Official"
+        },
+        {
+          "ts": "2026-07-20T21:52:06+00:00",
+          "price": 50.04,
+          "source": "Amazon"
+        },
+        {
+          "ts": "2026-07-20T21:52:06+00:00",
+          "price": 61.99,
+          "source": "eBay"
+        },
+        {
+          "ts": "2026-07-20T21:52:06+00:00",
+          "price": 54.22,
+          "source": "REI Re/Supply (outlet)"
         }
       ]
     },
@@ -5499,9 +6064,12 @@
       "season": "auto",
       "msrp": null,
       "min_discount_pct": null,
+      "lineage": [],
+      "home_region": null,
+      "urls": [],
       "best_price": 62.63,
       "best_source": "Brand Official",
-      "offer_count": 5,
+      "offer_count": 6,
       "offers": [
         {
           "watch_id": "lasportiva_tarantulace",
@@ -5513,12 +6081,14 @@
           "size": "EU 42",
           "color": "Black",
           "condition": "new",
+          "channel": "new",
+          "region": "US",
           "availability": "in_stock",
           "seller": "Brand Official",
           "image": null,
           "list_price": 100.0,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T17:09:37+00:00",
+          "fetched_at": "2026-07-20T21:52:06+00:00",
           "id": "8be076ab9704278c"
         },
         {
@@ -5531,12 +6101,14 @@
           "size": "EU 43",
           "color": "Green",
           "condition": "used",
+          "channel": "used",
+          "region": "US",
           "availability": "in_stock",
           "seller": "eBay",
           "image": null,
           "list_price": 100.0,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T17:09:37+00:00",
+          "fetched_at": "2026-07-20T21:52:06+00:00",
           "id": "67bed151d75a4ef3"
         },
         {
@@ -5549,13 +6121,35 @@
           "size": "EU 42",
           "color": "Green",
           "condition": "new",
+          "channel": "new",
+          "region": "US",
           "availability": "in_stock",
           "seller": "Backcountry",
           "image": null,
           "list_price": 100.0,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T17:09:37+00:00",
+          "fetched_at": "2026-07-20T21:52:06+00:00",
           "id": "b2982f7dd67000fe"
+        },
+        {
+          "watch_id": "lasportiva_tarantulace",
+          "source": "REI Re/Supply (outlet)",
+          "title": "La Sportiva Tarantulace Climbing Shoes — Black, EU 43",
+          "url": "https://www.rei.com/used/lasportiva-tarantulace?v=eu-43-black",
+          "price": 75.42,
+          "currency": "USD",
+          "size": "EU 43",
+          "color": "Black",
+          "condition": "new",
+          "channel": "outlet",
+          "region": "US",
+          "availability": "in_stock",
+          "seller": "REI Re/Supply (outlet)",
+          "image": null,
+          "list_price": null,
+          "match_score": 1.0,
+          "fetched_at": "2026-07-20T21:52:06+00:00",
+          "id": "9f2a69fe3668b4f4"
         },
         {
           "watch_id": "lasportiva_tarantulace",
@@ -5567,12 +6161,14 @@
           "size": "EU 42",
           "color": "Blue",
           "condition": "new",
+          "channel": "new",
+          "region": "US",
           "availability": "in_stock",
           "seller": "REI Co-op",
           "image": null,
           "list_price": 100.0,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T17:09:37+00:00",
+          "fetched_at": "2026-07-20T21:52:06+00:00",
           "id": "d9df3e210a29b258"
         },
         {
@@ -5585,46 +6181,28 @@
           "size": "EU 43",
           "color": "Green",
           "condition": "new",
+          "channel": "new",
+          "region": "US",
           "availability": "in_stock",
           "seller": "Amazon",
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T17:09:37+00:00",
+          "fetched_at": "2026-07-20T21:52:06+00:00",
           "id": "65678f0e3ffea4a5"
         }
       ],
+      "summary": {
+        "by_channel": {
+          "new": 62.63,
+          "used": 67.88,
+          "outlet": 75.42
+        },
+        "by_region": {
+          "US": 62.63
+        }
+      },
       "history": [
-        {
-          "ts": "2026-07-13T12:00:00+00:00",
-          "price": 95.65,
-          "source": "REI Co-op"
-        },
-        {
-          "ts": "2026-07-13T12:00:00+00:00",
-          "price": 74.52,
-          "source": "Backcountry"
-        },
-        {
-          "ts": "2026-07-13T12:00:00+00:00",
-          "price": 111.61,
-          "source": "Brand Official"
-        },
-        {
-          "ts": "2026-07-13T12:00:00+00:00",
-          "price": 62.35,
-          "source": "Amazon"
-        },
-        {
-          "ts": "2026-07-13T12:00:00+00:00",
-          "price": 87.37,
-          "source": "eBay"
-        },
-        {
-          "ts": "2026-07-14T12:00:00+00:00",
-          "price": 62.81,
-          "source": "REI Co-op"
-        },
         {
           "ts": "2026-07-14T12:00:00+00:00",
           "price": 100.01,
@@ -5894,6 +6472,36 @@
           "ts": "2026-07-20T17:09:37+00:00",
           "price": 67.88,
           "source": "eBay"
+        },
+        {
+          "ts": "2026-07-20T21:52:06+00:00",
+          "price": 88.6,
+          "source": "REI Co-op"
+        },
+        {
+          "ts": "2026-07-20T21:52:06+00:00",
+          "price": 74.62,
+          "source": "Backcountry"
+        },
+        {
+          "ts": "2026-07-20T21:52:06+00:00",
+          "price": 62.63,
+          "source": "Brand Official"
+        },
+        {
+          "ts": "2026-07-20T21:52:06+00:00",
+          "price": 89.48,
+          "source": "Amazon"
+        },
+        {
+          "ts": "2026-07-20T21:52:06+00:00",
+          "price": 67.88,
+          "source": "eBay"
+        },
+        {
+          "ts": "2026-07-20T21:52:06+00:00",
+          "price": 75.42,
+          "source": "REI Re/Supply (outlet)"
         }
       ]
     },
@@ -5919,9 +6527,12 @@
       "season": "auto",
       "msrp": null,
       "min_discount_pct": null,
+      "lineage": [],
+      "home_region": null,
+      "urls": [],
       "best_price": 199.37,
       "best_source": "Amazon",
-      "offer_count": 5,
+      "offer_count": 6,
       "offers": [
         {
           "watch_id": "osprey_atmos_ag_65",
@@ -5933,13 +6544,35 @@
           "size": "65L",
           "color": "Blue",
           "condition": "new",
+          "channel": "new",
+          "region": "US",
           "availability": "in_stock",
           "seller": "Amazon",
           "image": null,
           "list_price": 293.33,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T17:09:37+00:00",
+          "fetched_at": "2026-07-20T21:52:06+00:00",
           "id": "16943d7b5270aef9"
+        },
+        {
+          "watch_id": "osprey_atmos_ag_65",
+          "source": "REI Re/Supply (outlet)",
+          "title": "Osprey Atmos AG 65 Backpack — Blue, 65L",
+          "url": "https://www.rei.com/used/osprey-atmos-ag-65?v=65l-blue",
+          "price": 216.56,
+          "currency": "USD",
+          "size": "65L",
+          "color": "Blue",
+          "condition": "new",
+          "channel": "outlet",
+          "region": "US",
+          "availability": "in_stock",
+          "seller": "REI Re/Supply (outlet)",
+          "image": null,
+          "list_price": null,
+          "match_score": 1.0,
+          "fetched_at": "2026-07-20T21:52:06+00:00",
+          "id": "4ef447013f41b86a"
         },
         {
           "watch_id": "osprey_atmos_ag_65",
@@ -5951,12 +6584,14 @@
           "size": "65L",
           "color": "Blue",
           "condition": "used",
+          "channel": "used",
+          "region": "US",
           "availability": "in_stock",
           "seller": "eBay",
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T17:09:37+00:00",
+          "fetched_at": "2026-07-20T21:52:06+00:00",
           "id": "9612cd15be3bc940"
         },
         {
@@ -5969,12 +6604,14 @@
           "size": "65L",
           "color": "Blue",
           "condition": "new",
+          "channel": "new",
+          "region": "US",
           "availability": "in_stock",
           "seller": "REI Co-op",
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T17:09:37+00:00",
+          "fetched_at": "2026-07-20T21:52:06+00:00",
           "id": "8ed9964876e9698c"
         },
         {
@@ -5987,12 +6624,14 @@
           "size": "65L",
           "color": "Black",
           "condition": "new",
+          "channel": "new",
+          "region": "US",
           "availability": "in_stock",
           "seller": "Backcountry",
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T17:09:37+00:00",
+          "fetched_at": "2026-07-20T21:52:06+00:00",
           "id": "94adff0e08a92733"
         },
         {
@@ -6005,46 +6644,28 @@
           "size": "65L",
           "color": "Green",
           "condition": "new",
+          "channel": "new",
+          "region": "US",
           "availability": "in_stock",
           "seller": "Brand Official",
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T17:09:37+00:00",
+          "fetched_at": "2026-07-20T21:52:06+00:00",
           "id": "e07024f517605651"
         }
       ],
+      "summary": {
+        "by_channel": {
+          "new": 199.37,
+          "outlet": 216.56,
+          "used": 245.49
+        },
+        "by_region": {
+          "US": 199.37
+        }
+      },
       "history": [
-        {
-          "ts": "2026-07-13T12:00:00+00:00",
-          "price": 284.11,
-          "source": "REI Co-op"
-        },
-        {
-          "ts": "2026-07-13T12:00:00+00:00",
-          "price": 269.56,
-          "source": "Backcountry"
-        },
-        {
-          "ts": "2026-07-13T12:00:00+00:00",
-          "price": 331.41,
-          "source": "Brand Official"
-        },
-        {
-          "ts": "2026-07-13T12:00:00+00:00",
-          "price": 285.73,
-          "source": "Amazon"
-        },
-        {
-          "ts": "2026-07-13T12:00:00+00:00",
-          "price": 258.58,
-          "source": "eBay"
-        },
-        {
-          "ts": "2026-07-14T12:00:00+00:00",
-          "price": 260.87,
-          "source": "REI Co-op"
-        },
         {
           "ts": "2026-07-14T12:00:00+00:00",
           "price": 309.3,
@@ -6314,6 +6935,36 @@
           "ts": "2026-07-20T17:09:37+00:00",
           "price": 245.49,
           "source": "eBay"
+        },
+        {
+          "ts": "2026-07-20T21:52:06+00:00",
+          "price": 266.92,
+          "source": "REI Co-op"
+        },
+        {
+          "ts": "2026-07-20T21:52:06+00:00",
+          "price": 284.3,
+          "source": "Backcountry"
+        },
+        {
+          "ts": "2026-07-20T21:52:06+00:00",
+          "price": 305.09,
+          "source": "Brand Official"
+        },
+        {
+          "ts": "2026-07-20T21:52:06+00:00",
+          "price": 199.37,
+          "source": "Amazon"
+        },
+        {
+          "ts": "2026-07-20T21:52:06+00:00",
+          "price": 245.49,
+          "source": "eBay"
+        },
+        {
+          "ts": "2026-07-20T21:52:06+00:00",
+          "price": 216.56,
+          "source": "REI Re/Supply (outlet)"
         }
       ]
     },
@@ -6338,9 +6989,12 @@
       "season": "auto",
       "msrp": null,
       "min_discount_pct": null,
+      "lineage": [],
+      "home_region": null,
+      "urls": [],
       "best_price": 229.32,
       "best_source": "REI Co-op",
-      "offer_count": 5,
+      "offer_count": 6,
       "offers": [
         {
           "watch_id": "gregory_baltoro_65",
@@ -6352,12 +7006,14 @@
           "size": "65L",
           "color": "Black",
           "condition": "new",
+          "channel": "new",
+          "region": "US",
           "availability": "in_stock",
           "seller": "REI Co-op",
           "image": null,
           "list_price": 333.33,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T17:09:37+00:00",
+          "fetched_at": "2026-07-20T21:52:06+00:00",
           "id": "b4b903b29b62fd21"
         },
         {
@@ -6370,13 +7026,35 @@
           "size": "65L",
           "color": "Blue",
           "condition": "new",
+          "channel": "new",
+          "region": "US",
           "availability": "in_stock",
           "seller": "Amazon",
           "image": null,
           "list_price": 333.33,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T17:09:37+00:00",
+          "fetched_at": "2026-07-20T21:52:06+00:00",
           "id": "0d5697530899d8fb"
+        },
+        {
+          "watch_id": "gregory_baltoro_65",
+          "source": "REI Re/Supply (outlet)",
+          "title": "Gregory Baltoro 65 Backpack — Black, 65L",
+          "url": "https://www.rei.com/used/gregory-baltoro-65?v=65l-black",
+          "price": 235.91,
+          "currency": "USD",
+          "size": "65L",
+          "color": "Black",
+          "condition": "new",
+          "channel": "outlet",
+          "region": "US",
+          "availability": "in_stock",
+          "seller": "REI Re/Supply (outlet)",
+          "image": null,
+          "list_price": null,
+          "match_score": 1.0,
+          "fetched_at": "2026-07-20T21:52:06+00:00",
+          "id": "1349c98a17c93147"
         },
         {
           "watch_id": "gregory_baltoro_65",
@@ -6388,12 +7066,14 @@
           "size": "65L",
           "color": "Black",
           "condition": "used",
+          "channel": "used",
+          "region": "US",
           "availability": "in_stock",
           "seller": "eBay",
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T17:09:37+00:00",
+          "fetched_at": "2026-07-20T21:52:06+00:00",
           "id": "6d958ca76ff27390"
         },
         {
@@ -6406,12 +7086,14 @@
           "size": "65L",
           "color": "Green",
           "condition": "new",
+          "channel": "new",
+          "region": "US",
           "availability": "in_stock",
           "seller": "Backcountry",
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T17:09:37+00:00",
+          "fetched_at": "2026-07-20T21:52:06+00:00",
           "id": "8eb1ed4130b80a8f"
         },
         {
@@ -6424,46 +7106,28 @@
           "size": "65L",
           "color": "Green",
           "condition": "new",
+          "channel": "new",
+          "region": "US",
           "availability": "in_stock",
           "seller": "Brand Official",
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T17:09:37+00:00",
+          "fetched_at": "2026-07-20T21:52:06+00:00",
           "id": "ac576f85b2dc32a9"
         }
       ],
+      "summary": {
+        "by_channel": {
+          "new": 229.32,
+          "outlet": 235.91,
+          "used": 275.15
+        },
+        "by_region": {
+          "US": 229.32
+        }
+      },
       "history": [
-        {
-          "ts": "2026-07-13T12:00:00+00:00",
-          "price": 338.02,
-          "source": "REI Co-op"
-        },
-        {
-          "ts": "2026-07-13T12:00:00+00:00",
-          "price": 294.77,
-          "source": "Backcountry"
-        },
-        {
-          "ts": "2026-07-13T12:00:00+00:00",
-          "price": 270.58,
-          "source": "Brand Official"
-        },
-        {
-          "ts": "2026-07-13T12:00:00+00:00",
-          "price": 210.11,
-          "source": "Amazon"
-        },
-        {
-          "ts": "2026-07-13T12:00:00+00:00",
-          "price": 213.76,
-          "source": "eBay"
-        },
-        {
-          "ts": "2026-07-14T12:00:00+00:00",
-          "price": 193.88,
-          "source": "REI Co-op"
-        },
         {
           "ts": "2026-07-14T12:00:00+00:00",
           "price": 305.4,
@@ -6733,6 +7397,36 @@
           "ts": "2026-07-20T17:09:37+00:00",
           "price": 275.15,
           "source": "eBay"
+        },
+        {
+          "ts": "2026-07-20T21:52:06+00:00",
+          "price": 229.32,
+          "source": "REI Co-op"
+        },
+        {
+          "ts": "2026-07-20T21:52:06+00:00",
+          "price": 313.76,
+          "source": "Backcountry"
+        },
+        {
+          "ts": "2026-07-20T21:52:06+00:00",
+          "price": 321.68,
+          "source": "Brand Official"
+        },
+        {
+          "ts": "2026-07-20T21:52:06+00:00",
+          "price": 232.15,
+          "source": "Amazon"
+        },
+        {
+          "ts": "2026-07-20T21:52:06+00:00",
+          "price": 275.15,
+          "source": "eBay"
+        },
+        {
+          "ts": "2026-07-20T21:52:06+00:00",
+          "price": 235.91,
+          "source": "REI Re/Supply (outlet)"
         }
       ]
     },
@@ -6760,10 +7454,33 @@
       "season": "auto",
       "msrp": null,
       "min_discount_pct": null,
-      "best_price": 106.18,
-      "best_source": "Amazon",
-      "offer_count": 5,
+      "lineage": [],
+      "home_region": null,
+      "urls": [],
+      "best_price": 77.67,
+      "best_source": "REI Re/Supply (outlet)",
+      "offer_count": 6,
       "offers": [
+        {
+          "watch_id": "salomon_x_ultra_4_gtx",
+          "source": "REI Re/Supply (outlet)",
+          "title": "Salomon X Ultra 4 GTX Hiking Shoes — Green, US 10",
+          "url": "https://www.rei.com/used/salomon-x-ultra-4-gtx?v=us-10-green",
+          "price": 77.67,
+          "currency": "USD",
+          "size": "US 10",
+          "color": "Green",
+          "condition": "new",
+          "channel": "outlet",
+          "region": "US",
+          "availability": "in_stock",
+          "seller": "REI Re/Supply (outlet)",
+          "image": null,
+          "list_price": 146.67,
+          "match_score": 1.0,
+          "fetched_at": "2026-07-20T21:52:06+00:00",
+          "id": "e06fc1c5fe765ee3"
+        },
         {
           "watch_id": "salomon_x_ultra_4_gtx",
           "source": "Amazon",
@@ -6774,12 +7491,14 @@
           "size": "US 10",
           "color": "Black",
           "condition": "new",
+          "channel": "new",
+          "region": "US",
           "availability": "in_stock",
           "seller": "Amazon",
           "image": null,
           "list_price": 146.67,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T17:09:37+00:00",
+          "fetched_at": "2026-07-20T21:52:06+00:00",
           "id": "38548cec59ac648a"
         },
         {
@@ -6792,12 +7511,14 @@
           "size": "US 10",
           "color": "Blue",
           "condition": "new",
+          "channel": "new",
+          "region": "US",
           "availability": "in_stock",
           "seller": "REI Co-op",
           "image": null,
           "list_price": 146.67,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T17:09:37+00:00",
+          "fetched_at": "2026-07-20T21:52:06+00:00",
           "id": "be1a59f6a98d21f1"
         },
         {
@@ -6810,12 +7531,14 @@
           "size": "US 10",
           "color": "Blue",
           "condition": "used",
+          "channel": "used",
+          "region": "US",
           "availability": "in_stock",
           "seller": "eBay",
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T17:09:37+00:00",
+          "fetched_at": "2026-07-20T21:52:06+00:00",
           "id": "d7a063b3c0b6b403"
         },
         {
@@ -6828,12 +7551,14 @@
           "size": "US 10.5",
           "color": "Black",
           "condition": "new",
+          "channel": "new",
+          "region": "US",
           "availability": "in_stock",
           "seller": "Brand Official",
           "image": null,
           "list_price": 146.67,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T17:09:37+00:00",
+          "fetched_at": "2026-07-20T21:52:06+00:00",
           "id": "5bef14c5481d1025"
         },
         {
@@ -6846,46 +7571,28 @@
           "size": "US 10",
           "color": "Black",
           "condition": "new",
+          "channel": "new",
+          "region": "US",
           "availability": "in_stock",
           "seller": "Backcountry",
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T17:09:37+00:00",
+          "fetched_at": "2026-07-20T21:52:06+00:00",
           "id": "56da4cf3985f5ddd"
         }
       ],
+      "summary": {
+        "by_channel": {
+          "outlet": 77.67,
+          "new": 106.18,
+          "used": 124.77
+        },
+        "by_region": {
+          "US": 77.67
+        }
+      },
       "history": [
-        {
-          "ts": "2026-07-13T12:00:00+00:00",
-          "price": 141.39,
-          "source": "REI Co-op"
-        },
-        {
-          "ts": "2026-07-13T12:00:00+00:00",
-          "price": 101.26,
-          "source": "Backcountry"
-        },
-        {
-          "ts": "2026-07-13T12:00:00+00:00",
-          "price": 121.73,
-          "source": "Brand Official"
-        },
-        {
-          "ts": "2026-07-13T12:00:00+00:00",
-          "price": 109.92,
-          "source": "Amazon"
-        },
-        {
-          "ts": "2026-07-13T12:00:00+00:00",
-          "price": 96.72,
-          "source": "eBay"
-        },
-        {
-          "ts": "2026-07-14T12:00:00+00:00",
-          "price": 153.28,
-          "source": "REI Co-op"
-        },
         {
           "ts": "2026-07-14T12:00:00+00:00",
           "price": 132.08,
@@ -7155,6 +7862,36 @@
           "ts": "2026-07-20T17:09:37+00:00",
           "price": 124.77,
           "source": "eBay"
+        },
+        {
+          "ts": "2026-07-20T21:52:06+00:00",
+          "price": 114.91,
+          "source": "REI Co-op"
+        },
+        {
+          "ts": "2026-07-20T21:52:06+00:00",
+          "price": 148.53,
+          "source": "Backcountry"
+        },
+        {
+          "ts": "2026-07-20T21:52:06+00:00",
+          "price": 133.2,
+          "source": "Brand Official"
+        },
+        {
+          "ts": "2026-07-20T21:52:06+00:00",
+          "price": 106.18,
+          "source": "Amazon"
+        },
+        {
+          "ts": "2026-07-20T21:52:06+00:00",
+          "price": 124.77,
+          "source": "eBay"
+        },
+        {
+          "ts": "2026-07-20T21:52:06+00:00",
+          "price": 77.67,
+          "source": "REI Re/Supply (outlet)"
         }
       ]
     },
@@ -7181,9 +7918,12 @@
       "season": "auto",
       "msrp": null,
       "min_discount_pct": null,
+      "lineage": [],
+      "home_region": null,
+      "urls": [],
       "best_price": 177.74,
       "best_source": "Backcountry",
-      "offer_count": 5,
+      "offer_count": 6,
       "offers": [
         {
           "watch_id": "lowa_renegade_gtx_mid",
@@ -7195,13 +7935,35 @@
           "size": "US 10",
           "color": "Black",
           "condition": "new",
+          "channel": "new",
+          "region": "US",
           "availability": "in_stock",
           "seller": "Backcountry",
           "image": null,
           "list_price": 266.67,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T17:09:37+00:00",
+          "fetched_at": "2026-07-20T21:52:06+00:00",
           "id": "018515e6bc5dd018"
+        },
+        {
+          "watch_id": "lowa_renegade_gtx_mid",
+          "source": "REI Re/Supply (outlet)",
+          "title": "Lowa Renegade GTX Mid Boots — Green, US 11",
+          "url": "https://www.rei.com/used/lowa-renegade-gtx-mid?v=us-11-green",
+          "price": 182.34,
+          "currency": "USD",
+          "size": "US 11",
+          "color": "Green",
+          "condition": "new",
+          "channel": "outlet",
+          "region": "US",
+          "availability": "in_stock",
+          "seller": "REI Re/Supply (outlet)",
+          "image": null,
+          "list_price": null,
+          "match_score": 1.0,
+          "fetched_at": "2026-07-20T21:52:06+00:00",
+          "id": "ad5363cb2a646ac6"
         },
         {
           "watch_id": "lowa_renegade_gtx_mid",
@@ -7213,12 +7975,14 @@
           "size": "US 10",
           "color": "Black",
           "condition": "new",
+          "channel": "new",
+          "region": "US",
           "availability": "in_stock",
           "seller": "REI Co-op",
           "image": null,
           "list_price": 266.67,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T17:09:37+00:00",
+          "fetched_at": "2026-07-20T21:52:06+00:00",
           "id": "57b8f4c27932ac5d"
         },
         {
@@ -7231,12 +7995,14 @@
           "size": "US 11",
           "color": "Green",
           "condition": "used",
+          "channel": "used",
+          "region": "US",
           "availability": "in_stock",
           "seller": "eBay",
           "image": null,
           "list_price": 266.67,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T17:09:37+00:00",
+          "fetched_at": "2026-07-20T21:52:06+00:00",
           "id": "ebcb30f74117e050"
         },
         {
@@ -7249,12 +8015,14 @@
           "size": "US 10",
           "color": "Black",
           "condition": "new",
+          "channel": "new",
+          "region": "US",
           "availability": "in_stock",
           "seller": "Brand Official",
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T17:09:37+00:00",
+          "fetched_at": "2026-07-20T21:52:06+00:00",
           "id": "76220041560b5eb1"
         },
         {
@@ -7267,46 +8035,28 @@
           "size": "US 11",
           "color": "Blue",
           "condition": "new",
+          "channel": "new",
+          "region": "US",
           "availability": "in_stock",
           "seller": "Amazon",
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T17:09:37+00:00",
+          "fetched_at": "2026-07-20T21:52:06+00:00",
           "id": "1c6eff6582494efd"
         }
       ],
+      "summary": {
+        "by_channel": {
+          "new": 177.74,
+          "outlet": 182.34,
+          "used": 211.31
+        },
+        "by_region": {
+          "US": 177.74
+        }
+      },
       "history": [
-        {
-          "ts": "2026-07-13T12:00:00+00:00",
-          "price": 195.2,
-          "source": "REI Co-op"
-        },
-        {
-          "ts": "2026-07-13T12:00:00+00:00",
-          "price": 198.68,
-          "source": "Backcountry"
-        },
-        {
-          "ts": "2026-07-13T12:00:00+00:00",
-          "price": 226.83,
-          "source": "Brand Official"
-        },
-        {
-          "ts": "2026-07-13T12:00:00+00:00",
-          "price": 253.1,
-          "source": "Amazon"
-        },
-        {
-          "ts": "2026-07-13T12:00:00+00:00",
-          "price": 184.45,
-          "source": "eBay"
-        },
-        {
-          "ts": "2026-07-14T12:00:00+00:00",
-          "price": 210.57,
-          "source": "REI Co-op"
-        },
         {
           "ts": "2026-07-14T12:00:00+00:00",
           "price": 172.1,
@@ -7576,6 +8326,36 @@
           "ts": "2026-07-20T17:09:37+00:00",
           "price": 211.31,
           "source": "eBay"
+        },
+        {
+          "ts": "2026-07-20T21:52:06+00:00",
+          "price": 203.89,
+          "source": "REI Co-op"
+        },
+        {
+          "ts": "2026-07-20T21:52:06+00:00",
+          "price": 177.74,
+          "source": "Backcountry"
+        },
+        {
+          "ts": "2026-07-20T21:52:06+00:00",
+          "price": 254.71,
+          "source": "Brand Official"
+        },
+        {
+          "ts": "2026-07-20T21:52:06+00:00",
+          "price": 268.45,
+          "source": "Amazon"
+        },
+        {
+          "ts": "2026-07-20T21:52:06+00:00",
+          "price": 211.31,
+          "source": "eBay"
+        },
+        {
+          "ts": "2026-07-20T21:52:06+00:00",
+          "price": 182.34,
+          "source": "REI Re/Supply (outlet)"
         }
       ]
     },
@@ -7602,10 +8382,33 @@
       "season": "auto",
       "msrp": null,
       "min_discount_pct": null,
-      "best_price": 299.72,
-      "best_source": "Amazon",
-      "offer_count": 5,
+      "lineage": [],
+      "home_region": null,
+      "urls": [],
+      "best_price": 239.96,
+      "best_source": "REI Re/Supply (outlet)",
+      "offer_count": 6,
       "offers": [
+        {
+          "watch_id": "scarpa_zodiac_tech_gtx",
+          "source": "REI Re/Supply (outlet)",
+          "title": "Scarpa Zodiac Tech GTX Mountaineering Boots — Blue, EU 43",
+          "url": "https://www.rei.com/used/scarpa-zodiac-tech-gtx?v=eu-43-blue",
+          "price": 239.96,
+          "currency": "USD",
+          "size": "EU 43",
+          "color": "Blue",
+          "condition": "new",
+          "channel": "outlet",
+          "region": "US",
+          "availability": "in_stock",
+          "seller": "REI Re/Supply (outlet)",
+          "image": null,
+          "list_price": 453.33,
+          "match_score": 1.0,
+          "fetched_at": "2026-07-20T21:52:06+00:00",
+          "id": "0da80823add09178"
+        },
         {
           "watch_id": "scarpa_zodiac_tech_gtx",
           "source": "Amazon",
@@ -7616,12 +8419,14 @@
           "size": "EU 43",
           "color": "Blue",
           "condition": "new",
+          "channel": "new",
+          "region": "US",
           "availability": "in_stock",
           "seller": "Amazon",
           "image": null,
           "list_price": 453.33,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T17:09:37+00:00",
+          "fetched_at": "2026-07-20T21:52:06+00:00",
           "id": "b772d040b5b40d86"
         },
         {
@@ -7634,12 +8439,14 @@
           "size": "EU 43",
           "color": "Black",
           "condition": "new",
+          "channel": "new",
+          "region": "US",
           "availability": "in_stock",
           "seller": "REI Co-op",
           "image": null,
           "list_price": 453.33,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T17:09:37+00:00",
+          "fetched_at": "2026-07-20T21:52:06+00:00",
           "id": "dc54a15ada3af14f"
         },
         {
@@ -7652,12 +8459,14 @@
           "size": "EU 44",
           "color": "Blue",
           "condition": "used",
+          "channel": "used",
+          "region": "US",
           "availability": "in_stock",
           "seller": "eBay",
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T17:09:37+00:00",
+          "fetched_at": "2026-07-20T21:52:06+00:00",
           "id": "a2378acdef87a692"
         },
         {
@@ -7670,12 +8479,14 @@
           "size": "EU 43",
           "color": "Blue",
           "condition": "new",
+          "channel": "new",
+          "region": "US",
           "availability": "in_stock",
           "seller": "Backcountry",
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T17:09:37+00:00",
+          "fetched_at": "2026-07-20T21:52:06+00:00",
           "id": "629ad697c04670df"
         },
         {
@@ -7688,46 +8499,28 @@
           "size": "EU 43",
           "color": "Blue",
           "condition": "new",
+          "channel": "new",
+          "region": "US",
           "availability": "in_stock",
           "seller": "Brand Official",
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T17:09:37+00:00",
+          "fetched_at": "2026-07-20T21:52:06+00:00",
           "id": "8f27a70707057333"
         }
       ],
+      "summary": {
+        "by_channel": {
+          "outlet": 239.96,
+          "new": 299.72,
+          "used": 389.18
+        },
+        "by_region": {
+          "US": 239.96
+        }
+      },
       "history": [
-        {
-          "ts": "2026-07-13T12:00:00+00:00",
-          "price": 459.24,
-          "source": "REI Co-op"
-        },
-        {
-          "ts": "2026-07-13T12:00:00+00:00",
-          "price": 374.69,
-          "source": "Backcountry"
-        },
-        {
-          "ts": "2026-07-13T12:00:00+00:00",
-          "price": 486.82,
-          "source": "Brand Official"
-        },
-        {
-          "ts": "2026-07-13T12:00:00+00:00",
-          "price": 456.73,
-          "source": "Amazon"
-        },
-        {
-          "ts": "2026-07-13T12:00:00+00:00",
-          "price": 299.02,
-          "source": "eBay"
-        },
-        {
-          "ts": "2026-07-14T12:00:00+00:00",
-          "price": 474.19,
-          "source": "REI Co-op"
-        },
         {
           "ts": "2026-07-14T12:00:00+00:00",
           "price": 270.52,
@@ -7997,6 +8790,36 @@
           "ts": "2026-07-20T17:09:37+00:00",
           "price": 389.18,
           "source": "eBay"
+        },
+        {
+          "ts": "2026-07-20T21:52:06+00:00",
+          "price": 308.69,
+          "source": "REI Co-op"
+        },
+        {
+          "ts": "2026-07-20T21:52:06+00:00",
+          "price": 424.01,
+          "source": "Backcountry"
+        },
+        {
+          "ts": "2026-07-20T21:52:06+00:00",
+          "price": 499.78,
+          "source": "Brand Official"
+        },
+        {
+          "ts": "2026-07-20T21:52:06+00:00",
+          "price": 299.72,
+          "source": "Amazon"
+        },
+        {
+          "ts": "2026-07-20T21:52:06+00:00",
+          "price": 389.18,
+          "source": "eBay"
+        },
+        {
+          "ts": "2026-07-20T21:52:06+00:00",
+          "price": 239.96,
+          "source": "REI Re/Supply (outlet)"
         }
       ]
     },
@@ -8022,10 +8845,33 @@
       "season": "auto",
       "msrp": null,
       "min_discount_pct": null,
-      "best_price": 155.33,
-      "best_source": "Amazon",
-      "offer_count": 5,
+      "lineage": [],
+      "home_region": null,
+      "urls": [],
+      "best_price": 151.96,
+      "best_source": "REI Re/Supply (outlet)",
+      "offer_count": 6,
       "offers": [
+        {
+          "watch_id": "exped_megamat_10",
+          "source": "REI Re/Supply (outlet)",
+          "title": "Exped MegaMat 10 Sleeping Pad — Green, LW",
+          "url": "https://www.rei.com/used/exped-megamat-10?v=lw-green",
+          "price": 151.96,
+          "currency": "USD",
+          "size": "LW",
+          "color": "Green",
+          "condition": "new",
+          "channel": "outlet",
+          "region": "US",
+          "availability": "in_stock",
+          "seller": "REI Re/Supply (outlet)",
+          "image": null,
+          "list_price": 266.67,
+          "match_score": 1.0,
+          "fetched_at": "2026-07-20T21:52:06+00:00",
+          "id": "03818a79542c2dbb"
+        },
         {
           "watch_id": "exped_megamat_10",
           "source": "Amazon",
@@ -8036,12 +8882,14 @@
           "size": "LW",
           "color": "Black",
           "condition": "new",
+          "channel": "new",
+          "region": "US",
           "availability": "in_stock",
           "seller": "Amazon",
           "image": null,
           "list_price": 266.67,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T17:09:37+00:00",
+          "fetched_at": "2026-07-20T21:52:06+00:00",
           "id": "447bdaafb42ebebf"
         },
         {
@@ -8054,12 +8902,14 @@
           "size": "LW",
           "color": "Green",
           "condition": "used",
+          "channel": "used",
+          "region": "US",
           "availability": "in_stock",
           "seller": "eBay",
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T17:09:37+00:00",
+          "fetched_at": "2026-07-20T21:52:06+00:00",
           "id": "3b0da4cdf05dde31"
         },
         {
@@ -8072,12 +8922,14 @@
           "size": "LW",
           "color": "Green",
           "condition": "new",
+          "channel": "new",
+          "region": "US",
           "availability": "in_stock",
           "seller": "Backcountry",
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T17:09:37+00:00",
+          "fetched_at": "2026-07-20T21:52:06+00:00",
           "id": "77ff88e067bfb851"
         },
         {
@@ -8090,12 +8942,14 @@
           "size": "LW",
           "color": "Green",
           "condition": "new",
+          "channel": "new",
+          "region": "US",
           "availability": "in_stock",
           "seller": "Brand Official",
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T17:09:37+00:00",
+          "fetched_at": "2026-07-20T21:52:06+00:00",
           "id": "e6b3283ad8744231"
         },
         {
@@ -8108,46 +8962,28 @@
           "size": "LW",
           "color": "Blue",
           "condition": "new",
+          "channel": "new",
+          "region": "US",
           "availability": "in_stock",
           "seller": "REI Co-op",
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-20T17:09:37+00:00",
+          "fetched_at": "2026-07-20T21:52:06+00:00",
           "id": "6d36082169c9294b"
         }
       ],
+      "summary": {
+        "by_channel": {
+          "outlet": 151.96,
+          "new": 155.33,
+          "used": 230.02
+        },
+        "by_region": {
+          "US": 151.96
+        }
+      },
       "history": [
-        {
-          "ts": "2026-07-13T12:00:00+00:00",
-          "price": 291.77,
-          "source": "REI Co-op"
-        },
-        {
-          "ts": "2026-07-13T12:00:00+00:00",
-          "price": 281.35,
-          "source": "Backcountry"
-        },
-        {
-          "ts": "2026-07-13T12:00:00+00:00",
-          "price": 282.19,
-          "source": "Brand Official"
-        },
-        {
-          "ts": "2026-07-13T12:00:00+00:00",
-          "price": 253.55,
-          "source": "Amazon"
-        },
-        {
-          "ts": "2026-07-13T12:00:00+00:00",
-          "price": 165.38,
-          "source": "eBay"
-        },
-        {
-          "ts": "2026-07-14T12:00:00+00:00",
-          "price": 250.45,
-          "source": "REI Co-op"
-        },
         {
           "ts": "2026-07-14T12:00:00+00:00",
           "price": 267.39,
@@ -8417,6 +9253,424 @@
           "ts": "2026-07-20T17:09:37+00:00",
           "price": 230.02,
           "source": "eBay"
+        },
+        {
+          "ts": "2026-07-20T21:52:06+00:00",
+          "price": 279.79,
+          "source": "REI Co-op"
+        },
+        {
+          "ts": "2026-07-20T21:52:06+00:00",
+          "price": 248.43,
+          "source": "Backcountry"
+        },
+        {
+          "ts": "2026-07-20T21:52:06+00:00",
+          "price": 266.96,
+          "source": "Brand Official"
+        },
+        {
+          "ts": "2026-07-20T21:52:06+00:00",
+          "price": 155.33,
+          "source": "Amazon"
+        },
+        {
+          "ts": "2026-07-20T21:52:06+00:00",
+          "price": 230.02,
+          "source": "eBay"
+        },
+        {
+          "ts": "2026-07-20T21:52:06+00:00",
+          "price": 151.96,
+          "source": "REI Re/Supply (outlet)"
+        }
+      ]
+    },
+    {
+      "id": "peak_performance_helium_down",
+      "brand": "Peak Performance",
+      "name": "Helium Down Hood Jacket",
+      "category": "Down Jacket",
+      "sizes": [
+        "M",
+        "L"
+      ],
+      "colors": [],
+      "target_price": 240.0,
+      "currency": "USD",
+      "keywords": [
+        "down",
+        "hood"
+      ],
+      "upc": null,
+      "mpn": null,
+      "image": null,
+      "active": true,
+      "season": "auto",
+      "msrp": null,
+      "min_discount_pct": null,
+      "lineage": [],
+      "home_region": "EU",
+      "urls": [],
+      "best_price": 202.12,
+      "best_source": "REI Re/Supply (outlet)",
+      "offer_count": 6,
+      "offers": [
+        {
+          "watch_id": "peak_performance_helium_down",
+          "source": "REI Re/Supply (outlet)",
+          "title": "Peak Performance Helium Down Hood Jacket — Black, M",
+          "url": "https://www.rei.com/used/peak-performance-helium-down?v=m-black",
+          "price": 202.12,
+          "currency": "USD",
+          "size": "M",
+          "color": "Black",
+          "condition": "new",
+          "channel": "outlet",
+          "region": "US",
+          "availability": "in_stock",
+          "seller": "REI Re/Supply (outlet)",
+          "image": null,
+          "list_price": 320.0,
+          "match_score": 1.0,
+          "fetched_at": "2026-07-20T21:52:06+00:00",
+          "id": "9eda76cc343621a4"
+        },
+        {
+          "watch_id": "peak_performance_helium_down",
+          "source": "Brand Official",
+          "title": "Peak Performance Helium Down Hood Jacket — Black, L",
+          "url": "https://example-brand.com/shop/peak-performance-helium-down?v=l-black",
+          "price": 214.43,
+          "currency": "USD",
+          "size": "L",
+          "color": "Black",
+          "condition": "new",
+          "channel": "new",
+          "region": "US",
+          "availability": "in_stock",
+          "seller": "Brand Official",
+          "image": null,
+          "list_price": 320.0,
+          "match_score": 1.0,
+          "fetched_at": "2026-07-20T21:52:06+00:00",
+          "id": "76cb75dc036c3829"
+        },
+        {
+          "watch_id": "peak_performance_helium_down",
+          "source": "Backcountry",
+          "title": "Peak Performance Helium Down Hood Jacket — Black, L",
+          "url": "https://www.backcountry.com/peak-performance-helium-down?v=l-black",
+          "price": 236.84,
+          "currency": "USD",
+          "size": "L",
+          "color": "Black",
+          "condition": "new",
+          "channel": "new",
+          "region": "US",
+          "availability": "in_stock",
+          "seller": "Backcountry",
+          "image": null,
+          "list_price": 320.0,
+          "match_score": 1.0,
+          "fetched_at": "2026-07-20T21:52:06+00:00",
+          "id": "ab23b15069f07d76"
+        },
+        {
+          "watch_id": "peak_performance_helium_down",
+          "source": "eBay",
+          "title": "Peak Performance Helium Down Hood Jacket — Black, M",
+          "url": "https://www.ebay.com/itm/peak-performance-helium-down?v=m-black",
+          "price": 257.09,
+          "currency": "USD",
+          "size": "M",
+          "color": "Black",
+          "condition": "used",
+          "channel": "used",
+          "region": "US",
+          "availability": "in_stock",
+          "seller": "eBay",
+          "image": null,
+          "list_price": null,
+          "match_score": 1.0,
+          "fetched_at": "2026-07-20T21:52:06+00:00",
+          "id": "a45e33f5e3d2fdeb"
+        },
+        {
+          "watch_id": "peak_performance_helium_down",
+          "source": "REI Co-op",
+          "title": "Peak Performance Helium Down Hood Jacket — Blue, L",
+          "url": "https://www.rei.com/product/peak-performance-helium-down?v=l-blue",
+          "price": 302.81,
+          "currency": "USD",
+          "size": "L",
+          "color": "Blue",
+          "condition": "new",
+          "channel": "new",
+          "region": "US",
+          "availability": "in_stock",
+          "seller": "REI Co-op",
+          "image": null,
+          "list_price": null,
+          "match_score": 1.0,
+          "fetched_at": "2026-07-20T21:52:06+00:00",
+          "id": "a1fa64b9947744d3"
+        },
+        {
+          "watch_id": "peak_performance_helium_down",
+          "source": "Amazon",
+          "title": "Peak Performance Helium Down Hood Jacket — Green, L",
+          "url": "https://www.amazon.com/dp/peak-performance-helium-down?v=l-green",
+          "price": 318.66,
+          "currency": "USD",
+          "size": "L",
+          "color": "Green",
+          "condition": "new",
+          "channel": "new",
+          "region": "US",
+          "availability": "in_stock",
+          "seller": "Amazon",
+          "image": null,
+          "list_price": null,
+          "match_score": 1.0,
+          "fetched_at": "2026-07-20T21:52:06+00:00",
+          "id": "9175634b968d8e18"
+        }
+      ],
+      "summary": {
+        "by_channel": {
+          "outlet": 202.12,
+          "new": 214.43,
+          "used": 257.09
+        },
+        "by_region": {
+          "US": 202.12
+        }
+      },
+      "history": [
+        {
+          "ts": "2026-07-20T21:52:06+00:00",
+          "price": 302.81,
+          "source": "REI Co-op"
+        },
+        {
+          "ts": "2026-07-20T21:52:06+00:00",
+          "price": 236.84,
+          "source": "Backcountry"
+        },
+        {
+          "ts": "2026-07-20T21:52:06+00:00",
+          "price": 214.43,
+          "source": "Brand Official"
+        },
+        {
+          "ts": "2026-07-20T21:52:06+00:00",
+          "price": 318.66,
+          "source": "Amazon"
+        },
+        {
+          "ts": "2026-07-20T21:52:06+00:00",
+          "price": 257.09,
+          "source": "eBay"
+        },
+        {
+          "ts": "2026-07-20T21:52:06+00:00",
+          "price": 202.12,
+          "source": "REI Re/Supply (outlet)"
+        }
+      ]
+    },
+    {
+      "id": "helly_hansen_verglas_down",
+      "brand": "Helly Hansen",
+      "name": "Verglas Icefall Down Jacket",
+      "category": "Down Jacket",
+      "sizes": [
+        "M",
+        "L"
+      ],
+      "colors": [],
+      "target_price": 260.0,
+      "currency": "USD",
+      "keywords": [
+        "down",
+        "insulated"
+      ],
+      "upc": null,
+      "mpn": null,
+      "image": null,
+      "active": true,
+      "season": "auto",
+      "msrp": null,
+      "min_discount_pct": null,
+      "lineage": [],
+      "home_region": "EU",
+      "urls": [],
+      "best_price": 214.27,
+      "best_source": "eBay",
+      "offer_count": 6,
+      "offers": [
+        {
+          "watch_id": "helly_hansen_verglas_down",
+          "source": "eBay",
+          "title": "Helly Hansen Verglas Icefall Down Jacket — Green, L",
+          "url": "https://www.ebay.com/itm/helly-hansen-verglas-down?v=l-green",
+          "price": 214.27,
+          "currency": "USD",
+          "size": "L",
+          "color": "Green",
+          "condition": "used",
+          "channel": "used",
+          "region": "US",
+          "availability": "in_stock",
+          "seller": "eBay",
+          "image": null,
+          "list_price": 346.67,
+          "match_score": 1.0,
+          "fetched_at": "2026-07-20T21:52:06+00:00",
+          "id": "fe89b879b75c5711"
+        },
+        {
+          "watch_id": "helly_hansen_verglas_down",
+          "source": "REI Re/Supply (outlet)",
+          "title": "Helly Hansen Verglas Icefall Down Jacket — Blue, L",
+          "url": "https://www.rei.com/used/helly-hansen-verglas-down?v=l-blue",
+          "price": 229.08,
+          "currency": "USD",
+          "size": "L",
+          "color": "Blue",
+          "condition": "new",
+          "channel": "outlet",
+          "region": "US",
+          "availability": "in_stock",
+          "seller": "REI Re/Supply (outlet)",
+          "image": null,
+          "list_price": null,
+          "match_score": 1.0,
+          "fetched_at": "2026-07-20T21:52:06+00:00",
+          "id": "ba280f64c7c2d5bc"
+        },
+        {
+          "watch_id": "helly_hansen_verglas_down",
+          "source": "Backcountry",
+          "title": "Helly Hansen Verglas Icefall Down Jacket — Black, L",
+          "url": "https://www.backcountry.com/helly-hansen-verglas-down?v=l-black",
+          "price": 257.4,
+          "currency": "USD",
+          "size": "L",
+          "color": "Black",
+          "condition": "new",
+          "channel": "new",
+          "region": "US",
+          "availability": "in_stock",
+          "seller": "Backcountry",
+          "image": null,
+          "list_price": 346.67,
+          "match_score": 1.0,
+          "fetched_at": "2026-07-20T21:52:06+00:00",
+          "id": "1fbb9e73fa34d288"
+        },
+        {
+          "watch_id": "helly_hansen_verglas_down",
+          "source": "Amazon",
+          "title": "Helly Hansen Verglas Icefall Down Jacket — Green, M",
+          "url": "https://www.amazon.com/dp/helly-hansen-verglas-down?v=m-green",
+          "price": 265.66,
+          "currency": "USD",
+          "size": "M",
+          "color": "Green",
+          "condition": "new",
+          "channel": "new",
+          "region": "US",
+          "availability": "in_stock",
+          "seller": "Amazon",
+          "image": null,
+          "list_price": 346.67,
+          "match_score": 1.0,
+          "fetched_at": "2026-07-20T21:52:06+00:00",
+          "id": "9c551621c2c08608"
+        },
+        {
+          "watch_id": "helly_hansen_verglas_down",
+          "source": "Brand Official",
+          "title": "Helly Hansen Verglas Icefall Down Jacket — Green, M",
+          "url": "https://example-brand.com/shop/helly-hansen-verglas-down?v=m-green",
+          "price": 339.78,
+          "currency": "USD",
+          "size": "M",
+          "color": "Green",
+          "condition": "new",
+          "channel": "new",
+          "region": "US",
+          "availability": "in_stock",
+          "seller": "Brand Official",
+          "image": null,
+          "list_price": null,
+          "match_score": 1.0,
+          "fetched_at": "2026-07-20T21:52:06+00:00",
+          "id": "c60e376f6d1c834d"
+        },
+        {
+          "watch_id": "helly_hansen_verglas_down",
+          "source": "REI Co-op",
+          "title": "Helly Hansen Verglas Icefall Down Jacket — Green, M",
+          "url": "https://www.rei.com/product/helly-hansen-verglas-down?v=m-green",
+          "price": 380.73,
+          "currency": "USD",
+          "size": "M",
+          "color": "Green",
+          "condition": "new",
+          "channel": "new",
+          "region": "US",
+          "availability": "in_stock",
+          "seller": "REI Co-op",
+          "image": null,
+          "list_price": null,
+          "match_score": 1.0,
+          "fetched_at": "2026-07-20T21:52:06+00:00",
+          "id": "3e66d412f2311bf5"
+        }
+      ],
+      "summary": {
+        "by_channel": {
+          "used": 214.27,
+          "outlet": 229.08,
+          "new": 257.4
+        },
+        "by_region": {
+          "US": 214.27
+        }
+      },
+      "history": [
+        {
+          "ts": "2026-07-20T21:52:06+00:00",
+          "price": 380.73,
+          "source": "REI Co-op"
+        },
+        {
+          "ts": "2026-07-20T21:52:06+00:00",
+          "price": 257.4,
+          "source": "Backcountry"
+        },
+        {
+          "ts": "2026-07-20T21:52:06+00:00",
+          "price": 339.78,
+          "source": "Brand Official"
+        },
+        {
+          "ts": "2026-07-20T21:52:06+00:00",
+          "price": 265.66,
+          "source": "Amazon"
+        },
+        {
+          "ts": "2026-07-20T21:52:06+00:00",
+          "price": 214.27,
+          "source": "eBay"
+        },
+        {
+          "ts": "2026-07-20T21:52:06+00:00",
+          "price": 229.08,
+          "source": "REI Re/Supply (outlet)"
         }
       ]
     }

@@ -1,11 +1,24 @@
 {
   "generated_at": "2026-07-20T21:52:06+00:00",
-  "currency": "USD",
-  "demo": true,
+  "duration_seconds": 0.099,
   "scope": "standard",
-  "product_count": 22,
-  "offer_count": 132,
-  "deal_count": 97,
+  "max_workers": 6,
+  "watch_items": 22,
+  "offers": 132,
+  "active_deals": 97,
+  "new_deals": 57,
+  "phases": {
+    "gather": 0.017,
+    "detect": 0.045
+  },
+  "connectors": {
+    "sample": {
+      "calls": 22,
+      "offers": 198,
+      "errors": 0,
+      "seconds": 0.007
+    }
+  },
   "sources": [
     {
       "name": "REI Co-op",
@@ -37,9 +50,5 @@
       "available": true,
       "offers": 22
     }
-  ],
-  "site": {
-    "title": "Elite Brand Engine",
-    "tagline": "Radar de ofertas para equipo de montañismo y alpinismo"
-  }
+  ]
 }
