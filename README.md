@@ -94,8 +94,25 @@ Run the tests:
 ```bash
 python -m tests.test_normalize
 python -m tests.test_dealdetector
+python -m tests.test_http
+python -m tests.test_validate
 # or, if you have pytest:  pytest -q
 ```
+
+**Backend tooling**
+
+```bash
+python -m engine.validate                 # check data/watchlist.json (ids, brands, types)
+python -m engine.probe sample --id arcteryx_beta_ar_jacket   # inspect one source
+python -m engine.probe ebay --brand "Patagonia" --name "Nano Puff"  # (needs eBay keys)
+```
+
+`engine.probe` prints exactly what a single connector returns (or a clear
+"missing credential" message) — use it to validate eBay/Amazon/feeds right after
+adding secrets, before enabling them for scheduled runs. API connectors go
+through a shared resilient HTTP layer (retries + backoff + per-host rate
+limiting). A **CI** workflow runs the tests, `validate`, and a demo smoke run on
+every push.
 
 ---
 
@@ -191,14 +208,17 @@ engine/                 Python collection engine
   config.py             config.yml loader (+ env overrides for secrets)
   store.py              JSON store, price history, website snapshot
   dealdetector.py       target / discount / new-low detection
+  http.py               shared resilient HTTP (retries, backoff, rate-limit)
   run.py                orchestrator + CLI (python -m engine.run)
+  probe.py              inspect a single source (python -m engine.probe)
+  validate.py           watchlist validation (python -m engine.validate)
   connectors/           sample · ebay · amazon · affiliate_feed · polite_html
   notify/email.py       SMTP / SendGrid / Resend / dry-run alerts
 data/                   watchlist.json + committed price history (the "database")
 web/                    static GitHub Pages site (search / compare / deals)
 scripts/seed_demo.py    generate backdated demo history
 tests/                  unit tests for normalisation & detection
-.github/workflows/      collect.yml (cron) + deploy-pages.yml
+.github/workflows/      collect.yml (cron) + deploy-pages.yml + ci.yml (tests)
 docs/                   operator guide + legal/Honey explainer (Español)
 ```
 

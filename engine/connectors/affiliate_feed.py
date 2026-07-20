@@ -43,6 +43,7 @@ from typing import Optional
 
 import requests
 
+from .. import http
 from ..config import ROOT
 from ..models import Offer, WatchItem
 from ..normalize import (
@@ -82,7 +83,8 @@ class AffiliateFeedConnector(Connector):
     def _read_raw(self, feed: dict) -> str:
         url = feed.get("url", "")
         if url.startswith("http://") or url.startswith("https://"):
-            r = requests.get(url, timeout=60, headers={"User-Agent": "EliteBrandEngine/1.0"})
+            r = http.get(url, timeout=60, attempts=int(feed.get("attempts", 3)),
+                         min_interval=float(feed.get("min_interval", 0.0)))
             r.raise_for_status()
             return r.text
         # treat as a local path (relative to repo root) — useful for fixtures
@@ -113,7 +115,7 @@ class AffiliateFeedConnector(Connector):
             by_brand: dict[str, list[dict]] = defaultdict(list)
             try:
                 rows = self._parse_rows(feed)
-            except (requests.RequestException, OSError, ET.ParseError, ValueError) as exc:
+            except (requests.RequestException, http.HttpError, OSError, ET.ParseError, ValueError) as exc:
                 print(f"[AffiliateFeed] failed to load feed {feed.get('source')}: {exc}")
                 index[i] = {}
                 continue

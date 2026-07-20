@@ -26,6 +26,7 @@ from typing import Optional
 
 import requests
 
+from .. import http
 from ..models import Offer, WatchItem
 from ..normalize import (
     canonical_brand,
@@ -74,6 +75,8 @@ class AmazonConnector(Connector):
         )
         self.item_count = int(self.settings.get("item_count", 5))
         self.search_index = self.settings.get("search_index", "SportingGoods")
+        self.min_interval = float(self.settings.get("min_interval", 1.1))  # PA-API is strict
+        self.attempts = int(self.settings.get("attempts", 3))
 
     def available(self) -> bool:
         return bool(self.access_key and self.secret_key and self.partner_tag)
@@ -136,16 +139,18 @@ class AmazonConnector(Connector):
                 "Resources": _RESOURCES,
             }
         )
+        url = f"https://{self.host}/paapi5/searchitems"
         try:
-            r = requests.post(
-                f"https://{self.host}/paapi5/searchitems",
-                headers=self._signed_headers(payload),
-                data=payload,
-                timeout=25,
+            # Re-sign on every attempt: the SigV4 signature embeds a timestamp.
+            r = http.retry_request(
+                lambda: requests.post(url, headers=self._signed_headers(payload),
+                                      data=payload, timeout=25),
+                host=self.host, min_interval=self.min_interval,
+                attempts=self.attempts, label=f"amazon searchitems {watch.id}",
             )
             r.raise_for_status()
             items = (r.json().get("SearchResult") or {}).get("Items", []) or []
-        except (requests.RequestException, ValueError) as exc:
+        except (requests.RequestException, http.HttpError, ValueError) as exc:
             print(f"[Amazon] search error for {watch.id}: {exc}")
             return []
 

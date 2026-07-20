@@ -22,6 +22,7 @@ from typing import Optional
 
 import requests
 
+from .. import http
 from ..models import Offer, WatchItem
 from ..normalize import (
     canonical_brand,
@@ -49,6 +50,8 @@ class EbayConnector(Connector):
         self.limit = int(self.settings.get("limit", 8))
         self._token: Optional[str] = None
         self._token_exp = 0.0
+        self.min_interval = float(self.settings.get("min_interval", 0.25))
+        self.attempts = int(self.settings.get("attempts", 3))
 
     def available(self) -> bool:
         return bool(self.client_id and self.client_secret)
@@ -61,21 +64,22 @@ class EbayConnector(Connector):
             f"{self.client_id}:{self.client_secret}".encode()
         ).decode()
         try:
-            r = requests.post(
+            r = http.post(
                 _OAUTH_URL,
                 headers={
                     "Authorization": f"Basic {basic}",
                     "Content-Type": "application/x-www-form-urlencoded",
                 },
                 data={"grant_type": "client_credentials", "scope": _SCOPE},
-                timeout=20,
+                host="api.ebay.com", min_interval=self.min_interval,
+                attempts=self.attempts, timeout=20,
             )
             r.raise_for_status()
             body = r.json()
             self._token = body["access_token"]
             self._token_exp = time.time() + int(body.get("expires_in", 7200))
             return self._token
-        except (requests.RequestException, KeyError, ValueError) as exc:
+        except (requests.RequestException, http.HttpError, KeyError, ValueError) as exc:
             print(f"[eBay] token error: {exc}")
             return None
 
@@ -97,7 +101,7 @@ class EbayConnector(Connector):
         if watch.upc:
             params["gtin"] = watch.upc
         try:
-            r = requests.get(
+            r = http.get(
                 _SEARCH_URL,
                 headers={
                     "Authorization": f"Bearer {token}",
@@ -105,11 +109,12 @@ class EbayConnector(Connector):
                     "Content-Type": "application/json",
                 },
                 params=params,
-                timeout=25,
+                host="api.ebay.com", min_interval=self.min_interval,
+                attempts=self.attempts, timeout=25,
             )
             r.raise_for_status()
             summaries = r.json().get("itemSummaries", []) or []
-        except (requests.RequestException, ValueError) as exc:
+        except (requests.RequestException, http.HttpError, ValueError) as exc:
             print(f"[eBay] search error for {watch.id}: {exc}")
             return []
 

@@ -1,0 +1,42 @@
+name: CI
+
+# Runs on every push and PR: unit tests, watchlist validation, and a demo smoke
+# run of the engine. Keeps the backend green as it grows. No secrets needed.
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Unit tests
+        run: |
+          python -m tests.test_normalize
+          python -m tests.test_dealdetector
+          python -m tests.test_http
+          python -m tests.test_validate
+
+      - name: Validate watchlist
+        run: python -m engine.validate
+
+      - name: Smoke run (demo source, no email)
+        run: python -m engine.run --no-email --limit 3
