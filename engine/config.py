@@ -47,6 +47,13 @@ DEFAULTS: dict[str, Any] = {
         "max_offer_age_days": 3,
         # Don't re-email the same deal within this many days.
         "alert_ttl_days": 7,
+        # --- Storage hygiene (the repo IS the database — keep it bounded) ---
+        # Price history is trimmed on every write so it can never grow without
+        # bound. Retention comfortably exceeds baseline_window_days so all
+        # statistics stay intact.
+        "history_retention_days": 180,   # drop observations older than this
+        "history_max_points": 5000,      # hard safety cap per product file
+        "history_daily_downsample": True,  # keep one point per source per day
         # Match confidence required to trust an offer belongs to a product...
         "min_match_score": 0.6,
         # ...and the higher bar required to trust an unusually large discount.

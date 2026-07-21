@@ -232,13 +232,37 @@ credentials as environment variables / GitHub Secrets:
 
 | Transport | Env vars |
 | --- | --- |
-| SMTP (e.g. Gmail app password) | `SMTP_HOST`, `SMTP_PORT`, `SMTP_USER`, `SMTP_PASS`, `SMTP_FROM` |
+| **Gmail** (simplest) | `GMAIL_USER`, `GMAIL_APP_PASSWORD` |
+| SMTP | `SMTP_HOST`, `SMTP_PORT`, `SMTP_USER`, `SMTP_PASS`, `SMTP_FROM` |
 | SendGrid | `SENDGRID_API_KEY` (+ `ALERT_EMAIL_FROM`) |
 | Resend | `RESEND_API_KEY` (+ `ALERT_EMAIL_FROM`) |
 
 Recipients: `email.to` in `config.yml`, or the `ALERT_EMAIL_TO` variable
-(comma-separated). With no transport/recipients it renders the email to
-`dist/last_email.html` instead of sending.
+(comma-separated). With Gmail configured and no explicit recipient, alerts go to
+`GMAIL_USER` (your own inbox). With no transport/recipients it renders the email
+to `dist/last_email.html` instead of sending.
+
+**Gmail in 2 steps** (alerts land in your inbox, free):
+
+1. Enable 2-Step Verification, then create an **App Password** at
+   <https://myaccount.google.com/apppasswords> (a 16-char password, *not* your
+   login password).
+2. Repo → *Settings → Secrets and variables → Actions → New repository secret*:
+   `GMAIL_USER` = your address, `GMAIL_APP_PASSWORD` = the App Password.
+
+### Storage stays bounded (the repo is the database)
+
+Because every run commits data back to git, the stores are self-limiting so the
+repo never bloats and cron diffs stay small:
+
+- **Price history** is trimmed on every write — one observation per source per
+  day (`history_daily_downsample`), dropped after `history_retention_days` (180),
+  with a hard `history_max_points` ceiling. Repeated runs the same day don't grow
+  the file.
+- **Alert ledger** keeps only a rolling `alert_ttl_days` window; expired keys
+  (which no longer suppress re-alerts) are pruned instead of piling up forever.
+- Writes are **atomic** (temp file + `os.replace`), so a killed run can't corrupt
+  the store. HTTP is stateless — no sessions or cookies accumulate.
 
 ---
 
@@ -278,7 +302,7 @@ engine/                 Python collection engine
   probe.py              inspect a single source (python -m engine.probe)
   validate.py           watchlist validation (python -m engine.validate)
   connectors/           sample · ebay · amazon · affiliate_feed · structured · polite_html
-  notify/email.py       SMTP / SendGrid / Resend / dry-run alerts
+  notify/email.py       Gmail / SMTP / SendGrid / Resend / dry-run alerts
 data/                   watchlist.json + committed price history (the "database")
 web/                    static GitHub Pages site (search / compare / deals)
 scripts/seed_demo.py    generate backdated demo history

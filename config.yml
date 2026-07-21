@@ -27,6 +27,11 @@ detection:
   min_match_score: 0.6          # confidence a listing is the right product
   suspect_min_match_score: 0.9  # higher bar to trust an unusually large discount
   category_min_discount: {}     # e.g. {"Hardshell": 12} for rarely-discounted lines
+  # Storage hygiene — the repo IS the database, so keep it bounded. History is
+  # trimmed on every write (retention comfortably exceeds baseline_window_days).
+  history_retention_days: 180   # drop price observations older than this
+  history_max_points: 5000      # hard safety cap per product history file
+  history_daily_downsample: true  # keep one observation per source per day
 
 # --- Regional search scope --------------------------------------------------
 # standard = US only. expanded = US + Canada + Europe: European brands (Peak
@@ -94,11 +99,22 @@ sources:
     #       upc: "UPC"
 
 # --- Email alerts ------------------------------------------------------------
-# Transport auto-detected from env (SMTP_* / SENDGRID_API_KEY / RESEND_API_KEY).
+# Transport auto-detected from env, in order:
+#   Gmail  -> GMAIL_USER + GMAIL_APP_PASSWORD  (simplest: just two Secrets)
+#   SMTP   -> SMTP_HOST / SMTP_PORT / SMTP_USER / SMTP_PASS / SMTP_FROM
+#   SendGrid / Resend -> SENDGRID_API_KEY / RESEND_API_KEY
 # With no transport or no recipients it runs in DRY-RUN and renders the email to
 # dist/last_email.html instead of sending.
+#
+# GMAIL SETUP (2 secrets, then alerts land in your inbox):
+#   1. Enable 2-Step Verification on the Google account.
+#   2. Create an App Password: https://myaccount.google.com/apppasswords
+#   3. In the repo: Settings > Secrets and variables > Actions > New secret
+#        GMAIL_USER          = edumendozaagro@gmail.com
+#        GMAIL_APP_PASSWORD  = the 16-char App Password (no spaces)
+#   With Gmail set and `to` empty, alerts are sent to GMAIL_USER automatically.
 email:
   enabled: true
   subject_prefix: "[Elite Brand Engine] "
   from_name: "Elite Brand Engine"
-  to: []                     # e.g. ["compras@tuempresa.com"] or set ALERT_EMAIL_TO
+  to: []                     # empty => Gmail sends to GMAIL_USER; or set ALERT_EMAIL_TO

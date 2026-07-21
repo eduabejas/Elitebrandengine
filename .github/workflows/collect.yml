@@ -33,9 +33,14 @@ jobs:
 
       - name: Run collection cycle
         env:
-          # Recipients (non-secret) — set as a repository Variable.
+          # Recipients (non-secret) — set as a repository Variable. If unset and
+          # Gmail is configured, alerts go to GMAIL_USER (your own inbox).
           ALERT_EMAIL_TO: ${{ vars.ALERT_EMAIL_TO }}
-          # Email transport (set whichever you use as repository Secrets).
+          # Gmail (simplest transport): add these two repository Secrets.
+          # GMAIL_APP_PASSWORD is a Google App Password, NOT your login password.
+          GMAIL_USER: ${{ secrets.GMAIL_USER }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+          # Generic SMTP / other transports (set whichever you use as Secrets).
           ALERT_EMAIL_FROM: ${{ secrets.ALERT_EMAIL_FROM }}
           SMTP_HOST: ${{ secrets.SMTP_HOST }}
           SMTP_PORT: ${{ secrets.SMTP_PORT }}

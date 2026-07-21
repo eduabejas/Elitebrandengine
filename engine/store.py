@@ -14,12 +14,30 @@ Layout::
 from __future__ import annotations
 
 import json
+import os
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Iterable
 
 from .config import Config
 from .identity import channel_region_summary
 from .models import Deal, Offer, PricePoint, WatchItem, now_iso
+
+
+def _atomic_write_text(path: Path, text: str) -> None:
+    """Write via a temp file + os.replace so a killed run can't corrupt the
+    store (a truncated JSONL/JSON file would poison every later run)."""
+    path.parent.mkdir(parents=True, exist_ok=True)
+    tmp = path.with_name(path.name + ".tmp")
+    tmp.write_text(text, encoding="utf-8")
+    os.replace(tmp, path)
+
+
+def _parse_ts(ts: str) -> datetime | None:
+    try:
+        return datetime.fromisoformat(ts)
+    except (ValueError, TypeError):
+        return None
 
 
 # --------------------------------------------------------------------------- #
@@ -69,12 +87,54 @@ def load_history(cfg: Config, watch_id: str) -> list[PricePoint]:
     return out
 
 
-def append_history(cfg: Config, watch_id: str, points: Iterable[PricePoint]) -> None:
-    p = _history_path(cfg, watch_id)
-    p.parent.mkdir(parents=True, exist_ok=True)
-    with open(p, "a", encoding="utf-8") as fh:
+def _downsample_daily(points: list[PricePoint]) -> list[PricePoint]:
+    """Collapse to one observation per (day, source), keeping the latest.
+
+    Runs happen every few hours; without this the file would grow by one line
+    per source per run forever. Daily resolution is more than enough for the
+    percentile baseline and historical-low logic."""
+    kept: dict[tuple[str, str], PricePoint] = {}
+    # Ascending by ts => the last write for a (day, source) wins (latest price).
+    for pt in sorted(points, key=lambda x: x.ts):
+        dt = _parse_ts(pt.ts)
+        day = dt.date().isoformat() if dt else pt.ts   # unparsable => keep as-is
+        kept[(day, pt.source)] = pt
+    return sorted(kept.values(), key=lambda x: x.ts)
+
+
+def _trim_history(cfg: Config, points: list[PricePoint]) -> list[PricePoint]:
+    d = cfg.get("detection", {}) or {}
+    if d.get("history_daily_downsample", True):
+        points = _downsample_daily(points)
+    else:
+        points = sorted(points, key=lambda x: x.ts)
+
+    retention_days = int(d.get("history_retention_days", 180) or 0)
+    if retention_days > 0:
+        cutoff = datetime.now(timezone.utc) - timedelta(days=retention_days)
+        kept = []
         for pt in points:
-            fh.write(json.dumps(pt.to_dict(), ensure_ascii=False) + "\n")
+            dt = _parse_ts(pt.ts)
+            if dt is None or dt >= cutoff:   # keep unparsable rather than lose data
+                kept.append(pt)
+        points = kept
+
+    max_points = int(d.get("history_max_points", 5000) or 0)
+    if max_points > 0 and len(points) > max_points:
+        points = points[-max_points:]        # keep the most recent
+    return points
+
+
+def append_history(cfg: Config, watch_id: str, points: Iterable[PricePoint]) -> None:
+    """Append this run's observations, then trim so the file can never grow
+    without bound (daily downsample + retention window + hard cap). Rewrites
+    the file atomically."""
+    new = list(points)
+    p = _history_path(cfg, watch_id)
+    merged = load_history(cfg, watch_id) + new
+    trimmed = _trim_history(cfg, merged)
+    body = "".join(json.dumps(pt.to_dict(), ensure_ascii=False) + "\n" for pt in trimmed)
+    _atomic_write_text(p, body)
 
 
 # --------------------------------------------------------------------------- #
@@ -90,10 +150,24 @@ def load_ledger(cfg: Config) -> dict[str, str]:
         return {}
 
 
+def prune_ledger(ledger: dict[str, str], ttl_days: int) -> dict[str, str]:
+    """Drop entries older than the alert TTL. Past the TTL an entry no longer
+    suppresses a re-alert, so keeping it is pure dead weight — without this the
+    ledger grows by every distinct deal key ever seen, forever."""
+    if ttl_days <= 0:
+        return dict(ledger)
+    cutoff = datetime.now(timezone.utc) - timedelta(days=ttl_days)
+    out: dict[str, str] = {}
+    for key, ts in ledger.items():
+        dt = _parse_ts(ts)
+        if dt is not None and dt >= cutoff:
+            out[key] = ts        # unparsable timestamps are treated as expired
+    return out
+
+
 def save_ledger(cfg: Config, ledger: dict[str, str]) -> None:
     p = cfg.path("alerts_ledger")
-    p.parent.mkdir(parents=True, exist_ok=True)
-    p.write_text(json.dumps(ledger, indent=2, ensure_ascii=False), encoding="utf-8")
+    _atomic_write_text(p, json.dumps(ledger, indent=2, ensure_ascii=False))
 
 
 # --------------------------------------------------------------------------- #

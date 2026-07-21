@@ -6,13 +6,15 @@ plus colour, discount and condition for context.
 
 Transport is auto-detected from environment variables, in priority order:
 
+    Gmail       -> GMAIL_USER, GMAIL_APP_PASSWORD  (simplest: just two secrets)
     SMTP        -> SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASS, SMTP_FROM, SMTP_TLS
     SendGrid    -> SENDGRID_API_KEY  (+ ALERT_EMAIL_FROM)
     Resend      -> RESEND_API_KEY    (+ ALERT_EMAIL_FROM)
     (none)      -> dry run: writes dist/last_email.html and prints a summary
 
-Recipients come from config.yml ``email.to`` or the ALERT_EMAIL_TO env var.
-A rendered copy is always written to dist/last_email.html for inspection.
+Recipients come from config.yml ``email.to`` or the ALERT_EMAIL_TO env var; with
+Gmail configured and no explicit recipient, alerts go to GMAIL_USER (your own
+inbox). A rendered copy is always written to dist/last_email.html for inspection.
 """
 
 from __future__ import annotations
@@ -171,15 +173,8 @@ def _subject(cfg: Config, deals: list[Deal]) -> str:
     return f"{prefix}{len(deals)} oferta(s) nueva(s){extra}"
 
 
-def _send_smtp(subject, html, text, sender, to) -> bool:
-    host = os.getenv("SMTP_HOST")
-    if not host:
-        return False
-    port = int(os.getenv("SMTP_PORT", "587"))
-    user = os.getenv("SMTP_USER")
-    pw = os.getenv("SMTP_PASS")
-    use_tls = os.getenv("SMTP_TLS", "true").lower() != "false"
-
+def _smtp_send(host, port, user, pw, use_tls, subject, html, text, sender, to,
+              label) -> bool:
     msg = MIMEMultipart("alternative")
     msg["Subject"] = subject
     msg["From"] = sender
@@ -193,8 +188,31 @@ def _send_smtp(subject, html, text, sender, to) -> bool:
         if user and pw:
             server.login(user, pw)
         server.sendmail(sender, to, msg.as_string())
-    print(f"[email] sent via SMTP to {len(to)} recipient(s)")
+    print(f"[email] sent via {label} to {len(to)} recipient(s)")
     return True
+
+
+def _send_gmail(subject, html, text, sender, to) -> bool:
+    """Simplest path: set GMAIL_USER + GMAIL_APP_PASSWORD (a Google App
+    Password, NOT the account password) and alerts send from your Gmail."""
+    user = os.getenv("GMAIL_USER")
+    pw = os.getenv("GMAIL_APP_PASSWORD")
+    if not (user and pw):
+        return False
+    return _smtp_send("smtp.gmail.com", 587, user, pw, True,
+                      subject, html, text, sender or user, to, "Gmail")
+
+
+def _send_smtp(subject, html, text, sender, to) -> bool:
+    host = os.getenv("SMTP_HOST")
+    if not host:
+        return False
+    port = int(os.getenv("SMTP_PORT", "587"))
+    user = os.getenv("SMTP_USER")
+    pw = os.getenv("SMTP_PASS")
+    use_tls = os.getenv("SMTP_TLS", "true").lower() != "false"
+    return _smtp_send(host, port, user, pw, use_tls,
+                      subject, html, text, sender, to, "SMTP")
 
 
 def _send_sendgrid(subject, html, text, sender, to) -> bool:
@@ -259,9 +277,12 @@ def send_deal_alerts(cfg: Config, deals: list[Deal]) -> bool:
     out.write_text(html, encoding="utf-8")
 
     to = _recipients(cfg)
+    if not to and os.getenv("GMAIL_USER"):
+        to = [os.getenv("GMAIL_USER")]      # default: send to your own inbox
     sender = (
         os.getenv("SMTP_FROM")
         or os.getenv("ALERT_EMAIL_FROM")
+        or os.getenv("GMAIL_USER")
         or os.getenv("SMTP_USER")
         or "alerts@example.com"
     )
@@ -271,7 +292,7 @@ def send_deal_alerts(cfg: Config, deals: list[Deal]) -> bool:
               f"{len(deals)} deal(s) rendered to {out}")
         return True
 
-    for sender_fn in (_send_smtp, _send_sendgrid, _send_resend):
+    for sender_fn in (_send_gmail, _send_smtp, _send_sendgrid, _send_resend):
         try:
             if sender_fn(subject, html, text, sender, to):
                 return True

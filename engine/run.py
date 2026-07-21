@@ -38,6 +38,7 @@ from .store import (
     load_ledger,
     load_promos,
     load_watchlist,
+    prune_ledger,
     save_ledger,
     write_snapshot,
     write_status,
@@ -145,10 +146,12 @@ def run(config_file: str | None = None, send_email: bool = True,
                   + (f"  [{len(active)} deal(s)]" if active else ""))
     metrics.phase("detect", time.monotonic() - t1)
 
-    # Record newly-alerted deals so we don't email them again within the TTL.
+    # Record newly-alerted deals so we don't email them again within the TTL,
+    # then drop entries past the TTL so the ledger stays bounded.
     ts = now_iso()
     for d in all_new:
         ledger[d.key] = ts
+    ledger = prune_ledger(ledger, int(cfg.get("detection.alert_ttl_days", 7)))
     save_ledger(cfg, ledger)
 
     sources_status = _sources_status(cfg, connectors, source_offer_counts)
