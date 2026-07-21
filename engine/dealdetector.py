@@ -23,7 +23,9 @@ from __future__ import annotations
 from datetime import date, datetime, timedelta, timezone
 from typing import Optional
 
+from .brain import recommend
 from .config import Config
+from .credibility import assess
 from .effective import compute_effective
 from .identity import home_region_advantage
 from .models import Deal, Offer, PricePoint, WatchItem, now_iso
@@ -123,6 +125,8 @@ def detect_deals(
     max_age = int(d.get("max_offer_age_days", 3))
     ttl_days = int(d.get("alert_ttl_days", 7))
     suspect_min_match = float(d.get("suspect_min_match_score", 0.9))
+    tier_overrides = cfg.get("brain.brand_tier_overrides", {}) or {}
+    ceiling_overrides = cfg.get("brain.ceiling_overrides", {}) or {}
     offseason_boost = float(ssn.get("offseason_boost", 12.0))
     offseason_relax = float(ssn.get("offseason_discount_relax", 3.0))
     hemisphere = ssn.get("hemisphere", "north")
@@ -148,6 +152,7 @@ def detect_deals(
 
     target_base = (to_base(watch.target_price, watch.currency, rates, base)
                    if watch.target_price is not None else None)
+    hist_all = [h.price for h in history]  # for the brain's percentile
 
     active: list[Deal] = []
     for o in offers:
@@ -180,15 +185,24 @@ def detect_deals(
         if not (target_hit or discount_ok):
             continue
 
-        # Suspicion is about the RAW price being anomalously low (mismatch/price
-        # error) — a legitimately *stacked* effective discount is not suspect.
-        suspect = merch_disc is not None and merch_disc > suspect_pct
+        # Credibility (brand tier × channel × depth): a deep discount on a cult
+        # brand via resale is NOT a real opportunity (likely not new/genuine).
+        # Suspicion is judged on the RAW price, not a legitimately stacked one.
+        cred = assess(watch.brand, o.source, ch, merch_disc, o.condition,
+                      tier_overrides=tier_overrides, ceiling_overrides=ceiling_overrides)
+        suspect = cred.implausible or (merch_disc is not None and merch_disc > suspect_pct)
         if suspect and o.match_score < suspect_min_match:
-            continue  # drop rather than raise a false alarm
+            continue  # drop rather than raise a false alarm / illusion
 
         low_days = _lowest_in_days(history, price_base, today) if len(history) >= min_points else None
         stacked = (eff_disc is not None and merch_disc is not None
                    and eff_disc - merch_disc >= 1.0)
+
+        # The brain: buy / wait / hold, cautiously.
+        rec, flash, confidence, brain_note, pr = recommend(
+            eff_disc, eff_price, hist_all, cred, is_offseason=is_off,
+            sale_window=sale_window, min_discount=effective_min,
+            min_points=min_points, match_score=o.match_score)
 
         reasons: list[str] = []
         if target_hit:
@@ -204,8 +218,14 @@ def detect_deals(
             reasons.append(season_note.split(" — ")[0])
         if sale_window:
             reasons.append(f"ventana: {sale_window}")
-        if suspect:
+        if cred.implausible and cred.note:
+            reasons.append(cred.note)
+        elif suspect:
             reasons.append("⚠ descuento inusual — verificar")
+        if flash:
+            reasons.append("⚡ relámpago — suele agotarse pronto")
+        if brain_note:
+            reasons.append(brain_note)
         if ch in ("outlet", "refurbished", "used"):
             reasons.append({"outlet": "outlet", "refurbished": "reacondicionado",
                             "used": "usado"}[ch])
@@ -215,6 +235,10 @@ def detect_deals(
         elif o.region != "US":
             reasons.append(f"región {o.region}")
 
+        base_score = _score(eff_disc, strength if is_off else 0, low_days,
+                            o.match_score, ch, suspect, bool(sale_window), offseason_boost)
+        # Low credibility drags the score down so it never outranks real deals.
+        final_score = round(base_score * (0.5 + 0.5 * cred.credibility), 1)
         active.append(Deal(
             watch_id=watch.id, brand=watch.brand, product_name=watch.name,
             source=o.source, url=o.url, price=o.price, currency=o.currency,
@@ -223,12 +247,13 @@ def detect_deals(
             discount_pct=merch_disc, reference_price=regular, target_price=watch.target_price,
             effective_price=eff_price, effective_discount_pct=eff_disc,
             coupon_code=eff.coupon_code, stack_note=(eff.note if stacked else None),
-            score=_score(eff_disc, strength if is_off else 0, low_days, o.match_score,
-                         ch, suspect, bool(sale_window), offseason_boost),
+            score=final_score,
             tier=_tier(eff_disc, suspect),
             seasonal=bool(is_off), season_note=season_note if is_off else None,
             suspect=suspect, lowest_in_days=low_days,
             channel=ch, region=o.region, home_region_advantage=offer_home_adv,
+            recommendation=rec, credibility=cred.credibility, confidence=confidence,
+            flash=flash, discount_percentile=pr,
             detected_at=now_iso(),
         ))
 

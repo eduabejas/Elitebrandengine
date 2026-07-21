@@ -34,7 +34,8 @@ def test_target_price_hit():
 
 def test_list_price_discount():
     w = WatchItem(id="b", brand="Rab", name="Microlight")   # no target
-    offers = [_offer("b", 160.0, list_price=250.0, size="L")]  # 36% off
+    # authorized retailer -> 36% is credible for a cult brand (ceiling ~40%)
+    offers = [_offer("b", 160.0, list_price=250.0, size="L", source="Backcountry")]
     active, _ = detect_deals(_cfg(), w, offers, history=[], ledger={})
     assert len(active) == 1
     assert active[0].discount_pct and active[0].discount_pct >= 15
@@ -141,8 +142,8 @@ def test_outlet_offer_counts_as_deal():
 
 def test_home_region_advantage_marked_on_eu_offer():
     w = WatchItem(id="hr", brand="Rab", name="Microlight", msrp=300.0)  # EU brand
-    offers = [_offer("hr", 220.0, size="M", region="US", match_score=1.0),
-              _offer("hr", 180.0, size="M", region="EU", match_score=1.0)]
+    offers = [_offer("hr", 220.0, size="M", region="US", source="REI Co-op", match_score=1.0),
+              _offer("hr", 180.0, size="M", region="EU", source="Bergfreunde (EU)", match_score=1.0)]
     active, _ = detect_deals(_cfg(), w, offers, history=[], ledger={})
     eu = [a for a in active if a.region == "EU"]
     assert eu and eu[0].home_region_advantage is True
@@ -160,6 +161,41 @@ def test_offseason_winter_gear_in_summer_is_boosted():
                          history=[], ledger={}, today=summer)
     assert aw[0].seasonal is True and a3[0].seasonal is False
     assert aw[0].score > a3[0].score
+
+
+# --- the cautious brain: credibility + buy/wait/hold ----------------------- #
+def test_cult_deep_discount_on_resale_is_suspect_and_hold():
+    # THE benchmark to avoid: Peak Performance −50% "new" on eBay is not a real
+    # opportunity — flag it, never present it as a buy.
+    w = WatchItem(id="pp", brand="Peak Performance", name="Helium Down", msrp=300.0)
+    offers = [_offer("pp", 150.0, size="M", source="eBay", match_score=1.0)]  # 50% off
+    active, _ = detect_deals(_cfg(), w, offers, history=[], ledger={})
+    assert active and active[0].suspect and active[0].recommendation == "hold"
+    assert active[0].credibility < 1.0 and active[0].tier == "suspect"
+
+
+def test_mass_brand_deep_discount_on_resale_is_credible():
+    # A mass brand CAN legitimately be dumped cheap on resale by uninformed owners.
+    w = WatchItem(id="tnf", brand="The North Face", name="Nuptse", msrp=300.0)
+    offers = [_offer("tnf", 150.0, size="M", source="eBay", match_score=1.0)]  # 50% off
+    active, _ = detect_deals(_cfg(), w, offers, history=[], ledger={})
+    assert active and not active[0].suspect
+
+
+def test_buy_at_historical_low():
+    w = WatchItem(id="rl", brand="Rab", name="Microlight", msrp=300.0)
+    hist = [PricePoint(ts=now_iso(), source="Backcountry", price=p) for p in (250, 255, 248, 252)]
+    offers = [_offer("rl", 180.0, size="M", source="Backcountry", match_score=1.0)]  # new low
+    active, _ = detect_deals(_cfg(), w, offers, history=hist, ledger={}, today=date(2026, 7, 20))
+    assert active and active[0].recommendation == "buy"
+
+
+def test_wait_when_price_is_mediocre_vs_history():
+    w = WatchItem(id="rw", brand="Rab", name="Microlight", msrp=300.0)
+    hist = [PricePoint(ts=now_iso(), source="Backcountry", price=p) for p in (140, 150, 145, 155)]
+    offers = [_offer("rw", 200.0, size="M", source="Backcountry", match_score=1.0)]  # usually cheaper
+    active, _ = detect_deals(_cfg(), w, offers, history=hist, ledger={}, today=date(2026, 7, 20))
+    assert active and active[0].recommendation == "wait"
 
 
 def _run():

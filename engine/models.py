@@ -163,6 +163,12 @@ class Deal:
     channel: str = "new"               # new | outlet | refurbished | used
     region: str = "US"                 # where the offer lives
     home_region_advantage: bool = False  # brand's home market beats the US price
+    # The brain (cautious decision layer):
+    recommendation: str = "hold"       # buy | wait | hold
+    credibility: float = 1.0           # 0..1 believable as a genuine new deal
+    confidence: float = 0.0            # 0..1 overall confidence in the call
+    flash: bool = False                # cult/premium authorized deal — acts fast
+    discount_percentile: Optional[float] = None  # price rank vs own history (0=low)
     detected_at: str = field(default_factory=now_iso)
 
     @property

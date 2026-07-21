@@ -107,6 +107,15 @@ DEFAULTS: dict[str, Any] = {
         "from_name": "Elite Brand Engine",
         # recipients can be set here or via ALERT_EMAIL_TO env var
         "to": [],
+        # Never manufacture illusions: implausible/suspect and "hold" deals are
+        # kept out of the email by default (they still show on the site, flagged).
+        "include_suspect": False,
+        "include_hold": False,
+    },
+    "brain": {
+        # Override a brand's tier or a believable-discount ceiling if needed:
+        "brand_tier_overrides": {},   # {"Brand Name": "mass|premium|cult"}
+        "ceiling_overrides": {},      # {"cult:marketplace": 20}
     },
     "site": {
         "title": "Elite Brand Engine",

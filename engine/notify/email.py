@@ -49,6 +49,23 @@ _TIER = {
     "good": ("#3a7a5a", "Buena"), "suspect": ("#b26a00", "Verificar"),
     "target": ("#2a6a8a", "Objetivo"),
 }
+_REC = {"buy": ("#0a7d33", "COMPRAR"), "wait": ("#b26a00", "ESPERAR"),
+        "hold": ("#8a8a8a", "MANTENER")}
+
+
+def _emailable(cfg: Config, deals: list[Deal]) -> list[Deal]:
+    """Never manufacture illusions: drop suspect and 'hold' deals from the email
+    (they still appear on the site, flagged). Configurable."""
+    inc_suspect = cfg.get("email.include_suspect", False)
+    inc_hold = cfg.get("email.include_hold", False)
+    out = []
+    for d in deals:
+        if d.suspect and not inc_suspect:
+            continue
+        if d.recommendation == "hold" and not inc_hold:
+            continue
+        out.append(d)
+    return out
 
 
 def render_html(cfg: Config, deals: list[Deal]) -> str:
@@ -64,6 +81,10 @@ def render_html(cfg: Config, deals: list[Deal]) -> str:
         tcolor, tlabel = _TIER.get(d.tier, ("#3a7a5a", d.tier or ""))
         badge = (f'<span style="background:{tcolor};color:#fff;padding:2px 7px;'
                  f'border-radius:9px;font-size:11px;font-weight:700;">{tlabel}</span>')
+        rcolor, rlabel = _REC.get(d.recommendation, ("#3a7a5a", (d.recommendation or "").upper()))
+        recbadge = (f'<span style="background:{rcolor};color:#fff;padding:2px 7px;'
+                    f'border-radius:9px;font-size:11px;font-weight:800;">'
+                    f'{rlabel}{" ⚡" if d.flash else ""}</span>')
         season = (f'<div style="color:#0a7d33;font-size:12px;margin-top:2px;">❄️☀️ {d.season_note}</div>'
                   if d.seasonal and d.season_note else "")
         stacked = bool(d.stack_note and d.effective_price is not None)
@@ -75,7 +96,7 @@ def render_html(cfg: Config, deals: list[Deal]) -> str:
         rows.append(f"""
         <tr>
           <td style="padding:12px 10px;border-bottom:1px solid #eee;">
-            <div style="font-weight:700;color:#12222b;font-size:15px;">{d.brand} — {d.product_name} &nbsp;{badge}</div>
+            <div style="font-weight:700;color:#12222b;font-size:15px;">{d.brand} — {d.product_name} &nbsp;{recbadge} {badge}</div>
             <div style="color:#5a6b73;font-size:13px;">Talla: <b>{size}</b>{color}{cond}</div>
             <div style="color:#5a6b73;font-size:12px;margin-top:2px;">{d.reason}</div>
             {season}{stack}
@@ -116,13 +137,15 @@ def render_text(cfg: Config, deals: list[Deal]) -> str:
         eff_disc = d.effective_discount_pct if d.effective_discount_pct is not None else d.discount_pct
         disc = f" (-{eff_disc:.0f}%)" if eff_disc else ""
         _, tlabel = _TIER.get(d.tier, ("", d.tier or ""))
+        _, rlabel = _REC.get(d.recommendation, ("", (d.recommendation or "").upper()))
+        rlabel = rlabel + (" ⚡" if d.flash else "")
         stacked = bool(d.stack_note and d.effective_price is not None)
         price_line = (f"    Precio efectivo: {_fmt_price(d.effective_price, d.currency)}{disc}"
                       f"  (sticker {_fmt_price(d.price, d.currency)})\n"
                       if stacked else
                       f"    Precio: {_fmt_price(d.price, d.currency)}{disc}\n")
         lines.append(
-            f"• [{tlabel}] {d.brand} — {d.product_name}\n"
+            f"• [{rlabel} · {tlabel}] {d.brand} — {d.product_name}\n"
             f"    Talla: {d.size or '—'}"
             + (f" · {d.color.title()}" if d.color else "")
             + (f" · {d.condition}" if d.condition != 'new' else "")
@@ -220,6 +243,11 @@ def send_deal_alerts(cfg: Config, deals: list[Deal]) -> bool:
     if not cfg.get("email.enabled", True):
         print("[email] disabled in config")
         return False
+
+    deals = _emailable(cfg, deals)
+    if not deals:
+        print("[email] all new deals filtered (suspect/hold excluded) — nothing to send")
+        return True
 
     html = render_html(cfg, deals)
     text = render_text(cfg, deals)

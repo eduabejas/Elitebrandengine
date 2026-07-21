@@ -27,6 +27,7 @@ _SOURCES = [
     ("Brand Official", "https://example-brand.com/shop/", 1.03, "new", "US"),
     ("Amazon", "https://www.amazon.com/dp/", 0.95, "new", "US"),
     ("eBay", "https://www.ebay.com/itm/", 0.88, "used", "US"),
+    ("Marketplace (reventa)", "https://reventa.example/itm/", 0.74, "new", "US"),
     ("REI Re/Supply (outlet)", "https://www.rei.com/used/", 0.72, "new", "US"),
     ("MEC (CA)", "https://www.mec.ca/en/product/", 0.95, "new", "CA"),
     ("Bergfreunde (EU)", "https://www.bergfreunde.eu/", 0.99, "new", "EU"),

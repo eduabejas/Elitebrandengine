@@ -206,6 +206,18 @@ watch item (`urls`) — authoritative price/availability/GTIN, fetched politely
 they are low-trust **leads that must be corroborated by a real observed price**
 before they count (see `engine/community.py`), and are off by default.
 
+**Decision brain — don't manufacture illusions.** A deep discount isn't always
+an opportunity. Believability depends on **brand tier × channel × depth**: a
+cult/niche brand (Peak Performance, Helly Hansen, Mammut, Arc'teryx…) shown −50%
+*new* on a **resale marketplace** is almost certainly not genuine/new — it's
+flagged **suspect** and never presented as a buy. A **mass** brand (The North
+Face, Columbia, REI Co-op) *can* legitimately be dumped cheap on resale, so it
+stays credible. On top of credibility the brain reads the item's price history
+and returns **Buy / Wait / Hold** with a confidence, and marks legit cult/premium
+authorized deals **⚡ flash** (they sell out fast). Suspect and "hold" deals are
+kept **out of the email by default** (they still show on the site, flagged) so
+alerts never create false hopes.
+
 ### Turning on real sources
 Set `enabled: true` under `sources.<name>` in `config.yml` and provide the
 credentials as environment variables / GitHub Secrets:
@@ -260,6 +272,8 @@ engine/                 Python collection engine
   http.py               shared resilient HTTP (retries, backoff, rate-limit)
   metrics.py            thread-safe run metrics + per-source time budgets
   community.py          community signals as corroborated leads (anti fake-news)
+  credibility.py        brand-tier × channel × depth believability ("no ilusionar")
+  brain.py              Buy / Wait / Hold decision + confidence + flash
   run.py                orchestrator + CLI (concurrent; python -m engine.run)
   probe.py              inspect a single source (python -m engine.probe)
   validate.py           watchlist validation (python -m engine.validate)
