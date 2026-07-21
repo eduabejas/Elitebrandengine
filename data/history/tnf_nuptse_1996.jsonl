@@ -148,39 +148,21 @@
 {"ts": "2026-07-18T12:00:00+00:00", "source": "Brand Official", "price": 259.83, "size": "L", "color": "black", "condition": "new"}
 {"ts": "2026-07-18T12:00:00+00:00", "source": "Amazon", "price": 274.09, "size": "M", "color": "black", "condition": "new"}
 {"ts": "2026-07-18T12:00:00+00:00", "source": "eBay", "price": 221.33, "size": "L", "color": "black", "condition": "used"}
-{"ts": "2026-07-19T03:24:14+00:00", "source": "REI Co-op", "price": 277.01, "size": "M", "color": "black", "condition": "new"}
-{"ts": "2026-07-19T03:24:14+00:00", "source": "Backcountry", "price": 294.41, "size": "XL", "color": "black", "condition": "new"}
-{"ts": "2026-07-19T03:24:14+00:00", "source": "Brand Official", "price": 313.7, "size": "XL", "color": "black", "condition": "new"}
-{"ts": "2026-07-19T03:24:14+00:00", "source": "Amazon", "price": 253.21, "size": "XL", "color": "black", "condition": "new"}
-{"ts": "2026-07-19T03:24:14+00:00", "source": "eBay", "price": 258.6, "size": "XL", "color": "black", "condition": "used"}
-{"ts": "2026-07-19T10:59:28+00:00", "source": "REI Co-op", "price": 277.01, "size": "M", "color": "black", "condition": "new"}
-{"ts": "2026-07-19T10:59:28+00:00", "source": "Backcountry", "price": 294.41, "size": "XL", "color": "black", "condition": "new"}
-{"ts": "2026-07-19T10:59:28+00:00", "source": "Brand Official", "price": 313.7, "size": "XL", "color": "black", "condition": "new"}
-{"ts": "2026-07-19T10:59:28+00:00", "source": "Amazon", "price": 253.21, "size": "XL", "color": "black", "condition": "new"}
-{"ts": "2026-07-19T10:59:28+00:00", "source": "eBay", "price": 258.6, "size": "XL", "color": "black", "condition": "used"}
-{"ts": "2026-07-19T15:33:51+00:00", "source": "REI Co-op", "price": 277.01, "size": "M", "color": "black", "condition": "new"}
-{"ts": "2026-07-19T15:33:51+00:00", "source": "Backcountry", "price": 294.41, "size": "XL", "color": "black", "condition": "new"}
-{"ts": "2026-07-19T15:33:51+00:00", "source": "Brand Official", "price": 313.7, "size": "XL", "color": "black", "condition": "new"}
-{"ts": "2026-07-19T15:33:51+00:00", "source": "Amazon", "price": 253.21, "size": "XL", "color": "black", "condition": "new"}
-{"ts": "2026-07-19T15:33:51+00:00", "source": "eBay", "price": 258.6, "size": "XL", "color": "black", "condition": "used"}
 {"ts": "2026-07-19T20:33:11+00:00", "source": "REI Co-op", "price": 277.01, "size": "M", "color": "black", "condition": "new"}
 {"ts": "2026-07-19T20:33:11+00:00", "source": "Backcountry", "price": 294.41, "size": "XL", "color": "black", "condition": "new"}
 {"ts": "2026-07-19T20:33:11+00:00", "source": "Brand Official", "price": 313.7, "size": "XL", "color": "black", "condition": "new"}
 {"ts": "2026-07-19T20:33:11+00:00", "source": "Amazon", "price": 253.21, "size": "XL", "color": "black", "condition": "new"}
 {"ts": "2026-07-19T20:33:11+00:00", "source": "eBay", "price": 258.6, "size": "XL", "color": "black", "condition": "used"}
-{"ts": "2026-07-20T10:34:49+00:00", "source": "REI Co-op", "price": 263.09, "size": "XL", "color": "black", "condition": "new"}
-{"ts": "2026-07-20T10:34:49+00:00", "source": "Backcountry", "price": 284.96, "size": "XL", "color": "black", "condition": "new"}
-{"ts": "2026-07-20T10:34:49+00:00", "source": "Brand Official", "price": 199.52, "size": "M", "color": "black", "condition": "new"}
-{"ts": "2026-07-20T10:34:49+00:00", "source": "Amazon", "price": 221.62, "size": "XL", "color": "black", "condition": "new"}
-{"ts": "2026-07-20T10:34:49+00:00", "source": "eBay", "price": 184.68, "size": "XL", "color": "black", "condition": "used"}
-{"ts": "2026-07-20T17:09:37+00:00", "source": "REI Co-op", "price": 263.09, "size": "XL", "color": "black", "condition": "new"}
-{"ts": "2026-07-20T17:09:37+00:00", "source": "Backcountry", "price": 284.96, "size": "XL", "color": "black", "condition": "new"}
-{"ts": "2026-07-20T17:09:37+00:00", "source": "Brand Official", "price": 199.52, "size": "M", "color": "black", "condition": "new"}
-{"ts": "2026-07-20T17:09:37+00:00", "source": "Amazon", "price": 221.62, "size": "XL", "color": "black", "condition": "new"}
-{"ts": "2026-07-20T17:09:37+00:00", "source": "eBay", "price": 184.68, "size": "XL", "color": "black", "condition": "used"}
 {"ts": "2026-07-20T21:52:06+00:00", "source": "REI Co-op", "price": 263.09, "size": "XL", "color": "black", "condition": "new"}
 {"ts": "2026-07-20T21:52:06+00:00", "source": "Backcountry", "price": 284.96, "size": "XL", "color": "black", "condition": "new"}
 {"ts": "2026-07-20T21:52:06+00:00", "source": "Brand Official", "price": 199.52, "size": "M", "color": "black", "condition": "new"}
 {"ts": "2026-07-20T21:52:06+00:00", "source": "Amazon", "price": 221.62, "size": "XL", "color": "black", "condition": "new"}
 {"ts": "2026-07-20T21:52:06+00:00", "source": "eBay", "price": 184.68, "size": "XL", "color": "black", "condition": "used"}
 {"ts": "2026-07-20T21:52:06+00:00", "source": "REI Re/Supply (outlet)", "price": 169.42, "size": "L", "color": "black", "condition": "new"}
+{"ts": "2026-07-21T09:34:05+00:00", "source": "REI Co-op", "price": 172.14, "size": "L", "color": "black", "condition": "new"}
+{"ts": "2026-07-21T09:34:05+00:00", "source": "Backcountry", "price": 263.71, "size": "M", "color": "black", "condition": "new"}
+{"ts": "2026-07-21T09:34:05+00:00", "source": "Brand Official", "price": 284.43, "size": "L", "color": "black", "condition": "new"}
+{"ts": "2026-07-21T09:34:05+00:00", "source": "Amazon", "price": 248.49, "size": "XL", "color": "black", "condition": "new"}
+{"ts": "2026-07-21T09:34:05+00:00", "source": "eBay", "price": 159.48, "size": "XL", "color": "black", "condition": "used"}
+{"ts": "2026-07-21T09:34:05+00:00", "source": "Marketplace (reventa)", "price": 212.19, "size": "XL", "color": "black", "condition": "new"}
+{"ts": "2026-07-21T09:34:05+00:00", "source": "REI Re/Supply (outlet)", "price": 190.77, "size": "XL", "color": "black", "condition": "new"}

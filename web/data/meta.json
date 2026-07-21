@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-07-20T21:52:06+00:00",
+  "generated_at": "2026-07-21T09:34:05+00:00",
   "currency": "USD",
   "demo": true,
   "scope": "standard",
   "product_count": 22,
-  "offer_count": 132,
-  "deal_count": 97,
+  "offer_count": 154,
+  "deal_count": 119,
   "sources": [
     {
       "name": "REI Co-op",
@@ -29,6 +29,11 @@
     },
     {
       "name": "eBay",
+      "available": true,
+      "offers": 22
+    },
+    {
+      "name": "Marketplace (reventa)",
       "available": true,
       "offers": 22
     },
