@@ -159,10 +159,10 @@
 {"ts": "2026-07-20T21:52:06+00:00", "source": "Amazon", "price": 61.79, "size": "16L", "color": "Blue", "condition": "new"}
 {"ts": "2026-07-20T21:52:06+00:00", "source": "eBay", "price": 53.1, "size": "16L", "color": "Black", "condition": "used"}
 {"ts": "2026-07-20T21:52:06+00:00", "source": "REI Re/Supply (outlet)", "price": 58.7, "size": "16L", "color": "Blue", "condition": "new"}
-{"ts": "2026-07-21T09:34:05+00:00", "source": "REI Co-op", "price": 61.42, "size": "16L", "color": "Green", "condition": "new"}
-{"ts": "2026-07-21T09:34:05+00:00", "source": "Backcountry", "price": 60.88, "size": "16L", "color": "Blue", "condition": "new"}
-{"ts": "2026-07-21T09:34:05+00:00", "source": "Brand Official", "price": 93.55, "size": "16L", "color": "Blue", "condition": "new"}
-{"ts": "2026-07-21T09:34:05+00:00", "source": "Amazon", "price": 80.68, "size": "16L", "color": "Green", "condition": "new"}
-{"ts": "2026-07-21T09:34:05+00:00", "source": "eBay", "price": 77.03, "size": "16L", "color": "Blue", "condition": "used"}
-{"ts": "2026-07-21T09:34:05+00:00", "source": "Marketplace (reventa)", "price": 45.01, "size": "16L", "color": "Black", "condition": "new"}
-{"ts": "2026-07-21T09:34:05+00:00", "source": "REI Re/Supply (outlet)", "price": 46.31, "size": "16L", "color": "Green", "condition": "new"}
+{"ts": "2026-07-21T17:00:35+00:00", "source": "REI Co-op", "price": 61.42, "size": "16L", "color": "Green", "condition": "new"}
+{"ts": "2026-07-21T17:00:35+00:00", "source": "Backcountry", "price": 60.88, "size": "16L", "color": "Blue", "condition": "new"}
+{"ts": "2026-07-21T17:00:35+00:00", "source": "Brand Official", "price": 93.55, "size": "16L", "color": "Blue", "condition": "new"}
+{"ts": "2026-07-21T17:00:35+00:00", "source": "Amazon", "price": 80.68, "size": "16L", "color": "Green", "condition": "new"}
+{"ts": "2026-07-21T17:00:35+00:00", "source": "eBay", "price": 77.03, "size": "16L", "color": "Blue", "condition": "used"}
+{"ts": "2026-07-21T17:00:35+00:00", "source": "Marketplace (reventa)", "price": 45.01, "size": "16L", "color": "Black", "condition": "new"}
+{"ts": "2026-07-21T17:00:35+00:00", "source": "REI Re/Supply (outlet)", "price": 46.31, "size": "16L", "color": "Green", "condition": "new"}
