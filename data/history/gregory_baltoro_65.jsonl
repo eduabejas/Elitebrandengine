@@ -173,10 +173,10 @@
 {"ts": "2026-07-22T21:43:56+00:00", "source": "eBay", "price": 204.26, "size": "65L", "color": "Black", "condition": "used"}
 {"ts": "2026-07-22T21:43:56+00:00", "source": "Marketplace (reventa)", "price": 250.6, "size": "65L", "color": "Black", "condition": "new"}
 {"ts": "2026-07-22T21:43:56+00:00", "source": "REI Re/Supply (outlet)", "price": 167.1, "size": "65L", "color": "Blue", "condition": "new"}
-{"ts": "2026-07-23T09:15:41+00:00", "source": "REI Co-op", "price": 361.28, "size": "65L", "color": "Black", "condition": "new"}
-{"ts": "2026-07-23T09:15:41+00:00", "source": "Backcountry", "price": 354.13, "size": "65L", "color": "Black", "condition": "new"}
-{"ts": "2026-07-23T09:15:41+00:00", "source": "Brand Official", "price": 275.33, "size": "65L", "color": "Black", "condition": "new"}
-{"ts": "2026-07-23T09:15:41+00:00", "source": "Amazon", "price": 329.38, "size": "65L", "color": "Black", "condition": "new"}
-{"ts": "2026-07-23T09:15:41+00:00", "source": "eBay", "price": 252.33, "size": "65L", "color": "Blue", "condition": "used"}
-{"ts": "2026-07-23T09:15:41+00:00", "source": "Marketplace (reventa)", "price": 232.94, "size": "65L", "color": "Blue", "condition": "new"}
-{"ts": "2026-07-23T09:15:41+00:00", "source": "REI Re/Supply (outlet)", "price": 222.03, "size": "65L", "color": "Blue", "condition": "new"}
+{"ts": "2026-07-23T17:04:12+00:00", "source": "REI Co-op", "price": 361.28, "size": "65L", "color": "Black", "condition": "new"}
+{"ts": "2026-07-23T17:04:12+00:00", "source": "Backcountry", "price": 354.13, "size": "65L", "color": "Black", "condition": "new"}
+{"ts": "2026-07-23T17:04:12+00:00", "source": "Brand Official", "price": 275.33, "size": "65L", "color": "Black", "condition": "new"}
+{"ts": "2026-07-23T17:04:12+00:00", "source": "Amazon", "price": 329.38, "size": "65L", "color": "Black", "condition": "new"}
+{"ts": "2026-07-23T17:04:12+00:00", "source": "eBay", "price": 252.33, "size": "65L", "color": "Blue", "condition": "used"}
+{"ts": "2026-07-23T17:04:12+00:00", "source": "Marketplace (reventa)", "price": 232.94, "size": "65L", "color": "Blue", "condition": "new"}
+{"ts": "2026-07-23T17:04:12+00:00", "source": "REI Re/Supply (outlet)", "price": 222.03, "size": "65L", "color": "Blue", "condition": "new"}
