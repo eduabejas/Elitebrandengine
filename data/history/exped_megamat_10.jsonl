@@ -173,10 +173,10 @@
 {"ts": "2026-07-22T21:43:56+00:00", "source": "eBay", "price": 220.62, "size": "LW", "color": "Blue", "condition": "used"}
 {"ts": "2026-07-22T21:43:56+00:00", "source": "Marketplace (reventa)", "price": 137.3, "size": "LW", "color": "Blue", "condition": "new"}
 {"ts": "2026-07-22T21:43:56+00:00", "source": "REI Re/Supply (outlet)", "price": 203.23, "size": "LW", "color": "Black", "condition": "new"}
-{"ts": "2026-07-23T17:04:12+00:00", "source": "REI Co-op", "price": 245.26, "size": "LW", "color": "Green", "condition": "new"}
-{"ts": "2026-07-23T17:04:12+00:00", "source": "Backcountry", "price": 278.93, "size": "LW", "color": "Green", "condition": "new"}
-{"ts": "2026-07-23T17:04:12+00:00", "source": "Brand Official", "price": 179.01, "size": "LW", "color": "Black", "condition": "new"}
-{"ts": "2026-07-23T17:04:12+00:00", "source": "Amazon", "price": 164.78, "size": "LW", "color": "Blue", "condition": "new"}
-{"ts": "2026-07-23T17:04:12+00:00", "source": "eBay", "price": 180.99, "size": "LW", "color": "Green", "condition": "used"}
-{"ts": "2026-07-23T17:04:12+00:00", "source": "Marketplace (reventa)", "price": 202.73, "size": "LW", "color": "Blue", "condition": "new"}
-{"ts": "2026-07-23T17:04:12+00:00", "source": "REI Re/Supply (outlet)", "price": 209.71, "size": "LW", "color": "Blue", "condition": "new"}
+{"ts": "2026-07-23T21:40:01+00:00", "source": "REI Co-op", "price": 245.26, "size": "LW", "color": "Green", "condition": "new"}
+{"ts": "2026-07-23T21:40:01+00:00", "source": "Backcountry", "price": 278.93, "size": "LW", "color": "Green", "condition": "new"}
+{"ts": "2026-07-23T21:40:01+00:00", "source": "Brand Official", "price": 179.01, "size": "LW", "color": "Black", "condition": "new"}
+{"ts": "2026-07-23T21:40:01+00:00", "source": "Amazon", "price": 164.78, "size": "LW", "color": "Blue", "condition": "new"}
+{"ts": "2026-07-23T21:40:01+00:00", "source": "eBay", "price": 180.99, "size": "LW", "color": "Green", "condition": "used"}
+{"ts": "2026-07-23T21:40:01+00:00", "source": "Marketplace (reventa)", "price": 202.73, "size": "LW", "color": "Blue", "condition": "new"}
+{"ts": "2026-07-23T21:40:01+00:00", "source": "REI Re/Supply (outlet)", "price": 209.71, "size": "LW", "color": "Blue", "condition": "new"}
