@@ -90,6 +90,7 @@ def main(argv: list[str] | None = None) -> int:
             print("[probe] no offers returned (check query, min_match_score, or quotas)")
         for o in offers:
             print(f"  {o.price:>9.2f} {o.currency}  {o.source:<14} "
+                  f"[{o.condition}/{o.region}] "
                   f"size={str(o.size or '-'):<7} color={str(o.color or '-'):<8} "
                   f"score={o.match_score:.2f}")
             print(f"    {o.title[:88]}")

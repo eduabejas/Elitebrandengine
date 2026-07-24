@@ -70,8 +70,13 @@ sources:
 
   ebay:
     enabled: false           # needs EBAY_CLIENT_ID / EBAY_CLIENT_SECRET
-    marketplace: EBAY_US
-    limit: 8
+    marketplace: EBAY_US     # used for STANDARD scope
+    limit: 8                 # listings per product per marketplace
+    # With search.scope: expanded the connector auto-queries several eBay sites
+    # so European/Canadian home-market deals surface. Override the set here:
+    # expanded_marketplaces: [EBAY_US, EBAY_GB, EBAY_DE, EBAY_CA]
+    # Or pin an explicit list that ignores scope entirely:
+    # marketplaces: [EBAY_US, EBAY_GB]
 
   amazon:
     enabled: false           # needs AMAZON_ACCESS_KEY / _SECRET_KEY / _PARTNER_TAG

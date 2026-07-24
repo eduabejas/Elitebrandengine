@@ -41,6 +41,7 @@ jobs:
           python -m tests.test_brain
           python -m tests.test_dealdetector
           python -m tests.test_store
+          python -m tests.test_ebay
           python -m tests.test_http
           python -m tests.test_validate
 

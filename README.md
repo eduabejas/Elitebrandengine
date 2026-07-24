@@ -228,6 +228,22 @@ credentials as environment variables / GitHub Secrets:
 | Amazon | `AMAZON_ACCESS_KEY`, `AMAZON_SECRET_KEY`, `AMAZON_PARTNER_TAG` |
 | Affiliate feeds | add `feeds:` entries (feed URL + column mapping) — no secret needed if the feed URL is tokenised |
 
+**eBay (production-ready).** Create a free app at
+[developer.ebay.com](https://developer.ebay.com/) (Application keysets → Client
+ID + Secret), add the two secrets, and set `sources.ebay.enabled: true`. Then:
+
+```bash
+python -m engine.probe ebay --id arcteryx_beta_ar_jacket   # verify creds live
+```
+
+Because eBay is a **marketplace**, each listing is mapped to `new` / `used` /
+`refurbished` (eBay's "New other", "Like new" and refurbished tiers are *not*
+treated as genuine new), and tagged with its region + currency. This feeds the
+cautious brain directly: a cult brand shown "−55% new" on eBay is flagged
+**suspect → HOLD** and kept out of email, while a mass brand at the same price
+stays a credible **BUY**. With `search.scope: expanded` the connector
+auto-queries several eBay sites (US + GB + DE + CA) so home-market deals surface.
+
 ### Email transport (auto-detected from env, first match wins)
 
 | Transport | Env vars |
