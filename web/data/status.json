@@ -1,15 +1,15 @@
 {
-  "generated_at": "2026-07-23T21:40:01+00:00",
+  "generated_at": "2026-07-24T09:12:20+00:00",
   "duration_seconds": 0.185,
   "scope": "standard",
   "max_workers": 6,
   "watch_items": 22,
   "offers": 154,
-  "active_deals": 121,
-  "new_deals": 0,
+  "active_deals": 114,
+  "new_deals": 114,
   "phases": {
     "gather": 0.015,
-    "detect": 0.129
+    "detect": 0.13
   },
   "connectors": {
     "sample": {

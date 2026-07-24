@@ -180,3 +180,10 @@
 {"ts": "2026-07-23T21:40:01+00:00", "source": "eBay", "price": 182.53, "size": "130", "color": "Green", "condition": "used"}
 {"ts": "2026-07-23T21:40:01+00:00", "source": "Marketplace (reventa)", "price": 149.96, "size": "110", "color": "Black", "condition": "new"}
 {"ts": "2026-07-23T21:40:01+00:00", "source": "REI Re/Supply (outlet)", "price": 142.31, "size": "120", "color": "Green", "condition": "new"}
+{"ts": "2026-07-24T09:12:20+00:00", "source": "REI Co-op", "price": 136.56, "size": "130", "color": "Blue", "condition": "new"}
+{"ts": "2026-07-24T09:12:20+00:00", "source": "Backcountry", "price": 122.12, "size": "110", "color": "Blue", "condition": "new"}
+{"ts": "2026-07-24T09:12:20+00:00", "source": "Brand Official", "price": 194.57, "size": "110", "color": "Black", "condition": "new"}
+{"ts": "2026-07-24T09:12:20+00:00", "source": "Amazon", "price": 144.84, "size": "120", "color": "Blue", "condition": "new"}
+{"ts": "2026-07-24T09:12:20+00:00", "source": "eBay", "price": 175.63, "size": "110", "color": "Black", "condition": "used"}
+{"ts": "2026-07-24T09:12:20+00:00", "source": "Marketplace (reventa)", "price": 110.06, "size": "130", "color": "Green", "condition": "new"}
+{"ts": "2026-07-24T09:12:20+00:00", "source": "REI Re/Supply (outlet)", "price": 152.8, "size": "120", "color": "Black", "condition": "new"}
