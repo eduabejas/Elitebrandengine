@@ -54,7 +54,7 @@
           "image": null,
           "list_price": 598.67,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "f91bc6fd9287e842"
         },
         {
@@ -74,7 +74,7 @@
           "image": null,
           "list_price": 598.67,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "d6bf3ddc92f361bb"
         },
         {
@@ -94,7 +94,7 @@
           "image": null,
           "list_price": 598.67,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "c03a3cd0bfbf416f"
         },
         {
@@ -114,7 +114,7 @@
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "f8c6be61f64a945f"
         },
         {
@@ -134,7 +134,7 @@
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "8d013ca069eb2f82"
         },
         {
@@ -154,7 +154,7 @@
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "c1843708189c5f2a"
         },
         {
@@ -174,7 +174,7 @@
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "82ed37a1c1c7a53f"
         }
       ],
@@ -455,37 +455,37 @@
           "source": "REI Re/Supply (outlet)"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 576.84,
           "source": "REI Co-op"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 425.92,
           "source": "Backcountry"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 652.25,
           "source": "Brand Official"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 376.43,
           "source": "Amazon"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 486.45,
           "source": "eBay"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 435.35,
           "source": "Marketplace (reventa)"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 360.41,
           "source": "REI Re/Supply (outlet)"
         }
@@ -544,7 +544,7 @@
           "image": null,
           "list_price": 280.0,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "e28118b755794a16"
         },
         {
@@ -564,7 +564,7 @@
           "image": null,
           "list_price": 280.0,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "4252de3e29eeefb7"
         },
         {
@@ -584,7 +584,7 @@
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "157ec288b82c98bf"
         },
         {
@@ -604,7 +604,7 @@
           "image": null,
           "list_price": 280.0,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "a8de74f6e938856b"
         },
         {
@@ -624,7 +624,7 @@
           "image": null,
           "list_price": 280.0,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "fd0f5e3d00c5a1ee"
         },
         {
@@ -644,7 +644,7 @@
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "691cb6b38b8ed121"
         },
         {
@@ -664,7 +664,7 @@
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "b52618706f25f640"
         }
       ],
@@ -945,37 +945,37 @@
           "source": "REI Re/Supply (outlet)"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 307.22,
           "source": "REI Co-op"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 249.7,
           "source": "Backcountry"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 241.23,
           "source": "Brand Official"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 225.45,
           "source": "Amazon"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 175.55,
           "source": "eBay"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 222.85,
           "source": "Marketplace (reventa)"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 144.52,
           "source": "REI Re/Supply (outlet)"
         }
@@ -1028,7 +1028,7 @@
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "403fa9691eb0a596"
         },
         {
@@ -1048,7 +1048,7 @@
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "be70481d9496b382"
         },
         {
@@ -1068,7 +1068,7 @@
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "bc77a58102d8013d"
         },
         {
@@ -1088,7 +1088,7 @@
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "58547536530cb602"
         },
         {
@@ -1108,7 +1108,7 @@
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "d371e2bfdddb4c9d"
         },
         {
@@ -1128,7 +1128,7 @@
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "a6b24b65beed548d"
         },
         {
@@ -1148,7 +1148,7 @@
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "93bf66e453daff31"
         }
       ],
@@ -1429,37 +1429,37 @@
           "source": "REI Re/Supply (outlet)"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 207.09,
           "source": "REI Co-op"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 206.97,
           "source": "Backcountry"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 190.9,
           "source": "Brand Official"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 182.43,
           "source": "Amazon"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 188.95,
           "source": "eBay"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 134.23,
           "source": "Marketplace (reventa)"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 138.19,
           "source": "REI Re/Supply (outlet)"
         }
@@ -1513,7 +1513,7 @@
           "image": null,
           "list_price": 200.0,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "85c8cf40598da4a9"
         },
         {
@@ -1533,7 +1533,7 @@
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "7efc23e93a442d92"
         },
         {
@@ -1553,7 +1553,7 @@
           "image": null,
           "list_price": 200.0,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "5e8607edb94cbab0"
         },
         {
@@ -1573,7 +1573,7 @@
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "4870bef76b113007"
         },
         {
@@ -1593,7 +1593,7 @@
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "54f9ab02cb6bdccb"
         },
         {
@@ -1613,7 +1613,7 @@
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "f447eeb4753114d7"
         },
         {
@@ -1633,7 +1633,7 @@
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "ccaeab138cebd227"
         }
       ],
@@ -1914,37 +1914,37 @@
           "source": "REI Re/Supply (outlet)"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 207.28,
           "source": "REI Co-op"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 192.16,
           "source": "Backcountry"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 185.46,
           "source": "Brand Official"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 141.04,
           "source": "Amazon"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 164.79,
           "source": "eBay"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 102.88,
           "source": "Marketplace (reventa)"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 137.55,
           "source": "REI Re/Supply (outlet)"
         }
@@ -1996,7 +1996,7 @@
           "image": null,
           "list_price": 266.67,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "0d330e05f92ebba4"
         },
         {
@@ -2016,7 +2016,7 @@
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "1907ae063196d78f"
         },
         {
@@ -2036,7 +2036,7 @@
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "84fbcf2be6613e10"
         },
         {
@@ -2056,7 +2056,7 @@
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "1c49e56b816c206d"
         },
         {
@@ -2076,7 +2076,7 @@
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "ac7af2b90efcf757"
         },
         {
@@ -2096,7 +2096,7 @@
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "667dc19ed5c0133a"
         },
         {
@@ -2116,7 +2116,7 @@
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "ee4c6b0f915c0d64"
         }
       ],
@@ -2397,37 +2397,37 @@
           "source": "REI Re/Supply (outlet)"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 265.46,
           "source": "REI Co-op"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 233.84,
           "source": "Backcountry"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 271.14,
           "source": "Brand Official"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 249.0,
           "source": "Amazon"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 243.15,
           "source": "eBay"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 199.42,
           "source": "Marketplace (reventa)"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 113.25,
           "source": "REI Re/Supply (outlet)"
         }
@@ -2480,7 +2480,7 @@
           "image": null,
           "list_price": 173.33,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "ac14c78f4fedb681"
         },
         {
@@ -2500,7 +2500,7 @@
           "image": null,
           "list_price": 173.33,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "7f4111c589164b76"
         },
         {
@@ -2520,7 +2520,7 @@
           "image": null,
           "list_price": 173.33,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "6064a1c407ace987"
         },
         {
@@ -2540,7 +2540,7 @@
           "image": null,
           "list_price": 173.33,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "6b24a93e6aba8048"
         },
         {
@@ -2560,7 +2560,7 @@
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "b83bf71ac8ae155a"
         },
         {
@@ -2580,7 +2580,7 @@
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "f7875c9cd0473800"
         },
         {
@@ -2600,7 +2600,7 @@
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "94fbde01e8d32613"
         }
       ],
@@ -2881,37 +2881,37 @@
           "source": "REI Re/Supply (outlet)"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 144.37,
           "source": "REI Co-op"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 105.52,
           "source": "Backcountry"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 165.34,
           "source": "Brand Official"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 173.51,
           "source": "Amazon"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 165.53,
           "source": "eBay"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 96.25,
           "source": "Marketplace (reventa)"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 92.7,
           "source": "REI Re/Supply (outlet)"
         }
@@ -2963,7 +2963,7 @@
           "image": null,
           "list_price": 80.0,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "a5794a9a1a900495"
         },
         {
@@ -2983,7 +2983,7 @@
           "image": null,
           "list_price": 80.0,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "62f9793681d88347"
         },
         {
@@ -3003,7 +3003,7 @@
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "62c931f790c4b688"
         },
         {
@@ -3023,7 +3023,7 @@
           "image": null,
           "list_price": 80.0,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "014c78c441c9635e"
         },
         {
@@ -3043,7 +3043,7 @@
           "image": null,
           "list_price": 80.0,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "8defce9d63b60d85"
         },
         {
@@ -3063,7 +3063,7 @@
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "620daaf576986d91"
         },
         {
@@ -3083,7 +3083,7 @@
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "2905dff250b4e07b"
         }
       ],
@@ -3364,37 +3364,37 @@
           "source": "REI Re/Supply (outlet)"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 60.88,
           "source": "REI Co-op"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 52.49,
           "source": "Backcountry"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 86.29,
           "source": "Brand Official"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 57.57,
           "source": "Amazon"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 49.86,
           "source": "eBay"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 64.11,
           "source": "Marketplace (reventa)"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 55.91,
           "source": "REI Re/Supply (outlet)"
         }
@@ -3450,7 +3450,7 @@
           "image": null,
           "list_price": 400.0,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "29d078c13c0cde2a"
         },
         {
@@ -3470,7 +3470,7 @@
           "image": null,
           "list_price": 400.0,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "c9531ec129b59f0d"
         },
         {
@@ -3490,7 +3490,7 @@
           "image": null,
           "list_price": 400.0,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "a51c45dea4f5b3c9"
         },
         {
@@ -3510,7 +3510,7 @@
           "image": null,
           "list_price": 400.0,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "e5a1821ec6898d73"
         },
         {
@@ -3530,7 +3530,7 @@
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "06b5e575d0186193"
         },
         {
@@ -3550,7 +3550,7 @@
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "3ca1ff1e6cf84eeb"
         },
         {
@@ -3570,7 +3570,7 @@
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "ac95689e63982a8e"
         }
       ],
@@ -3851,37 +3851,37 @@
           "source": "REI Re/Supply (outlet)"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 405.14,
           "source": "REI Co-op"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 292.66,
           "source": "Backcountry"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 397.69,
           "source": "Brand Official"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 401.79,
           "source": "Amazon"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 230.19,
           "source": "eBay"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 242.11,
           "source": "Marketplace (reventa)"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 258.18,
           "source": "REI Re/Supply (outlet)"
         }
@@ -3934,7 +3934,7 @@
           "image": null,
           "list_price": 100.0,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "428c1b4ed4044d08"
         },
         {
@@ -3954,7 +3954,7 @@
           "image": null,
           "list_price": 100.0,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "7cd66b9a9ce1bd9d"
         },
         {
@@ -3974,7 +3974,7 @@
           "image": null,
           "list_price": 100.0,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "6f66b05e58814e96"
         },
         {
@@ -3994,7 +3994,7 @@
           "image": null,
           "list_price": 100.0,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "39f4929ec79ecf20"
         },
         {
@@ -4014,7 +4014,7 @@
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "8d53c1b336f4a52b"
         },
         {
@@ -4034,7 +4034,7 @@
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "48c656a49a2dbdf1"
         },
         {
@@ -4054,7 +4054,7 @@
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "1c3223c283778f88"
         }
       ],
@@ -4335,37 +4335,37 @@
           "source": "REI Re/Supply (outlet)"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 90.88,
           "source": "REI Co-op"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 65.73,
           "source": "Backcountry"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 71.41,
           "source": "Brand Official"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 91.25,
           "source": "Amazon"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 68.96,
           "source": "eBay"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 80.94,
           "source": "Marketplace (reventa)"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 56.46,
           "source": "REI Re/Supply (outlet)"
         }
@@ -4418,7 +4418,7 @@
           "image": null,
           "list_price": 266.67,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "e22998b100d50c67"
         },
         {
@@ -4438,7 +4438,7 @@
           "image": null,
           "list_price": 266.67,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "fd311950f494614e"
         },
         {
@@ -4458,7 +4458,7 @@
           "image": null,
           "list_price": 266.67,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "fae408fc1e5903af"
         },
         {
@@ -4478,7 +4478,7 @@
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "e45c132061dfe050"
         },
         {
@@ -4498,7 +4498,7 @@
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "f78d0ef93d722e5a"
         },
         {
@@ -4518,7 +4518,7 @@
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "67a053ee9be46d8b"
         },
         {
@@ -4538,7 +4538,7 @@
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "2d614a088dda9cf3"
         }
       ],
@@ -4819,37 +4819,37 @@
           "source": "REI Re/Supply (outlet)"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 283.08,
           "source": "REI Co-op"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 258.62,
           "source": "Backcountry"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 191.21,
           "source": "Brand Official"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 244.64,
           "source": "Amazon"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 143.16,
           "source": "eBay"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 171.84,
           "source": "Marketplace (reventa)"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 193.06,
           "source": "REI Re/Supply (outlet)"
         }
@@ -4900,7 +4900,7 @@
           "image": null,
           "list_price": 86.67,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "62dded6878b7ccfd"
         },
         {
@@ -4920,7 +4920,7 @@
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "15374b4a5acccf4b"
         },
         {
@@ -4940,7 +4940,7 @@
           "image": null,
           "list_price": 86.67,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "58c72e03a0e9ad96"
         },
         {
@@ -4960,7 +4960,7 @@
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "6c5354816d1c4289"
         },
         {
@@ -4980,7 +4980,7 @@
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "3ecb32c3e6306c70"
         },
         {
@@ -5000,7 +5000,7 @@
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "d821dba9849f6ca0"
         },
         {
@@ -5020,7 +5020,7 @@
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "092d317546e604f3"
         }
       ],
@@ -5301,37 +5301,37 @@
           "source": "REI Re/Supply (outlet)"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 67.7,
           "source": "REI Co-op"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 85.75,
           "source": "Backcountry"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 91.52,
           "source": "Brand Official"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 89.0,
           "source": "Amazon"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 76.17,
           "source": "eBay"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 66.36,
           "source": "Marketplace (reventa)"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 43.09,
           "source": "REI Re/Supply (outlet)"
         }
@@ -5384,7 +5384,7 @@
           "image": null,
           "list_price": 733.33,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "ed09dd6a9af29b93"
         },
         {
@@ -5404,7 +5404,7 @@
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "57ed21af9f01e2d5"
         },
         {
@@ -5424,7 +5424,7 @@
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "465dc08b835709d2"
         },
         {
@@ -5444,7 +5444,7 @@
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "bc629e33735a08fa"
         },
         {
@@ -5464,7 +5464,7 @@
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "b48ce301b4fd60c5"
         },
         {
@@ -5484,7 +5484,7 @@
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "95aa6edb0ffa9d58"
         },
         {
@@ -5504,7 +5504,7 @@
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "a50d525556e48605"
         }
       ],
@@ -5785,37 +5785,37 @@
           "source": "REI Re/Supply (outlet)"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 661.09,
           "source": "REI Co-op"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 781.37,
           "source": "Backcountry"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 813.33,
           "source": "Brand Official"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 661.69,
           "source": "Amazon"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 597.93,
           "source": "eBay"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 533.49,
           "source": "Marketplace (reventa)"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 350.16,
           "source": "REI Re/Supply (outlet)"
         }
@@ -5865,7 +5865,7 @@
           "image": null,
           "list_price": 73.33,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "ba8c64d7ce2798f2"
         },
         {
@@ -5885,7 +5885,7 @@
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "48338be7a3018a07"
         },
         {
@@ -5905,7 +5905,7 @@
           "image": null,
           "list_price": 73.33,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "89d0ba221cc7ed85"
         },
         {
@@ -5925,7 +5925,7 @@
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "70dc09efcc2fdf5e"
         },
         {
@@ -5945,7 +5945,7 @@
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "8c25e9635d2dc465"
         },
         {
@@ -5965,7 +5965,7 @@
           "image": null,
           "list_price": 73.33,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "c9787f884fcf2747"
         },
         {
@@ -5985,7 +5985,7 @@
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "8c4d3cc3a6f1cd02"
         }
       ],
@@ -6266,37 +6266,37 @@
           "source": "REI Re/Supply (outlet)"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 54.31,
           "source": "REI Co-op"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 50.9,
           "source": "Backcountry"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 69.79,
           "source": "Brand Official"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 63.78,
           "source": "Amazon"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 59.18,
           "source": "eBay"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 56.76,
           "source": "Marketplace (reventa)"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 52.68,
           "source": "REI Re/Supply (outlet)"
         }
@@ -6348,7 +6348,7 @@
           "image": null,
           "list_price": 100.0,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "7f07c9a30b58ef1b"
         },
         {
@@ -6368,7 +6368,7 @@
           "image": null,
           "list_price": 100.0,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "cf94ba33a77fcdd2"
         },
         {
@@ -6388,7 +6388,7 @@
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "aca65e80be82d8ee"
         },
         {
@@ -6408,7 +6408,7 @@
           "image": null,
           "list_price": 100.0,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "9ec0711adfe855c4"
         },
         {
@@ -6428,7 +6428,7 @@
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "d92b21439190f532"
         },
         {
@@ -6448,7 +6448,7 @@
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "d78a0435db8a8fcf"
         },
         {
@@ -6468,7 +6468,7 @@
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "ed2443dc68e7432c"
         }
       ],
@@ -6749,37 +6749,37 @@
           "source": "REI Re/Supply (outlet)"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 77.52,
           "source": "REI Co-op"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 72.79,
           "source": "Backcountry"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 104.17,
           "source": "Brand Official"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 101.23,
           "source": "Amazon"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 89.12,
           "source": "eBay"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 73.76,
           "source": "Marketplace (reventa)"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 46.36,
           "source": "REI Re/Supply (outlet)"
         }
@@ -6831,7 +6831,7 @@
           "image": null,
           "list_price": 293.33,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "9612cd15be3bc940"
         },
         {
@@ -6851,7 +6851,7 @@
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "9850c8bd8558e6bd"
         },
         {
@@ -6871,7 +6871,7 @@
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "adcf8f488f1c9a6c"
         },
         {
@@ -6891,7 +6891,7 @@
           "image": null,
           "list_price": 293.33,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "16943d7b5270aef9"
         },
         {
@@ -6911,7 +6911,7 @@
           "image": null,
           "list_price": 293.33,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "94adff0e08a92733"
         },
         {
@@ -6931,7 +6931,7 @@
           "image": null,
           "list_price": 293.33,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "8ef22d0ac7cc69ae"
         },
         {
@@ -6951,7 +6951,7 @@
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "3b308ab36ccf5bbe"
         }
       ],
@@ -7232,37 +7232,37 @@
           "source": "REI Re/Supply (outlet)"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 302.45,
           "source": "REI Co-op"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 236.47,
           "source": "Backcountry"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 246.56,
           "source": "Brand Official"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 210.91,
           "source": "Amazon"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 153.51,
           "source": "eBay"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 204.32,
           "source": "Marketplace (reventa)"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 190.21,
           "source": "REI Re/Supply (outlet)"
         }
@@ -7313,7 +7313,7 @@
           "image": null,
           "list_price": 333.33,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "d59b8fbd27a2bb92"
         },
         {
@@ -7333,7 +7333,7 @@
           "image": null,
           "list_price": 333.33,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "93093ec66cdce539"
         },
         {
@@ -7353,7 +7353,7 @@
           "image": null,
           "list_price": 333.33,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "ac576f85b2dc32a9"
         },
         {
@@ -7373,7 +7373,7 @@
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "f6decb50c1b074e3"
         },
         {
@@ -7393,7 +7393,7 @@
           "image": null,
           "list_price": 333.33,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "373ecc3b293e03a1"
         },
         {
@@ -7413,7 +7413,7 @@
           "image": null,
           "list_price": 333.33,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "3e4e41b07dec356b"
         },
         {
@@ -7433,7 +7433,7 @@
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "6d958ca76ff27390"
         }
       ],
@@ -7714,37 +7714,37 @@
           "source": "REI Re/Supply (outlet)"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 260.76,
           "source": "REI Co-op"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 261.97,
           "source": "Backcountry"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 254.79,
           "source": "Brand Official"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 240.31,
           "source": "Amazon"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 309.59,
           "source": "eBay"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 255.37,
           "source": "Marketplace (reventa)"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 191.51,
           "source": "REI Re/Supply (outlet)"
         }
@@ -7798,7 +7798,7 @@
           "image": null,
           "list_price": 146.67,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "16834181e1080c5c"
         },
         {
@@ -7818,7 +7818,7 @@
           "image": null,
           "list_price": 146.67,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "81c352f0f13f71bf"
         },
         {
@@ -7838,7 +7838,7 @@
           "image": null,
           "list_price": 146.67,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "1ba785d666aa763d"
         },
         {
@@ -7858,7 +7858,7 @@
           "image": null,
           "list_price": 146.67,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "ff9c084d074d36d2"
         },
         {
@@ -7878,7 +7878,7 @@
           "image": null,
           "list_price": 146.67,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "5b638ccc7df354a9"
         },
         {
@@ -7898,7 +7898,7 @@
           "image": null,
           "list_price": 146.67,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "d3bb7af5a2f353e5"
         },
         {
@@ -7918,7 +7918,7 @@
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "213acad6243180a5"
         }
       ],
@@ -8199,37 +8199,37 @@
           "source": "REI Re/Supply (outlet)"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 92.84,
           "source": "REI Co-op"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 105.63,
           "source": "Backcountry"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 142.84,
           "source": "Brand Official"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 98.51,
           "source": "Amazon"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 99.24,
           "source": "eBay"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 88.7,
           "source": "Marketplace (reventa)"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 81.3,
           "source": "REI Re/Supply (outlet)"
         }
@@ -8282,7 +8282,7 @@
           "image": null,
           "list_price": 266.67,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "63f7015619442dda"
         },
         {
@@ -8302,7 +8302,7 @@
           "image": null,
           "list_price": 266.67,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "0739351966ec23b3"
         },
         {
@@ -8322,7 +8322,7 @@
           "image": null,
           "list_price": 266.67,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "e5b87485b8a4c701"
         },
         {
@@ -8342,7 +8342,7 @@
           "image": null,
           "list_price": 266.67,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "edc41b8edcf5a783"
         },
         {
@@ -8362,7 +8362,7 @@
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "77c83997a1318737"
         },
         {
@@ -8382,7 +8382,7 @@
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "6bab4f55f38ac5ca"
         },
         {
@@ -8402,7 +8402,7 @@
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "b90e8028fff973b3"
         }
       ],
@@ -8683,37 +8683,37 @@
           "source": "REI Re/Supply (outlet)"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 177.86,
           "source": "REI Co-op"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 237.89,
           "source": "Backcountry"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 259.9,
           "source": "Brand Official"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 158.53,
           "source": "Amazon"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 243.39,
           "source": "eBay"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 118.41,
           "source": "Marketplace (reventa)"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 139.34,
           "source": "REI Re/Supply (outlet)"
         }
@@ -8766,7 +8766,7 @@
           "image": null,
           "list_price": 453.33,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "fda7991188c7e371"
         },
         {
@@ -8786,7 +8786,7 @@
           "image": null,
           "list_price": 453.33,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "a2ee10074d27d864"
         },
         {
@@ -8806,7 +8806,7 @@
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "e6afa86bc8b578ca"
         },
         {
@@ -8826,7 +8826,7 @@
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "f4941803ae31b8c2"
         },
         {
@@ -8846,7 +8846,7 @@
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "e0630a8b820bfc97"
         },
         {
@@ -8866,7 +8866,7 @@
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "3bc6114231c5a218"
         },
         {
@@ -8886,7 +8886,7 @@
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "6b0c8b9c51d9b2a7"
         }
       ],
@@ -9167,37 +9167,37 @@
           "source": "REI Re/Supply (outlet)"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 470.23,
           "source": "REI Co-op"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 261.14,
           "source": "Backcountry"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 465.82,
           "source": "Brand Official"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 451.31,
           "source": "Amazon"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 368.56,
           "source": "eBay"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 255.61,
           "source": "Marketplace (reventa)"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 294.08,
           "source": "REI Re/Supply (outlet)"
         }
@@ -9249,7 +9249,7 @@
           "image": null,
           "list_price": 266.67,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "03818a79542c2dbb"
         },
         {
@@ -9269,7 +9269,7 @@
           "image": null,
           "list_price": 266.67,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "3b0da4cdf05dde31"
         },
         {
@@ -9289,7 +9289,7 @@
           "image": null,
           "list_price": 266.67,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "e6b3283ad8744231"
         },
         {
@@ -9309,7 +9309,7 @@
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "d00624c9ace5b2db"
         },
         {
@@ -9329,7 +9329,7 @@
           "image": null,
           "list_price": 266.67,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "2625760e6867cbf0"
         },
         {
@@ -9349,7 +9349,7 @@
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "b078b8128d23714d"
         },
         {
@@ -9369,7 +9369,7 @@
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "1cdbfbcf8088b187"
         }
       ],
@@ -9650,37 +9650,37 @@
           "source": "REI Re/Supply (outlet)"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 200.55,
           "source": "REI Co-op"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 265.95,
           "source": "Backcountry"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 183.94,
           "source": "Brand Official"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 264.76,
           "source": "Amazon"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 153.18,
           "source": "eBay"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 196.47,
           "source": "Marketplace (reventa)"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 144.86,
           "source": "REI Re/Supply (outlet)"
         }
@@ -9733,7 +9733,7 @@
           "image": null,
           "list_price": 320.0,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "5875c3e256cfae8d"
         },
         {
@@ -9753,7 +9753,7 @@
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "9eda76cc343621a4"
         },
         {
@@ -9773,7 +9773,7 @@
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "da244b8a39f0ac9e"
         },
         {
@@ -9793,7 +9793,7 @@
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "52cfc8d2a4ee135f"
         },
         {
@@ -9813,7 +9813,7 @@
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "006dafc5dc9ef822"
         },
         {
@@ -9833,7 +9833,7 @@
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "726d8a560497ab0b"
         },
         {
@@ -9853,7 +9853,7 @@
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "b43bc5307ac58f2a"
         }
       ],
@@ -10039,37 +10039,37 @@
           "source": "REI Re/Supply (outlet)"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 307.43,
           "source": "REI Co-op"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 313.83,
           "source": "Backcountry"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 305.14,
           "source": "Brand Official"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 298.51,
           "source": "Amazon"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 267.86,
           "source": "eBay"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 167.06,
           "source": "Marketplace (reventa)"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 208.17,
           "source": "REI Re/Supply (outlet)"
         }
@@ -10122,7 +10122,7 @@
           "image": null,
           "list_price": 346.67,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "c12124b1cc9ccbdb"
         },
         {
@@ -10142,7 +10142,7 @@
           "image": null,
           "list_price": 346.67,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "4ceadce350c8b0d4"
         },
         {
@@ -10162,7 +10162,7 @@
           "image": null,
           "list_price": 346.67,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "62a94d2f9d1f71c9"
         },
         {
@@ -10182,7 +10182,7 @@
           "image": null,
           "list_price": 346.67,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "9c551621c2c08608"
         },
         {
@@ -10202,7 +10202,7 @@
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "e875bca303082156"
         },
         {
@@ -10222,7 +10222,7 @@
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "7584f954df698bce"
         },
         {
@@ -10242,7 +10242,7 @@
           "image": null,
           "list_price": null,
           "match_score": 1.0,
-          "fetched_at": "2026-07-25T07:35:13+00:00",
+          "fetched_at": "2026-07-25T15:48:38+00:00",
           "id": "26eb528c801fa5f6"
         }
       ],
@@ -10428,37 +10428,37 @@
           "source": "REI Re/Supply (outlet)"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 235.96,
           "source": "REI Co-op"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 311.43,
           "source": "Backcountry"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 247.27,
           "source": "Brand Official"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 271.89,
           "source": "Amazon"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 320.69,
           "source": "eBay"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 280.76,
           "source": "Marketplace (reventa)"
         },
         {
-          "ts": "2026-07-25T07:35:13+00:00",
+          "ts": "2026-07-25T15:48:38+00:00",
           "price": 168.46,
           "source": "REI Re/Supply (outlet)"
         }
