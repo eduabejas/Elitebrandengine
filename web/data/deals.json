@@ -33,7 +33,7 @@
       "confidence": 1.0,
       "flash": true,
       "discount_percentile": 0.0,
-      "detected_at": "2026-07-26T15:47:48+00:00",
+      "detected_at": "2026-07-26T21:14:36+00:00",
       "key": "d4f6e1b836efa314"
     },
     {
@@ -69,7 +69,7 @@
       "confidence": 1.0,
       "flash": true,
       "discount_percentile": 0.0,
-      "detected_at": "2026-07-26T15:47:48+00:00",
+      "detected_at": "2026-07-26T21:14:36+00:00",
       "key": "e7b74f9784b840f4"
     },
     {
@@ -105,7 +105,7 @@
       "confidence": 1.0,
       "flash": true,
       "discount_percentile": 0.02,
-      "detected_at": "2026-07-26T15:47:48+00:00",
+      "detected_at": "2026-07-26T21:14:36+00:00",
       "key": "000541ab030a7aa8"
     },
     {
@@ -141,7 +141,7 @@
       "confidence": 1.0,
       "flash": true,
       "discount_percentile": 0.04,
-      "detected_at": "2026-07-26T15:47:48+00:00",
+      "detected_at": "2026-07-26T21:14:36+00:00",
       "key": "09165bae4cfdd6b9"
     },
     {
@@ -177,7 +177,7 @@
       "confidence": 1.0,
       "flash": true,
       "discount_percentile": 0.01,
-      "detected_at": "2026-07-26T15:47:48+00:00",
+      "detected_at": "2026-07-26T21:14:36+00:00",
       "key": "7d979dff301f22e0"
     },
     {
@@ -213,7 +213,7 @@
       "confidence": 1.0,
       "flash": false,
       "discount_percentile": 0.04,
-      "detected_at": "2026-07-26T15:47:48+00:00",
+      "detected_at": "2026-07-26T21:14:36+00:00",
       "key": "1bde7ba564045f30"
     },
     {
@@ -249,7 +249,7 @@
       "confidence": 1.0,
       "flash": true,
       "discount_percentile": 0.04,
-      "detected_at": "2026-07-26T15:47:48+00:00",
+      "detected_at": "2026-07-26T21:14:36+00:00",
       "key": "ea694adc65402c8b"
     },
     {
@@ -285,7 +285,7 @@
       "confidence": 1.0,
       "flash": false,
       "discount_percentile": 0.0,
-      "detected_at": "2026-07-26T15:47:48+00:00",
+      "detected_at": "2026-07-26T21:14:36+00:00",
       "key": "3e6d03c56615c3ff"
     },
     {
@@ -321,7 +321,7 @@
       "confidence": 1.0,
       "flash": true,
       "discount_percentile": 0.07,
-      "detected_at": "2026-07-26T15:47:48+00:00",
+      "detected_at": "2026-07-26T21:14:36+00:00",
       "key": "f740dec098cfb9de"
     },
     {
@@ -357,7 +357,7 @@
       "confidence": 1.0,
       "flash": true,
       "discount_percentile": 0.07,
-      "detected_at": "2026-07-26T15:47:48+00:00",
+      "detected_at": "2026-07-26T21:14:36+00:00",
       "key": "093c9a151f6aff77"
     },
     {
@@ -393,7 +393,7 @@
       "confidence": 1.0,
       "flash": true,
       "discount_percentile": 0.07,
-      "detected_at": "2026-07-26T15:47:48+00:00",
+      "detected_at": "2026-07-26T21:14:36+00:00",
       "key": "15dccf5ad6d57986"
     },
     {
@@ -429,7 +429,7 @@
       "confidence": 1.0,
       "flash": false,
       "discount_percentile": 0.0,
-      "detected_at": "2026-07-26T15:47:48+00:00",
+      "detected_at": "2026-07-26T21:14:36+00:00",
       "key": "76072a8b01de2878"
     },
     {
@@ -465,7 +465,7 @@
       "confidence": 1.0,
       "flash": true,
       "discount_percentile": 0.05,
-      "detected_at": "2026-07-26T15:47:48+00:00",
+      "detected_at": "2026-07-26T21:14:36+00:00",
       "key": "ef078adfb9b18859"
     },
     {
@@ -501,7 +501,7 @@
       "confidence": 1.0,
       "flash": true,
       "discount_percentile": 0.08,
-      "detected_at": "2026-07-26T15:47:48+00:00",
+      "detected_at": "2026-07-26T21:14:36+00:00",
       "key": "7ad5d98355807774"
     },
     {
@@ -537,7 +537,7 @@
       "confidence": 1.0,
       "flash": true,
       "discount_percentile": 0.08,
-      "detected_at": "2026-07-26T15:47:48+00:00",
+      "detected_at": "2026-07-26T21:14:36+00:00",
       "key": "1c66f475250ea48d"
     },
     {
@@ -573,7 +573,7 @@
       "confidence": 1.0,
       "flash": true,
       "discount_percentile": 0.06,
-      "detected_at": "2026-07-26T15:47:48+00:00",
+      "detected_at": "2026-07-26T21:14:36+00:00",
       "key": "1437db8a2ffe8a2f"
     },
     {
@@ -609,7 +609,7 @@
       "confidence": 1.0,
       "flash": false,
       "discount_percentile": 0.02,
-      "detected_at": "2026-07-26T15:47:48+00:00",
+      "detected_at": "2026-07-26T21:14:36+00:00",
       "key": "9c84c0261b901e45"
     },
     {
@@ -645,7 +645,7 @@
       "confidence": 1.0,
       "flash": false,
       "discount_percentile": 0.01,
-      "detected_at": "2026-07-26T15:47:48+00:00",
+      "detected_at": "2026-07-26T21:14:36+00:00",
       "key": "fa5e28d2d7093317"
     },
     {
@@ -681,7 +681,7 @@
       "confidence": 1.0,
       "flash": true,
       "discount_percentile": 0.09,
-      "detected_at": "2026-07-26T15:47:48+00:00",
+      "detected_at": "2026-07-26T21:14:36+00:00",
       "key": "39904ea19a54f4b8"
     },
     {
@@ -717,7 +717,7 @@
       "confidence": 1.0,
       "flash": true,
       "discount_percentile": 0.13,
-      "detected_at": "2026-07-26T15:47:48+00:00",
+      "detected_at": "2026-07-26T21:14:36+00:00",
       "key": "29f2859106135702"
     },
     {
@@ -753,7 +753,7 @@
       "confidence": 1.0,
       "flash": true,
       "discount_percentile": 0.18,
-      "detected_at": "2026-07-26T15:47:48+00:00",
+      "detected_at": "2026-07-26T21:14:36+00:00",
       "key": "15a94b8f1f11332d"
     },
     {
@@ -789,7 +789,7 @@
       "confidence": 1.0,
       "flash": false,
       "discount_percentile": 0.19,
-      "detected_at": "2026-07-26T15:47:48+00:00",
+      "detected_at": "2026-07-26T21:14:36+00:00",
       "key": "f71dd34e4a41d50e"
     },
     {
@@ -825,7 +825,7 @@
       "confidence": 1.0,
       "flash": false,
       "discount_percentile": 0.03,
-      "detected_at": "2026-07-26T15:47:48+00:00",
+      "detected_at": "2026-07-26T21:14:36+00:00",
       "key": "5f6598034227fd09"
     },
     {
@@ -861,7 +861,7 @@
       "confidence": 1.0,
       "flash": false,
       "discount_percentile": 0.02,
-      "detected_at": "2026-07-26T15:47:48+00:00",
+      "detected_at": "2026-07-26T21:14:36+00:00",
       "key": "e198f03c80bfd832"
     },
     {
@@ -897,7 +897,7 @@
       "confidence": 1.0,
       "flash": true,
       "discount_percentile": 0.22,
-      "detected_at": "2026-07-26T15:47:48+00:00",
+      "detected_at": "2026-07-26T21:14:36+00:00",
       "key": "94ee1ac09ce37d4d"
     },
     {
@@ -933,7 +933,7 @@
       "confidence": 1.0,
       "flash": false,
       "discount_percentile": 0.07,
-      "detected_at": "2026-07-26T15:47:48+00:00",
+      "detected_at": "2026-07-26T21:14:36+00:00",
       "key": "7e5e4c16a37770e1"
     },
     {
@@ -969,7 +969,7 @@
       "confidence": 1.0,
       "flash": true,
       "discount_percentile": 0.22,
-      "detected_at": "2026-07-26T15:47:48+00:00",
+      "detected_at": "2026-07-26T21:14:36+00:00",
       "key": "e3edfdc3e187cfc8"
     },
     {
@@ -1005,7 +1005,7 @@
       "confidence": 0.69,
       "flash": false,
       "discount_percentile": 0.0,
-      "detected_at": "2026-07-26T15:47:48+00:00",
+      "detected_at": "2026-07-26T21:14:36+00:00",
       "key": "fe939109cdfd5c37"
     },
     {
@@ -1041,7 +1041,7 @@
       "confidence": 1.0,
       "flash": false,
       "discount_percentile": 0.31,
-      "detected_at": "2026-07-26T15:47:48+00:00",
+      "detected_at": "2026-07-26T21:14:36+00:00",
       "key": "cc9f638fee69884f"
     },
     {
@@ -1077,7 +1077,7 @@
       "confidence": 1.0,
       "flash": false,
       "discount_percentile": 0.32,
-      "detected_at": "2026-07-26T15:47:48+00:00",
+      "detected_at": "2026-07-26T21:14:36+00:00",
       "key": "fe52c77a8e614846"
     },
     {
@@ -1113,7 +1113,7 @@
       "confidence": 1.0,
       "flash": false,
       "discount_percentile": 0.05,
-      "detected_at": "2026-07-26T15:47:48+00:00",
+      "detected_at": "2026-07-26T21:14:36+00:00",
       "key": "4286f6b5bd86f292"
     },
     {
@@ -1149,7 +1149,7 @@
       "confidence": 1.0,
       "flash": true,
       "discount_percentile": 0.24,
-      "detected_at": "2026-07-26T15:47:48+00:00",
+      "detected_at": "2026-07-26T21:14:36+00:00",
       "key": "9787ea2be3d2fe26"
     },
     {
@@ -1185,7 +1185,7 @@
       "confidence": 1.0,
       "flash": true,
       "discount_percentile": 0.31,
-      "detected_at": "2026-07-26T15:47:48+00:00",
+      "detected_at": "2026-07-26T21:14:36+00:00",
       "key": "097e4c5292667b03"
     },
     {
@@ -1221,7 +1221,7 @@
       "confidence": 1.0,
       "flash": false,
       "discount_percentile": 0.12,
-      "detected_at": "2026-07-26T15:47:48+00:00",
+      "detected_at": "2026-07-26T21:14:36+00:00",
       "key": "49157680dc06f30d"
     },
     {
@@ -1257,7 +1257,7 @@
       "confidence": 1.0,
       "flash": true,
       "discount_percentile": 0.28,
-      "detected_at": "2026-07-26T15:47:48+00:00",
+      "detected_at": "2026-07-26T21:14:36+00:00",
       "key": "bde010e394369dfb"
     },
     {
@@ -1293,7 +1293,7 @@
       "confidence": 1.0,
       "flash": false,
       "discount_percentile": 0.09,
-      "detected_at": "2026-07-26T15:47:48+00:00",
+      "detected_at": "2026-07-26T21:14:36+00:00",
       "key": "f7dbc7d37a2ce9f1"
     },
     {
@@ -1329,7 +1329,7 @@
       "confidence": 1.0,
       "flash": false,
       "discount_percentile": 0.1,
-      "detected_at": "2026-07-26T15:47:48+00:00",
+      "detected_at": "2026-07-26T21:14:36+00:00",
       "key": "d41ab01cc676bd43"
     },
     {
@@ -1365,7 +1365,7 @@
       "confidence": 1.0,
       "flash": false,
       "discount_percentile": 0.08,
-      "detected_at": "2026-07-26T15:47:48+00:00",
+      "detected_at": "2026-07-26T21:14:36+00:00",
       "key": "e998332ea932a7f6"
     },
     {
@@ -1401,7 +1401,7 @@
       "confidence": 1.0,
       "flash": false,
       "discount_percentile": 0.15,
-      "detected_at": "2026-07-26T15:47:48+00:00",
+      "detected_at": "2026-07-26T21:14:36+00:00",
       "key": "5c752cba6c05174d"
     },
     {
@@ -1437,7 +1437,7 @@
       "confidence": 0.66,
       "flash": false,
       "discount_percentile": 0.0,
-      "detected_at": "2026-07-26T15:47:48+00:00",
+      "detected_at": "2026-07-26T21:14:36+00:00",
       "key": "288da55f2bada0b1"
     },
     {
@@ -1473,7 +1473,7 @@
       "confidence": 1.0,
       "flash": true,
       "discount_percentile": 0.38,
-      "detected_at": "2026-07-26T15:47:48+00:00",
+      "detected_at": "2026-07-26T21:14:36+00:00",
       "key": "eacff6d9aedf7310"
     },
     {
@@ -1509,7 +1509,7 @@
       "confidence": 1.0,
       "flash": true,
       "discount_percentile": 0.4,
-      "detected_at": "2026-07-26T15:47:48+00:00",
+      "detected_at": "2026-07-26T21:14:36+00:00",
       "key": "3c86cba37481fd44"
     },
     {
@@ -1545,7 +1545,7 @@
       "confidence": 1.0,
       "flash": true,
       "discount_percentile": 0.42,
-      "detected_at": "2026-07-26T15:47:48+00:00",
+      "detected_at": "2026-07-26T21:14:36+00:00",
       "key": "bcb2249b0c8a548a"
     },
     {
@@ -1581,7 +1581,7 @@
       "confidence": 1.0,
       "flash": true,
       "discount_percentile": 0.3,
-      "detected_at": "2026-07-26T15:47:48+00:00",
+      "detected_at": "2026-07-26T21:14:36+00:00",
       "key": "960617ff9ba2b0f3"
     },
     {
@@ -1617,7 +1617,7 @@
       "confidence": 1.0,
       "flash": false,
       "discount_percentile": 0.15,
-      "detected_at": "2026-07-26T15:47:48+00:00",
+      "detected_at": "2026-07-26T21:14:36+00:00",
       "key": "2584f11942e55b30"
     },
     {
@@ -1653,7 +1653,7 @@
       "confidence": 1.0,
       "flash": false,
       "discount_percentile": 0.14,
-      "detected_at": "2026-07-26T15:47:48+00:00",
+      "detected_at": "2026-07-26T21:14:36+00:00",
       "key": "2d62a23b989597e1"
     },
     {
@@ -1689,7 +1689,7 @@
       "confidence": 1.0,
       "flash": false,
       "discount_percentile": 0.33,
-      "detected_at": "2026-07-26T15:47:48+00:00",
+      "detected_at": "2026-07-26T21:14:36+00:00",
       "key": "3aa93c74de0f17bc"
     },
     {
@@ -1725,7 +1725,7 @@
       "confidence": 1.0,
       "flash": false,
       "discount_percentile": 0.22,
-      "detected_at": "2026-07-26T15:47:48+00:00",
+      "detected_at": "2026-07-26T21:14:36+00:00",
       "key": "8d0571f02eb564e6"
     },
     {
@@ -1761,7 +1761,7 @@
       "confidence": 1.0,
       "flash": false,
       "discount_percentile": 0.37,
-      "detected_at": "2026-07-26T15:47:48+00:00",
+      "detected_at": "2026-07-26T21:14:36+00:00",
       "key": "1326987401c85860"
     },
     {
@@ -1797,7 +1797,7 @@
       "confidence": 1.0,
       "flash": false,
       "discount_percentile": 0.15,
-      "detected_at": "2026-07-26T15:47:48+00:00",
+      "detected_at": "2026-07-26T21:14:36+00:00",
       "key": "6e916be68c0075d7"
     },
     {
@@ -1833,7 +1833,7 @@
       "confidence": 1.0,
       "flash": true,
       "discount_percentile": 0.4,
-      "detected_at": "2026-07-26T15:47:48+00:00",
+      "detected_at": "2026-07-26T21:14:36+00:00",
       "key": "0bf99298066f036a"
     },
     {
@@ -1869,7 +1869,7 @@
       "confidence": 1.0,
       "flash": false,
       "discount_percentile": 0.2,
-      "detected_at": "2026-07-26T15:47:48+00:00",
+      "detected_at": "2026-07-26T21:14:36+00:00",
       "key": "930a40301b34917b"
     },
     {
@@ -1905,7 +1905,7 @@
       "confidence": 1.0,
       "flash": false,
       "discount_percentile": 0.21,
-      "detected_at": "2026-07-26T15:47:48+00:00",
+      "detected_at": "2026-07-26T21:14:36+00:00",
       "key": "054d1602692f688b"
     },
     {
@@ -1941,7 +1941,7 @@
       "confidence": 1.0,
       "flash": false,
       "discount_percentile": 0.23,
-      "detected_at": "2026-07-26T15:47:48+00:00",
+      "detected_at": "2026-07-26T21:14:36+00:00",
       "key": "461862817518cebc"
     },
     {
@@ -1977,7 +1977,7 @@
       "confidence": 1.0,
       "flash": false,
       "discount_percentile": 0.2,
-      "detected_at": "2026-07-26T15:47:48+00:00",
+      "detected_at": "2026-07-26T21:14:36+00:00",
       "key": "2c8e33d10b4deb25"
     },
     {
@@ -2013,7 +2013,7 @@
       "confidence": 1.0,
       "flash": false,
       "discount_percentile": 0.18,
-      "detected_at": "2026-07-26T15:47:48+00:00",
+      "detected_at": "2026-07-26T21:14:36+00:00",
       "key": "1c922a752b4ca1f4"
     },
     {
@@ -2049,7 +2049,7 @@
       "confidence": 1.0,
       "flash": false,
       "discount_percentile": 0.28,
-      "detected_at": "2026-07-26T15:47:48+00:00",
+      "detected_at": "2026-07-26T21:14:36+00:00",
       "key": "44e773ed7e0b40ff"
     },
     {
@@ -2085,7 +2085,7 @@
       "confidence": 1.0,
       "flash": false,
       "discount_percentile": 0.44,
-      "detected_at": "2026-07-26T15:47:48+00:00",
+      "detected_at": "2026-07-26T21:14:36+00:00",
       "key": "7d991d13597b375f"
     },
     {
@@ -2121,7 +2121,7 @@
       "confidence": 1.0,
       "flash": false,
       "discount_percentile": 0.25,
-      "detected_at": "2026-07-26T15:47:48+00:00",
+      "detected_at": "2026-07-26T21:14:36+00:00",
       "key": "72cfa22eec013cda"
     },
     {
@@ -2157,7 +2157,7 @@
       "confidence": 1.0,
       "flash": true,
       "discount_percentile": 0.5,
-      "detected_at": "2026-07-26T15:47:48+00:00",
+      "detected_at": "2026-07-26T21:14:36+00:00",
       "key": "db3799a33bbeb3cb"
     },
     {
@@ -2193,7 +2193,7 @@
       "confidence": 1.0,
       "flash": true,
       "discount_percentile": 0.44,
-      "detected_at": "2026-07-26T15:47:48+00:00",
+      "detected_at": "2026-07-26T21:14:36+00:00",
       "key": "060d613e527a52d2"
     },
     {
@@ -2229,7 +2229,7 @@
       "confidence": 1.0,
       "flash": false,
       "discount_percentile": 0.2,
-      "detected_at": "2026-07-26T15:47:48+00:00",
+      "detected_at": "2026-07-26T21:14:36+00:00",
       "key": "5f36f5f0cb4cba58"
     },
     {
@@ -2265,7 +2265,7 @@
       "confidence": 1.0,
       "flash": false,
       "discount_percentile": 0.26,
-      "detected_at": "2026-07-26T15:47:48+00:00",
+      "detected_at": "2026-07-26T21:14:36+00:00",
       "key": "8b4c132106a44f81"
     },
     {
@@ -2301,7 +2301,7 @@
       "confidence": 1.0,
       "flash": false,
       "discount_percentile": 0.28,
-      "detected_at": "2026-07-26T15:47:48+00:00",
+      "detected_at": "2026-07-26T21:14:36+00:00",
       "key": "d13857d5a601c0db"
     },
     {
@@ -2337,7 +2337,7 @@
       "confidence": 1.0,
       "flash": false,
       "discount_percentile": 0.21,
-      "detected_at": "2026-07-26T15:47:48+00:00",
+      "detected_at": "2026-07-26T21:14:36+00:00",
       "key": "f662f1396e942b87"
     },
     {
@@ -2373,7 +2373,7 @@
       "confidence": 1.0,
       "flash": false,
       "discount_percentile": 0.28,
-      "detected_at": "2026-07-26T15:47:48+00:00",
+      "detected_at": "2026-07-26T21:14:36+00:00",
       "key": "ceca218837c29922"
     },
     {
@@ -2409,7 +2409,7 @@
       "confidence": 1.0,
       "flash": false,
       "discount_percentile": 0.29,
-      "detected_at": "2026-07-26T15:47:48+00:00",
+      "detected_at": "2026-07-26T21:14:36+00:00",
       "key": "60e026b0a38dba47"
     },
     {
@@ -2445,7 +2445,7 @@
       "confidence": 1.0,
       "flash": false,
       "discount_percentile": 0.28,
-      "detected_at": "2026-07-26T15:47:48+00:00",
+      "detected_at": "2026-07-26T21:14:36+00:00",
       "key": "476c12862c50475e"
     },
     {
@@ -2481,7 +2481,7 @@
       "confidence": 1.0,
       "flash": true,
       "discount_percentile": 0.44,
-      "detected_at": "2026-07-26T15:47:48+00:00",
+      "detected_at": "2026-07-26T21:14:36+00:00",
       "key": "c29fbd01f2064071"
     },
     {
@@ -2517,7 +2517,7 @@
       "confidence": 1.0,
       "flash": false,
       "discount_percentile": 0.28,
-      "detected_at": "2026-07-26T15:47:48+00:00",
+      "detected_at": "2026-07-26T21:14:36+00:00",
       "key": "105462cc8056e9b2"
     },
     {
@@ -2553,7 +2553,7 @@
       "confidence": 0.14,
       "flash": false,
       "discount_percentile": 0.0,
-      "detected_at": "2026-07-26T15:47:48+00:00",
+      "detected_at": "2026-07-26T21:14:36+00:00",
       "key": "0f3daf79808278c9"
     },
     {
@@ -2589,7 +2589,7 @@
       "confidence": 1.0,
       "flash": false,
       "discount_percentile": 0.29,
-      "detected_at": "2026-07-26T15:47:48+00:00",
+      "detected_at": "2026-07-26T21:14:36+00:00",
       "key": "5732b4cae36f20fa"
     },
     {
@@ -2625,7 +2625,7 @@
       "confidence": 1.0,
       "flash": false,
       "discount_percentile": 0.33,
-      "detected_at": "2026-07-26T15:47:48+00:00",
+      "detected_at": "2026-07-26T21:14:36+00:00",
       "key": "19967b625dac825a"
     },
     {
@@ -2661,7 +2661,7 @@
       "confidence": 1.0,
       "flash": false,
       "discount_percentile": 0.33,
-      "detected_at": "2026-07-26T15:47:48+00:00",
+      "detected_at": "2026-07-26T21:14:36+00:00",
       "key": "751e38f074300256"
     },
     {
@@ -2697,7 +2697,7 @@
       "confidence": 1.0,
       "flash": true,
       "discount_percentile": 0.43,
-      "detected_at": "2026-07-26T15:47:48+00:00",
+      "detected_at": "2026-07-26T21:14:36+00:00",
       "key": "b53fac37b0b7d95b"
     },
     {
@@ -2733,7 +2733,7 @@
       "confidence": 1.0,
       "flash": false,
       "discount_percentile": 0.33,
-      "detected_at": "2026-07-26T15:47:48+00:00",
+      "detected_at": "2026-07-26T21:14:36+00:00",
       "key": "3b787222ad1dd173"
     },
     {
@@ -2769,7 +2769,7 @@
       "confidence": 1.0,
       "flash": false,
       "discount_percentile": 0.36,
-      "detected_at": "2026-07-26T15:47:48+00:00",
+      "detected_at": "2026-07-26T21:14:36+00:00",
       "key": "128490d60545d030"
     },
     {
@@ -2805,7 +2805,7 @@
       "confidence": 1.0,
       "flash": false,
       "discount_percentile": 0.35,
-      "detected_at": "2026-07-26T15:47:48+00:00",
+      "detected_at": "2026-07-26T21:14:36+00:00",
       "key": "9384643a4971b29d"
     },
     {
@@ -2841,7 +2841,7 @@
       "confidence": 1.0,
       "flash": false,
       "discount_percentile": 0.34,
-      "detected_at": "2026-07-26T15:47:48+00:00",
+      "detected_at": "2026-07-26T21:14:36+00:00",
       "key": "dbafbccd83142a31"
     },
     {
@@ -2877,7 +2877,7 @@
       "confidence": 0.29,
       "flash": false,
       "discount_percentile": 0.01,
-      "detected_at": "2026-07-26T15:47:48+00:00",
+      "detected_at": "2026-07-26T21:14:36+00:00",
       "key": "9828519c09829ab5"
     },
     {
@@ -2913,7 +2913,7 @@
       "confidence": 0.7,
       "flash": false,
       "discount_percentile": 0.04,
-      "detected_at": "2026-07-26T15:47:48+00:00",
+      "detected_at": "2026-07-26T21:14:36+00:00",
       "key": "122643e7e9a54fac"
     },
     {
@@ -2949,7 +2949,7 @@
       "confidence": 1.0,
       "flash": false,
       "discount_percentile": 0.33,
-      "detected_at": "2026-07-26T15:47:48+00:00",
+      "detected_at": "2026-07-26T21:14:36+00:00",
       "key": "3df979552ec830c3"
     },
     {
@@ -2985,7 +2985,7 @@
       "confidence": 1.0,
       "flash": false,
       "discount_percentile": 0.39,
-      "detected_at": "2026-07-26T15:47:48+00:00",
+      "detected_at": "2026-07-26T21:14:36+00:00",
       "key": "482ac3296b319cc6"
     },
     {
@@ -3021,7 +3021,7 @@
       "confidence": 1.0,
       "flash": false,
       "discount_percentile": 0.54,
-      "detected_at": "2026-07-26T15:47:48+00:00",
+      "detected_at": "2026-07-26T21:14:36+00:00",
       "key": "9f20263729cf0995"
     },
     {
@@ -3057,7 +3057,7 @@
       "confidence": 1.0,
       "flash": true,
       "discount_percentile": 0.54,
-      "detected_at": "2026-07-26T15:47:48+00:00",
+      "detected_at": "2026-07-26T21:14:36+00:00",
       "key": "75f4913090442ad8"
     },
     {
@@ -3093,7 +3093,7 @@
       "confidence": 0.4,
       "flash": false,
       "discount_percentile": 0.03,
-      "detected_at": "2026-07-26T15:47:48+00:00",
+      "detected_at": "2026-07-26T21:14:36+00:00",
       "key": "4e0f04e3dcd4702b"
     },
     {
@@ -3129,7 +3129,7 @@
       "confidence": 1.0,
       "flash": false,
       "discount_percentile": 0.36,
-      "detected_at": "2026-07-26T15:47:48+00:00",
+      "detected_at": "2026-07-26T21:14:36+00:00",
       "key": "6e8faccfd74ca670"
     },
     {
@@ -3165,7 +3165,7 @@
       "confidence": 0.76,
       "flash": false,
       "discount_percentile": 0.02,
-      "detected_at": "2026-07-26T15:47:48+00:00",
+      "detected_at": "2026-07-26T21:14:36+00:00",
       "key": "b4617e26f4094e29"
     },
     {
@@ -3201,7 +3201,7 @@
       "confidence": 1.0,
       "flash": true,
       "discount_percentile": 0.56,
-      "detected_at": "2026-07-26T15:47:48+00:00",
+      "detected_at": "2026-07-26T21:14:36+00:00",
       "key": "5bb069908c26cd5d"
     },
     {
@@ -3237,7 +3237,7 @@
       "confidence": 0.45,
       "flash": false,
       "discount_percentile": 0.1,
-      "detected_at": "2026-07-26T15:47:48+00:00",
+      "detected_at": "2026-07-26T21:14:36+00:00",
       "key": "51e6bca5724846f8"
     },
     {
@@ -3273,7 +3273,7 @@
       "confidence": 1.0,
       "flash": false,
       "discount_percentile": 0.39,
-      "detected_at": "2026-07-26T15:47:48+00:00",
+      "detected_at": "2026-07-26T21:14:36+00:00",
       "key": "85b8b886ef6a097b"
     },
     {
@@ -3309,7 +3309,7 @@
       "confidence": 1.0,
       "flash": false,
       "discount_percentile": 0.43,
-      "detected_at": "2026-07-26T15:47:48+00:00",
+      "detected_at": "2026-07-26T21:14:36+00:00",
       "key": "ac00854d6daf0dee"
     },
     {
@@ -3345,7 +3345,7 @@
       "confidence": 1.0,
       "flash": false,
       "discount_percentile": 0.37,
-      "detected_at": "2026-07-26T15:47:48+00:00",
+      "detected_at": "2026-07-26T21:14:36+00:00",
       "key": "c897d251093e2f8b"
     },
     {
@@ -3381,7 +3381,7 @@
       "confidence": 1.0,
       "flash": false,
       "discount_percentile": 0.37,
-      "detected_at": "2026-07-26T15:47:48+00:00",
+      "detected_at": "2026-07-26T21:14:36+00:00",
       "key": "6e5d0fbeec35c36f"
     },
     {
@@ -3417,7 +3417,7 @@
       "confidence": 1.0,
       "flash": false,
       "discount_percentile": 0.41,
-      "detected_at": "2026-07-26T15:47:48+00:00",
+      "detected_at": "2026-07-26T21:14:36+00:00",
       "key": "b789dae7a733a6c3"
     },
     {
@@ -3453,7 +3453,7 @@
       "confidence": 1.0,
       "flash": false,
       "discount_percentile": 0.38,
-      "detected_at": "2026-07-26T15:47:48+00:00",
+      "detected_at": "2026-07-26T21:14:36+00:00",
       "key": "8bdfd34d8d53e6c8"
     },
     {
@@ -3489,7 +3489,7 @@
       "confidence": 1.0,
       "flash": true,
       "discount_percentile": 0.51,
-      "detected_at": "2026-07-26T15:47:48+00:00",
+      "detected_at": "2026-07-26T21:14:36+00:00",
       "key": "ec2d200d34f8e3ed"
     },
     {
@@ -3525,7 +3525,7 @@
       "confidence": 1.0,
       "flash": false,
       "discount_percentile": 0.42,
-      "detected_at": "2026-07-26T15:47:48+00:00",
+      "detected_at": "2026-07-26T21:14:36+00:00",
       "key": "d73f770a98b0b1f3"
     },
     {
@@ -3561,7 +3561,7 @@
       "confidence": 1.0,
       "flash": true,
       "discount_percentile": 0.52,
-      "detected_at": "2026-07-26T15:47:48+00:00",
+      "detected_at": "2026-07-26T21:14:36+00:00",
       "key": "5879e0db285c9a0a"
     },
     {
@@ -3597,7 +3597,7 @@
       "confidence": 1.0,
       "flash": false,
       "discount_percentile": 0.39,
-      "detected_at": "2026-07-26T15:47:48+00:00",
+      "detected_at": "2026-07-26T21:14:36+00:00",
       "key": "a3419df8e30d3987"
     },
     {
@@ -3633,7 +3633,7 @@
       "confidence": 0.71,
       "flash": false,
       "discount_percentile": 0.06,
-      "detected_at": "2026-07-26T15:47:48+00:00",
+      "detected_at": "2026-07-26T21:14:36+00:00",
       "key": "b768929311b3b112"
     },
     {
@@ -3669,7 +3669,7 @@
       "confidence": 1.0,
       "flash": true,
       "discount_percentile": 0.65,
-      "detected_at": "2026-07-26T15:47:48+00:00",
+      "detected_at": "2026-07-26T21:14:36+00:00",
       "key": "b803868870d1ffe2"
     },
     {
@@ -3705,7 +3705,7 @@
       "confidence": 1.0,
       "flash": false,
       "discount_percentile": 0.42,
-      "detected_at": "2026-07-26T15:47:48+00:00",
+      "detected_at": "2026-07-26T21:14:36+00:00",
       "key": "f947bd04c2d3d492"
     },
     {
@@ -3741,7 +3741,7 @@
       "confidence": 1.0,
       "flash": false,
       "discount_percentile": 0.44,
-      "detected_at": "2026-07-26T15:47:48+00:00",
+      "detected_at": "2026-07-26T21:14:36+00:00",
       "key": "c7947a2d3c8be984"
     },
     {
@@ -3777,7 +3777,7 @@
       "confidence": 1.0,
       "flash": false,
       "discount_percentile": 0.42,
-      "detected_at": "2026-07-26T15:47:48+00:00",
+      "detected_at": "2026-07-26T21:14:36+00:00",
       "key": "2c91b545f452b48f"
     },
     {
@@ -3813,7 +3813,7 @@
       "confidence": 1.0,
       "flash": false,
       "discount_percentile": 0.43,
-      "detected_at": "2026-07-26T15:47:48+00:00",
+      "detected_at": "2026-07-26T21:14:36+00:00",
       "key": "3a620bb3187c338e"
     },
     {
@@ -3849,7 +3849,7 @@
       "confidence": 1.0,
       "flash": false,
       "discount_percentile": 0.45,
-      "detected_at": "2026-07-26T15:47:48+00:00",
+      "detected_at": "2026-07-26T21:14:36+00:00",
       "key": "dc637c5f23b74a2b"
     },
     {
@@ -3885,7 +3885,7 @@
       "confidence": 1.0,
       "flash": false,
       "discount_percentile": 0.43,
-      "detected_at": "2026-07-26T15:47:48+00:00",
+      "detected_at": "2026-07-26T21:14:36+00:00",
       "key": "1bdae0b36a6b700b"
     },
     {
@@ -3921,7 +3921,7 @@
       "confidence": 1.0,
       "flash": false,
       "discount_percentile": 0.46,
-      "detected_at": "2026-07-26T15:47:48+00:00",
+      "detected_at": "2026-07-26T21:14:36+00:00",
       "key": "731729b606c425a5"
     },
     {
@@ -3957,7 +3957,7 @@
       "confidence": 1.0,
       "flash": false,
       "discount_percentile": 0.48,
-      "detected_at": "2026-07-26T15:47:48+00:00",
+      "detected_at": "2026-07-26T21:14:36+00:00",
       "key": "2376ad2851673fca"
     },
     {
@@ -3993,7 +3993,7 @@
       "confidence": 0.36,
       "flash": false,
       "discount_percentile": 0.01,
-      "detected_at": "2026-07-26T15:47:48+00:00",
+      "detected_at": "2026-07-26T21:14:36+00:00",
       "key": "f01676da91d989a6"
     },
     {
@@ -4029,7 +4029,7 @@
       "confidence": 0.22,
       "flash": false,
       "discount_percentile": 0.03,
-      "detected_at": "2026-07-26T15:47:48+00:00",
+      "detected_at": "2026-07-26T21:14:36+00:00",
       "key": "f8a67edad682d0b9"
     },
     {
@@ -4065,7 +4065,7 @@
       "confidence": 1.0,
       "flash": false,
       "discount_percentile": 0.45,
-      "detected_at": "2026-07-26T15:47:48+00:00",
+      "detected_at": "2026-07-26T21:14:36+00:00",
       "key": "f4a66b9149d4c75e"
     },
     {
@@ -4101,7 +4101,7 @@
       "confidence": 1.0,
       "flash": false,
       "discount_percentile": 0.49,
-      "detected_at": "2026-07-26T15:47:48+00:00",
+      "detected_at": "2026-07-26T21:14:36+00:00",
       "key": "3d3c36a420f63687"
     },
     {
@@ -4137,7 +4137,7 @@
       "confidence": 1.0,
       "flash": false,
       "discount_percentile": 0.56,
-      "detected_at": "2026-07-26T15:47:48+00:00",
+      "detected_at": "2026-07-26T21:14:36+00:00",
       "key": "f8017eaa216cc9e1"
     },
     {
@@ -4173,7 +4173,7 @@
       "confidence": 1.0,
       "flash": false,
       "discount_percentile": 0.45,
-      "detected_at": "2026-07-26T15:47:48+00:00",
+      "detected_at": "2026-07-26T21:14:36+00:00",
       "key": "dadda2d05179493b"
     },
     {
@@ -4209,7 +4209,7 @@
       "confidence": 1.0,
       "flash": false,
       "discount_percentile": 0.45,
-      "detected_at": "2026-07-26T15:47:48+00:00",
+      "detected_at": "2026-07-26T21:14:36+00:00",
       "key": "a5ecd60a3abefad3"
     },
     {
@@ -4245,7 +4245,7 @@
       "confidence": 0.75,
       "flash": false,
       "discount_percentile": 0.33,
-      "detected_at": "2026-07-26T15:47:48+00:00",
+      "detected_at": "2026-07-26T21:14:36+00:00",
       "key": "517e105f0e4191c0"
     },
     {
@@ -4281,7 +4281,7 @@
       "confidence": 0.68,
       "flash": false,
       "discount_percentile": 0.31,
-      "detected_at": "2026-07-26T15:47:48+00:00",
+      "detected_at": "2026-07-26T21:14:36+00:00",
       "key": "56368c307be69bb6"
     }
   ]
