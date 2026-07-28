@@ -110,6 +110,12 @@ class EbayConnector(Connector):
     def available(self) -> bool:
         return bool(self.client_id and self.client_secret)
 
+    def status_note(self) -> Optional[str]:
+        if self._auth_failed:
+            return ("credenciales rechazadas por eBay (401/403) — usa el keyset "
+                    "de PRODUCCIÓN (App ID + Cert ID), no el de Sandbox")
+        return None
+
     def _marketplaces(self) -> list[str]:
         """One marketplace for standard scope; US+EU+CA for expanded. An
         explicit `marketplaces` list in config overrides both."""

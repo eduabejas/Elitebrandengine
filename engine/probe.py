@@ -7,7 +7,7 @@ source for scheduled runs.
     python -m engine.probe sample                       # works with no keys
     python -m engine.probe ebay --id arcteryx_beta_ar_jacket
     python -m engine.probe ebay --brand "Patagonia" --name "Nano Puff" --limit 5
-    python -m engine.probe amazon --query "black diamond headlamp" --json
+    python -m engine.probe structured --id tnf_nuptse_1996 --json
 """
 
 from __future__ import annotations
@@ -24,7 +24,6 @@ from .store import load_watchlist
 # What to set when a source isn't available yet.
 _ENV_HINTS = {
     "ebay": "env: EBAY_CLIENT_ID, EBAY_CLIENT_SECRET",
-    "amazon": "env: AMAZON_ACCESS_KEY, AMAZON_SECRET_KEY, AMAZON_PARTNER_TAG",
     "affiliate_feed": "config.yml: add entries under sources.affiliate_feed.feeds",
     "sample": "(always available)",
 }

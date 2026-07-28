@@ -7,9 +7,9 @@ Wraps ``requests`` with:
 * **Per-host rate limiting** so we stay polite and under API quotas.
 * **Sane defaults** (timeout, truthful User-Agent).
 
-Connectors that must rebuild the request each attempt (e.g. Amazon re-signs with
-a fresh timestamp) pass a ``send`` closure to :func:`retry_request`; simpler
-callers use :func:`get` / :func:`post`.
+Connectors that must rebuild the request each attempt (e.g. re-signing with a
+fresh timestamp, or refreshing a token) pass a ``send`` closure to
+:func:`retry_request`; simpler callers use :func:`get` / :func:`post`.
 """
 
 from __future__ import annotations

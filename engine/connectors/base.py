@@ -24,6 +24,14 @@ class Connector(ABC):
         self.cfg = cfg
         self.settings = settings or {}
 
+    def status_note(self) -> str | None:
+        """Why this source produced nothing, in one line (None = healthy).
+
+        Surfaced in status.json so a failed run is diagnosable from a single
+        small file instead of a full CI log dump.
+        """
+        return None
+
     def available(self) -> bool:
         """Whether this connector has what it needs to run (keys, feeds, ...).
 

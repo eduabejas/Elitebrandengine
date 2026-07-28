@@ -9,7 +9,6 @@ from __future__ import annotations
 
 from ..config import Config
 from .affiliate_feed import AffiliateFeedConnector
-from .amazon import AmazonConnector
 from .base import Connector
 from .ebay import EbayConnector
 from .sample import SampleConnector
@@ -18,7 +17,6 @@ from .structured import StructuredDataConnector
 _REGISTRY = {
     "sample": SampleConnector,
     "ebay": EbayConnector,
-    "amazon": AmazonConnector,
     "affiliate_feed": AffiliateFeedConnector,
     "structured": StructuredDataConnector,
 }

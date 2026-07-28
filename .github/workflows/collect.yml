@@ -50,12 +50,9 @@ jobs:
           SMTP_TLS: ${{ secrets.SMTP_TLS }}
           SENDGRID_API_KEY: ${{ secrets.SENDGRID_API_KEY }}
           RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
-          # Source API credentials (optional).
+          # eBay API credentials.
           EBAY_CLIENT_ID: ${{ secrets.EBAY_CLIENT_ID }}
           EBAY_CLIENT_SECRET: ${{ secrets.EBAY_CLIENT_SECRET }}
-          AMAZON_ACCESS_KEY: ${{ secrets.AMAZON_ACCESS_KEY }}
-          AMAZON_SECRET_KEY: ${{ secrets.AMAZON_SECRET_KEY }}
-          AMAZON_PARTNER_TAG: ${{ secrets.AMAZON_PARTNER_TAG }}
         run: python -m engine.run
 
       - name: Upload rendered email (for inspection)

@@ -24,7 +24,6 @@ DEFAULTS: dict[str, Any] = {
         "history_dir": "data/history",
         "alerts_ledger": "data/alerts_ledger.json",
         "promos": "data/promos.json",
-        "status": "data/status.json",
         "web_data": "web/data",
     },
     "detection": {
@@ -102,7 +101,6 @@ DEFAULTS: dict[str, Any] = {
         # Demo source ships enabled so the whole system works with zero setup.
         "sample": {"enabled": True},
         "ebay": {"enabled": False, "marketplace": "EBAY_US", "limit": 8},
-        "amazon": {"enabled": False, "marketplace": "www.amazon.com", "region": "us-east-1"},
         "affiliate_feed": {"enabled": False, "feeds": []},
         # Reads schema.org JSON-LD from product pages listed on a watch item's
         # `urls`. Authoritative retailer data; polite (robots.txt + rate limit).

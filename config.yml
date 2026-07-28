@@ -80,11 +80,6 @@ sources:
     # Or pin an explicit list that ignores scope entirely:
     # marketplaces: [EBAY_US, EBAY_GB]
 
-  amazon:
-    enabled: false           # needs AMAZON_ACCESS_KEY / _SECRET_KEY / _PARTNER_TAG
-    marketplace: www.amazon.com
-    region: us-east-1
-    search_index: SportingGoods
 
   affiliate_feed:
     enabled: false           # REI / Backcountry / Patagonia / brand DTC via feeds

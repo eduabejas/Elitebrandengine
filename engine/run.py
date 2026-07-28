@@ -190,10 +190,15 @@ def _sources_status(cfg, connectors, counts) -> list[dict]:
     # nothing (bad credentials, quota, an outage) stays VISIBLE instead of
     # silently vanishing from the report.
     counts = {**{c.name: 0 for c in connectors}, **counts}
-    status = [{"name": name, "available": True, "offers": n}
-              for name, n in sorted(counts.items(), key=lambda kv: -kv[1])]
+    notes = {c.name: c.status_note() for c in connectors}
+    status = []
+    for name, n in sorted(counts.items(), key=lambda kv: -kv[1]):
+        row = {"name": name, "available": True, "offers": n}
+        if notes.get(name):
+            row["problem"] = notes[name]   # why it produced nothing
+        status.append(row)
     configured = cfg.get("sources", {}) or {}
-    label_by_key = {"ebay": "eBay", "amazon": "Amazon",
+    label_by_key = {"ebay": "eBay",
                     "affiliate_feed": "AffiliateFeed", "structured": "StructuredData"}
     ran_conn = {c.name for c in connectors}
     for key, s in configured.items():

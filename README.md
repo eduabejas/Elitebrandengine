@@ -36,7 +36,6 @@ constantly, and gets your IPs banned):
 | Source | How we read prices — legitimately |
 | --- | --- |
 | **eBay** | Official **Browse API** (OAuth client-credentials). ([docs][ebay]) |
-| **Amazon** | Official **Product Advertising API 5.0** (Associates + SigV4). |
 | **REI / Backcountry / Patagonia / brand DTC** | **Affiliate product datafeeds** via AvantLink / Impact / CJ — explicitly meant for comparison sites. ([AvantLink][avantlink]) |
 | **Other stores** | *Polite* HTML fetching that honours `robots.txt`, rate-limits, identifies itself, and **backs off** on any challenge. |
 
@@ -51,8 +50,8 @@ flowchart LR
   subgraph GitHub Actions (cron, free)
     A[watchlist.json] --> B[Connectors]
     B -->|eBay API| B
-    B -->|Amazon PA-API| B
     B -->|Affiliate feeds| B
+    B -->|JSON-LD product pages| B
     B -->|sample demo| B
     B --> C[Normalize + match<br/>brand / size / colour]
     C --> D[Deal detector<br/>vs target & price history]
@@ -84,11 +83,6 @@ python -m engine.run --no-email
 cd web && python -m http.server 8000     # open http://localhost:8000
 ```
 
-**Instant sandbox:** open **`web/sandbox.html`** directly in a browser — a single
-self-contained file with demo data, search, brand filter and price comparison
-baked in (no server, no build). Regenerate it after changing data with
-`python scripts/build_sandbox.py`.
-
 Run the tests:
 
 ```bash
@@ -108,7 +102,7 @@ python -m engine.probe ebay --brand "Patagonia" --name "Nano Puff"  # (needs eBa
 ```
 
 `engine.probe` prints exactly what a single connector returns (or a clear
-"missing credential" message) — use it to validate eBay/Amazon/feeds right after
+"missing credential" message) — use it to validate eBay/feeds right after
 adding secrets, before enabling them for scheduled runs. API connectors go
 through a shared resilient HTTP layer (retries + backoff + per-host rate
 limiting). A **CI** workflow runs the tests, `validate`, and a demo smoke run on
@@ -225,7 +219,6 @@ credentials as environment variables / GitHub Secrets:
 | Source | Env vars |
 | --- | --- |
 | eBay | `EBAY_CLIENT_ID`, `EBAY_CLIENT_SECRET` |
-| Amazon | `AMAZON_ACCESS_KEY`, `AMAZON_SECRET_KEY`, `AMAZON_PARTNER_TAG` |
 | Affiliate feeds | add `feeds:` entries (feed URL + column mapping) — no secret needed if the feed URL is tokenised |
 
 **eBay (production-ready).** Create a free app at
@@ -317,7 +310,7 @@ engine/                 Python collection engine
   run.py                orchestrator + CLI (concurrent; python -m engine.run)
   probe.py              inspect a single source (python -m engine.probe)
   validate.py           watchlist validation (python -m engine.validate)
-  connectors/           sample · ebay · amazon · affiliate_feed · structured · polite_html
+  connectors/           sample · ebay · affiliate_feed · structured · polite_html
   notify/email.py       Gmail / SMTP / SendGrid / Resend / dry-run alerts
 data/                   watchlist.json + committed price history (the "database")
 web/                    static GitHub Pages site (search / compare / deals)
@@ -332,10 +325,12 @@ docs/                   operator guide · legal/Honey explainer · autonomous-en
 
 ## Limitations & honest notes
 
-- The **demo source is synthetic** — turn on eBay/Amazon/affiliate feeds for
+- The **demo source is synthetic** — turn on eBay/affiliate feeds for
   real prices. The site shows a *"Modo demo"* badge until you do.
-- The **Amazon** connector's SigV4 signing is implemented to spec but should be
-  validated the first time against your live keys.
+- **Amazon is not a source.** Its Product Advertising API is gated behind an
+  approved Associates account with qualifying sales, so the connector was
+  removed rather than left as untestable dead code (recoverable from git
+  history if that access is ever granted).
 - Affiliate feeds require you to be an **approved affiliate** of each program.
 - Matching is deliberately conservative (`min_match_score`); tune per source.
 
