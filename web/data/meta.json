@@ -1,12 +1,18 @@
 {
-  "generated_at": "2026-07-28T20:49:42+00:00",
+  "generated_at": "2026-07-28T21:07:23+00:00",
   "currency": "USD",
   "demo": false,
   "scope": "standard",
   "product_count": 22,
   "offer_count": 0,
   "deal_count": 0,
-  "sources": [],
+  "sources": [
+    {
+      "name": "eBay",
+      "available": true,
+      "offers": 0
+    }
+  ],
   "site": {
     "title": "Elite Brand Engine",
     "tagline": "Radar de ofertas para equipo de montañismo y alpinismo"

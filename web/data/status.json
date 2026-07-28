@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-07-28T20:49:42+00:00",
-  "duration_seconds": 6.507,
+  "generated_at": "2026-07-28T21:07:23+00:00",
+  "duration_seconds": 0.349,
   "scope": "standard",
   "max_workers": 6,
   "watch_items": 22,
@@ -8,16 +8,22 @@
   "active_deals": 0,
   "new_deals": 0,
   "phases": {
-    "gather": 6.502,
-    "detect": 0.003
+    "gather": 0.333,
+    "detect": 0.013
   },
   "connectors": {
     "eBay": {
       "calls": 22,
       "offers": 0,
       "errors": 0,
-      "seconds": 35.192
+      "seconds": 1.985
     }
   },
-  "sources": []
+  "sources": [
+    {
+      "name": "eBay",
+      "available": true,
+      "offers": 0
+    }
+  ]
 }
