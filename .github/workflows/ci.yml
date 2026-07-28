@@ -49,4 +49,10 @@ jobs:
         run: python -m engine.validate
 
       - name: Smoke run (demo source, no email)
-        run: python -m engine.run --no-email --limit 3
+        # Production config runs on real sources (eBay) whose secrets aren't
+        # available here, so force the synthetic source on for the smoke test.
+        # config.local.yml is layered on top of config.yml and is CI-only.
+        run: |
+          printf 'sources:\n  sample:\n    enabled: true\n' > config.local.yml
+          python -m engine.run --no-email --limit 3
+          rm -f config.local.yml

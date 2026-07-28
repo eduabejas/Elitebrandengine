@@ -66,10 +66,12 @@ fx:
 # system works with zero setup; turn on the real ones as you get credentials.
 sources:
   sample:
-    enabled: true            # synthetic demo data (no network, no keys)
+    enabled: false           # synthetic demo data — OFF now that a real source
+                             # is live: fake prices must never mix with real ones
+                             # (they would poison the price-history baseline).
 
   ebay:
-    enabled: false           # needs EBAY_CLIENT_ID / EBAY_CLIENT_SECRET
+    enabled: true            # needs EBAY_CLIENT_ID / EBAY_CLIENT_SECRET
     marketplace: EBAY_US     # used for STANDARD scope
     limit: 8                 # listings per product per marketplace
     # With search.scope: expanded the connector auto-queries several eBay sites
