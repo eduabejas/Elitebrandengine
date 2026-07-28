@@ -71,6 +71,44 @@ _MARKET_CURRENCY = {
 _EXPANDED_DEFAULT = ["EBAY_US", "EBAY_GB", "EBAY_DE", "EBAY_CA"]
 
 
+def _mask(value: str) -> str:
+    if len(value) <= 10:
+        return "***"
+    return f"{value[:6]}…{value[-4:]}"
+
+
+def _diagnose_auth_failure(resp: requests.Response, client_id: str) -> str:
+    """Turn a rejected token request into one specific, actionable line —
+    eBay's own error body plus a check of eBay's App ID naming convention
+    (```<name>-PRD-...``` for production, ```-SBX-``` for sandbox), so this
+    doesn't stay a guessing game across repeated runs."""
+    ebay_said = None
+    try:
+        body = resp.json()
+        ebay_said = body.get("error_description") or body.get("error")
+    except ValueError:
+        pass
+    if not ebay_said:
+        ebay_said = (resp.text or "")[:160] or "(sin cuerpo de respuesta)"
+
+    cid_lower = client_id.lower()
+    if "-sbx-" in cid_lower:
+        hint = ("el EBAY_CLIENT_ID cargado ES un App ID de SANDBOX (contiene "
+                "'-SBX-') — copia el de la fila PRODUCTION en Application Keys.")
+    elif "-prd-" in cid_lower:
+        hint = ("el EBAY_CLIENT_ID SÍ tiene forma de App ID de producción "
+                "(contiene '-PRD-'), así que el problema es probablemente "
+                "EBAY_CLIENT_SECRET (Cert ID) — revísalo por separado: "
+                "puede estar truncado, con un espacio/salto de línea al "
+                "pegar, o corresponder a un keyset distinto del App ID.")
+    else:
+        hint = ("el EBAY_CLIENT_ID no tiene la forma habitual de un App ID de "
+                "eBay ('<nombre>-PRD-...' o '...-SBX-...') — probablemente se "
+                "pegó el valor equivocado (Dev ID en vez de App ID, o el "
+                "token de prueba en vez del keyset).")
+    return (f"eBay dijo: \"{ebay_said}\" (client_id={_mask(client_id)}). {hint}")
+
+
 def map_condition(item: dict) -> str:
     """eBay condition/conditionId -> 'new' | 'used' | 'refurbished'."""
     cid = str(item.get("conditionId") or "").strip()
@@ -106,14 +144,14 @@ class EbayConnector(Connector):
         # Credential errors are permanent for this run: stop after the first one
         # instead of re-hammering eBay's OAuth endpoint once per watch item.
         self._auth_failed = False
+        self._auth_detail: Optional[str] = None
 
     def available(self) -> bool:
         return bool(self.client_id and self.client_secret)
 
     def status_note(self) -> Optional[str]:
         if self._auth_failed:
-            return ("credenciales rechazadas por eBay (401/403) — usa el keyset "
-                    "de PRODUCCIÓN (App ID + Cert ID), no el de Sandbox")
+            return self._auth_detail or "credenciales rechazadas por eBay (401/403)"
         return None
 
     def _marketplaces(self) -> list[str]:
@@ -161,13 +199,8 @@ class EbayConnector(Connector):
                 # Bad/rejected credentials: permanent until they're fixed. Trip
                 # the breaker so we don't repeat this for every watch item.
                 self._auth_failed = True
-                print(f"[eBay] AUTH FAILED ({r.status_code}) — eBay rejected the "
-                      f"application credentials; skipping eBay for this run.\n"
-                      f"       Check that EBAY_CLIENT_ID / EBAY_CLIENT_SECRET are "
-                      f"the PRODUCTION keyset (App ID + Cert ID) from "
-                      f"developer.ebay.com — Sandbox keys are rejected by "
-                      f"api.ebay.com — and that neither value has stray "
-                      f"whitespace or newlines.")
+                self._auth_detail = _diagnose_auth_failure(r, self.client_id)
+                print(f"[eBay] AUTH FAILED ({r.status_code}) — {self._auth_detail}")
                 self._token, self._token_exp = None, 0.0
                 return None
             r.raise_for_status()

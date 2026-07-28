@@ -15,7 +15,7 @@ import requests
 
 import engine.http as http
 from engine.config import DEFAULTS, Config, _deep_merge
-from engine.connectors.ebay import EbayConnector, map_condition
+from engine.connectors.ebay import EbayConnector, map_condition, _diagnose_auth_failure
 from engine.models import WatchItem
 
 
@@ -192,6 +192,33 @@ def test_reauth_on_401():
     assert len(fake.gets()) == 2         # 401 then success
 
 
+def test_diagnose_detects_sandbox_app_id():
+    resp = _Resp({"error": "invalid_client", "error_description": "client authentication failed"}, status=401)
+    msg = _diagnose_auth_failure(resp, "MyCo-MyApp-SBX-1a2b3c4d5-6e7f8g9h")
+    assert "SANDBOX" in msg and "-SBX-" in msg
+    assert "eBay dijo:" in msg and "client authentication failed" in msg
+
+
+def test_diagnose_production_id_points_at_secret_not_id():
+    resp = _Resp({"error": "invalid_client"}, status=401)
+    msg = _diagnose_auth_failure(resp, "MyCo-MyApp-PRD-1a2b3c4d5-6e7f8g9h")
+    assert "-PRD-" in msg and "EBAY_CLIENT_SECRET" in msg
+
+
+def test_diagnose_unrecognized_id_shape():
+    resp = _Resp({"error": "invalid_client"}, status=401)
+    msg = _diagnose_auth_failure(resp, "not-a-real-app-id")
+    assert "valor equivocado" in msg
+
+
+def test_diagnose_falls_back_to_raw_text_without_json_body():
+    resp = _Resp({}, status=401)
+    resp.json = lambda: (_ for _ in ()).throw(ValueError("no json"))
+    resp.text = "Unauthorized"
+    msg = _diagnose_auth_failure(resp, "MyCo-MyApp-PRD-x")
+    assert "Unauthorized" in msg
+
+
 def test_auth_failure_trips_breaker_once_not_per_item():
     """Bad credentials must not re-hammer eBay's OAuth endpoint for all 22
     watch items — one rejection stops the source for the whole run."""
@@ -204,6 +231,7 @@ def test_auth_failure_trips_breaker_once_not_per_item():
     assert len(fake.posts()) == 1                # exactly ONE token attempt
     assert len(fake.gets()) == 0                 # never reached the search API
     assert conn._auth_failed is True
+    assert "invalid_client" in conn.status_note()  # eBay's own reason, not a guess
 
 
 def test_transient_token_error_does_not_trip_breaker():
