@@ -103,6 +103,9 @@ class EbayConnector(Connector):
         self.min_interval = float(self.settings.get("min_interval", 0.25))
         self.attempts = int(self.settings.get("attempts", 3))
         self._token_lock = threading.Lock()
+        # Credential errors are permanent for this run: stop after the first one
+        # instead of re-hammering eBay's OAuth endpoint once per watch item.
+        self._auth_failed = False
 
     def available(self) -> bool:
         return bool(self.client_id and self.client_secret)
@@ -120,9 +123,13 @@ class EbayConnector(Connector):
 
     # ------------------------------------------------------------------ #
     def _get_token(self, force: bool = False) -> Optional[str]:
+        if self._auth_failed:
+            return None                 # credentials already rejected this run
         if not force and self._token and time.time() < self._token_exp - 60:
             return self._token
         with self._token_lock:
+            if self._auth_failed:
+                return None
             if not force and self._token and time.time() < self._token_exp - 60:
                 return self._token  # another thread refreshed it
             return self._refresh_token()
@@ -144,6 +151,19 @@ class EbayConnector(Connector):
                 host="api.ebay.com", min_interval=self.min_interval,
                 attempts=self.attempts, timeout=20,
             )
+            if r.status_code in (400, 401, 403):
+                # Bad/rejected credentials: permanent until they're fixed. Trip
+                # the breaker so we don't repeat this for every watch item.
+                self._auth_failed = True
+                print(f"[eBay] AUTH FAILED ({r.status_code}) — eBay rejected the "
+                      f"application credentials; skipping eBay for this run.\n"
+                      f"       Check that EBAY_CLIENT_ID / EBAY_CLIENT_SECRET are "
+                      f"the PRODUCTION keyset (App ID + Cert ID) from "
+                      f"developer.ebay.com — Sandbox keys are rejected by "
+                      f"api.ebay.com — and that neither value has stray "
+                      f"whitespace or newlines.")
+                self._token, self._token_exp = None, 0.0
+                return None
             r.raise_for_status()
             body = r.json()
             self._token = body["access_token"]

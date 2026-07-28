@@ -34,8 +34,9 @@ class _Resp:
 class _FakeHttp:
     """Patch engine.http.get/post; record calls; script GET responses."""
 
-    def __init__(self, get_responses):
+    def __init__(self, get_responses, token_status=200):
         self._get_responses = list(get_responses)   # one _Resp per GET call
+        self._token_status = token_status
         self.calls: list[tuple] = []
 
     def __enter__(self):
@@ -50,6 +51,8 @@ class _FakeHttp:
 
     def _post(self, url, **kw):
         self.calls.append(("POST", url, kw))
+        if self._token_status != 200:
+            return _Resp({"error": "invalid_client"}, status=self._token_status)
         return _Resp({"access_token": "TOK", "expires_in": 7200})
 
     def _get(self, url, **kw):
@@ -187,6 +190,31 @@ def test_reauth_on_401():
     assert len(offers) == 1              # recovered after re-auth
     assert len(fake.posts()) == 2        # initial token + forced re-auth
     assert len(fake.gets()) == 2         # 401 then success
+
+
+def test_auth_failure_trips_breaker_once_not_per_item():
+    """Bad credentials must not re-hammer eBay's OAuth endpoint for all 22
+    watch items — one rejection stops the source for the whole run."""
+    cfg = _cfg(min_match_score=0.4)
+    conn = _conn(cfg, marketplace="EBAY_US")
+    w = WatchItem(id="x", brand="Rab", name="Microlight Alpine")
+    with _FakeHttp([_search_resp([])], token_status=401) as fake:
+        for _ in range(22):                      # simulate the full watchlist
+            assert conn.search(w) == []
+    assert len(fake.posts()) == 1                # exactly ONE token attempt
+    assert len(fake.gets()) == 0                 # never reached the search API
+    assert conn._auth_failed is True
+
+
+def test_transient_token_error_does_not_trip_breaker():
+    """A 5xx is transient — the breaker must stay closed so a later run (or
+    watch item) can still succeed once eBay recovers."""
+    cfg = _cfg(min_match_score=0.4)
+    conn = _conn(cfg, marketplace="EBAY_US")
+    w = WatchItem(id="x", brand="Rab", name="Microlight Alpine")
+    with _FakeHttp([_search_resp([])], token_status=503):
+        conn.search(w)
+    assert conn._auth_failed is False
 
 
 def test_unavailable_without_credentials():

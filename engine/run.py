@@ -186,6 +186,10 @@ def run(config_file: str | None = None, send_email: bool = True,
 def _sources_status(cfg, connectors, counts) -> list[dict]:
     """Per-storefront status for the website footer (what actually produced
     offers), plus any configured-but-unavailable connectors for transparency."""
+    # Seed every connector that actually ran at 0 so a source that returned
+    # nothing (bad credentials, quota, an outage) stays VISIBLE instead of
+    # silently vanishing from the report.
+    counts = {**{c.name: 0 for c in connectors}, **counts}
     status = [{"name": name, "available": True, "offers": n}
               for name, n in sorted(counts.items(), key=lambda kv: -kv[1])]
     configured = cfg.get("sources", {}) or {}
