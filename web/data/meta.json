@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-28T21:07:23+00:00",
+  "generated_at": "2026-07-28T21:46:38+00:00",
   "currency": "USD",
   "demo": false,
   "scope": "standard",
@@ -10,7 +10,8 @@
     {
       "name": "eBay",
       "available": true,
-      "offers": 0
+      "offers": 0,
+      "problem": "credenciales rechazadas por eBay (401/403) — usa el keyset de PRODUCCIÓN (App ID + Cert ID), no el de Sandbox"
     }
   ],
   "site": {
