@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-28T22:09:39+00:00",
+  "generated_at": "2026-07-28T22:13:18+00:00",
   "currency": "USD",
   "demo": false,
   "scope": "standard",
@@ -11,7 +11,7 @@
       "name": "eBay",
       "available": true,
       "offers": 0,
-      "problem": "credenciales rechazadas por eBay (401/403) — usa el keyset de PRODUCCIÓN (App ID + Cert ID), no el de Sandbox"
+      "problem": "eBay dijo: \"client authentication failed\" (client_id=JoseMe…65f4). el EBAY_CLIENT_ID SÍ tiene forma de App ID de producción (contiene '-PRD-'), así que el problema es probablemente EBAY_CLIENT_SECRET (Cert ID) — revísalo por separado: puede estar truncado, con un espacio/salto de línea al pegar, o corresponder a un keyset distinto del App ID."
     }
   ],
   "site": {
