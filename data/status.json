@@ -1,59 +1,23 @@
 {
-  "generated_at": "2026-07-28T17:12:56+00:00",
-  "duration_seconds": 0.193,
+  "generated_at": "2026-07-28T20:49:42+00:00",
+  "duration_seconds": 6.507,
   "scope": "standard",
   "max_workers": 6,
   "watch_items": 22,
-  "offers": 154,
-  "active_deals": 120,
-  "new_deals": 1,
+  "offers": 0,
+  "active_deals": 0,
+  "new_deals": 0,
   "phases": {
-    "gather": 0.01,
-    "detect": 0.138
+    "gather": 6.502,
+    "detect": 0.003
   },
   "connectors": {
-    "sample": {
+    "eBay": {
       "calls": 22,
-      "offers": 220,
+      "offers": 0,
       "errors": 0,
-      "seconds": 0.001
+      "seconds": 35.192
     }
   },
-  "sources": [
-    {
-      "name": "REI Co-op",
-      "available": true,
-      "offers": 22
-    },
-    {
-      "name": "Backcountry",
-      "available": true,
-      "offers": 22
-    },
-    {
-      "name": "Brand Official",
-      "available": true,
-      "offers": 22
-    },
-    {
-      "name": "Amazon",
-      "available": true,
-      "offers": 22
-    },
-    {
-      "name": "eBay",
-      "available": true,
-      "offers": 22
-    },
-    {
-      "name": "Marketplace (reventa)",
-      "available": true,
-      "offers": 22
-    },
-    {
-      "name": "REI Re/Supply (outlet)",
-      "available": true,
-      "offers": 22
-    }
-  ]
+  "sources": []
 }
