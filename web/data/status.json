@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-08-23T12:52:52+00:00",
-  "duration_seconds": 0.157,
+  "generated_at": "2026-08-23T18:38:35+00:00",
+  "duration_seconds": 0.562,
   "scope": "standard",
   "max_workers": 6,
   "watch_items": 22,
@@ -8,7 +8,7 @@
   "active_deals": 0,
   "new_deals": 0,
   "phases": {
-    "gather": 0.15,
+    "gather": 0.555,
     "detect": 0.005
   },
   "connectors": {
@@ -16,7 +16,7 @@
       "calls": 22,
       "offers": 0,
       "errors": 0,
-      "seconds": 0.89
+      "seconds": 3.312
     }
   },
   "sources": [
