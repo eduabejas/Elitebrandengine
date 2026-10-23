@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-23T04:23:56+00:00",
-  "duration_seconds": 0.471,
+  "generated_at": "2026-10-23T11:24:08+00:00",
+  "duration_seconds": 1.194,
   "scope": "standard",
   "max_workers": 6,
   "watch_items": 22,
@@ -8,15 +8,15 @@
   "active_deals": 0,
   "new_deals": 0,
   "phases": {
-    "gather": 0.466,
-    "detect": 0.004
+    "gather": 1.184,
+    "detect": 0.007
   },
   "connectors": {
     "eBay": {
       "calls": 22,
       "offers": 0,
       "errors": 0,
-      "seconds": 2.788
+      "seconds": 7.094
     }
   },
   "sources": [
